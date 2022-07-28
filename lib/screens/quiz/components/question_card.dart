@@ -29,10 +29,9 @@ class QuestionCard extends StatelessWidget {
         children: [
           Text(
             question.question,
-            style: Theme.of(context)
-                .textTheme
-                .headline6
-                ?.copyWith(color: kBlackColor),
+            style: TextStyle(
+              fontSize: 16,
+            )
           ),
           SizedBox(height: kDefaultPadding / 2),
           ...List.generate(

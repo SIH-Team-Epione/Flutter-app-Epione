@@ -8,6 +8,7 @@ class WelcomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: Stack(
         children: [
           SafeArea(
@@ -18,10 +19,16 @@ class WelcomeScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Spacer(flex: 2), //2/6
-                  Text(
-                    "Patient Health Questionnaire",
-                    style: Theme.of(context).textTheme.headline4?.copyWith(
-                        color: Colors.black54, fontWeight: FontWeight.bold),
+                  Center(
+                    child: Text(
+                      "Patient Health Questionnaire",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontWeight: FontWeight.w700,
+                        color: Colors.black,
+                        fontSize: 30,
+                      ),
+                    ),
                   ),
                   SizedBox(height: 10.0,),
                   Text("The PHQ-9 is a multipurpose instrument for screening, diagnosing, monitoring and measuring the severity of depression. This analysis will help us guide you further. Please answer over the last 2 weeks, how often have you been bothered by the following problems?"),

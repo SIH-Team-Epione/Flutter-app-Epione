@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:quiz_app/constants.dart';
 import 'package:quiz_app/screens/welcome/welcome_screen.dart';
-import 'package:quiz_app/util/my_button_icon_card.dart';
 import 'package:quiz_app/models/MentalHealthHome.dart';
 
 class MentalHealthScreen extends StatefulWidget {
@@ -18,6 +15,7 @@ class _MentalHealthScreenState extends State<MentalHealthScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         // leading: new IconButton(
         //   icon: new Icon(Icons.arrow_back, color: Colors.white),
@@ -30,6 +28,7 @@ class _MentalHealthScreenState extends State<MentalHealthScreen> {
         physics: ScrollPhysics(),
         child: Container(
           alignment: Alignment.center,
+          color: Colors.white,
           child: Column(
             children: [
               SizedBox(height: 20,),
@@ -37,7 +36,10 @@ class _MentalHealthScreenState extends State<MentalHealthScreen> {
                 width: 350,
                 height: 120,
                 child: RaisedButton(
-                  onPressed: (){},
+                  onPressed: (){
+                    Navigator.pushNamed(context, '/learn_more_mental_health');
+                  },
+                  highlightColor: Colors.greenAccent.withOpacity(0.3),
                   shape: new RoundedRectangleBorder(
                     borderRadius: new BorderRadius.circular(20.0),
                   ),
@@ -80,7 +82,7 @@ class _MentalHealthScreenState extends State<MentalHealthScreen> {
                 ),
 
               ),
-              SizedBox(height: 20,),
+              SizedBox(height: 25,),
               Container(
                 child: Text(
                   'Features',
@@ -90,6 +92,7 @@ class _MentalHealthScreenState extends State<MentalHealthScreen> {
                   )
                 ),
               ),
+              SizedBox(height: 20,),
 
               // List of features
               ListView.builder(
@@ -100,59 +103,78 @@ class _MentalHealthScreenState extends State<MentalHealthScreen> {
                   itemBuilder: (context, index) {
                     final feature = featuresList[index];
 
-                    return Container(
-                      margin: EdgeInsets.fromLTRB(10, 15, 10, 5),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(15),
-                        color: Colors.white,
-                        boxShadow: [BoxShadow(
-                          color: Colors.grey,
-                          blurRadius: 10,
-                          spreadRadius: 10,
-                        )]
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 5.0),
-                        child: Row(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: <Widget>[
-                            Expanded(
-                              flex: 2,
-                              child: Image.asset(
-                                feature.urlImage,
-                                fit: BoxFit.cover,
-                              ),
-                            ),
-                            Expanded(
-                              flex: 3,
-                              child:
-                              Padding(
-                                padding: const EdgeInsets.fromLTRB(10.0, 0.0, 16.0, 0.0),
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: <Widget>[
-                                    Text(
-                                      feature.title,
-                                      style: const TextStyle(
-                                        fontWeight: FontWeight.w500,
-                                        fontSize: 14.0,
-                                      ),
-                                    ),
-                                    const Padding(padding: EdgeInsets.symmetric(vertical: 2.0)),
-                                    Text(
-                                      feature.description,
-                                      style: const TextStyle(fontSize: 10.0),
-                                    ),
-                                    const Padding(padding: EdgeInsets.symmetric(vertical: 1.0)),
-                                    Text(
-                                      'Ages 10-20',
-                                      style: const TextStyle(fontSize: 10.0),
-                                    ),
-                                  ],
+                    return InkWell(
+                      onTap: () {
+                        Navigator.pushNamed(context, feature.nextScreenRoute);
+                      },
+                      highlightColor: Color(0xffe0f4f0),
+                      child: Container(
+                        margin: EdgeInsets.fromLTRB(20, 15, 20, 10),
+                        height: 170,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(15),
+                          color: Colors.white,
+                          boxShadow: [BoxShadow(
+                            color: Colors.grey.shade200,
+                            blurRadius: 10,
+                            spreadRadius: 10,
+                          )]
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 5.0),
+                          child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: <Widget>[
+                              Expanded(
+                                flex: 2,
+                                child: Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Image.asset(
+                                    feature.urlImage,
+                                    fit: BoxFit.cover,
+                                  ),
                                 ),
-                              )
-                            ),
-                          ],
+                              ),
+                              Expanded(
+                                flex: 3,
+                                child:
+                                Padding(
+                                  padding: const EdgeInsets.fromLTRB(10.0, 0.0, 20.0, 0.0),
+                                  child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: <Widget>[
+                                      Text(
+                                        feature.title,
+                                        style: const TextStyle(
+                                          fontWeight: FontWeight.w700,
+                                          fontSize: 14.0,
+                                        ),
+                                      ),
+                                      const Padding(padding: EdgeInsets.symmetric(vertical: 2.0)),
+                                      Text(
+                                        feature.description,
+                                        style: const TextStyle(fontSize: 10.0,
+                                        color: Color(0xff8e8e8e)),
+                                      ),
+                                      const Padding(padding: EdgeInsets.symmetric(vertical: 1.0)),
+                                      Container(
+                                        padding: EdgeInsets.all(5),
+                                        decoration: BoxDecoration(
+                                          borderRadius: BorderRadius.circular(10),
+                                          color: Color(0xffe0f4f0)
+                                        ),
+                                        child: Text(
+                                          feature.ageGroup,
+                                          style: const TextStyle(fontSize: 10.0),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                )
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     );

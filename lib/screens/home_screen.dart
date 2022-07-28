@@ -24,7 +24,7 @@ class _HomeScreenState extends State<HomeScreen> {
       return (to.difference(from).inHours / 24).round();
     }
 
-    final firstDay = DateTime(2022, 7, 24);
+    final firstDay = DateTime(2022, 7, 27);
     final dateNow = DateTime.now();
     final difference = daysBetween(firstDay, dateNow);
     print(difference);
@@ -157,7 +157,7 @@ class _HomeScreenState extends State<HomeScreen> {
             Column(
               children: [
                 InkWell(
-                  onTap: () => Navigator.pushNamed(context, '/welcome'),
+                  onTap: () => Navigator.pushNamed(context, '/mental_health_home'),
                   child: Stack(
                     children: [
                       Container(
