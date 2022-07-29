@@ -41,20 +41,20 @@ A cross platform flutter mobile application to promote self care among students 
   - Montserrat
   - PlayfairDisplay (Google fonts)(Only for few headings)
 - **Color scheme**
-  - Dark green: #307473 ![img.png](img.png)
-  - Light green: #e0f4f0 ![img_1.png](img_1.png)
-  - Light pink: #f6d6d7 ![img_2.png](img_2.png)
-  - Light grey: #fafafa ![img_3.png](img_3.png)
-  - Dark grey: #bdbdbd ![img_4.png](img_4.png)
-  - Lighter black: #293241 ![img_5.png](img_5.png)
-  - Yellow: #febd40 ![img_6.png](img_6.png)
+  - Dark green: #307473 ![img.png](/img.png)
+  - Light green: #e0f4f0 ![img_1.png](/img_1.png)
+  - Light pink: #f6d6d7 ![img_2.png](/img_2.png)
+  - Light grey: #fafafa ![img_3.png](/img_3.png)
+  - Dark grey: #bdbdbd ![img_4.png](/img_4.png)
+  - Lighter black: #293241 ![img_5.png](/img_5.png)
+  - Yellow: #febd40 ![img_6.png](/img_6.png)
 - **Text Style**
   - Heading:
     fontWeight: FontWeight.w700,
     color: Colors.black
   - Paragraphs:
     color: Color(0xff8e8e8e)
-  - Pills: ![img_7.png](img_7.png)
+  - Pills: ![img_7.png](/img_7.png)
 
     ```
     Container(
