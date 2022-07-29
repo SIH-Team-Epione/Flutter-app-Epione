@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:quiz_app/controllers/question_controller.dart';
 
 class ScoreScreen extends StatelessWidget {
@@ -35,22 +36,48 @@ class ScoreScreen extends StatelessWidget {
                           child: Padding(
                             padding: sidePadding,
                             child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                InkWell(
-                                  onTap: (){
-                                    Navigator.pop(context);
-                                  },
-                                  child: Container(
-                                    height: 50,
-                                    width: 50,
-                                    color: Colors.white.withOpacity(0.3),
-                                    child: Icon(
-                                      Icons.arrow_left,
-                                      color: Colors.white,
-                                    ),
+                                Container(
+                                  height: 100,
+                                  margin: EdgeInsets.only(top: 150),
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        'REPORT',
+                                        style: TextStyle(
+                                          fontSize: 32,
+                                          fontWeight: FontWeight.w700,
+                                          color: Colors.white,
+                                        ),
+                                      ),
+                                      Text(
+                                        "Score: $score/27",
+                                        style: TextStyle(
+                                          fontWeight: FontWeight.w300,
+                                          color: Colors.white,
+                                          fontSize: 18,
+                                        ),
+                                      ),
+                                    ],
                                   ),
-                                ),
+                                )
+                                // back button
+                                // InkWell(
+                                //   onTap: (){
+                                //     Navigator.pop(context);
+                                //   },
+                                //   child: Container(
+                                //     height: 50,
+                                //     width: 50,
+                                //     color: Colors.white.withOpacity(0.3),
+                                //     child: Icon(
+                                //       Icons.arrow_left,
+                                //       color: Colors.white,
+                                //     ),
+                                //   ),
+                                // ),
                               ],
                             ),
                           ),
@@ -58,23 +85,26 @@ class ScoreScreen extends StatelessWidget {
                       ],
                     ),
                     SizedBox(height: padding,),
+                    SingleChildScrollView(
+                      child: Column(
+                        children: [
+                          Center(
+                            child: DataTable(
+                              columns: [
+                                DataColumn(
+                                    label: Text(
+                                      ""
+                                    )
+                                )
+                              ],
+                              rows: [
 
-                    Text(
-                      "Score",
-                      style: Theme.of(context)
-                          .textTheme
-                          .headline5
-                          ?.copyWith(color: Colors.black),
-                    ),
-
-                    Text(
-                      "$score/27",
-                      style: Theme.of(context)
-                          .textTheme
-                          .headline5
-                          ?.copyWith(color: Colors.black),
-                    ),
-                    Spacer(flex: 1),
+                              ],
+                            ),
+                          )
+                        ],
+                      ),
+                    )
 
                   ],
                 ),

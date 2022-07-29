@@ -73,7 +73,12 @@ class QuestionController extends GetxController
     _pageController.dispose();
   }
 
+  int prevQuestionId = -1;
+
   void checkAns(Question question, int selectedIndex) {
+    if(question.id == prevQuestionId){
+      return;
+    }
     // because once user press any option then it will run
     _isAnswered = true;
     //_correctAns = question.answer;
@@ -87,9 +92,10 @@ class QuestionController extends GetxController
     // It will stop the counter
     _animationController.stop();
     update();
+    prevQuestionId = question.id;
 
-    // Once user select an ans after 3s it will go to the next qn
-    Future.delayed(Duration(seconds: 2), () {
+    // Once user select an ans after 1s it will go to the next qn
+    Future.delayed(Duration(seconds: 1), () {
       nextQuestion();
     });
   }
@@ -107,7 +113,7 @@ class QuestionController extends GetxController
       // Once timer is finish go to the next qn
       _animationController.forward().whenComplete(nextQuestion);
     } else {
-      // Get package provide us simple way to navigate another page
+      // Get package provides us simple way to navigate another page
       Get.to(ScoreScreen());
     }
   }

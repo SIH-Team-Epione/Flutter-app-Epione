@@ -7,6 +7,7 @@ import 'package:quiz_app/screens/welcome/welcome_screen.dart';
 import 'package:quiz_app/screens/login_screen.dart';
 import 'package:quiz_app/screens/mental_health_screen.dart';
 import 'package:quiz_app/screens/learn_more/mental_health.dart';
+import 'package:quiz_app/constants.dart';
 
 void main() {
   runApp(MyApp());
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         // TODO: change the color schemes
-        primarySwatch: Colors.red,
+        primarySwatch: Colors.teal,
         scaffoldBackgroundColor: const Color(0xFFffffff),
         fontFamily: 'Montserrat',
       ),
