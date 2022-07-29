@@ -18,7 +18,7 @@ class DoctorDetailsScreen extends StatefulWidget {
 
   @override
   State<DoctorDetailsScreen> createState() =>
-      _DoctorDetailsScreenState(); //somehow i want to pass index to _DoctorDetailsPageState
+      _DoctorDetailsScreenState();
 }
 
 class _DoctorDetailsScreenState extends State<DoctorDetailsScreen> {
@@ -30,49 +30,75 @@ class _DoctorDetailsScreenState extends State<DoctorDetailsScreen> {
       ),
       body: Container(
         color: Colors.black12,
-        child: Column(
-          children: [
-            CircleAvatar(
-              radius: 50,
-              backgroundImage: AssetImage('assets/images/user_image.png'),
-            ),
-            Text(doctors[widget.index].name),
-            Container(
-              margin: EdgeInsets.all(20.0),
-              child: Row(
-                children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text("Hospital"),
-                      Text("Years of exp"),
-                      Text("Specialisation")
-                    ],
-                  ),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(doctors[widget.index].name),
-                      Text(doctors[widget.index].yearsOfExp.toString()),
-                      Text(doctors[widget.index].specialisation)
-                    ],
-                  )
-                ],
+        child: Container(
+          child: Column(
+            children: [
+              Container(
+                margin: EdgeInsets.fromLTRB(0.0, 20.0, 0.0, 0.0),
+                child: CircleAvatar(
+                  radius: 50,
+                  backgroundImage: AssetImage('assets/images/user_image.png'),
+                ),
               ),
-            ),
-            Container(
-              color: Colors.deepOrange,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  _buildButtonColumn(Colors.blue, Icons.call, 'Call', 0),
-                  _buildButtonColumn(Colors.blue, Icons.mail, 'Email', 1),
-                  _buildButtonColumn(Colors.blue, Icons.language, 'Website', 2),
-                  _buildButtonColumn(Colors.blue, Icons.location_on, 'Map', 3),
-                ],
+              Container(
+                margin: EdgeInsets.fromLTRB(0.0, 20.0, 0.0, 0.0),
+                  child: Text(doctors[widget.index].name)),
+              Container(
+                margin: EdgeInsets.all(20.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Text("Hospital"),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Text("Years of exp"),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Text("Specialisation"),
+                        )
+                      ],
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Text(doctors[widget.index].name),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Text(doctors[widget.index].yearsOfExp.toString()),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Text(doctors[widget.index].specialisation),
+                        )
+                      ],
+                    )
+                  ],
+                ),
               ),
-            )
-          ],
+              Container(
+                color: Colors.deepOrange,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    _buildButtonColumn(Colors.blue, Icons.call, 'Call', 0),
+                    _buildButtonColumn(Colors.blue, Icons.mail, 'Email', 1),
+                    _buildButtonColumn(Colors.blue, Icons.language, 'Website', 2),
+                    _buildButtonColumn(Colors.blue, Icons.location_on, 'Map', 3),
+                  ],
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );
@@ -127,23 +153,26 @@ class _DoctorDetailsScreenState extends State<DoctorDetailsScreen> {
       onTap: () {
         itemClickHandler(position);
       },
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Icon(icon, color: color),
-          Container(
-            margin: const EdgeInsets.only(top: 8),
-            child: Text(
-              label,
-              style: TextStyle(
-                fontSize: 12,
-                fontWeight: FontWeight.w400,
-                color: color,
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(icon, color: color),
+            Container(
+              margin: const EdgeInsets.only(top: 8),
+              child: Text(
+                label,
+                style: TextStyle(
+                  fontSize: 12,
+                  fontWeight: FontWeight.w400,
+                  color: color,
+                ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
