@@ -68,7 +68,7 @@ Widget _buildDoctorRow(int index, BuildContext context) {
       gotoDoctorDetailsPage(context);
     },
     child: Card(
-      color: Colors.brown,
+      color: Colors.white,
       elevation: 5.0,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15.0)),
       child: Padding(
@@ -87,17 +87,27 @@ Widget _buildDoctorRow(int index, BuildContext context) {
                 mainAxisSize: MainAxisSize.max,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    doctors[index].name,
-                    style: TextStyle(color: Colors.black),
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(0.0, 5.0, 0.0, 5.0),
+                    child: Text(
+                      doctors[index].name,
+                      style: TextStyle(color: Colors.black,
+                      fontWeight: FontWeight.bold),
+                    ),
                   ),
-                  Text(
-                    doctors[index].specialisation,
-                    style: TextStyle(color: Colors.black),
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(0.0, 2.0, 0.0, 0.0),
+                    child: Text(
+                      "Specialisation: ${doctors[index].specialisation}",
+                      style: TextStyle(color: Colors.black),
+                    ),
                   ),
-                  Text(
-                    "${doctors[index].yearsOfExp}",
-                    style: TextStyle(color: Colors.black),
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(0.0, 2.0, 0.0, 2.0),
+                    child: Text(
+                      "Experience: ${doctors[index].yearsOfExp}",
+                      style: TextStyle(color: Colors.black),
+                    ),
                   )
                 ],
               ),
