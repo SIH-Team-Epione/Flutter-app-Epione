@@ -39,13 +39,16 @@ class _DoctorsListSectionState extends State<DoctorsListSection> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ListView.builder(
-        itemBuilder: (BuildContext context, int index) => Container(
-          width: MediaQuery.of(context).size.width,
-          padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 5.0),
-          child: _buildDoctorRow(index, context),
+      body: Padding(
+        padding: const EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 0.0),
+        child: ListView.builder(
+          itemBuilder: (BuildContext context, int index) => Container(
+            width: MediaQuery.of(context).size.width,
+            padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 5.0),
+            child: _buildDoctorRow(index, context),
+          ),
+          itemCount: 3,
         ),
-        itemCount: 3,
       ),
     );
   }
