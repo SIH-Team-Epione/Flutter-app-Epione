@@ -34,6 +34,9 @@ dependencies:
 
   # state management, intelligent dependency injection, and route management
   get: ^4.6.5
+  sound_stream: ^0.3.0
+  dialogflow_grpc: ^0.2.9
+  rxdart: ^0.27.5
 
 dev_dependencies:
   flutter_test:
@@ -54,6 +57,7 @@ flutter:
     - assets/icons/
     - assets/images/
     - assets/svg/
+    - assets/credentials.json
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

@@ -6,6 +6,7 @@ import 'package:quiz_app/constants.dart';
 import 'package:quiz_app/models/Quotes.dart';
 import 'package:quiz_app/screens/welcome/welcome_screen.dart';
 import 'package:quiz_app/util/my_button_icon_card.dart';
+import 'package:quiz_app/screens/chatbot/main.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({key}) : super(key: key);
@@ -24,7 +25,7 @@ class _HomeScreenState extends State<HomeScreen> {
       return (to.difference(from).inHours / 24).round();
     }
 
-    final firstDay = DateTime(2022, 7, 27);
+    final firstDay = DateTime(2022, 8, 04);
     final dateNow = DateTime.now();
     final difference = daysBetween(firstDay, dateNow);
     print(difference);
@@ -427,8 +428,37 @@ class _HomeScreenState extends State<HomeScreen> {
             )
           ],
         ),
-      )
+      ),
+      floatingActionButton: buildChatbotButton(),
     );
   }
+  Widget buildChatbotButton() => Container(
+    margin: EdgeInsets.only(right: 8.0, bottom: 8.0),
+    width: 65.0,
+    height: 65.0,
+    decoration: BoxDecoration(
+      // boxShadow: [
+      //   BoxShadow(
+      //       color: Color(0xFFBDBDBD),
+      //       offset: const Offset(2.0, 2.0),
+      //       blurRadius: 10.0,
+      //       spreadRadius: 0.5
+      //   )
+      // ]
+    ),
+    child: FloatingActionButton(
+        backgroundColor: Color(0xFF307473),
+            child: Icon(
+              Icons.chat,
+              size: 28.0,
+            ),
+        onPressed: () {
+          print('Clicked');
+          Navigator.push(context,
+            MaterialPageRoute(builder: (context) => const Chatbot()),
+          );
+        }
+    ),
+  );
 }
 
