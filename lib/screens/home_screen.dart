@@ -24,7 +24,7 @@ class _HomeScreenState extends State<HomeScreen> {
       return (to.difference(from).inHours / 24).round();
     }
 
-    final firstDay = DateTime(2022, 7, 29);
+    final firstDay = DateTime(2022, 8, 13);
     final dateNow = DateTime.now();
     final difference = daysBetween(firstDay, dateNow);
     print(difference);
