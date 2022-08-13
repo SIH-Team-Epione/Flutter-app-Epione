@@ -6,7 +6,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:quiz_app/constants.dart';
 import 'package:quiz_app/models/Quotes.dart';
 import 'package:quiz_app/screens/doctor_details_screen.dart';
-import 'package:quiz_app/screens/welcome/welcome_screen.dart';
+import 'package:quiz_app/screens/mental_health/phq9_home.dart';
 import 'package:quiz_app/util/my_button_icon_card.dart';
 
 class DoctorConsultationScreen extends StatefulWidget {

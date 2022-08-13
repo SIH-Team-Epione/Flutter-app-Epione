@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:quiz_app/constants.dart';
-import 'package:quiz_app/screens/welcome/welcome_screen.dart';
+import 'package:quiz_app/screens/mental_health/phq9_home.dart';
 import 'package:quiz_app/models/MentalHealthHome.dart';
 
 class MentalHealthScreen extends StatefulWidget {

@@ -6,7 +6,7 @@ import 'package:quiz_app/constants.dart';
 import 'package:quiz_app/models/Quotes.dart';
 import 'package:quiz_app/screens/doctor_consultation_screen.dart';
 import 'package:quiz_app/screens/doctor_details_screen.dart';
-import 'package:quiz_app/screens/welcome/welcome_screen.dart';
+import 'package:quiz_app/screens/mental_health/phq9_home.dart';
 import 'package:quiz_app/util/my_button_icon_card.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -31,7 +31,7 @@ class _HomeScreenState extends State<HomeScreen> {
       Navigator.push(context, MaterialPageRoute(builder: (context) => DoctorConsultationScreen()));
     }
 
-    final firstDay = DateTime(2022, 7, 27);
+    final firstDay = DateTime(2022, 8, 13);
     final dateNow = DateTime.now();
     final difference = daysBetween(firstDay, dateNow);
     print(difference);
