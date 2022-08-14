@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_email_sender/flutter_email_sender.dart';
+import 'package:get/get.dart';
 import 'package:maps_launcher/maps_launcher.dart';
 import 'package:quiz_app/models/Doctors.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -101,10 +102,10 @@ class _DoctorDetailsScreenState extends State<DoctorDetailsScreen> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  _buildButtonColumn(Colors.green, Icons.call, 'Call', 0),
-                  _buildButtonColumn(Colors.green, Icons.mail, 'Email', 1),
-                  _buildButtonColumn(Colors.green, Icons.language, 'Website', 2),
-                  _buildButtonColumn(Colors.green, Icons.location_on, 'Map', 3),
+                  _buildButtonColumn(Colors.teal.shade500, Icons.call, 'Call', 0),
+                  _buildButtonColumn(Colors.teal.shade500, Icons.mail, 'Email', 1),
+                  _buildButtonColumn(Colors.teal.shade500, Icons.language, 'Website', 2),
+                  _buildButtonColumn(Colors.teal.shade500, Icons.location_on, 'Map', 3),
                 ],
               ),
             )
@@ -164,23 +165,14 @@ class _DoctorDetailsScreenState extends State<DoctorDetailsScreen> {
       onTap: () {
         itemClickHandler(position);
       },
-      child: Padding(
-        padding: const EdgeInsets.all(8.0),
+      child: ClipRRect(
+        borderRadius: BorderRadius.all(Radius.circular(10)),
         child: Column(
-          mainAxisSize: MainAxisSize.min,
-          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(icon, color: color),
             Container(
-              margin: const EdgeInsets.only(top: 8),
-              child: Text(
-                label,
-                style: TextStyle(
-                  fontSize: 12,
-                  fontWeight: FontWeight.w400,
-                  color: color,
-                ),
-              ),
+              color: Colors.teal.shade50,
+              padding: EdgeInsets.all(12.0),
+              child: Icon(icon, size: 30, color: color,),
             ),
           ],
         ),
