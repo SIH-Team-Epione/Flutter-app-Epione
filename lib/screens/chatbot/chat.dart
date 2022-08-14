@@ -125,7 +125,7 @@ class _ChatState extends State<Chat> {
       print(data);
       _audioStream.add(data);
     });
-    
+
     // TODO Create SpeechContexts
     // Create an audio InputConfig
     var biasList = SpeechContextV2Beta1(
@@ -159,7 +159,7 @@ class _ChatState extends State<Chat> {
         String queryText = data.queryResult.queryText;
         String fulfillmentText = data.queryResult.fulfillmentText;
 
-        if(fulfillmentText.isNotEmpty && _isClicked) {
+        if(fulfillmentText.isNotEmpty) {
 
           ChatMessage message = new ChatMessage(
             text: queryText,
@@ -172,10 +172,11 @@ class _ChatState extends State<Chat> {
             name: "Bot",
             type: false,
           );
-
-          _messages.insert(0, message);
-          _textController.clear();
-          _messages.insert(0, botMessage);
+          if (_isClicked) {
+            _messages.insert(0, message);
+            _textController.clear();
+            _messages.insert(0, botMessage);
+          }
 
         }
         if(transcript.isNotEmpty) {
@@ -226,19 +227,27 @@ class _ChatState extends State<Chat> {
               // margin: const EdgeInsets.symmetric(horizontal: 8.0),
               child: Row(
                 children: <Widget>[
-                  SizedBox(width: 12.0),
-                  ConstrainedBox(
-                    constraints: BoxConstraints(
-                      maxHeight: 40.0,
-                      maxWidth: 275.0
+                  SizedBox(width: 10.0),
+                  Container(
+                    margin: EdgeInsets.fromLTRB(1.0, 3.0, 5.0, 3.0),
+                    padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      border: Border.all(color: Color(0xFFBDBDBD), width: 1.0)
                     ),
-                    child: TextField(
-                      controller: _textController,
-                      onSubmitted: handleSubmitted,
-                      decoration: InputDecoration.collapsed(hintText: "Send a message"),
-                      showCursor: true,
-                      // minLines: 1,
-                      maxLines: null,
+                    child: ConstrainedBox(
+                      constraints: BoxConstraints(
+                        maxHeight: 40.0,
+                        maxWidth: 249.0
+                      ),
+                      child: TextField(
+                        controller: _textController,
+                        onSubmitted: handleSubmitted,
+                        decoration: InputDecoration.collapsed(hintText: "Send a message"),
+                        showCursor: true,
+                        // minLines: 1,
+                        maxLines: null,
+                      ),
                     ),
                   ),
                   Container(
