@@ -67,10 +67,19 @@ Widget _buildDoctorRow(int index, BuildContext context) {
     onTap: () {
       gotoDoctorDetailsPage(context);
     },
-    child: Card(
-      color: Colors.white,
-      elevation: 5.0,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15.0)),
+    child: Container(
+      margin: EdgeInsets.fromLTRB(10, 10, 10, 0),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(20.0),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.grey.shade300,
+            blurRadius: 20,
+            spreadRadius: 5,
+          )
+        ]
+      ),
       child: Padding(
         padding: EdgeInsets.all(10.0),
         child: Row(
