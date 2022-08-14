@@ -12,7 +12,7 @@ class _LearnMoreMentalScreenState extends State<LearnMoreMentalScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Learn More about Mental Health'),
+        title: Text('Learn More about Self Care'),
       ),
     );
   }

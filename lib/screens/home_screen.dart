@@ -1,13 +1,16 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:provider/provider.dart';
+import 'package:quiz_app/animations/FadeAnimation.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:quiz_app/constants.dart';
 import 'package:quiz_app/models/Quotes.dart';
 import 'package:quiz_app/screens/doctor_consultation_screen.dart';
-import 'package:quiz_app/screens/doctor_details_screen.dart';
-import 'package:quiz_app/screens/mental_health/phq9_home.dart';
-import 'package:quiz_app/util/my_button_icon_card.dart';
+import 'package:quiz_app/screens/google_sign_in.dart';
+import 'package:quiz_app/screens/login_screen.dart';
+import 'package:quiz_app/util/long_img_container.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({key}) : super(key: key);
@@ -19,6 +22,9 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
+    final user = FirebaseAuth.instance.currentUser;
+
+    print(user);
 
     int daysBetween(DateTime from, DateTime to) {
       from = DateTime(from.year, from.month, from.day);
@@ -42,7 +48,7 @@ class _HomeScreenState extends State<HomeScreen> {
       //   centerTitle: true,
       // ),
       body: Container(
-        margin: EdgeInsets.only(top: 8),
+        margin: EdgeInsets.only(top: 4),
         child: ListView(
           physics: ClampingScrollPhysics(),
           children: <Widget>[
@@ -56,20 +62,32 @@ class _HomeScreenState extends State<HomeScreen> {
                     print('Drawer Tapped!');
                   },
                       child: SvgPicture.asset('assets/svg/drawer_icon2.svg')),
-                  Container(
-                    height: 45,
-                    width: 45,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
-                      image: DecorationImage(image: AssetImage('assets/images/user_image.png'))
-                    ),
-                  )
+                  Text('Hi '+ user!.displayName!),
+                  TextButton(
+                      onPressed: (){
+                        final provider = Provider.of<GoogleSignInProvider>(context, listen: false);
+                        provider.logout();
+                      },
+                      child: Text('Logout')
+                  ),
+                  CircleAvatar(
+                    radius: 20,
+                    backgroundImage: NetworkImage(user.photoURL!),
+                  ),
+                  // Container(
+                  //   height: 45,
+                  //   width: 45,
+                    // decoration: BoxDecoration(
+                    //   borderRadius: BorderRadius.circular(20),
+                    //   image: DecorationImage(image: AssetImage('assets/images/user_image.png'))
+                    // ),
+                  // )
                 ],
               ),
             ),
             // card section
             SizedBox(
-              height: 25,
+              height: 15,
             ),
             Padding(
               padding: const EdgeInsets.only(left: 16, bottom: 16),
@@ -115,7 +133,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       child: Align(
                         alignment: Alignment.center,
                         child: Text('${sampled_quotes[difference]['quote']}',
-                          style: TextStyle(color: Colors.white,
+                          style: TextStyle(color: Colors.black,
                               fontSize: 16,
                               fontWeight: FontWeight.w500,
                               backgroundColor: Colors.white.withOpacity(0.2)
@@ -129,28 +147,56 @@ class _HomeScreenState extends State<HomeScreen> {
             SizedBox(height: 25,),
 
             // 2 button cards
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                // About self care button
-                MyIconButton(
-                    iconImagePath: 'assets/images/about_self_care_icon.png',
-                    buttonText: 'Learn more about \n self care',
-                    bgColor: Color(0xffe0f4f0),
+            // Row(
+            //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            //   children: [
+            //     // About self care button
+            //     MyIconButton(
+            //         iconImagePath: 'assets/images/about_self_care_icon.png',
+            //         buttonText: 'Learn more about \n self care',
+            //         bgColor: Color(0xffe0f4f0),
+            //     ),
+            //     GestureDetector(
+            //       onTap: (){
+            //         gotoDoctorsListPage();
+            //       },
+            //       child: MyIconButton(
+            //           iconImagePath: 'assets/images/consult_doctor_icon.png',
+            //           buttonText: 'Consult a mental health specialist',
+            //           bgColor: Color(0xfff6d6d7),
+            //       ),
+            //     ),
+            //
+            //   ],
+            // ),// Horizontal
+            Container(
+              height: 240,
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 20.0),
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  children: <Widget>[
+                    FadeAnimation(
+                        1.4,
+                        verticalImageContainer('assets/images/self_care2.jpg', "Learn more about self care",
+                            "5 minute read")),
+                    FadeAnimation(
+                        1.5,
+                        verticalImageContainer('assets/images/doctor_home2.jpg',
+                            'Consult a mental health specialist', "In Delhi NCR")),
+                    FadeAnimation(
+                        1.6,
+                        verticalImageContainer('assets/images/time_home2.jpg', "Manage time using Pomodoro",
+                            "Effective technique")),
+                    FadeAnimation(
+                        1.5,
+                        verticalImageContainer('assets/images/pmr_home2.jpg',
+                            'Practice Progressive Muscle relaxation', "Releases strain")),
+                  ],
                 ),
-                GestureDetector(
-                  onTap: (){
-                    gotoDoctorsListPage();
-                  },
-                  child: MyIconButton(
-                      iconImagePath: 'assets/images/consult_doctor_icon.png',
-                      buttonText: 'Consult a mental health specialist',
-                      bgColor: Color(0xfff6d6d7),
-                  ),
-                ),
-
-              ],
+              ),
             ),
+
             // Text widget for 'Explore Tracks'
             Padding(
               padding: EdgeInsets.only(top: 48, left: 32, right: 28),
@@ -200,7 +246,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                     'Mental Health',
                                     style: TextStyle(
                                       fontSize: 18,
-                                      fontWeight: FontWeight.w600,
+                                      fontWeight: FontWeight.w800,
                                     ),
                                     overflow: TextOverflow.ellipsis,
                                   ),
@@ -274,7 +320,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   'Physical Health',
                                   style: TextStyle(
                                     fontSize: 18,
-                                    fontWeight: FontWeight.w600,
+                                    fontWeight: FontWeight.w800,
                                   ),
                                   overflow: TextOverflow.ellipsis,
                                 ),
@@ -337,7 +383,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   'Social Health',
                                   style: TextStyle(
                                     fontSize: 18,
-                                    fontWeight: FontWeight.w600,
+                                    fontWeight: FontWeight.w800,
                                   ),
                                   overflow: TextOverflow.ellipsis,
                                 ),
@@ -400,7 +446,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   'Work Health',
                                   style: TextStyle(
                                     fontSize: 18,
-                                    fontWeight: FontWeight.w600,
+                                    fontWeight: FontWeight.w800,
                                   ),
                                   overflow: TextOverflow.ellipsis,
                                 ),
@@ -434,7 +480,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ],
                 ),
 
-                SizedBox(height: 5,),
+                SizedBox(height: 25,),
               ],
             )
           ],
