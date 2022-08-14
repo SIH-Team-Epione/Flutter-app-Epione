@@ -30,7 +30,7 @@ List<Feature> featuresList = [
   ),
   const Feature(
       id: 1,
-      title: 'GAD-7 Anxiety assessment',
+      title: 'Exercises',
       description: 'Generalized Anxiety Disorder 7 is a self reported questionnaire for screening and severity measuring of generalized anxiety disorder. Take this test to receive treatment recommendations.',
       urlImage: 'assets/images/gad_list_image.png',
     ageGroup: '12 above',
@@ -38,7 +38,7 @@ List<Feature> featuresList = [
   ),
   const Feature(
       id: 2,
-      title: 'Cognitive Behavioral Therapy',
+      title: 'Diets',
       description: 'Learn cognitive restructuring to identify and destruct negative thought patterns using techniques such as Rational Emotive behaviour therapy, multimodal therapy, etc.',
       urlImage: 'assets/images/cbt_list_image.jpeg',
     ageGroup: 'All ages',
@@ -46,26 +46,11 @@ List<Feature> featuresList = [
   ),
   const Feature(
       id: 3,
-      title: 'Diaphragmatic breathing',
+      title: 'Progressive Muscle Relaxation',
       description: 'Diaphragmatic breathing is an effective deep breathing technique to tackle anxiety. Use this feature to perform the guided exercise.',
       urlImage: 'assets/images/diaphragm_list_image.jpg',
     ageGroup: 'All ages',
       nextScreenRoute: '/diaphragm_home',
   ),
-  const Feature(
-      id: 4,
-      title: 'Meditation',
-      description: 'Meditation can give you a sense of calm, peace and balance that can benefit both your emotional well-being and your overall health. You can also use it to relax and cope with stress by refocusing your attention on something calming.',
-      urlImage: 'assets/images/meditation_list_image.jpg',
-    ageGroup: '15 above',
-      nextScreenRoute: '/meditation_home',
-  ),
-  const Feature(
-      id: 5,
-      title: 'Mindfulness',
-      description: 'Mindfulness is a technique by which you can learn to be fully present and engaged in the moment without judging anything. It can help you manage your thoughts, feelings and mental health.',
-      urlImage: 'assets/images/mindfulness_list_image.jpg',
-    ageGroup: '15 above',
-      nextScreenRoute: '/mindfulness_home',
-  )
+
 ];

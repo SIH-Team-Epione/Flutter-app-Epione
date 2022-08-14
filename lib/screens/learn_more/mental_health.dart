@@ -124,7 +124,7 @@ class _LearnMoreMentalScreenState extends State<LearnMoreMentalScreen> {
                           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.0)),
                           color: Colors.teal,
                           textColor: Colors.white,
-                          child: Text("Benefits", style: TextStyle(
+                          child: Text("Further Reading", style: TextStyle(
                               fontWeight: FontWeight.normal
                           ),),
                           padding: const EdgeInsets.symmetric(
@@ -132,7 +132,7 @@ class _LearnMoreMentalScreenState extends State<LearnMoreMentalScreen> {
                             horizontal: 32.0,
                           ),
                           onPressed: () {
-                            Navigator.pushNamed(context, '/benefits_physical');
+                            Navigator.pushNamed(context, '/further_read_mental');
                           },
                         ),
                       ),
@@ -181,6 +181,13 @@ class _LearnMoreMentalScreenState extends State<LearnMoreMentalScreen> {
                         "Mental health is also strongly linked with the physical health of a student. It is true that mental health is more crucial for students as they are vulnerable compared to adults. That is because students have to adapt to the changing environments in order to thrive constantly. With the increase in academic demands, it is vital to prioritize work and manage efficiently.",
                         textAlign: TextAlign.justify, style: TextStyle(
                           fontWeight: FontWeight.w300,
+                          fontSize: 14.0
+                      ),),
+                      const SizedBox(height: 10.0),
+                      Text(
+                        "Our goal",
+                        textAlign: TextAlign.justify, style: TextStyle(
+                          fontWeight: FontWeight.w700,
                           fontSize: 14.0
                       ),),
                       const SizedBox(height: 10.0),

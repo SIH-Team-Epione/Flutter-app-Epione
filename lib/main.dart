@@ -7,6 +7,7 @@ import 'package:quiz_app/screens/google_sign_in.dart';
 
 import 'package:quiz_app/screens/home_screen.dart';
 import 'package:quiz_app/screens/learn_more/benefits_physical.dart';
+import 'package:quiz_app/screens/learn_more/further_read_mental.dart';
 import 'package:quiz_app/screens/login_screen.dart';
 //importing mental health screens
 import 'package:quiz_app/screens/mental_health/mental_health_screen.dart';
@@ -67,6 +68,16 @@ class MyApp extends StatelessWidget {
               '/diaphragm_home': (BuildContext context) => new DiaphragmScreen(),
               '/meditation_home': (BuildContext context) => new MeditationScreen(),
               '/mindfulness_home': (BuildContext context) => new MindfulnessScreen(),
+
+              '/further_read_mental': (BuildContext context) => new FurtherReadMentalHealth(),
+              // '/further_read_students': (BuildContext context) => new FurtherReadStudentScreen(),
+              // '/further_read_warnings': (BuildContext context) => new FurtherReadWarningscreen(),
+              // '/further_read_myth': (BuildContext context) => new FurtherReadMythScreen(),
+              // '/further_read_suicide': (BuildContext context) => new FurtherReadSuicideScreen(),
+              // '/further_read_types': (BuildContext context) => new FurtherReadTypesScreen(),
+              // '/further_read_diagnosis': (BuildContext context) => new FurtherReadDiagnosisScreen(),
+              // '/further_read_meditation': (BuildContext context) => new FurtherReadMeditationScreen(),
+              // '/further_read_mindfulness': (BuildContext context) => new FurtherReadMindfulnessScreen(),
 
               '/physical_health_home': (BuildContext context) => new PhysicalHealthScreen(),
               '/learn_more_physical_health': (BuildContext context) => new LearnMorePhysicalScreen(),
