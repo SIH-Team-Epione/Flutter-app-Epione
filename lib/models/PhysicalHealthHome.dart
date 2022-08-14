@@ -18,13 +18,12 @@ class Feature {
 }
 
 const title = 'Physical Health';
-const learnMoreText = 'Mental health disorders are not uncommon amongst students and its prevalence imposes many challenges and thus being aware and knowing how to tackle...';
-
+const learnMoreText = 'Physical health forms a core component of your self-care journey as a student. The benefits of physical activity for school-aged as well as college going students are proven. Healthy school environments help students achieve their academic potential and support the development of life-long healthy habits. ';
 List<Feature> featuresList = [
   const Feature(
     id: 0,
-    title: 'PHQ-9 Depression assessment',
-    description: 'The 9-question Patient Health Questionnaire is a diagnostic tool to screen patients for severity of depression. You can easily take this professional assessment to get recommendations based on your scores.',
+    title: 'Yoga Pose Detection',
+    description: 'Practice Yoga daily using our real-time pose detection feature which gives you an accuracy to guide you and make yoga fun and interactive!',
     urlImage: 'assets/images/phq_list_image.png',
     ageGroup: '12 above',
     nextScreenRoute: '/phq_home'

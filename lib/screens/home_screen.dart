@@ -290,68 +290,71 @@ class _HomeScreenState extends State<HomeScreen> {
                     ],
                   ),
                 ),
-                Stack(
-                  children: [
-                    Container(
-                      margin: EdgeInsets.fromLTRB(25, 5, 25, 15.0),
-                      height: 90.0,
-                      decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(20.0),
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.grey.shade300,
-                              blurRadius: 40,
-                              spreadRadius: 10,
-                            )
-                          ]
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.fromLTRB(110, 25, 0, 0),
-                              child: Container(
-                                width:150,
-                                child: Text(
-                                  'Physical Health',
-                                  style: TextStyle(
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.w800,
+                InkWell(
+                  onTap: () => Navigator.pushNamed(context, '/physical_health_home'),
+                  child: Stack(
+                    children: [
+                      Container(
+                        margin: EdgeInsets.fromLTRB(25, 5, 25, 15.0),
+                        height: 90.0,
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(20.0),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.grey.shade300,
+                                blurRadius: 40,
+                                spreadRadius: 10,
+                              )
+                            ]
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.fromLTRB(110, 25, 0, 0),
+                                child: Container(
+                                  width:150,
+                                  child: Text(
+                                    'Physical Health',
+                                    style: TextStyle(
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.w800,
+                                    ),
+                                    overflow: TextOverflow.ellipsis,
                                   ),
-                                  overflow: TextOverflow.ellipsis,
                                 ),
                               ),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.fromLTRB(0, 15, 10,0),
-                              child: Icon(
-                                Icons.arrow_circle_right_rounded,
-                                size: 40,
-                                color: Color(0xff000000),
-                              ),
-                            )
-                          ],
+                              Padding(
+                                padding: const EdgeInsets.fromLTRB(0, 15, 10,0),
+                                child: Icon(
+                                  Icons.arrow_circle_right_rounded,
+                                  size: 40,
+                                  color: Color(0xff000000),
+                                ),
+                              )
+                            ],
+                          ),
                         ),
                       ),
-                    ),
-                    Positioned(
-                      left: 20.0,
-                      top: 0,
-                      bottom: 10.0,
-                      child: ClipRRect(
-                          borderRadius: BorderRadius.circular(20.0),
-                          child: Image(
-                            width: 110,
-                            image: AssetImage('assets/images/home_physical.png'),
-                            fit: BoxFit.cover,
-                          )
+                      Positioned(
+                        left: 20.0,
+                        top: 0,
+                        bottom: 10.0,
+                        child: ClipRRect(
+                            borderRadius: BorderRadius.circular(20.0),
+                            child: Image(
+                              width: 110,
+                              image: AssetImage('assets/images/home_physical.png'),
+                              fit: BoxFit.cover,
+                            )
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
                 Stack(
                   children: [

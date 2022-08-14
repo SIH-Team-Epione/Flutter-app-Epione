@@ -6,6 +6,7 @@ import 'package:provider/provider.dart';
 import 'package:quiz_app/screens/google_sign_in.dart';
 
 import 'package:quiz_app/screens/home_screen.dart';
+import 'package:quiz_app/screens/learn_more/benefits_physical.dart';
 import 'package:quiz_app/screens/login_screen.dart';
 //importing mental health screens
 import 'package:quiz_app/screens/mental_health/mental_health_screen.dart';
@@ -73,6 +74,7 @@ class MyApp extends StatelessWidget {
               '/pmr': (BuildContext context) => new PMRScreen(),
               '/exercises': (BuildContext context) => new ExercisesScreen(),
               '/diets': (BuildContext context) => new DietsScreen(),
+              '/benefits_physical': (BuildContext context) => new BenefitsPhysical(),
 
     },
   )
