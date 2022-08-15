@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:quiz_app/screens/cbt_screen.dart';
 import 'package:quiz_app/screens/home_screen.dart';
 import 'package:quiz_app/screens/welcome/welcome_screen.dart';
 import 'package:quiz_app/screens/login_screen.dart';
@@ -34,7 +35,7 @@ class MyApp extends StatelessWidget {
         '/learn_more_mental_health': (BuildContext context) => new LearnMoreMentalScreen(),
         '/phq_home': (BuildContext context) => new WelcomeScreen(),
         // '/gad_home': (BuildContext context) => new GADScreen(),
-        // '/cbt_home': (BuildContext context) => new CBTScreen(),
+        '/cbt_home': (BuildContext context) => new CBTScreen(),
         // '/diaphragm_home': (BuildContext context) => new DiaphragmScreen(),
         // '/meditation_home': (BuildContext context) => new MeditationScreen(),
         // '/mindfulness_home': (BuildContext context) => new MindfulnessScreen(),

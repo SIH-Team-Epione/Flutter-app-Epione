@@ -4,6 +4,8 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:quiz_app/constants.dart';
 import 'package:quiz_app/models/Quotes.dart';
+import 'package:quiz_app/screens/doctor_consultation_screen.dart';
+import 'package:quiz_app/screens/doctor_details_screen.dart';
 import 'package:quiz_app/screens/welcome/welcome_screen.dart';
 import 'package:quiz_app/util/my_button_icon_card.dart';
 import 'package:quiz_app/screens/chatbot/main.dart';
@@ -25,7 +27,11 @@ class _HomeScreenState extends State<HomeScreen> {
       return (to.difference(from).inHours / 24).round();
     }
 
-    final firstDay = DateTime(2022, 8, 14);
+    void gotoDoctorsListPage(){
+      Navigator.push(context, MaterialPageRoute(builder: (context) => DoctorConsultationScreen()));
+    }
+
+    final firstDay = DateTime(2022, 7, 27);
     final dateNow = DateTime.now();
     final difference = daysBetween(firstDay, dateNow);
     print(difference);
@@ -132,10 +138,15 @@ class _HomeScreenState extends State<HomeScreen> {
                     buttonText: 'Learn more about \n self care',
                     bgColor: Color(0xffe0f4f0),
                 ),
-                MyIconButton(
-                    iconImagePath: 'assets/images/consult_doctor_icon.png',
-                    buttonText: 'Consult a mental health specialist',
-                    bgColor: Color(0xfff6d6d7),
+                GestureDetector(
+                  onTap: (){
+                    gotoDoctorsListPage();
+                  },
+                  child: MyIconButton(
+                      iconImagePath: 'assets/images/consult_doctor_icon.png',
+                      buttonText: 'Consult a mental health specialist',
+                      bgColor: Color(0xfff6d6d7),
+                  ),
                 ),
 
               ],
