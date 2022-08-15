@@ -37,7 +37,7 @@ class _WorkHealthScreenState extends State<WorkHealthScreen> {
                 height: 120,
                 child: RaisedButton(
                   onPressed: (){
-                    Navigator.pushNamed(context, '/learn_more_mental_health');
+                    Navigator.pushNamed(context, '/learn_more_work_health');
                   },
                   highlightColor: Colors.greenAccent.withOpacity(0.3),
                   shape: new RoundedRectangleBorder(

@@ -10,6 +10,8 @@ import 'package:quiz_app/screens/google_sign_in.dart';
 import 'package:quiz_app/screens/home_screen.dart';
 import 'package:quiz_app/screens/learn_more/benefits_physical.dart';
 import 'package:quiz_app/screens/learn_more/further_read_mental.dart';
+import 'package:quiz_app/screens/learn_more/further_read_social.dart';
+import 'package:quiz_app/screens/learn_more/learn_time.dart';
 import 'package:quiz_app/screens/learn_more/social_health.dart';
 import 'package:quiz_app/screens/learn_more/work_health.dart';
 import 'package:quiz_app/screens/login_screen.dart';
@@ -99,12 +101,15 @@ class MyApp extends StatelessWidget {
               '/learn_more_social_health': (BuildContext context) => new LearnMoreSocialScreen(),
               '/connect_friends': (BuildContext context) => new ConnectFriendsScreen(),
               '/connect_family': (BuildContext context) => new ConnectFamilyScreen(),
+              '/more_social_health': (BuildContext context) => new MoreSocialHealth(),
 
               '/work_health_home': (BuildContext context) => new WorkHealthScreen(),
               '/learn_more_work_health': (BuildContext context) => new LearnMoreWorkScreen(),
               '/time_management_home': (BuildContext context) => new TimeHomeScreen(),
               '/pomodoro': (BuildContext context) => new PomodoroScreen(),
               '/concentration_home': (BuildContext context) => new ConcentrationHomeScreen(),
+              '/learn_time': (BuildContext context) => new LearnTimeScreen(),
+              //'/learn_conc': (BuildContext context) => new LearnConcScreen(),
 
     },
 

@@ -9,7 +9,7 @@ class LearnMoreWorkScreen extends StatefulWidget {
 
 class _LearnMoreWorkScreenState extends State<LearnMoreWorkScreen> {
 
-  final String image = "assets/images/physical_learn_more.jpg";
+  final String image = "assets/images/work_learn_more.jpg";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,7 +30,7 @@ class _LearnMoreWorkScreenState extends State<LearnMoreWorkScreen> {
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal:16.0),
                   child: Text(
-                    "Learn more about\nPhysical health",
+                    "Learn more about\nWork health",
                     style: TextStyle(color: Colors.white, fontSize: 28.0, fontWeight: FontWeight.bold),
                   ),
                 ),
@@ -82,11 +82,11 @@ class _LearnMoreWorkScreenState extends State<LearnMoreWorkScreen> {
                                       color: Colors.teal,
                                     ),
                                     Icon(
-                                      Icons.circle_outlined,
+                                      Icons.circle,
                                       color: Colors.teal,
                                     ),
                                     Icon(
-                                      Icons.circle_outlined,
+                                      Icons.circle,
                                       color: Colors.teal,
                                     ),
 
@@ -97,7 +97,7 @@ class _LearnMoreWorkScreenState extends State<LearnMoreWorkScreen> {
                                       child: Icon(Icons.location_on, size: 16.0, color: Colors.grey,)
                                   ),
                                   TextSpan(
-                                      text: "You are on track 2"
+                                      text: "You are on track 4"
                                   )
                                 ]), style: TextStyle(color: Colors.grey, fontSize: 12.0),)
                               ],
@@ -119,13 +119,26 @@ class _LearnMoreWorkScreenState extends State<LearnMoreWorkScreen> {
                         ],
                       ),
                       const SizedBox(height: 30.0),
+
+                      Text("What do we mean by work health?".toUpperCase(), style: TextStyle(
+                          fontWeight: FontWeight.w600,
+                          fontSize: 14.0
+                      ),),
+                      const SizedBox(height: 10.0),
+                      Text(
+                        "A student's life is largely governed of their school or university related work. Be it a high school student or a college going student, studies, projects, internships etc. take up most of their time. \nWe wanted to factor in this aspect in our app as we strongly believe that this component is of equal significance when we talk about self care. Hence, we decided to add this unique dimension to our app dividing the features into two, namely, time management and concentration techniques. Head over to their pages to learn more about them!",
+                        textAlign: TextAlign.justify, style: TextStyle(
+                          fontWeight: FontWeight.w300,
+                          fontSize: 14.0
+                      ),),
+                      const SizedBox(height: 30.0),
                       SizedBox(
                         width: double.infinity,
                         child: RaisedButton(
                           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.0)),
                           color: Colors.teal,
                           textColor: Colors.white,
-                          child: Text("Benefits", style: TextStyle(
+                          child: Text("Time Management", style: TextStyle(
                               fontWeight: FontWeight.normal
                           ),),
                           padding: const EdgeInsets.symmetric(
@@ -133,36 +146,29 @@ class _LearnMoreWorkScreenState extends State<LearnMoreWorkScreen> {
                             horizontal: 32.0,
                           ),
                           onPressed: () {
-                            Navigator.pushNamed(context, '/benefits_physical');
+                            Navigator.pushNamed(context, '/learn_time');
                           },
                         ),
                       ),
                       const SizedBox(height: 30.0),
-                      Text("Why is it important for students?".toUpperCase(), style: TextStyle(
-                          fontWeight: FontWeight.w600,
-                          fontSize: 14.0
-                      ),),
-                      const SizedBox(height: 10.0),
-                      Text(
-                        "There has been researches that show the positive correlation between being physically active and improving as a student. Being a young student means you have a lot of potentials to be able to develop new hobbies that can benefit your fitness. It can be anything like running, skipping, or doing yoga. Exercising at least four times a week increases your metabolic rate which reduces the risk of cardiovascular diseases in the future which is just one of the numerous benefits.",
-                        textAlign: TextAlign.justify, style: TextStyle(
-                          fontWeight: FontWeight.w300,
-                          fontSize: 14.0
-                      ),),
-                      const SizedBox(height: 10.0),
-                      Text(
-                        "Being physically fit doesn’t require you have a strict schedule, but just have enough discipline to repeat it regularly. This aspect of self-care directly impacts all others and hence we encourage evryone user to actively utilize the features within this track!",
-                        textAlign: TextAlign.justify, style: TextStyle(
-                          fontWeight: FontWeight.w300,
-                          fontSize: 14.0
-                      ),),
-                      const SizedBox(height: 10.0),
-                      Text(
-                        "Having an enthusiastic and active lifestyle overhauls your personality. It lets you perform physical activities without being tired or restless. It also ensures that you are mentally fit and stress-free. So here is your cue to embark on your fitness journey while starting your journey with Epione",
-                        textAlign: TextAlign.justify, style: TextStyle(
-                          fontWeight: FontWeight.w300,
-                          fontSize: 14.0
-                      ),),
+                      SizedBox(
+                        width: double.infinity,
+                        child: RaisedButton(
+                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.0)),
+                          color: Colors.teal,
+                          textColor: Colors.white,
+                          child: Text("Concentration Techniques", style: TextStyle(
+                              fontWeight: FontWeight.normal
+                          ),),
+                          padding: const EdgeInsets.symmetric(
+                            vertical: 16.0,
+                            horizontal: 32.0,
+                          ),
+                          onPressed: () {
+                            Navigator.pushNamed(context, '/learn_conc');
+                          },
+                        ),
+                      ),
                       const SizedBox(height: 20.0),
                     ],
                   ),

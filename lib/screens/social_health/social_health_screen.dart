@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:quiz_app/constants.dart';
-import 'package:quiz_app/screens/mental_health/phq9_home.dart';
-import 'package:quiz_app/models/MentalHealthHome.dart';
+import 'package:quiz_app/models/SocialHealthHome.dart';
 
 class SocialHealthScreen extends StatefulWidget {
   const SocialHealthScreen({Key? key}) : super(key: key);
@@ -37,7 +35,7 @@ class _SocialHealthScreenState extends State<SocialHealthScreen> {
                 height: 120,
                 child: RaisedButton(
                   onPressed: (){
-                    Navigator.pushNamed(context, '/learn_more_mental_health');
+                    Navigator.pushNamed(context, '/learn_more_social_health');
                   },
                   highlightColor: Colors.greenAccent.withOpacity(0.3),
                   shape: new RoundedRectangleBorder(

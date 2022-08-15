@@ -9,7 +9,7 @@ class LearnMoreSocialScreen extends StatefulWidget {
 
 class _LearnMoreSocialScreenState extends State<LearnMoreSocialScreen> {
 
-  final String image = "assets/images/physical_learn_more.jpg";
+  final String image = "assets/images/social_learn_more.jpg";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,7 +30,7 @@ class _LearnMoreSocialScreenState extends State<LearnMoreSocialScreen> {
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal:16.0),
                   child: Text(
-                    "Learn more about\nPhysical health",
+                    "Learn more about\nSocial health",
                     style: TextStyle(color: Colors.white, fontSize: 28.0, fontWeight: FontWeight.bold),
                   ),
                 ),
@@ -82,7 +82,7 @@ class _LearnMoreSocialScreenState extends State<LearnMoreSocialScreen> {
                                       color: Colors.teal,
                                     ),
                                     Icon(
-                                      Icons.circle_outlined,
+                                      Icons.circle,
                                       color: Colors.teal,
                                     ),
                                     Icon(
@@ -97,7 +97,7 @@ class _LearnMoreSocialScreenState extends State<LearnMoreSocialScreen> {
                                       child: Icon(Icons.location_on, size: 16.0, color: Colors.grey,)
                                   ),
                                   TextSpan(
-                                      text: "You are on track 2"
+                                      text: "You are on track 3"
                                   )
                                 ]), style: TextStyle(color: Colors.grey, fontSize: 12.0),)
                               ],
@@ -125,7 +125,7 @@ class _LearnMoreSocialScreenState extends State<LearnMoreSocialScreen> {
                           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.0)),
                           color: Colors.teal,
                           textColor: Colors.white,
-                          child: Text("Benefits", style: TextStyle(
+                          child: Text("More on social self care", style: TextStyle(
                               fontWeight: FontWeight.normal
                           ),),
                           padding: const EdgeInsets.symmetric(
@@ -133,32 +133,56 @@ class _LearnMoreSocialScreenState extends State<LearnMoreSocialScreen> {
                             horizontal: 32.0,
                           ),
                           onPressed: () {
-                            Navigator.pushNamed(context, '/benefits_physical');
+                            Navigator.pushNamed(context, '/more_social_health');
                           },
                         ),
                       ),
                       const SizedBox(height: 30.0),
-                      Text("Why is it important for students?".toUpperCase(), style: TextStyle(
+                      Text("What is social health".toUpperCase(), style: TextStyle(
                           fontWeight: FontWeight.w600,
                           fontSize: 14.0
                       ),),
                       const SizedBox(height: 10.0),
                       Text(
-                        "There has been researches that show the positive correlation between being physically active and improving as a student. Being a young student means you have a lot of potentials to be able to develop new hobbies that can benefit your fitness. It can be anything like running, skipping, or doing yoga. Exercising at least four times a week increases your metabolic rate which reduces the risk of cardiovascular diseases in the future which is just one of the numerous benefits.",
+                        "Technically, it is the ability of the people to be free from want of basic necessities and to coexist peacefully in communities with opportunities for advancement or well-being stands for absence of negative conditions and feelings and if not the total absence then presence of more positive feelings than negative ones."+
+                        'It can be defined as our ability to interact and form meaningful relationships with others. It also relates to how comfortably we can adapt in social situations. Social relationships have an impact on our mental health, physical health and mortality risk.  '
+                        + 'Hence, it is an important aspect of self care.',
                         textAlign: TextAlign.justify, style: TextStyle(
                           fontWeight: FontWeight.w300,
                           fontSize: 14.0
                       ),),
-                      const SizedBox(height: 10.0),
-                      Text(
-                        "Being physically fit doesn’t require you have a strict schedule, but just have enough discipline to repeat it regularly. This aspect of self-care directly impacts all others and hence we encourage evryone user to actively utilize the features within this track!",
-                        textAlign: TextAlign.justify, style: TextStyle(
-                          fontWeight: FontWeight.w300,
+                      const SizedBox(height: 30.0),
+                      Text("Signs that you're socially healthy".toUpperCase(), style: TextStyle(
+                          fontWeight: FontWeight.w600,
                           fontSize: 14.0
                       ),),
                       const SizedBox(height: 10.0),
                       Text(
-                        "Having an enthusiastic and active lifestyle overhauls your personality. It lets you perform physical activities without being tired or restless. It also ensures that you are mentally fit and stress-free. So here is your cue to embark on your fitness journey while starting your journey with Epione",
+                        "Signs of good social health include:"
+
+                        +"\n\n> Balancing your social and personal time"
+                      +"\n> Being your true self at all times"
+                      +"\n> Engaging with people in your community"
+                      +"\n> Treating others with respect"
+                      +"\n> Maintaining and building strong relationships with friends"
+                      +"\n> Creating healthy boundaries that help with communication, trust and conflict management"
+                      +"\n> Turning to friends and family for support"
+                      +"\n> Communicating effectively",
+                        textAlign: TextAlign.justify, style: TextStyle(
+                          fontWeight: FontWeight.w300,
+                          fontSize: 14.0
+                      ),),
+                      const SizedBox(height: 30.0),
+                      Text("Our aim".toUpperCase(), style: TextStyle(
+                          fontWeight: FontWeight.w600,
+                          fontSize: 14.0
+                      ),),
+                      const SizedBox(height: 10.0),
+                      Text(
+                        "The outbreak of COVID-19 affected the lives of all sections of society as people were asked to self-quarantine in their homes to prevent the spread of the virus. The lockdown had serious implications on mental health, resulting in psychological problems including frustration, stress, and depression and also loneliness and isolation."
+                        +"\n\nHence, our aim is to provide students a means to stay connected to their close friends and family."
+                        +"\n\nAs social connections were lost, students' social well-being was severely affected. Our app aims to undo this by providing the features to connect with loved ones as studies have shown how crucial it can be when it comes to a person's overall well being."
+                        ,
                         textAlign: TextAlign.justify, style: TextStyle(
                           fontWeight: FontWeight.w300,
                           fontSize: 14.0
