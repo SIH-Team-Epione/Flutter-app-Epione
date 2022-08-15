@@ -3,31 +3,33 @@ import 'package:get/get.dart';
 import 'package:quiz_app/constants.dart';
 import 'package:quiz_app/controllers/question_controller_phq.dart';
 import 'package:quiz_app/models/Questions.dart';
+import 'package:quiz_app/screens/quiz/components/question_card2.dart';
 
 
+import '../../../controllers/question_controller_gad.dart';
 import 'progress_bar.dart';
 import 'question_card.dart';
 
-class Body extends StatelessWidget {
-  const Body({
+class Body2 extends StatelessWidget {
+  const Body2({
     Key? key,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     // So that we have acccess our controller
-    QuestionController _questionController = Get.put(QuestionController());
+    QuestionController2 _questionController = Get.put(QuestionController2());
     return Stack(
       children: [
         SafeArea(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: kDefaultPadding),
-                child: ProgressBar(),
-              ),
+              // Padding(
+              //   padding:
+              //       const EdgeInsets.symmetric(horizontal: kDefaultPadding),
+              //   child: ProgressBar(),
+              // ),
               SizedBox(height: kDefaultPadding),
               Padding(
                 padding:
@@ -63,7 +65,7 @@ class Body extends StatelessWidget {
                   controller: _questionController.pageController,
                   onPageChanged: _questionController.updateTheQnNum,
                   itemCount: _questionController.questions.length,
-                  itemBuilder: (context, index) => QuestionCard(
+                  itemBuilder: (context, index) => QuestionCard2(
                       question: _questionController.questions[index]),
                 ),
               ),

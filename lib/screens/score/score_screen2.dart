@@ -3,15 +3,17 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:quiz_app/controllers/question_controller_phq.dart';
 
-class ScoreScreen extends StatelessWidget {
-  const ScoreScreen({
-    Key? key,
+import '../../controllers/question_controller_gad.dart';
+
+class ScoreScreen2 extends StatelessWidget {
+  const ScoreScreen2({
+    Key? key
   }) : super(key: key);
 
 
   @override
   Widget build(BuildContext context) {
-    QuestionController _qnController = Get.put(QuestionController());
+    QuestionController2 _qnController = Get.put(QuestionController2());
     final score = _qnController.numOfCorrectAns;
 
     final Size size = MediaQuery.of(context).size;

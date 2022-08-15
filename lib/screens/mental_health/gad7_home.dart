@@ -3,6 +3,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:quiz_app/constants.dart';
 import 'package:quiz_app/screens/quiz/quiz_screen.dart';
+import 'package:quiz_app/screens/quiz/quiz_screen2.dart';
 
 class GADScreen extends StatelessWidget {
   @override
@@ -21,7 +22,7 @@ class GADScreen extends StatelessWidget {
                   Spacer(flex: 2), //2/6
                   Center(
                     child: Text(
-                      "Patient Health Questionnaire",
+                      "Generalized Anxiety Disorder Questionnaire",
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontWeight: FontWeight.w700,
@@ -31,11 +32,11 @@ class GADScreen extends StatelessWidget {
                     ),
                   ),
                   SizedBox(height: 10.0,),
-                  Text("The PHQ-9 is a multipurpose instrument for screening, diagnosing, monitoring and measuring the severity of depression. This analysis will help us guide you further. Please answer over the last 2 weeks, how often have you been bothered by the following problems?"),
+                  Text("The Generalized Anxiety Disorder Scale-7 (GAD-7) is a 7-item, self-rated scale developed by Spitzer and colleagues (2006) as a screening tool and severity indicator for GAD. It is easily scored and initially was created to increase recognition of GAD in primary care settings. The original validation of the GAD-7 in a large primary care sample revealed that the measure has good reliability, and good criterion, factorial, and procedural validity. This analysis will help us guide you further. Please answer over the last 2 weeks, how often have you been bothered by the following problems?"),
                   Spacer(), // 1/6
                   Spacer(), // 1/6
                   InkWell(
-                    onTap: () => Get.to(QuizScreen()),
+                    onTap: () => Get.to(QuizScreen2()),
                     child: Container(
                       width: double.infinity,
                       alignment: Alignment.center,

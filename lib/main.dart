@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
+import 'package:get/get_navigation/src/routes/get_route.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:quiz_app/screens/google_sign_in.dart';
@@ -30,7 +31,11 @@ import 'package:quiz_app/screens/physical_health/diets.dart';
 import 'package:quiz_app/screens/physical_health/exercises.dart';
 
 import 'package:firebase_core/firebase_core.dart';
+import 'package:quiz_app/screens/quiz/quiz_screen.dart';
+import 'package:quiz_app/screens/quiz/quiz_screen2.dart';
 import 'package:quiz_app/screens/signing_up.dart';
+
+import 'controllers/question_controller_phq.dart';
 
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -70,14 +75,6 @@ class MyApp extends StatelessWidget {
               '/mindfulness_home': (BuildContext context) => new MindfulnessScreen(),
 
               '/further_read_mental': (BuildContext context) => new FurtherReadMentalHealth(),
-              // '/further_read_students': (BuildContext context) => new FurtherReadStudentScreen(),
-              // '/further_read_warnings': (BuildContext context) => new FurtherReadWarningscreen(),
-              // '/further_read_myth': (BuildContext context) => new FurtherReadMythScreen(),
-              // '/further_read_suicide': (BuildContext context) => new FurtherReadSuicideScreen(),
-              // '/further_read_types': (BuildContext context) => new FurtherReadTypesScreen(),
-              // '/further_read_diagnosis': (BuildContext context) => new FurtherReadDiagnosisScreen(),
-              // '/further_read_meditation': (BuildContext context) => new FurtherReadMeditationScreen(),
-              // '/further_read_mindfulness': (BuildContext context) => new FurtherReadMindfulnessScreen(),
 
               '/physical_health_home': (BuildContext context) => new PhysicalHealthScreen(),
               '/learn_more_physical_health': (BuildContext context) => new LearnMorePhysicalScreen(),
@@ -88,6 +85,7 @@ class MyApp extends StatelessWidget {
               '/benefits_physical': (BuildContext context) => new BenefitsPhysical(),
 
     },
+
   )
   );
 }

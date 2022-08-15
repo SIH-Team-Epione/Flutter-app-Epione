@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:quiz_app/controllers/question_controller_phq.dart';
 
 import '../../../constants.dart';
+import '../../../controllers/question_controller_gad.dart';
 
-class Option extends StatelessWidget {
-  const Option({
+class Option2 extends StatelessWidget {
+  const Option2({
     Key? key,
     required this.text,
     required this.index,
@@ -17,15 +19,15 @@ class Option extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GetBuilder<QuestionController>(
-        init: QuestionController(),
+    return GetBuilder<QuestionController2>(
+        init: QuestionController2(),
         builder: (qnController) {
+
           Color getTheRightColor(int idx) {
-            if (qnController.isAnswered) {
-              if(qnController.selectedAns == idx){
+            if(qnController.isAnswered == true){
+              if(qnController.selectedAns == idx) {
                 return kGreenColor;
               }
-
             }
             return kGrayColor;
           }

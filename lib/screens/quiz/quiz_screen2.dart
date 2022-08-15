@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:quiz_app/controllers/question_controller_gad.dart';
 import 'package:quiz_app/controllers/question_controller_phq.dart';
 import 'components/body.dart';
+import 'components/body2.dart';
 
-class QuizScreen extends StatelessWidget {
+class QuizScreen2 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    QuestionController _controller = Get.put(QuestionController());
+    QuestionController2 _controller = Get.put(QuestionController2());
 
     return Scaffold(
       extendBodyBehindAppBar: true,
@@ -17,11 +19,12 @@ class QuizScreen extends StatelessWidget {
         elevation: 0,
         actions: [
           FlatButton(
-              onPressed: _controller.nextQuestion,
-              child: Text("Skip")),
+          onPressed: _controller.nextQuestion,
+          child: Text("Next"),
+          ),
         ],
       ),
-      body: Body(),
+      body: Body2(),
     );
   }
 }
