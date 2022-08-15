@@ -31,19 +31,28 @@ class _CBTScreenState
 }
 
 Widget _buildCBTRow(int index, BuildContext context) {
-  return Card(
-    elevation: 10,
-    shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.all(Radius.circular(10))),
+  return Container(
+    margin: EdgeInsets.fromLTRB(10, 10, 10, 0),
+    decoration: BoxDecoration(
+      color: Colors.white,
+      borderRadius: BorderRadius.circular(20.0),
+      boxShadow: [
+        BoxShadow(
+          color: Colors.teal.shade50,
+          blurRadius: 10,
+          spreadRadius: 5,
+        )
+      ]
+    ),
     child: ClipRRect(
-      borderRadius: BorderRadius.all(Radius.circular(10)),
+      borderRadius: BorderRadius.all(Radius.circular(20)),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Row(
             children: [
               Container(
-                color: Colors.blue,
+                color: Colors.teal.shade100,
                 padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 5.0),
                 child: Text(
                   (index + 1).toString(),
@@ -53,7 +62,7 @@ Widget _buildCBTRow(int index, BuildContext context) {
                 ),
               ),
               Container(
-                margin: EdgeInsets.fromLTRB(10.0, 0.0, 0.0, 0.0),
+                color: Colors.teal.shade200,
                 child: Text(
                   cbtSteps[index].headline,
                   style: TextStyle(

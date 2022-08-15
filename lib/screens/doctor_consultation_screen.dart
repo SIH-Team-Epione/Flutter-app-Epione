@@ -74,8 +74,8 @@ Widget _buildDoctorRow(int index, BuildContext context) {
         borderRadius: BorderRadius.circular(20.0),
         boxShadow: [
           BoxShadow(
-            color: Colors.grey.shade300,
-            blurRadius: 20,
+            color: Colors.teal.shade50,
+            blurRadius: 10,
             spreadRadius: 5,
           )
         ]
