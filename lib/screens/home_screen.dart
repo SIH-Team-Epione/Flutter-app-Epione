@@ -30,7 +30,7 @@ class _HomeScreenState extends State<HomeScreen> {
       Navigator.push(context, MaterialPageRoute(builder: (context) => DoctorConsultationScreen()));
     }
 
-    final firstDay = DateTime(2022, 7, 27);
+    final firstDay = DateTime(2022, 8, 14);
     final dateNow = DateTime.now();
     final difference = daysBetween(firstDay, dateNow);
     print(difference);
@@ -243,6 +243,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     ],
                   ),
                 ),
+                
                 Stack(
                   children: [
                     Container(
@@ -369,7 +370,10 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ],
                 ),
-                Stack(
+                InkWell(
+                  onTap: () => Navigator.pushNamed(context, '/pomo_home'),
+
+                child:Stack(
                   children: [
                     Container(
                       margin: EdgeInsets.fromLTRB(25, 5, 25, 15.0),
@@ -431,11 +435,11 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ),
                   ],
-                ),
+                ),),
 
                 SizedBox(height: 5,),
               ],
-            )
+            ),
           ],
         ),
       )

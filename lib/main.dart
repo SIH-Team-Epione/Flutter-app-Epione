@@ -7,6 +7,8 @@ import 'package:quiz_app/screens/home_screen.dart';
 import 'package:quiz_app/screens/welcome/welcome_screen.dart';
 import 'package:quiz_app/screens/login_screen.dart';
 import 'package:quiz_app/screens/mental_health_screen.dart';
+import 'package:quiz_app/screens/pomo_screen.dart';
+import 'package:quiz_app/screens/diag_screen.dart';
 import 'package:quiz_app/screens/learn_more/mental_health.dart';
 import 'package:quiz_app/constants.dart';
 
@@ -32,11 +34,12 @@ class MyApp extends StatelessWidget {
         '/': (context) => const HomeScreen(),
         '/login': (BuildContext context) => const LoginScreen(),
         '/mental_health_home': (BuildContext context) => new MentalHealthScreen(),
+        '/pomo_home': (BuildContext context) => new PomoScreen(),
         '/learn_more_mental_health': (BuildContext context) => new LearnMoreMentalScreen(),
         '/phq_home': (BuildContext context) => new WelcomeScreen(),
         // '/gad_home': (BuildContext context) => new GADScreen(),
         '/cbt_home': (BuildContext context) => new CBTScreen(),
-        // '/diaphragm_home': (BuildContext context) => new DiaphragmScreen(),
+        '/diaphragm_home': (BuildContext context) => new DiagScreen(),
         // '/meditation_home': (BuildContext context) => new MeditationScreen(),
         // '/mindfulness_home': (BuildContext context) => new MindfulnessScreen(),
       },
