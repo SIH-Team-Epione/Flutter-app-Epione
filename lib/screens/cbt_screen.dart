@@ -24,7 +24,7 @@ class _CBTScreenState
           padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
           child: _buildCBTRow(index, context),
         ),
-        itemCount: 2,
+        itemCount: cbtSteps.length,
       ),
     );
   }
@@ -57,7 +57,8 @@ Widget _buildCBTRow(int index, BuildContext context) {
                 child: Text(
                   cbtSteps[index].headline,
                   style: TextStyle(
-                    fontSize: 20.0,
+                    fontSize: 16.0,
+                    fontWeight: FontWeight.bold
                   ),
                 ),
               )
