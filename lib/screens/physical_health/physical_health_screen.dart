@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:quiz_app/constants.dart';
 import 'package:quiz_app/models/PhysicalHealthHome.dart';
@@ -110,7 +111,7 @@ class _PhysicalHealthScreenState extends State<PhysicalHealthScreen> {
                         margin: EdgeInsets.fromLTRB(20, 15, 20, 10),
                         height: 170,
                         decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(15),
+                          borderRadius: BorderRadius.circular(5),
                           color: Colors.white,
                           boxShadow: [BoxShadow(
                             color: Colors.grey.shade200,
@@ -119,17 +120,21 @@ class _PhysicalHealthScreenState extends State<PhysicalHealthScreen> {
                           )]
                         ),
                         child: Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 5.0),
+                          padding: const EdgeInsets.symmetric(vertical: 0.0),
                           child: Row(
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: <Widget>[
                               Expanded(
                                 flex: 2,
                                 child: Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: Image.asset(
-                                    feature.urlImage,
-                                    fit: BoxFit.cover,
+                                  padding: const EdgeInsets.all(0.0),
+                                  child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(0),
+                                    child: Image.asset(
+                                      feature.urlImage,
+                                      fit: BoxFit.cover,
+                                      height:170,
+                                    ),
                                   ),
                                 ),
                               ),

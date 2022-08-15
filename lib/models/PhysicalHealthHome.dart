@@ -24,33 +24,33 @@ List<Feature> featuresList = [
     id: 0,
     title: 'Yoga Pose Detection',
     description: 'Practice Yoga daily using our real-time pose detection feature which gives you an accuracy to guide you and make yoga fun and interactive!',
-    urlImage: 'assets/images/phq_list_image.png',
-    ageGroup: '12 above',
-    nextScreenRoute: '/phq_home'
+    urlImage: 'assets/images/yoga_list.jpg',
+    ageGroup: '7 above',
+    nextScreenRoute: '/yoga'
   ),
   const Feature(
       id: 1,
       title: 'Exercises',
-      description: 'Generalized Anxiety Disorder 7 is a self reported questionnaire for screening and severity measuring of generalized anxiety disorder. Take this test to receive treatment recommendations.',
-      urlImage: 'assets/images/gad_list_image.png',
-    ageGroup: '12 above',
-      nextScreenRoute: '/gad_home'
+      description: 'Boost your stamina and keep track of your physical exercises by using this feature which uses plugins to integrate your health details in the app.',
+      urlImage: 'assets/images/exercise_list.jpg',
+    ageGroup: '10 above',
+      nextScreenRoute: '/exercises'
   ),
   const Feature(
       id: 2,
       title: 'Diets',
-      description: 'Learn cognitive restructuring to identify and destruct negative thought patterns using techniques such as Rational Emotive behaviour therapy, multimodal therapy, etc.',
-      urlImage: 'assets/images/cbt_list_image.jpeg',
+      description: 'Try out the diet plans available from our list which are easy to follow and custom tailored according to age group.',
+      urlImage: 'assets/images/diets_list.jpg',
     ageGroup: 'All ages',
-      nextScreenRoute: '/cbt_home'
+      nextScreenRoute: '/diets'
   ),
   const Feature(
       id: 3,
       title: 'Progressive Muscle Relaxation',
-      description: 'Diaphragmatic breathing is an effective deep breathing technique to tackle anxiety. Use this feature to perform the guided exercise.',
-      urlImage: 'assets/images/diaphragm_list_image.jpg',
+      description: 'PMR is a deep relaxation technique that has been effectively used to control stress and anxiety, relieve insomnia. Try our guided PMR technique!',
+      urlImage: 'assets/images/pmr_list.jpg',
     ageGroup: 'All ages',
-      nextScreenRoute: '/diaphragm_home',
+      nextScreenRoute: '/pmr',
   ),
 
 ];
