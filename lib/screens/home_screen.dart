@@ -176,22 +176,34 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: ListView(
                   scrollDirection: Axis.horizontal,
                   children: <Widget>[
-                    FadeAnimation(
-                        1.4,
-                        verticalImageContainer('assets/images/self_care2.jpg', "Learn more about self care",
-                            "5 minute read")),
-                    FadeAnimation(
-                        1.5,
-                        verticalImageContainer('assets/images/doctor_home2.jpg',
-                            'Consult a mental health specialist', "In Delhi NCR")),
-                    FadeAnimation(
-                        1.6,
-                        verticalImageContainer('assets/images/time_home2.jpg', "Manage time using Pomodoro",
-                            "Effective technique")),
-                    FadeAnimation(
-                        1.5,
-                        verticalImageContainer('assets/images/pmr_home2.jpg',
-                            'Practice Progressive Muscle relaxation', "Releases strain")),
+                    InkWell(
+                      onTap: () => Navigator.pushNamed(context, '/learn_more_self_care'),
+                      child: FadeAnimation(
+                          1.4,
+                          verticalImageContainer('assets/images/self_care2.jpg', "Learn more about self care",
+                              "5 minute read")),
+                    ),
+                    InkWell(
+                      onTap: () => Navigator.pushNamed(context, '/doctor_consultation'),
+                      child: FadeAnimation(
+                          1.5,
+                          verticalImageContainer('assets/images/doctor_home2.jpg',
+                              'Consult a mental health specialist', "In Delhi NCR")),
+                    ),
+                    InkWell(
+                      onTap: () => Navigator.pushNamed(context, '/pomodoro'),
+                      child: FadeAnimation(
+                          1.6,
+                          verticalImageContainer('assets/images/time_home2.jpg', "Manage time using Pomodoro",
+                              "Effective technique")),
+                    ),
+                    InkWell(
+                      onTap: () => Navigator.pushNamed(context, '/pmr'),
+                      child: FadeAnimation(
+                          1.5,
+                          verticalImageContainer('assets/images/pmr_home2.jpg',
+                              'Practice Progressive Muscle relaxation', "Releases strain")),
+                    ),
                   ],
                 ),
               ),
