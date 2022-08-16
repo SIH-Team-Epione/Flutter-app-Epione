@@ -53,21 +53,25 @@ Widget _buildCBTRow(int index, BuildContext context) {
             children: [
               Container(
                 color: Colors.teal.shade100,
-                padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 5.0),
+                padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 5.0),
                 child: Text(
                   (index + 1).toString(),
                   style: TextStyle(
-                    fontSize: 20.0,
+                    fontSize: 16.0,
+                    fontWeight: FontWeight.bold
                   ),
                 ),
               ),
-              Container(
-                color: Colors.teal.shade200,
-                child: Text(
-                  cbtSteps[index].headline,
-                  style: TextStyle(
-                    fontSize: 16.0,
-                    fontWeight: FontWeight.bold
+              Expanded(
+                child: Container(
+                  padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 5.0),
+                  color: Colors.teal.shade200,
+                  child: Text(
+                    cbtSteps[index].headline,
+                    style: TextStyle(
+                      fontSize: 16.0,
+                      fontWeight: FontWeight.bold
+                    ),
                   ),
                 ),
               )
