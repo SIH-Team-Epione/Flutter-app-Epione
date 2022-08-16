@@ -102,10 +102,10 @@ class _DoctorDetailsScreenState extends State<DoctorDetailsScreen> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  _buildButtonColumn(Colors.teal.shade500, Icons.call, 'Call', 0),
-                  _buildButtonColumn(Colors.teal.shade500, Icons.mail, 'Email', 1),
-                  _buildButtonColumn(Colors.teal.shade500, Icons.language, 'Website', 2),
-                  _buildButtonColumn(Colors.teal.shade500, Icons.location_on, 'Map', 3),
+                  _buildButtonColumn(Colors.teal.shade900, Icons.call, 'Call', 0),
+                  _buildButtonColumn(Colors.teal.shade900, Icons.mail, 'Email', 1),
+                  _buildButtonColumn(Colors.teal.shade900, Icons.language, 'Website', 2),
+                  _buildButtonColumn(Colors.teal.shade900, Icons.location_on, 'Map', 3),
                 ],
               ),
             )
@@ -170,7 +170,9 @@ class _DoctorDetailsScreenState extends State<DoctorDetailsScreen> {
         child: Column(
           children: [
             Container(
-              color: Colors.teal.shade50,
+              decoration: BoxDecoration(
+                color: Colors.teal.shade100,
+              ),
               padding: EdgeInsets.all(12.0),
               child: Icon(icon, size: 30, color: color,),
             ),
