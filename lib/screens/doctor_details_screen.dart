@@ -63,6 +63,10 @@ class _DoctorDetailsScreenState extends State<DoctorDetailsScreen> {
                         padding:
                             const EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 10.0),
                         child: Text("Specialisation"),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 10.0),
+                        child: Text("Education"),
                       )
                     ],
                   ),
@@ -92,11 +96,33 @@ class _DoctorDetailsScreenState extends State<DoctorDetailsScreen> {
                           doctors[widget.index].specialisation,
                           style: TextStyle(fontWeight: FontWeight.bold),
                         ),
+                      ),
+                      Padding(
+                        padding:
+                        const EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 10.0),
+                        child: Text(
+                          doctors[widget.index].education,
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
                       )
                     ],
                   )
                 ],
               ),
+            ),
+            Container(
+              margin: EdgeInsets.fromLTRB(20.0, 0.0, 20.0, 10.0),
+              child: Text(
+                "About",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 16.0
+                ),
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.fromLTRB(20.0, 0.0, 20.0, 30.0),
+              child: Text("Start reading through your list of replacement thoughts at least twice a day. I usually recommend that clients read their lists first thing in the morning upon getting out of bed and last thing at night before jumping into bed. Over time, you will start memorizing the wording and content of your replacement thoughts, so that you can use them throughout each day."),
             ),
             Container(
               child: Row(
