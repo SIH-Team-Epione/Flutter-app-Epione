@@ -28,7 +28,7 @@ class _DoctorDetailsScreenState extends State<DoctorDetailsScreen> {
               margin: EdgeInsets.fromLTRB(0.0, 20.0, 0.0, 0.0),
               child: CircleAvatar(
                 radius: 50,
-                backgroundImage: AssetImage('assets/images/user_image.png'),
+                backgroundImage: AssetImage(doctors[widget.index].imagePath),
               ),
             ),
             Container(
@@ -122,16 +122,16 @@ class _DoctorDetailsScreenState extends State<DoctorDetailsScreen> {
             ),
             Container(
               margin: EdgeInsets.fromLTRB(20.0, 0.0, 20.0, 30.0),
-              child: Text("Start reading through your list of replacement thoughts at least twice a day. I usually recommend that clients read their lists first thing in the morning upon getting out of bed and last thing at night before jumping into bed. Over time, you will start memorizing the wording and content of your replacement thoughts, so that you can use them throughout each day."),
+              child: Text(doctors[widget.index].about),
             ),
             Container(
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  _buildButtonColumn(Colors.teal.shade900, Icons.call, 'Call', 0),
-                  _buildButtonColumn(Colors.teal.shade900, Icons.mail, 'Email', 1),
-                  _buildButtonColumn(Colors.teal.shade900, Icons.language, 'Website', 2),
-                  _buildButtonColumn(Colors.teal.shade900, Icons.location_on, 'Map', 3),
+                  _buildButtonColumn(Colors.teal.shade900, Icons.call, 'Call', 0, widget.index),
+                  _buildButtonColumn(Colors.teal.shade900, Icons.mail, 'Email', 1, widget.index),
+                  _buildButtonColumn(Colors.teal.shade900, Icons.language, 'Website', 2, widget.index),
+                  _buildButtonColumn(Colors.teal.shade900, Icons.location_on, 'Map', 3, widget.index),
                 ],
               ),
             )
@@ -142,13 +142,13 @@ class _DoctorDetailsScreenState extends State<DoctorDetailsScreen> {
   }
 
   GestureDetector _buildButtonColumn(
-      Color color, IconData icon, String label, int position) {
+      Color color, IconData icon, String label, int position, int index) {
     Future<void> itemClickHandler(int position) async {
       switch (position) {
         case 0:
           {
             //call
-            final url = Uri.parse('tel://7055781339');
+            final url = Uri.parse('tel://${doctors[index].phone}');
             if (!await launchUrl(url, mode: LaunchMode.externalApplication)) {
               throw 'Could not launch';
             }
@@ -170,7 +170,7 @@ class _DoctorDetailsScreenState extends State<DoctorDetailsScreen> {
         case 2:
           {
             //website
-            final url = Uri.parse('https://github.com');
+            final url = Uri.parse(doctors[index].website);
             if (!await launchUrl(url, mode: LaunchMode.externalApplication)) {
               throw 'Could not launch';
             }
@@ -180,8 +180,7 @@ class _DoctorDetailsScreenState extends State<DoctorDetailsScreen> {
         case 3:
           {
             //maps
-            MapsLauncher.launchCoordinates(
-                28.65495318711065, 77.23944576717803);
+            MapsLauncher.launchCoordinates(doctors[index].x_cor, doctors[index].y_cor, doctors[index].address);
             break;
           }
       }
