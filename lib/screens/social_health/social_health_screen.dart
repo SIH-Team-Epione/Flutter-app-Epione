@@ -20,7 +20,8 @@ class _SocialHealthScreenState extends State<SocialHealthScreen> {
         //   onPressed: () => Navigator.of(context).pop(),
         // ),
         title: const Text(title),
-        centerTitle: true,
+        centerTitle: false,
+        backgroundColor: Colors.teal,
       ),
       body: SingleChildScrollView(
         physics: ScrollPhysics(),
@@ -32,7 +33,7 @@ class _SocialHealthScreenState extends State<SocialHealthScreen> {
               SizedBox(height: 20,),
               Container(
                 width: 350,
-                height: 120,
+                height: 200,
                 child: RaisedButton(
                   onPressed: (){
                     Navigator.pushNamed(context, '/learn_more_social_health');
@@ -41,7 +42,7 @@ class _SocialHealthScreenState extends State<SocialHealthScreen> {
                   shape: new RoundedRectangleBorder(
                     borderRadius: new BorderRadius.circular(20.0),
                   ),
-                  color: Color(0xff307473),
+                  color: Color(0xffdea23e),
                   //0xfff3dbdd,
                   child: Container(
                     margin: EdgeInsets.symmetric(
@@ -52,7 +53,7 @@ class _SocialHealthScreenState extends State<SocialHealthScreen> {
                         vertical: 5,
                     ),
                     width: double.infinity,
-                    height: 90,
+                    height: 180,
                     decoration: BoxDecoration(
                       color: Color(307473),
                       borderRadius: BorderRadius.circular(60),
@@ -108,7 +109,7 @@ class _SocialHealthScreenState extends State<SocialHealthScreen> {
                       highlightColor: Color(0xffe0f4f0),
                       child: Container(
                         margin: EdgeInsets.fromLTRB(20, 15, 20, 10),
-                        height: 170,
+                        height: 220,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(15),
                           color: Colors.white,
@@ -119,17 +120,21 @@ class _SocialHealthScreenState extends State<SocialHealthScreen> {
                           )]
                         ),
                         child: Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 5.0),
+                          padding: const EdgeInsets.symmetric(vertical: 0.0),
                           child: Row(
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: <Widget>[
                               Expanded(
                                 flex: 2,
                                 child: Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: Image.asset(
-                                    feature.urlImage,
-                                    fit: BoxFit.cover,
+                                  padding: const EdgeInsets.all(0.0),
+                                  child: ClipRRect(
+                                    borderRadius: BorderRadius.only(topLeft: Radius.circular(15), bottomLeft: Radius.circular(15)),
+                                    child: Image.asset(
+                                      feature.urlImage,
+                                      fit: BoxFit.cover,
+                                      height:220,
+                                    ),
                                   ),
                                 ),
                               ),
@@ -194,7 +199,8 @@ class _SocialHealthScreenState extends State<SocialHealthScreen> {
                     //   ),
                     // );
                   }
-              )
+              ),
+              SizedBox(height: 30,),
             ],
           ),
         ),

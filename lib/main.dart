@@ -9,6 +9,7 @@ import 'package:quiz_app/screens/google_sign_in.dart';
 
 import 'package:quiz_app/screens/home_screen.dart';
 import 'package:quiz_app/screens/learn_more/benefits_physical.dart';
+import 'package:quiz_app/screens/learn_more/comm_skills.dart';
 import 'package:quiz_app/screens/learn_more/further_read_mental.dart';
 import 'package:quiz_app/screens/learn_more/further_read_social.dart';
 import 'package:quiz_app/screens/learn_more/learn_time.dart';
@@ -101,6 +102,7 @@ class MyApp extends StatelessWidget {
               '/learn_more_social_health': (BuildContext context) => new LearnMoreSocialScreen(),
               '/connect_friends': (BuildContext context) => new ConnectFriendsScreen(),
               '/connect_family': (BuildContext context) => new ConnectFamilyScreen(),
+              '/communication_skills': (BuildContext context) => new CommunicationSkillsScreen(),
               '/more_social_health': (BuildContext context) => new MoreSocialHealth(),
 
               '/work_health_home': (BuildContext context) => new WorkHealthScreen(),

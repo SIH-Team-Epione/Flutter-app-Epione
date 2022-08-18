@@ -18,39 +18,32 @@ class Feature {
 }
 
 const title = 'Social Health';
-const learnMoreText = 'Physical health forms a core component of your self-care journey as a student. The benefits of physical activity for school-aged as well as college going students are proven. Healthy school environments help students achieve their academic potential and support the development of life-long healthy habits. ';
+const learnMoreText = 'Another aspect that we wanted to cover in our app, one that is often neglected, is that of social health. Social wellness involves building healthy, nurturing, and supportive relationships as well as fostering a genuine connection with those around you. Conscious actions are important in learning how to balance your social life with your academic and professional lives.';
+
 List<Feature> featuresList = [
   const Feature(
     id: 0,
-    title: 'Yoga Pose Detection',
-    description: 'Practice Yoga daily using our real-time pose detection feature which gives you an accuracy to guide you and make yoga fun and interactive!',
-    urlImage: 'assets/images/phq_list_image.png',
-    ageGroup: '12 above',
-    nextScreenRoute: '/phq_home'
+    title: 'Connect with friends',
+    description: 'Friends also play a significant role in promoting your overall health. Strong Social Connections Help Offset Stressors in Your Life. They are the ones who stay with you through thick and thin and know you the best. So, take out time from your schedule and talk to a friend now to boost your happy hormones!',
+    urlImage: 'assets/images/friend_list.jpg',
+    ageGroup: 'All ages',
+    nextScreenRoute: '/connect_friends'
   ),
   const Feature(
       id: 1,
-      title: 'Exercises',
-      description: 'Generalized Anxiety Disorder 7 is a self reported questionnaire for screening and severity measuring of generalized anxiety disorder. Take this test to receive treatment recommendations.',
-      urlImage: 'assets/images/gad_list_image.png',
-    ageGroup: '12 above',
-      nextScreenRoute: '/gad_home'
+      title: 'Connect with family',
+      description: 'Owing to our jam-packed schedules we often tend to forget about our family, even when we''re living under the same roof! Good family communications bring a sense of togetherness, security and contributes to our happiness. This feature would remind you that as part of your self-care journey, you can connect with your loved ones, seek their support and comfort and stay connected.',
+      urlImage: 'assets/images/family_list.jpg',
+    ageGroup: 'All ages',
+      nextScreenRoute: '/connect_family'
   ),
   const Feature(
       id: 2,
-      title: 'Diets',
-      description: 'Learn cognitive restructuring to identify and destruct negative thought patterns using techniques such as Rational Emotive behaviour therapy, multimodal therapy, etc.',
-      urlImage: 'assets/images/cbt_list_image.jpeg',
+      title: 'Developing communication skills',
+      description: '',
+      urlImage: 'assets/images/communication_list.jpg',
     ageGroup: 'All ages',
-      nextScreenRoute: '/cbt_home'
-  ),
-  const Feature(
-      id: 3,
-      title: 'Progressive Muscle Relaxation',
-      description: 'Diaphragmatic breathing is an effective deep breathing technique to tackle anxiety. Use this feature to perform the guided exercise.',
-      urlImage: 'assets/images/diaphragm_list_image.jpg',
-    ageGroup: 'All ages',
-      nextScreenRoute: '/diaphragm_home',
+      nextScreenRoute: '/communication_skills'
   ),
 
 ];

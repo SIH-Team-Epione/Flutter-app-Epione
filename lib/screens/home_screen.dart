@@ -37,7 +37,7 @@ class _HomeScreenState extends State<HomeScreen> {
       Navigator.push(context, MaterialPageRoute(builder: (context) => DoctorConsultationScreen()));
     }
 
-    final firstDay = DateTime(2022, 8, 15);
+    final firstDay = DateTime(2022, 8, 18);
     final dateNow = DateTime.now();
     final difference = daysBetween(firstDay, dateNow);
     print(difference);
@@ -253,7 +253,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               Padding(
                                 padding: const EdgeInsets.fromLTRB(110, 25, 0, 0),
                                 child: Container(
-                                  width:150,
+                                  //width:150,
                                   child: Text(
                                     'Mental Health',
                                     style: TextStyle(
@@ -329,7 +329,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               Padding(
                                 padding: const EdgeInsets.fromLTRB(110, 25, 0, 0),
                                 child: Container(
-                                  width:150,
+                                  //width:MediaQuery.of(context).size.width,
                                   child: Text(
                                     'Physical Health',
                                     style: TextStyle(
@@ -395,7 +395,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               Padding(
                                 padding: const EdgeInsets.fromLTRB(110, 25, 0, 0),
                                 child: Container(
-                                  width:150,
+                                  //width:150,
                                   child: Text(
                                     'Social Health',
                                     style: TextStyle(
@@ -461,7 +461,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               Padding(
                                 padding: const EdgeInsets.fromLTRB(110, 25, 0, 0),
                                 child: Container(
-                                  width:150,
+                                  //width:150,
                                   child: Text(
                                     'Work Health',
                                     style: TextStyle(

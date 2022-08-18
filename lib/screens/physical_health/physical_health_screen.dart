@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:quiz_app/constants.dart';
 import 'package:quiz_app/models/PhysicalHealthHome.dart';
 
 class PhysicalHealthScreen extends StatefulWidget {
@@ -111,7 +110,7 @@ class _PhysicalHealthScreenState extends State<PhysicalHealthScreen> {
                         margin: EdgeInsets.fromLTRB(20, 15, 20, 10),
                         height: 170,
                         decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(5),
+                          borderRadius: BorderRadius.circular(15),
                           color: Colors.white,
                           boxShadow: [BoxShadow(
                             color: Colors.grey.shade200,
@@ -129,7 +128,7 @@ class _PhysicalHealthScreenState extends State<PhysicalHealthScreen> {
                                 child: Padding(
                                   padding: const EdgeInsets.all(0.0),
                                   child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(0),
+                                    borderRadius: BorderRadius.only(topLeft: Radius.circular(15), bottomLeft: Radius.circular(15)),
                                     child: Image.asset(
                                       feature.urlImage,
                                       fit: BoxFit.cover,
