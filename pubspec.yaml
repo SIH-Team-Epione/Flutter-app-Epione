@@ -46,6 +46,7 @@ dependencies:
   google_sign_in: ^5.4.1
   font_awesome_flutter: ^10.1.0
   provider: ^6.0.3
+  youtube_player_flutter: ^8.1.0
 
 dev_dependencies:
   flutter_test:

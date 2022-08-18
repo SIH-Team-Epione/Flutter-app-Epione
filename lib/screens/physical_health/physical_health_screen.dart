@@ -180,23 +180,6 @@ class _PhysicalHealthScreenState extends State<PhysicalHealthScreen> {
                         ),
                       ),
                     );
-
-                    // return Card(
-                    //   child: ListTile(
-                    //     leading: Container(
-                    //       height: 600,
-                    //       child: Image.asset(
-                    //         feature.urlImage,
-                    //         fit: BoxFit.cover,
-                    //         // height: 100,
-                    //         // width: 300,
-                    //       ),
-                    //     ),
-                    //     title: Text(feature.title),
-                    //     subtitle: Text(feature.description),
-                    //     trailing: const Icon(Icons.arrow_forward),
-                    //   ),
-                    // );
                   }
               )
             ],

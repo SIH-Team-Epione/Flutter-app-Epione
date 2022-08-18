@@ -14,6 +14,7 @@ import 'package:quiz_app/screens/learn_more/further_read_mental.dart';
 import 'package:quiz_app/screens/learn_more/further_read_social.dart';
 import 'package:quiz_app/screens/learn_more/learn_time.dart';
 import 'package:quiz_app/screens/learn_more/social_health.dart';
+import 'package:quiz_app/screens/learn_more/time_techniques.dart';
 import 'package:quiz_app/screens/learn_more/work_health.dart';
 import 'package:quiz_app/screens/login_screen.dart';
 //importing mental health screens
@@ -45,7 +46,6 @@ import 'package:quiz_app/screens/social_health/connect_friends.dart';
 import 'package:quiz_app/screens/social_health/social_health_screen.dart';
 import 'package:quiz_app/screens/work_health/concentration_home.dart';
 import 'package:quiz_app/screens/work_health/pomodoro.dart';
-import 'package:quiz_app/screens/work_health/time_management.dart';
 import 'package:quiz_app/screens/work_health/work_health_screen.dart';
 
 import 'controllers/question_controller_phq.dart';
@@ -107,10 +107,10 @@ class MyApp extends StatelessWidget {
 
               '/work_health_home': (BuildContext context) => new WorkHealthScreen(),
               '/learn_more_work_health': (BuildContext context) => new LearnMoreWorkScreen(),
-              '/time_management_home': (BuildContext context) => new TimeHomeScreen(),
+              //'/time_management_home': (BuildContext context) => new TimeHomeScreen(),
+              '/learn_time': (BuildContext context) => new LearnTimeScreen(),
               '/pomodoro': (BuildContext context) => new PomodoroScreen(),
               '/concentration_home': (BuildContext context) => new ConcentrationHomeScreen(),
-              '/learn_time': (BuildContext context) => new LearnTimeScreen(),
               //'/learn_conc': (BuildContext context) => new LearnConcScreen(),
 
     },

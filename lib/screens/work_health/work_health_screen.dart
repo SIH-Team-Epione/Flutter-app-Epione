@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:quiz_app/constants.dart';
-import 'package:quiz_app/screens/mental_health/phq9_home.dart';
-import 'package:quiz_app/models/MentalHealthHome.dart';
+import 'package:quiz_app/models/WorkHealthHome.dart';
+
+import '../learn_more/time_techniques.dart';
 
 class WorkHealthScreen extends StatefulWidget {
   const WorkHealthScreen({Key? key}) : super(key: key);
@@ -34,7 +34,7 @@ class _WorkHealthScreenState extends State<WorkHealthScreen> {
               SizedBox(height: 20,),
               Container(
                 width: 350,
-                height: 120,
+                height: 250,
                 child: RaisedButton(
                   onPressed: (){
                     Navigator.pushNamed(context, '/learn_more_work_health');
@@ -54,7 +54,7 @@ class _WorkHealthScreenState extends State<WorkHealthScreen> {
                         vertical: 5,
                     ),
                     width: double.infinity,
-                    height: 90,
+                    height: 230,
                     decoration: BoxDecoration(
                       color: Color(307473),
                       borderRadius: BorderRadius.circular(60),
@@ -105,96 +105,93 @@ class _WorkHealthScreenState extends State<WorkHealthScreen> {
 
                     return InkWell(
                       onTap: () {
-                        Navigator.pushNamed(context, feature.nextScreenRoute);
+                        if(feature.id != 9 && feature.id != 8){
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) =>TimeTechScreen(id: feature.id),
+                            ),
+                          );
+                        }
+                        else {
+                          Navigator.pushNamed(context, feature.nextScreenRoute);
+                        }
                       },
                       highlightColor: Color(0xffe0f4f0),
                       child: Container(
                         margin: EdgeInsets.fromLTRB(20, 15, 20, 10),
-                        height: 170,
+                        height: 100,
                         decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(15),
-                          color: Colors.white,
-                          boxShadow: [BoxShadow(
-                            color: Colors.grey.shade200,
-                            blurRadius: 10,
-                            spreadRadius: 10,
-                          )]
+                            borderRadius: BorderRadius.circular(15),
+                            color: Colors.white,
+                            boxShadow: [BoxShadow(
+                              color: Colors.grey.shade200,
+                              blurRadius: 10,
+                              spreadRadius: 10,
+                            )]
                         ),
                         child: Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 5.0),
+                          padding: const EdgeInsets.symmetric(vertical: 0.0),
                           child: Row(
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: <Widget>[
                               Expanded(
-                                flex: 2,
+                                flex: 1,
                                 child: Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: Image.asset(
-                                    feature.urlImage,
-                                    fit: BoxFit.cover,
+                                  padding: const EdgeInsets.all(0.0),
+                                  child: ClipRRect(
+                                    borderRadius: BorderRadius.only(topLeft: Radius.circular(15), bottomLeft: Radius.circular(15)),
+                                    child: Image.asset(
+                                      feature.urlImage,
+                                      fit: BoxFit.cover,
+                                      height:170,
+                                    ),
                                   ),
                                 ),
                               ),
                               Expanded(
-                                flex: 3,
-                                child:
-                                Padding(
-                                  padding: const EdgeInsets.fromLTRB(10.0, 0.0, 20.0, 0.0),
-                                  child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: <Widget>[
-                                      Text(
-                                        feature.title,
-                                        style: const TextStyle(
-                                          fontWeight: FontWeight.w700,
-                                          fontSize: 14.0,
+                                  flex: 3,
+                                  child:
+                                  Padding(
+                                    padding: const EdgeInsets.fromLTRB(10.0, 0.0, 20.0, 0.0),
+                                    child: Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      mainAxisAlignment: MainAxisAlignment.center,
+                                      children: <Widget>[
+                                        Text(
+                                          feature.title,
+                                          style: const TextStyle(
+                                            fontWeight: FontWeight.w700,
+                                            fontSize: 14.0,
+                                          ),
                                         ),
-                                      ),
-                                      const Padding(padding: EdgeInsets.symmetric(vertical: 2.0)),
-                                      Text(
-                                        feature.description,
-                                        style: const TextStyle(fontSize: 10.0,
-                                        color: Color(0xff8e8e8e)),
-                                      ),
-                                      const Padding(padding: EdgeInsets.symmetric(vertical: 1.0)),
-                                      Container(
-                                        padding: EdgeInsets.all(5),
-                                        decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.circular(10),
-                                          color: Color(0xffe0f4f0)
+                                        const Padding(padding: EdgeInsets.symmetric(vertical: 2.0)),
+                                        // Text(
+                                        //   feature.description,
+                                        //   style: const TextStyle(fontSize: 10.0,
+                                        //       color: Color(0xff8e8e8e)),
+                                        // ),
+                                        // const Padding(padding: EdgeInsets.symmetric(vertical: 1.0)),
+                                        Container(
+                                          padding: EdgeInsets.all(5),
+                                          decoration: BoxDecoration(
+                                              borderRadius: BorderRadius.circular(10),
+                                              color: Color(0xffe0f4f0)
+                                          ),
+                                          child: Text(
+                                            feature.ageGroup,
+                                            style: const TextStyle(fontSize: 10.0),
+                                          ),
                                         ),
-                                        child: Text(
-                                          feature.ageGroup,
-                                          style: const TextStyle(fontSize: 10.0),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                )
+                                      ],
+                                    ),
+                                  )
                               ),
                             ],
                           ),
                         ),
                       ),
                     );
-
-                    // return Card(
-                    //   child: ListTile(
-                    //     leading: Container(
-                    //       height: 600,
-                    //       child: Image.asset(
-                    //         feature.urlImage,
-                    //         fit: BoxFit.cover,
-                    //         // height: 100,
-                    //         // width: 300,
-                    //       ),
-                    //     ),
-                    //     title: Text(feature.title),
-                    //     subtitle: Text(feature.description),
-                    //     trailing: const Icon(Icons.arrow_forward),
-                    //   ),
-                    // );
                   }
               )
             ],

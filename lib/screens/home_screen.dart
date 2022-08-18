@@ -32,7 +32,6 @@ class _HomeScreenState extends State<HomeScreen> {
       return (to.difference(from).inHours / 24).round();
     }
 
-
     void gotoDoctorsListPage(){
       Navigator.push(context, MaterialPageRoute(builder: (context) => DoctorConsultationScreen()));
     }
@@ -43,10 +42,6 @@ class _HomeScreenState extends State<HomeScreen> {
     print(difference);
 
     return Scaffold(
-      // appBar: AppBar(
-      //   title: Text("Home"),
-      //   centerTitle: true,
-      // ),
       body: Container(
         margin: EdgeInsets.only(top: 4),
         child: ListView(
