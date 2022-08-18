@@ -160,7 +160,7 @@ class _DoctorDetailsScreenState extends State<DoctorDetailsScreen> {
             final Email sendEmail = Email(
               body: 'body of email',
               subject: 'subject of email',
-              recipients: ['xpandeyed@gmail.com'],
+              recipients: [doctors[index].email],
               isHTML: false,
             );
 
