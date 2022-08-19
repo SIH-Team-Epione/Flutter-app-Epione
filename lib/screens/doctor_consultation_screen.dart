@@ -47,7 +47,7 @@ class _DoctorsListSectionState extends State<DoctorsListSection> {
             padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 5.0),
             child: _buildDoctorRow(index, context),
           ),
-          itemCount: 3,
+          itemCount: doctors.length,
         ),
       ),
     );
@@ -67,10 +67,19 @@ Widget _buildDoctorRow(int index, BuildContext context) {
     onTap: () {
       gotoDoctorDetailsPage(context);
     },
-    child: Card(
-      color: Colors.white,
-      elevation: 5.0,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15.0)),
+    child: Container(
+      margin: EdgeInsets.fromLTRB(10, 10, 10, 0),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(20.0),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.teal.shade50,
+            blurRadius: 10,
+            spreadRadius: 5,
+          )
+        ]
+      ),
       child: Padding(
         padding: EdgeInsets.all(10.0),
         child: Row(
@@ -79,7 +88,7 @@ Widget _buildDoctorRow(int index, BuildContext context) {
           children: [
             CircleAvatar(
               radius: 40,
-              backgroundImage: AssetImage('assets/images/user_image.png'),
+              backgroundImage: AssetImage(doctors[index].imagePath),
             ),
             Container(
               margin: EdgeInsets.fromLTRB(10.0, 0.0, 0.0, 0.0),

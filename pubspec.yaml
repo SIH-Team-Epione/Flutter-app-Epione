@@ -60,7 +60,9 @@ flutter:
   assets:
     - assets/icons/
     - assets/images/
+    - assets/images/cbt/
     - assets/svg/
+    - assets/images/doctors/
     - assets/credentials.json
   #   - images/a_dot_ham.jpeg
 

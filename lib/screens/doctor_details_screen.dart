@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_email_sender/flutter_email_sender.dart';
+import 'package:get/get.dart';
 import 'package:maps_launcher/maps_launcher.dart';
 import 'package:quiz_app/models/Doctors.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -20,14 +21,14 @@ class _DoctorDetailsScreenState extends State<DoctorDetailsScreen> {
       appBar: AppBar(
         title: Text("Doctor Details"),
       ),
-      body: Container(
+      body: SingleChildScrollView(
         child: Column(
           children: [
             Container(
               margin: EdgeInsets.fromLTRB(0.0, 20.0, 0.0, 0.0),
               child: CircleAvatar(
                 radius: 50,
-                backgroundImage: AssetImage('assets/images/user_image.png'),
+                backgroundImage: AssetImage(doctors[widget.index].imagePath),
               ),
             ),
             Container(
@@ -62,6 +63,10 @@ class _DoctorDetailsScreenState extends State<DoctorDetailsScreen> {
                         padding:
                             const EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 10.0),
                         child: Text("Specialisation"),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 10.0),
+                        child: Text("Education"),
                       )
                     ],
                   ),
@@ -80,7 +85,7 @@ class _DoctorDetailsScreenState extends State<DoctorDetailsScreen> {
                         padding:
                             const EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 10.0),
                         child: Text(
-                          doctors[widget.index].yearsOfExp.toString(),
+                          "${doctors[widget.index].yearsOfExp}",
                           style: TextStyle(fontWeight: FontWeight.bold),
                         ),
                       ),
@@ -91,6 +96,14 @@ class _DoctorDetailsScreenState extends State<DoctorDetailsScreen> {
                           doctors[widget.index].specialisation,
                           style: TextStyle(fontWeight: FontWeight.bold),
                         ),
+                      ),
+                      Padding(
+                        padding:
+                        const EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 10.0),
+                        child: Text(
+                          doctors[widget.index].education,
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
                       )
                     ],
                   )
@@ -98,13 +111,27 @@ class _DoctorDetailsScreenState extends State<DoctorDetailsScreen> {
               ),
             ),
             Container(
+              margin: EdgeInsets.fromLTRB(20.0, 0.0, 20.0, 10.0),
+              child: Text(
+                "About",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 16.0
+                ),
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.fromLTRB(20.0, 0.0, 20.0, 30.0),
+              child: Text(doctors[widget.index].about),
+            ),
+            Container(
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  _buildButtonColumn(Colors.green, Icons.call, 'Call', 0),
-                  _buildButtonColumn(Colors.green, Icons.mail, 'Email', 1),
-                  _buildButtonColumn(Colors.green, Icons.language, 'Website', 2),
-                  _buildButtonColumn(Colors.green, Icons.location_on, 'Map', 3),
+                  _buildButtonColumn(Colors.teal.shade900, Icons.call, 'Call', 0, widget.index),
+                  _buildButtonColumn(Colors.teal.shade900, Icons.mail, 'Email', 1, widget.index),
+                  _buildButtonColumn(Colors.teal.shade900, Icons.language, 'Website', 2, widget.index),
+                  _buildButtonColumn(Colors.teal.shade900, Icons.location_on, 'Map', 3, widget.index),
                 ],
               ),
             )
@@ -115,13 +142,13 @@ class _DoctorDetailsScreenState extends State<DoctorDetailsScreen> {
   }
 
   GestureDetector _buildButtonColumn(
-      Color color, IconData icon, String label, int position) {
+      Color color, IconData icon, String label, int position, int index) {
     Future<void> itemClickHandler(int position) async {
       switch (position) {
         case 0:
           {
             //call
-            final url = Uri.parse('tel://7055781339');
+            final url = Uri.parse('tel://${doctors[index].phone}');
             if (!await launchUrl(url, mode: LaunchMode.externalApplication)) {
               throw 'Could not launch';
             }
@@ -131,9 +158,9 @@ class _DoctorDetailsScreenState extends State<DoctorDetailsScreen> {
           {
             //send mail
             final Email sendEmail = Email(
-              body: 'body of email',
-              subject: 'subject of email',
-              recipients: ['xpandeyed@gmail.com'],
+              body: '',
+              subject: '',
+              recipients: [doctors[index].email],
               isHTML: false,
             );
 
@@ -143,7 +170,7 @@ class _DoctorDetailsScreenState extends State<DoctorDetailsScreen> {
         case 2:
           {
             //website
-            final url = Uri.parse('https://github.com');
+            final url = Uri.parse(doctors[index].website);
             if (!await launchUrl(url, mode: LaunchMode.externalApplication)) {
               throw 'Could not launch';
             }
@@ -153,8 +180,7 @@ class _DoctorDetailsScreenState extends State<DoctorDetailsScreen> {
         case 3:
           {
             //maps
-            MapsLauncher.launchCoordinates(
-                28.65495318711065, 77.23944576717803);
+            MapsLauncher.launchCoordinates(doctors[index].x_cor, doctors[index].y_cor, doctors[index].address);
             break;
           }
       }
@@ -164,23 +190,16 @@ class _DoctorDetailsScreenState extends State<DoctorDetailsScreen> {
       onTap: () {
         itemClickHandler(position);
       },
-      child: Padding(
-        padding: const EdgeInsets.all(8.0),
+      child: ClipRRect(
+        borderRadius: BorderRadius.all(Radius.circular(10)),
         child: Column(
-          mainAxisSize: MainAxisSize.min,
-          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(icon, color: color),
             Container(
-              margin: const EdgeInsets.only(top: 8),
-              child: Text(
-                label,
-                style: TextStyle(
-                  fontSize: 12,
-                  fontWeight: FontWeight.w400,
-                  color: color,
-                ),
+              decoration: BoxDecoration(
+                color: Colors.teal.shade100,
               ),
+              padding: EdgeInsets.all(12.0),
+              child: Icon(icon, size: 30, color: color,),
             ),
           ],
         ),
