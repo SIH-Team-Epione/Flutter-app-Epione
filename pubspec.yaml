@@ -38,6 +38,9 @@ dependencies:
   url_launcher: ^6.1.5
   map_launcher: ^2.2.3
   maps_launcher: ^2.0.1
+  sound_stream: ^0.3.0
+  dialogflow_grpc: ^0.2.9
+  rxdart: ^0.27.5
 
 dev_dependencies:
   flutter_test:
@@ -60,6 +63,7 @@ flutter:
     - assets/images/cbt/
     - assets/svg/
     - assets/images/doctors/
+    - assets/credentials.json
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
