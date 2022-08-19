@@ -262,7 +262,7 @@ class _ChatState extends State<Chat> {
                   ),
                   IconButton(
                     iconSize: 30.0,
-                    icon: Icon(_isRecording ? Icons.mic_off : Icons.mic),
+                    icon: Icon(_isRecording ? Icons.mic : Icons.mic_off),
                     onPressed: _isRecording ? stopStream : handleStream,
                   ),
                 ],
