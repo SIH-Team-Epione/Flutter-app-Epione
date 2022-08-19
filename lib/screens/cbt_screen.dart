@@ -78,9 +78,9 @@ Widget _buildCBTRow(int index, BuildContext context) {
             ],
           ),
           Container(
-            height: ((MediaQuery.of(context).size.width) / 16.0) * 6.0,
+            height: ((MediaQuery.of(context).size.width) / 16.0) * 9.0,
             width: MediaQuery.of(context).size.width,
-            decoration: BoxDecoration(color: Colors.deepOrange),
+            child: Image.asset('assets/images/cbt/Frame${index+1}.png'),
           ),
           Container(
             padding: EdgeInsets.all(15.0),
