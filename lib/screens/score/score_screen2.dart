@@ -3,7 +3,9 @@ import 'package:get/get.dart';
 import '../../controllers/question_controller_gad.dart';
 import 'package:quiz_app/controllers/question_controller_gad.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:quiz_app/models/ReportCategoriesPHQ.dart';
+import 'package:quiz_app/models/ReportCategoriesGAD.dart';
+
+import '../learn_more/time_techniques.dart';
 
 class ScoreScreen2 extends StatelessWidget {
   const ScoreScreen2({
@@ -30,7 +32,7 @@ class ScoreScreen2 extends StatelessWidget {
       catId=2;
       doc=true;
     }
-    else if(score>=15 && score<=19){
+    else if(score>=15 && score<=21){
       catId=3;
       doc=true;
     }
@@ -38,8 +40,6 @@ class ScoreScreen2 extends StatelessWidget {
       catId=4;
       doc=true;
     }
-
-    final double padding = 25;
 
     return Scaffold(
         backgroundColor: Colors.white,
@@ -350,6 +350,87 @@ class ScoreScreen2 extends StatelessWidget {
 
                                         return InkWell(
                                             onTap: () {
+                                              Navigator.pushNamed(context, feature.nextScreenRoute);
+                                            },
+                                            highlightColor: Color(0xffe0f4f0),
+                                            child: Container(
+                                              margin: EdgeInsets.fromLTRB(20, 15, 20, 10),
+                                              height: 90,
+                                              decoration: BoxDecoration(
+                                                  borderRadius: BorderRadius.circular(0),
+                                                  color: Colors.white,
+                                                  boxShadow: [BoxShadow(
+                                                    color: Colors.grey.shade200,
+                                                    blurRadius: 12,
+                                                    spreadRadius: 5,
+                                                  )]
+                                              ),
+                                              child: Padding(
+                                                padding: const EdgeInsets.symmetric(vertical: 0.0),
+                                                child: Row(
+                                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                                  children: <Widget>[
+                                                    Expanded(
+                                                      flex: 1,
+                                                      child: Padding(
+                                                        padding: const EdgeInsets.all(0.0),
+                                                        child: ClipRRect(
+                                                          borderRadius: BorderRadius.circular(50),
+                                                          child: Image.asset(
+                                                            feature.urlImage,
+                                                            fit: BoxFit.cover,
+                                                            height:80,
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ),
+                                                    Expanded(
+                                                        flex: 3,
+                                                        child:
+                                                        Padding(
+                                                          padding: const EdgeInsets.fromLTRB(10.0, 0.0, 20.0, 0.0),
+                                                          child: Column(
+                                                            crossAxisAlignment: CrossAxisAlignment.start,
+                                                            mainAxisAlignment: MainAxisAlignment.center,
+                                                            children: <Widget>[
+                                                              Text(
+                                                                feature.title,
+                                                                style: const TextStyle(
+                                                                  fontWeight: FontWeight.w700,
+                                                                  fontSize: 14.0,
+                                                                ),
+                                                              ),
+                                                              const Padding(padding: EdgeInsets.symmetric(vertical: 2.0)),
+                                                            ],
+                                                          ),
+                                                        )
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                            )
+                                        );
+                                      }
+                                  ),
+                                  ListView.builder(
+                                      physics: NeverScrollableScrollPhysics(),
+                                      shrinkWrap: true,
+                                      scrollDirection: Axis.vertical,
+                                      itemCount: catsList[catId].listWork.length,
+                                      itemBuilder: (context, index) {
+                                        final feature = catsList[catId].listWork[index];
+
+                                        return InkWell(
+                                            onTap: () {
+                                              if(feature.id != 9 && feature.id != 8){
+                                                Navigator.push(
+                                                  context,
+                                                  MaterialPageRoute(
+                                                    builder: (context) =>TimeTechScreen(id: feature.id),
+                                                  ),
+                                                );
+                                              }
+                                              else
                                               Navigator.pushNamed(context, feature.nextScreenRoute);
                                             },
                                             highlightColor: Color(0xffe0f4f0),
