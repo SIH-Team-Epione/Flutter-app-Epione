@@ -47,6 +47,9 @@ dependencies:
   font_awesome_flutter: ^10.1.0
   provider: ^6.0.3
   youtube_player_flutter: ^8.1.0
+  sound_stream: ^0.3.0
+  dialogflow_grpc: ^0.2.9
+  rxdart: ^0.27.5
 
 dev_dependencies:
   flutter_test:
@@ -66,7 +69,10 @@ flutter:
   assets:
     - assets/icons/
     - assets/images/
+    - assets/images/cbt/
     - assets/svg/
+    - assets/images/doctors/
+    - assets/credentials.json
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
