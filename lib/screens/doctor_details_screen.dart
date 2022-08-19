@@ -21,7 +21,7 @@ class _DoctorDetailsScreenState extends State<DoctorDetailsScreen> {
       appBar: AppBar(
         title: Text("Doctor Details"),
       ),
-      body: Container(
+      body: SingleChildScrollView(
         child: Column(
           children: [
             Container(
@@ -85,7 +85,7 @@ class _DoctorDetailsScreenState extends State<DoctorDetailsScreen> {
                         padding:
                             const EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 10.0),
                         child: Text(
-                          doctors[widget.index].yearsOfExp.toString(),
+                          "${doctors[widget.index].yearsOfExp}",
                           style: TextStyle(fontWeight: FontWeight.bold),
                         ),
                       ),
@@ -158,8 +158,8 @@ class _DoctorDetailsScreenState extends State<DoctorDetailsScreen> {
           {
             //send mail
             final Email sendEmail = Email(
-              body: 'body of email',
-              subject: 'subject of email',
+              body: '',
+              subject: '',
               recipients: [doctors[index].email],
               isHTML: false,
             );
