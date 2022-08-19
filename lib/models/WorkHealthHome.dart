@@ -1,4 +1,4 @@
-// physical health home page data
+// work health home page data
 class Feature {
   final int id;
   final String title;
