@@ -125,6 +125,7 @@ class _DoctorDetailsScreenState extends State<DoctorDetailsScreen> {
               child: Text(doctors[widget.index].about),
             ),
             Container(
+              padding: EdgeInsets.only(bottom: 20.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
