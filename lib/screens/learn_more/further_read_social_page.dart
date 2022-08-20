@@ -100,7 +100,7 @@ class _FurtherReadSocialScreenState extends State<FurtherReadSocialScreen> {
   }
 }
 
-//index == 0 means diagnosis and treatment
+//index == 0 means dimensions
 List<Widget> list0 = [
   const SizedBox(height: 30.0),
   Text("Dimensions".toUpperCase(), style: TextStyle(
@@ -131,7 +131,7 @@ List<Widget> list0 = [
   const SizedBox(height: 20.0),
 ];
 
-//index == 1 means relevance for students
+//index == 1 means strategies
 List<Widget> list1 = [
   const SizedBox(height: 30.0),
   Text("Why is it important for students?".toUpperCase(), style: TextStyle(
@@ -162,7 +162,7 @@ List<Widget> list1 = [
   const SizedBox(height: 20.0),
 ];
 
-//index == 2 early warning signs
+//index == 2 signs
 List<Widget> list2 = [
   const SizedBox(height: 30.0),
   Text("Why is it important for students?".toUpperCase(), style: TextStyle(
@@ -193,7 +193,7 @@ List<Widget> list2 = [
   const SizedBox(height: 20.0),
 ];
 
-//index == 3 myth vs fact
+//index == 3 emotional
 List<Widget> list3 = [
   const SizedBox(height: 30.0),
   Text("Why is it important for students?".toUpperCase(), style: TextStyle(
@@ -224,126 +224,3 @@ List<Widget> list3 = [
   const SizedBox(height: 20.0),
 ];
 
-//index == 4 suicide prevention
-List<Widget> list4 = [
-  const SizedBox(height: 30.0),
-  Text("Why is it important for students?".toUpperCase(), style: TextStyle(
-      fontWeight: FontWeight.w600,
-      fontSize: 14.0
-  ),),
-  const SizedBox(height: 10.0),
-  Text(
-    "There has been researches that show the positive correlation between being physically active and improving as a student. Being a young student means you have a lot of potentials to be able to develop new hobbies that can benefit your fitness. It can be anything like running, skipping, or doing yoga. Exercising at least four times a week increases your metabolic rate which reduces the risk of cardiovascular diseases in the future which is just one of the numerous benefits.",
-    textAlign: TextAlign.justify, style: TextStyle(
-      fontWeight: FontWeight.w300,
-      fontSize: 14.0
-  ),),
-  const SizedBox(height: 10.0),
-  Text(
-    "Being physically fit doesn’t require you have a strict schedule, but just have enough discipline to repeat it regularly. This aspect of self-care directly impacts all others and hence we encourage evryone user to actively utilize the features within this track!",
-    textAlign: TextAlign.justify, style: TextStyle(
-      fontWeight: FontWeight.w300,
-      fontSize: 14.0
-  ),),
-  const SizedBox(height: 10.0),
-  Text(
-    "Having an enthusiastic and active lifestyle overhauls your personality. It lets you perform physical activities without being tired or restless. It also ensures that you are mentally fit and stress-free. So here is your cue to embark on your fitness journey while starting your journey with Epione",
-    textAlign: TextAlign.justify, style: TextStyle(
-      fontWeight: FontWeight.w300,
-      fontSize: 14.0
-  ),),
-  const SizedBox(height: 20.0),
-];
-
-//index == 5 types
-List<Widget> list5 = [
-  const SizedBox(height: 30.0),
-  Text("Why is it important for students?".toUpperCase(), style: TextStyle(
-      fontWeight: FontWeight.w600,
-      fontSize: 14.0
-  ),),
-  const SizedBox(height: 10.0),
-  Text(
-    "There has been researches that show the positive correlation between being physically active and improving as a student. Being a young student means you have a lot of potentials to be able to develop new hobbies that can benefit your fitness. It can be anything like running, skipping, or doing yoga. Exercising at least four times a week increases your metabolic rate which reduces the risk of cardiovascular diseases in the future which is just one of the numerous benefits.",
-    textAlign: TextAlign.justify, style: TextStyle(
-      fontWeight: FontWeight.w300,
-      fontSize: 14.0
-  ),),
-  const SizedBox(height: 10.0),
-  Text(
-    "Being physically fit doesn’t require you have a strict schedule, but just have enough discipline to repeat it regularly. This aspect of self-care directly impacts all others and hence we encourage evryone user to actively utilize the features within this track!",
-    textAlign: TextAlign.justify, style: TextStyle(
-      fontWeight: FontWeight.w300,
-      fontSize: 14.0
-  ),),
-  const SizedBox(height: 10.0),
-  Text(
-    "Having an enthusiastic and active lifestyle overhauls your personality. It lets you perform physical activities without being tired or restless. It also ensures that you are mentally fit and stress-free. So here is your cue to embark on your fitness journey while starting your journey with Epione",
-    textAlign: TextAlign.justify, style: TextStyle(
-      fontWeight: FontWeight.w300,
-      fontSize: 14.0
-  ),),
-  const SizedBox(height: 20.0),
-];
-
-//index == 6 meditation
-List<Widget> list6 = [
-  const SizedBox(height: 30.0),
-  Text("Why is it important for students?".toUpperCase(), style: TextStyle(
-      fontWeight: FontWeight.w600,
-      fontSize: 14.0
-  ),),
-  const SizedBox(height: 10.0),
-  Text(
-    "There has been researches that show the positive correlation between being physically active and improving as a student. Being a young student means you have a lot of potentials to be able to develop new hobbies that can benefit your fitness. It can be anything like running, skipping, or doing yoga. Exercising at least four times a week increases your metabolic rate which reduces the risk of cardiovascular diseases in the future which is just one of the numerous benefits.",
-    textAlign: TextAlign.justify, style: TextStyle(
-      fontWeight: FontWeight.w300,
-      fontSize: 14.0
-  ),),
-  const SizedBox(height: 10.0),
-  Text(
-    "Being physically fit doesn’t require you have a strict schedule, but just have enough discipline to repeat it regularly. This aspect of self-care directly impacts all others and hence we encourage evryone user to actively utilize the features within this track!",
-    textAlign: TextAlign.justify, style: TextStyle(
-      fontWeight: FontWeight.w300,
-      fontSize: 14.0
-  ),),
-  const SizedBox(height: 10.0),
-  Text(
-    "Having an enthusiastic and active lifestyle overhauls your personality. It lets you perform physical activities without being tired or restless. It also ensures that you are mentally fit and stress-free. So here is your cue to embark on your fitness journey while starting your journey with Epione",
-    textAlign: TextAlign.justify, style: TextStyle(
-      fontWeight: FontWeight.w300,
-      fontSize: 14.0
-  ),),
-  const SizedBox(height: 20.0),
-];
-
-//index == 7 mindfulness
-List<Widget> list7 = [
-  const SizedBox(height: 30.0),
-  Text("Why is it important for students?".toUpperCase(), style: TextStyle(
-      fontWeight: FontWeight.w600,
-      fontSize: 14.0
-  ),),
-  const SizedBox(height: 10.0),
-  Text(
-    "There has been researches that show the positive correlation between being physically active and improving as a student. Being a young student means you have a lot of potentials to be able to develop new hobbies that can benefit your fitness. It can be anything like running, skipping, or doing yoga. Exercising at least four times a week increases your metabolic rate which reduces the risk of cardiovascular diseases in the future which is just one of the numerous benefits.",
-    textAlign: TextAlign.justify, style: TextStyle(
-      fontWeight: FontWeight.w300,
-      fontSize: 14.0
-  ),),
-  const SizedBox(height: 10.0),
-  Text(
-    "Being physically fit doesn’t require you have a strict schedule, but just have enough discipline to repeat it regularly. This aspect of self-care directly impacts all others and hence we encourage evryone user to actively utilize the features within this track!",
-    textAlign: TextAlign.justify, style: TextStyle(
-      fontWeight: FontWeight.w300,
-      fontSize: 14.0
-  ),),
-  const SizedBox(height: 10.0),
-  Text(
-    "Having an enthusiastic and active lifestyle overhauls your personality. It lets you perform physical activities without being tired or restless. It also ensures that you are mentally fit and stress-free. So here is your cue to embark on your fitness journey while starting your journey with Epione",
-    textAlign: TextAlign.justify, style: TextStyle(
-      fontWeight: FontWeight.w300,
-      fontSize: 14.0
-  ),),
-  const SizedBox(height: 20.0),
-];
