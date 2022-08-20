@@ -103,32 +103,30 @@ class _FurtherReadScreenState extends State<FurtherReadScreen> {
 //index == 0 means diagnosis and treatment
 List<Widget> list0 = [
   const SizedBox(height: 30.0),
-  Text("Why is it important for students?".toUpperCase(), style: TextStyle(
+  Text("Diagnosis".toUpperCase(), style: TextStyle(
       fontWeight: FontWeight.w600,
       fontSize: 14.0
   ),),
   const SizedBox(height: 10.0),
   Text(
-    "There has been researches that show the positive correlation between being physically active and improving as a student. Being a young student means you have a lot of potentials to be able to develop new hobbies that can benefit your fitness. It can be anything like running, skipping, or doing yoga. Exercising at least four times a week increases your metabolic rate which reduces the risk of cardiovascular diseases in the future which is just one of the numerous benefits.",
+    "To determine a diagnosis and check for related complications, you may have:\n\nA physical exam: Your doctor will try to rule out physical problems that could cause your symptoms.\n\nLab tests: These may include, for example, a check of your thyroid function or a screening for alcohol and drugs.\n\nA psychological evaluation: A doctor or mental health professional talks to you about your symptoms, thoughts, feelings and behavior patterns. You may be asked to fill out a questionnaire to help answer these questions.",
     textAlign: TextAlign.justify, style: TextStyle(
       fontWeight: FontWeight.w300,
       fontSize: 14.0
   ),),
   const SizedBox(height: 10.0),
+  Text("Treatment".toUpperCase(), style: TextStyle(
+      fontWeight: FontWeight.w600,
+      fontSize: 14.0
+  ),),
+  const SizedBox(height: 10.0),
   Text(
-    "Being physically fit doesn’t require you have a strict schedule, but just have enough discipline to repeat it regularly. This aspect of self-care directly impacts all others and hence we encourage evryone user to actively utilize the features within this track!",
+    "Your treatment depends on the type of mental illness you have, its severity and what works best for you. In many cases, a combination of treatments works best. If you have a mild mental illness with well-controlled symptoms, treatment from your primary care provider may be sufficient. However, often a team approach is appropriate to make sure all your psychiatric, medical and social needs are met. This is especially important for severe mental illnesses, such as schizophrenia.",
     textAlign: TextAlign.justify, style: TextStyle(
       fontWeight: FontWeight.w300,
       fontSize: 14.0
   ),),
   const SizedBox(height: 10.0),
-  Text(
-    "Having an enthusiastic and active lifestyle overhauls your personality. It lets you perform physical activities without being tired or restless. It also ensures that you are mentally fit and stress-free. So here is your cue to embark on your fitness journey while starting your journey with Epione",
-    textAlign: TextAlign.justify, style: TextStyle(
-      fontWeight: FontWeight.w300,
-      fontSize: 14.0
-  ),),
-  const SizedBox(height: 20.0),
 ];
 
 //index == 1 means relevance for students
