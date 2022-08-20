@@ -209,7 +209,7 @@ List<Widget> list3 = [
   ),),
   const SizedBox(height: 10.0),
   Text(
-    "Being physically fit doesn’t require you have a strict schedule, but just have enough discipline to repeat it regularly. This aspect of self-care directly impacts all others and hence we encourage evryone user to actively utilize the features within this track!",
+    "Being physically fit doesn’t require you have a strict schedule, but just have enough discipline to repeat it regularly. This aspect of self-care directly impacts all others and hence we encourage everyone user to actively utilize the features within this track!",
     textAlign: TextAlign.justify, style: TextStyle(
       fontWeight: FontWeight.w300,
       fontSize: 14.0

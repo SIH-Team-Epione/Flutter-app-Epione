@@ -5,7 +5,7 @@ import 'package:quiz_app/controllers/question_controller_gad.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:quiz_app/models/ReportCategoriesGAD.dart';
 
-import '../learn_more/time_techniques.dart';
+import '../work_health/time_techniques.dart';
 
 class ScoreScreen2 extends StatelessWidget {
   const ScoreScreen2({
