@@ -162,30 +162,59 @@ List<Widget> list1 = [
 
 //index == 2 early warning signs
 List<Widget> list2 = [
-  const SizedBox(height: 30.0),
-  Text("Why is it important for students?".toUpperCase(), style: TextStyle(
+  const SizedBox(height: 20.0),
+  Text("Eating or sleeping too much or too little", style: TextStyle(
       fontWeight: FontWeight.w600,
       fontSize: 14.0
   ),),
-  const SizedBox(height: 10.0),
-  Text(
-    "There has been researches that show the positive correlation between being physically active and improving as a student. Being a young student means you have a lot of potentials to be able to develop new hobbies that can benefit your fitness. It can be anything like running, skipping, or doing yoga. Exercising at least four times a week increases your metabolic rate which reduces the risk of cardiovascular diseases in the future which is just one of the numerous benefits.",
-    textAlign: TextAlign.justify, style: TextStyle(
-      fontWeight: FontWeight.w300,
+  const SizedBox(height: 20.0),
+  Text("Pulling away from people and usual activities", style: TextStyle(
+      fontWeight: FontWeight.w600,
       fontSize: 14.0
   ),),
-  const SizedBox(height: 10.0),
-  Text(
-    "Being physically fit doesn’t require you have a strict schedule, but just have enough discipline to repeat it regularly. This aspect of self-care directly impacts all others and hence we encourage evryone user to actively utilize the features within this track!",
-    textAlign: TextAlign.justify, style: TextStyle(
-      fontWeight: FontWeight.w300,
+  const SizedBox(height: 20.0),
+  Text("Feeling numb or like nothing matters.", style: TextStyle(
+      fontWeight: FontWeight.w600,
       fontSize: 14.0
   ),),
-  const SizedBox(height: 10.0),
-  Text(
-    "Having an enthusiastic and active lifestyle overhauls your personality. It lets you perform physical activities without being tired or restless. It also ensures that you are mentally fit and stress-free. So here is your cue to embark on your fitness journey while starting your journey with Epione",
-    textAlign: TextAlign.justify, style: TextStyle(
-      fontWeight: FontWeight.w300,
+  const SizedBox(height: 20.0),
+  Text("Having unexplained aches and pains.", style: TextStyle(
+      fontWeight: FontWeight.w600,
+      fontSize: 14.0
+  ),),
+  const SizedBox(height: 20.0),
+  Text("Feeling helpless or hopeless.", style: TextStyle(
+      fontWeight: FontWeight.w600,
+      fontSize: 14.0
+  ),),
+  const SizedBox(height: 20.0),
+  Text("Smoking, drinking, or using drugs more than usual", style: TextStyle(
+      fontWeight: FontWeight.w600,
+      fontSize: 14.0
+  ),),
+  const SizedBox(height: 20.0),
+  Text("Feeling unusually confused, forgetful, on edge, angry, upset, worried, or scared", style: TextStyle(
+      fontWeight: FontWeight.w600,
+      fontSize: 14.0
+  ),),
+  const SizedBox(height: 20.0),
+  Text("Yelling or fighting with family and friends", style: TextStyle(
+      fontWeight: FontWeight.w600,
+      fontSize: 14.0
+  ),),
+  const SizedBox(height: 20.0),
+  Text("Experiencing severe mood swings that cause problems in relationships", style: TextStyle(
+      fontWeight: FontWeight.w600,
+      fontSize: 14.0
+  ),),
+  const SizedBox(height: 20.0),
+  Text("Having persistent thoughts and memories you can't get out of your head", style: TextStyle(
+      fontWeight: FontWeight.w600,
+      fontSize: 14.0
+  ),),
+  const SizedBox(height: 20.0),
+  Text("Hearing voices or believing things that are not true.", style: TextStyle(
+      fontWeight: FontWeight.w600,
       fontSize: 14.0
   ),),
   const SizedBox(height: 20.0),
