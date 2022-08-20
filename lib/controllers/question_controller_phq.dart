@@ -5,28 +5,29 @@ import 'package:quiz_app/models/Questions.dart';
 import 'package:quiz_app/screens/score/score_screen.dart';
 
 // We use get package for our state management
-
 class QuestionController extends GetxController
     with SingleGetTickerProviderMixin {
   // Lets animated our progress bar
 
   late AnimationController _animationController;
   late Animation _animation;
+
   // so that we can access our animation outside
   Animation get animation => this._animation;
 
   late PageController _pageController;
   PageController get pageController => this._pageController;
+  //static get quizNum => null;
 
-  List<Question> _questions = sample_data
-      .map(
+  List<Question> _questions =  sample_data.map(
         (question) => Question(
             id: question['id'],
             question: question['question'],
             options: question['options'],
             answer: question['answer_index']),
-      )
-      .toList();
+      ).toList();
+
+
   List<Question> get questions => this._questions;
 
   bool _isAnswered = false;
@@ -84,7 +85,7 @@ class QuestionController extends GetxController
     //_correctAns = question.answer;
     _selectedAns = selectedIndex;
     //print('correct ans = ${question.answer}');
-    print('sel index = ${_selectedAns}');
+    print('sel index = $_selectedAns');
 
     _numOfCorrectAns += _selectedAns;
     print('num correct ans = ${_numOfCorrectAns}');

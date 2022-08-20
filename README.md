@@ -38,6 +38,20 @@ A cross platform flutter mobile application to promote self care among students 
 
 ### UI
 - **Fonts**
+<<<<<<< HEAD
+    - Montserrat 
+    - PlayfairDisplay (Google fonts)(Only for few headings)
+- **Color scheme**
+    - Dark green: #307473 ![img.png](img.png)
+    - Light green: #e0f4f0 ![img_1.png](img_1.png)
+    - Light pink: #f6d6d7 ![img_2.png](img_2.png)
+    - Light grey: #fafafa ![img_3.png](img_3.png)
+    - Dark grey: #bdbdbd ![img_4.png](img_4.png)
+    - Lighter black: #293241 ![img_5.png](img_5.png)
+    - Yellow: #febd40 ![img_6.png](img_6.png)
+- **Text Style**
+  - Heading: 
+=======
   - Montserrat
   - PlayfairDisplay (Google fonts)(Only for few headings)
 - **Color scheme**
@@ -50,12 +64,18 @@ A cross platform flutter mobile application to promote self care among students 
   - Yellow: #febd40 ![img_6.png](/img_6.png)
 - **Text Style**
   - Heading:
+>>>>>>> origin/develop
     fontWeight: FontWeight.w700,
     color: Colors.black
   - Paragraphs:
     color: Color(0xff8e8e8e)
+<<<<<<< HEAD
+  - Pills: ![img_7.png](img_7.png)
+    
+=======
   - Pills: ![img_7.png](/img_7.png)
 
+>>>>>>> origin/develop
     ```
     Container(
       padding: EdgeInsets.all(5),
@@ -70,10 +90,13 @@ A cross platform flutter mobile application to promote self care among students 
     ),
     ```
     
+<<<<<<< HEAD
+=======
 ### Packages
 -
 -
 
 ### Screenshots
+>>>>>>> origin/develop
 
 ![App UI](/ui.PNG)
