@@ -59,7 +59,7 @@ List<Feature> featuresList = [
       description: 'Meditation can give you a sense of calm, peace and balance that can benefit both your emotional well-being and your overall health. You can also use it to relax and cope with stress by refocusing your attention on something calming.',
       urlImage: 'assets/images/meditation_list_image.jpg',
     ageGroup: '15 above',
-      nextScreenRoute: 'meditation_home',
+      nextScreenRoute: '/meditation_home',
   ),
   const Feature(
       id: 5,
@@ -67,6 +67,6 @@ List<Feature> featuresList = [
       description: 'Mindfulness is a technique by which you can learn to be fully present and engaged in the moment without judging anything. It can help you manage your thoughts, feelings and mental health.',
       urlImage: 'assets/images/mindfulness_list_image.jpg',
     ageGroup: '15 above',
-      nextScreenRoute: 'mindfulness_home',
+      nextScreenRoute: '/mindfulness_home',
   )
 ];

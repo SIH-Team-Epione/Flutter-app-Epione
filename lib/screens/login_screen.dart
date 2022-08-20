@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:provider/provider.dart';
+import 'package:quiz_app/screens/google_sign_in.dart';
 import 'package:quiz_app/screens/signup_screen.dart';
+import 'package:quiz_app/screens/google_sign_in.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({key}) : super(key: key);
@@ -39,7 +43,6 @@ class _LoginScreenState extends State<LoginScreen> {
       ),
     );
 
-
     final passwordField = TextFormField(
       autofocus: false,
       controller: passwordController,
@@ -72,8 +75,6 @@ class _LoginScreenState extends State<LoginScreen> {
         textAlign: TextAlign.center,
           style: TextStyle(fontSize: 20,
           color: Colors.white, fontWeight: FontWeight.bold),
-
-
         ),
       )
     );
@@ -97,14 +98,27 @@ class _LoginScreenState extends State<LoginScreen> {
                       child: Image.asset("assets/icons/logo_sample.png", fit: BoxFit.contain,),
                     ),
                     SizedBox(height: 45,),
-
-                    emailField,
-                    SizedBox(height: 25,),
-
-                    passwordField,
-                    SizedBox(height: 35,),
-
-                    loginButton,
+                    //
+                    // emailField,
+                    // SizedBox(height: 25,),
+                    //
+                    // passwordField,
+                    // SizedBox(height: 35,),
+                    //
+                    // Spacer(),
+                    ElevatedButton.icon(
+                      style: ElevatedButton.styleFrom(
+                        primary: Colors.white,
+                        onPrimary: Colors.black,
+                        minimumSize: Size(double.infinity, 50),
+                      ),
+                        onPressed: (){
+                          final provider = Provider.of<GoogleSignInProvider>(context, listen: false);
+                          provider.googleLogIn();
+                        },
+                        icon: FaIcon(FontAwesomeIcons.google, color: Colors.red),
+                        label: Text('Sign Up with Google')
+                    ),
                     SizedBox(height: 15,),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,

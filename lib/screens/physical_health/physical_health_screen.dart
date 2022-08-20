@@ -1,17 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:quiz_app/constants.dart';
-import 'package:quiz_app/screens/welcome/welcome_screen.dart';
-import 'package:quiz_app/models/MentalHealthHome.dart';
+import 'package:quiz_app/models/PhysicalHealthHome.dart';
 
-class MentalHealthScreen extends StatefulWidget {
-  const MentalHealthScreen({Key? key}) : super(key: key);
+class PhysicalHealthScreen extends StatefulWidget {
+  const PhysicalHealthScreen({Key? key}) : super(key: key);
 
   @override
-  State<MentalHealthScreen> createState() => _MentalHealthScreenState();
+  State<PhysicalHealthScreen> createState() => _PhysicalHealthScreenState();
 }
 
-class _MentalHealthScreenState extends State<MentalHealthScreen> {
+class _PhysicalHealthScreenState extends State<PhysicalHealthScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,14 +36,13 @@ class _MentalHealthScreenState extends State<MentalHealthScreen> {
                 height: 120,
                 child: RaisedButton(
                   onPressed: (){
-                    Navigator.pushNamed(context, '/learn_more_mental_health');
+                    Navigator.pushNamed(context, '/learn_more_physical_health');
                   },
                   highlightColor: Colors.greenAccent.withOpacity(0.3),
                   shape: new RoundedRectangleBorder(
                     borderRadius: new BorderRadius.circular(20.0),
                   ),
                   color: Color(0xff307473),
-                  //0xfff3dbdd,
                   child: Container(
                     margin: EdgeInsets.symmetric(
                         horizontal: 20
@@ -121,17 +119,21 @@ class _MentalHealthScreenState extends State<MentalHealthScreen> {
                           )]
                         ),
                         child: Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 5.0),
+                          padding: const EdgeInsets.symmetric(vertical: 0.0),
                           child: Row(
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: <Widget>[
                               Expanded(
                                 flex: 2,
                                 child: Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: Image.asset(
-                                    feature.urlImage,
-                                    fit: BoxFit.cover,
+                                  padding: const EdgeInsets.all(0.0),
+                                  child: ClipRRect(
+                                    borderRadius: BorderRadius.only(topLeft: Radius.circular(15), bottomLeft: Radius.circular(15)),
+                                    child: Image.asset(
+                                      feature.urlImage,
+                                      fit: BoxFit.cover,
+                                      height:170,
+                                    ),
                                   ),
                                 ),
                               ),
@@ -178,23 +180,6 @@ class _MentalHealthScreenState extends State<MentalHealthScreen> {
                         ),
                       ),
                     );
-
-                    // return Card(
-                    //   child: ListTile(
-                    //     leading: Container(
-                    //       height: 600,
-                    //       child: Image.asset(
-                    //         feature.urlImage,
-                    //         fit: BoxFit.cover,
-                    //         // height: 100,
-                    //         // width: 300,
-                    //       ),
-                    //     ),
-                    //     title: Text(feature.title),
-                    //     subtitle: Text(feature.description),
-                    //     trailing: const Icon(Icons.arrow_forward),
-                    //   ),
-                    // );
                   }
               )
             ],

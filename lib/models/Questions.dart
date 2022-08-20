@@ -63,3 +63,50 @@ const List sample_data = [
     "answer_index": 2,
   },
 ];
+
+const List sample_data2 = [
+  {
+    "id": 1,
+    "question":
+    "Feeling nervous, anxious or on edge?",
+    "options": ['Not at all', 'Several Days', 'More than half the days', 'Nearly everyday'],
+    "answer_index": 1,
+  },
+  {
+    "id": 2,
+    "question": "Feeling down, depressed or hopeless",
+    "options":['Not at all', 'Several Days', 'More than half the days', 'Nearly everyday'],
+    "answer_index": 2,
+  },
+  {
+    "id": 3,
+    "question": "Worrying too much about different things?",
+    "options": ['Not at all', 'Several Days', 'More than half the days', 'Nearly everyday'],
+    "answer_index": 2,
+  },
+  {
+    "id": 4,
+    "question": "Trouble relaxing?",
+    "options": ['Not at all', 'Several Days', 'More than half the days', 'Nearly everyday'],
+    "answer_index": 2,
+  },
+  {
+    "id": 5,
+    "question": "Being so restless that it is hard to sit still?",
+    "options": ['Not at all', 'Several Days', 'More than half the days', 'Nearly everyday'],
+    "answer_index": 2,
+  },
+  {
+    "id": 6,
+    "question": "Becoming easily annoyed or irritable?",
+    "options": ['Not at all', 'Several Days', 'More than half the days', 'Nearly everyday'],
+    "answer_index": 2,
+  },
+  {
+    "id": 7,
+    "question": "Feeling afraid as if something awful might happen?",
+    "options": ['Not at all', 'Several Days', 'More than half the days', 'Nearly everyday'],
+    "answer_index": 2,
+  },
+
+];
