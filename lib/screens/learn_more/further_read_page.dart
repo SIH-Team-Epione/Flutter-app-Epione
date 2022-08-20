@@ -516,31 +516,58 @@ List<Widget> list6 = [
 
 //index == 7 mindfulness
 List<Widget> list7 = [
-  const SizedBox(height: 30.0),
-  Text("Why is it important for students?".toUpperCase(), style: TextStyle(
-      fontWeight: FontWeight.w600,
-      fontSize: 14.0
-  ),),
-  const SizedBox(height: 10.0),
   Text(
-    "There has been researches that show the positive correlation between being physically active and improving as a student. Being a young student means you have a lot of potentials to be able to develop new hobbies that can benefit your fitness. It can be anything like running, skipping, or doing yoga. Exercising at least four times a week increases your metabolic rate which reduces the risk of cardiovascular diseases in the future which is just one of the numerous benefits.",
-    textAlign: TextAlign.justify, style: TextStyle(
-      fontWeight: FontWeight.w300,
-      fontSize: 14.0
-  ),),
-  const SizedBox(height: 10.0),
-  Text(
-    "Being physically fit doesn’t require you have a strict schedule, but just have enough discipline to repeat it regularly. This aspect of self-care directly impacts all others and hence we encourage evryone user to actively utilize the features within this track!",
-    textAlign: TextAlign.justify, style: TextStyle(
-      fontWeight: FontWeight.w300,
-      fontSize: 14.0
-  ),),
-  const SizedBox(height: 10.0),
-  Text(
-    "Having an enthusiastic and active lifestyle overhauls your personality. It lets you perform physical activities without being tired or restless. It also ensures that you are mentally fit and stress-free. So here is your cue to embark on your fitness journey while starting your journey with Epione",
+    "Mindfulness involves focusing your awareness on the present moment. It means paying attention to your sensations, feelings, thoughts, and environment in the here-and-now with an attitude of acceptance. Some of the potential benefits of mindfulness include lowering stress, decreasing depression, improving memory, and strengthening your relationships, among other things.",
     textAlign: TextAlign.justify, style: TextStyle(
       fontWeight: FontWeight.w300,
       fontSize: 14.0
   ),),
   const SizedBox(height: 20.0),
+  Text("Decreased Depression", style: TextStyle(
+      fontWeight: FontWeight.w600,
+      fontSize: 14.0
+  ),),
+  const SizedBox(height: 10.0),
+  Text(
+    "Reduced depression is one of the important benefits of mindfulness. It can help relieve symptoms of depression and may help prevent these symptoms from returning in the future.",
+    textAlign: TextAlign.justify, style: TextStyle(
+      fontWeight: FontWeight.w300,
+      fontSize: 14.0
+  ),),
+  const SizedBox(height: 20.0),
+  Text("Increased Emotional Regulation", style: TextStyle(
+      fontWeight: FontWeight.w600,
+      fontSize: 14.0
+  ),),
+  const SizedBox(height: 10.0),
+  Text(
+    "Another potential benefit of mindfulness is that the practice may help you identify and manage your feelings. Emotional regulation refers to your ability to exert control over your own emotions. This means being able to both enhance or reign in emotions depending on the situation and need.",
+    textAlign: TextAlign.justify, style: TextStyle(
+      fontWeight: FontWeight.w300,
+      fontSize: 14.0
+  ),),
+  const SizedBox(height: 20.0),
+  Text("Reduced Anxiety and Stress", style: TextStyle(
+      fontWeight: FontWeight.w600,
+      fontSize: 14.0
+  ),),
+  const SizedBox(height: 10.0),
+  Text(
+    "Chronic stress is a significant problem for many adults that can contribute to a variety of health problems, including an increased risk of depression and anxiety. According to the American Psychological Association, mindfulness can be helpful for soothing feelings of anxiety and stress.",
+    textAlign: TextAlign.justify, style: TextStyle(
+      fontWeight: FontWeight.w300,
+      fontSize: 14.0
+  ),),
+  const SizedBox(height: 20.0),
+  Text("Better Memory", style: TextStyle(
+      fontWeight: FontWeight.w600,
+      fontSize: 14.0
+  ),),
+  const SizedBox(height: 10.0),
+  Text(
+    "Mindfulness may also have potential as a way to boost your memory. If you’ve ever forgotten an important meeting or misplaced your car keys, then you know that even simple, everyday memory problems can be a major hassle. Many of these moments of forgetfulness are caused by something known as proactive interference, where older memories interfere with your ability to access newer ones.",
+    textAlign: TextAlign.justify, style: TextStyle(
+      fontWeight: FontWeight.w300,
+      fontSize: 14.0
+  ),),
 ];
