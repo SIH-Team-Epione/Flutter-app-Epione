@@ -359,32 +359,48 @@ List<Widget> list3 = [
 //index == 4 suicide prevention
 List<Widget> list4 = [
   const SizedBox(height: 30.0),
-  Text("Why is it important for students?".toUpperCase(), style: TextStyle(
-      fontWeight: FontWeight.w600,
-      fontSize: 14.0
-  ),),
-  const SizedBox(height: 10.0),
   Text(
-    "There has been researches that show the positive correlation between being physically active and improving as a student. Being a young student means you have a lot of potentials to be able to develop new hobbies that can benefit your fitness. It can be anything like running, skipping, or doing yoga. Exercising at least four times a week increases your metabolic rate which reduces the risk of cardiovascular diseases in the future which is just one of the numerous benefits.",
-    textAlign: TextAlign.justify, style: TextStyle(
-      fontWeight: FontWeight.w300,
-      fontSize: 14.0
-  ),),
-  const SizedBox(height: 10.0),
-  Text(
-    "Being physically fit doesn’t require you have a strict schedule, but just have enough discipline to repeat it regularly. This aspect of self-care directly impacts all others and hence we encourage evryone user to actively utilize the features within this track!",
-    textAlign: TextAlign.justify, style: TextStyle(
-      fontWeight: FontWeight.w300,
-      fontSize: 14.0
-  ),),
-  const SizedBox(height: 10.0),
-  Text(
-    "Having an enthusiastic and active lifestyle overhauls your personality. It lets you perform physical activities without being tired or restless. It also ensures that you are mentally fit and stress-free. So here is your cue to embark on your fitness journey while starting your journey with Epione",
+    "Effective, evidence-based interventions are available to help people who are at risk for suicide.",
     textAlign: TextAlign.justify, style: TextStyle(
       fontWeight: FontWeight.w300,
       fontSize: 14.0
   ),),
   const SizedBox(height: 20.0),
+  Text("Safety Planning", style: TextStyle(
+      fontWeight: FontWeight.w600,
+      fontSize: 14.0
+  ),),
+  const SizedBox(height: 10.0),
+  Text(
+    "Personalized safety planning has been shown to help reduce suicidal thoughts and actions. Patients work with a caregiver to develop a plan that describes ways to limit access to lethal means such as firearms, pills, or poisons. The plan also lists coping strategies and people and resources that can help in a crisis.",
+    textAlign: TextAlign.justify, style: TextStyle(
+      fontWeight: FontWeight.w300,
+      fontSize: 14.0
+  ),),
+  const SizedBox(height: 20.0),
+  Text("Follow-up phone calls", style: TextStyle(
+      fontWeight: FontWeight.w600,
+      fontSize: 14.0
+  ),),
+  const SizedBox(height: 10.0),
+  Text(
+    "Research has shown that when at-risk patients receive further screening, a Safety Plan intervention, and a series of supportive phone calls, their risk of suicide goes down.",
+    textAlign: TextAlign.justify, style: TextStyle(
+      fontWeight: FontWeight.w300,
+      fontSize: 14.0
+  ),),
+  const SizedBox(height: 20.0),
+  Text("Cognitive Behavioral Therapy (CBT)", style: TextStyle(
+      fontWeight: FontWeight.w600,
+      fontSize: 14.0
+  ),),
+  const SizedBox(height: 10.0),
+  Text(
+    "Cognitive Behavioral Therapy (CBT) can help people learn new ways of dealing with stressful experiences. CBT helps individuals recognize their thought patterns and consider alternative actions when thoughts of suicide arise.",
+    textAlign: TextAlign.justify, style: TextStyle(
+      fontWeight: FontWeight.w300,
+      fontSize: 14.0
+  ),),
 ];
 
 //index == 5 types
