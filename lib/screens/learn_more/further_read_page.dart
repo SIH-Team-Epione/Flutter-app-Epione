@@ -255,33 +255,61 @@ List<Widget> list4 = [
 
 //index == 5 types
 List<Widget> list5 = [
+  const SizedBox(height: 10.0),
+  Text(
+    "Classes of Mental Illness:",
+    textAlign: TextAlign.justify, style: TextStyle(
+      fontWeight: FontWeight.w600,
+      fontSize: 14.0
+  ),),
   const SizedBox(height: 30.0),
-  Text("Why is it important for students?".toUpperCase(), style: TextStyle(
+  Text("Neurodevelopmental disorders".toUpperCase(), style: TextStyle(
       fontWeight: FontWeight.w600,
       fontSize: 14.0
   ),),
   const SizedBox(height: 10.0),
   Text(
-    "There has been researches that show the positive correlation between being physically active and improving as a student. Being a young student means you have a lot of potentials to be able to develop new hobbies that can benefit your fitness. It can be anything like running, skipping, or doing yoga. Exercising at least four times a week increases your metabolic rate which reduces the risk of cardiovascular diseases in the future which is just one of the numerous benefits.",
+    "This class covers a wide range of problems that usually begin in infancy or childhood, often before the child begins grade school. Examples include autism spectrum disorder, attention-deficit/hyperactivity disorder (ADHD) and learning disorders.",
     textAlign: TextAlign.justify, style: TextStyle(
       fontWeight: FontWeight.w300,
+      fontSize: 14.0
+  ),),
+  const SizedBox(height: 30.0),
+  Text("Bipolar and related disorders".toUpperCase(), style: TextStyle(
+      fontWeight: FontWeight.w600,
       fontSize: 14.0
   ),),
   const SizedBox(height: 10.0),
   Text(
-    "Being physically fit doesn’t require you have a strict schedule, but just have enough discipline to repeat it regularly. This aspect of self-care directly impacts all others and hence we encourage evryone user to actively utilize the features within this track!",
+    "This class includes disorders with alternating episodes of mania — periods of excessive activity, energy and excitement — and depression.",
     textAlign: TextAlign.justify, style: TextStyle(
       fontWeight: FontWeight.w300,
+      fontSize: 14.0
+  ),),
+  const SizedBox(height: 30.0),
+  Text("Depressive disorders".toUpperCase(), style: TextStyle(
+      fontWeight: FontWeight.w600,
       fontSize: 14.0
   ),),
   const SizedBox(height: 10.0),
   Text(
-    "Having an enthusiastic and active lifestyle overhauls your personality. It lets you perform physical activities without being tired or restless. It also ensures that you are mentally fit and stress-free. So here is your cue to embark on your fitness journey while starting your journey with Epione",
+    "These include disorders that affect how you feel emotionally, such as the level of sadness and happiness, and they can disrupt your ability to function. Examples include major depressive disorder and premenstrual dysphoric disorder.",
     textAlign: TextAlign.justify, style: TextStyle(
       fontWeight: FontWeight.w300,
       fontSize: 14.0
   ),),
-  const SizedBox(height: 20.0),
+  const SizedBox(height: 30.0),
+  Text("Anxiety disorders".toUpperCase(), style: TextStyle(
+      fontWeight: FontWeight.w600,
+      fontSize: 14.0
+  ),),
+  const SizedBox(height: 10.0),
+  Text(
+    "Anxiety is an emotion characterized by the anticipation of future danger or misfortune, along with excessive worrying. It can include behavior aimed at avoiding situations that cause anxiety. This class includes generalized anxiety disorder, panic disorder and phobias.",
+    textAlign: TextAlign.justify, style: TextStyle(
+      fontWeight: FontWeight.w300,
+      fontSize: 14.0
+  ),),
 ];
 
 //index == 6 meditation
