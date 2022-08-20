@@ -1,3 +1,4 @@
+import 'dart:core';
 import 'package:flutter/material.dart';
 import 'package:quiz_app/models/further_social_list.dart';
 
@@ -223,4 +224,3 @@ List<Widget> list3 = [
   ),),
   const SizedBox(height: 20.0),
 ];
-
