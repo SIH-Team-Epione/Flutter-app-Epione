@@ -15,10 +15,6 @@ class _SocialHealthScreenState extends State<SocialHealthScreen> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        // leading: new IconButton(
-        //   icon: new Icon(Icons.arrow_back, color: Colors.white),
-        //   onPressed: () => Navigator.of(context).pop(),
-        // ),
         title: const Text(title),
         centerTitle: false,
         backgroundColor: Colors.teal,

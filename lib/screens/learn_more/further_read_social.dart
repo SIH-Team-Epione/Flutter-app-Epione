@@ -5,6 +5,7 @@ import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:quiz_app/models/further_social_list.dart';
 
 import 'further_read_page.dart';
+import 'further_read_social_page.dart';
 
 class MoreSocialHealth extends StatefulWidget {
   const MoreSocialHealth({Key? key}) : super(key: key);
@@ -64,20 +65,20 @@ class _MoreSocialHealthState extends State<MoreSocialHealth> {
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => FurtherReadScreen(index: index))
+                                      builder: (context) => FurtherReadSocialScreen(index: index))
                               );
                             },
                             child: Column(
                               children: [
-                                SizedBox(height: 80,),
+                                SizedBox(height: 75,),
                                 Padding(
-                                  padding: const EdgeInsets.only(left:10.0,right: 30,top:20,bottom: 10),
+                                  padding: const EdgeInsets.only(left:5.0,right: 30,top:20,bottom: 10),
                                   child: Stack(
                                     alignment: Alignment.bottomLeft,
                                     children: <Widget>[
                                       Text(articlesList[index].title,
                                         style: TextStyle(
-                                          fontSize: 16,
+                                          fontSize: 14,
                                           color: Colors.white,
                                           fontWeight: FontWeight.bold
                                       ),)
