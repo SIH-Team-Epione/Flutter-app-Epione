@@ -132,32 +132,94 @@ List<Widget> list0 = [
 //index == 1 means relevance for students
 List<Widget> list1 = [
   const SizedBox(height: 30.0),
-  Text("Why is it important for students?".toUpperCase(), style: TextStyle(
+  Text("Why is Good Mental Health important for students?".toUpperCase(), style: TextStyle(
       fontWeight: FontWeight.w600,
       fontSize: 14.0
   ),),
-  const SizedBox(height: 10.0),
-  Text(
-    "There has been researches that show the positive correlation between being physically active and improving as a student. Being a young student means you have a lot of potentials to be able to develop new hobbies that can benefit your fitness. It can be anything like running, skipping, or doing yoga. Exercising at least four times a week increases your metabolic rate which reduces the risk of cardiovascular diseases in the future which is just one of the numerous benefits.",
-    textAlign: TextAlign.justify, style: TextStyle(
-      fontWeight: FontWeight.w300,
-      fontSize: 14.0
-  ),),
-  const SizedBox(height: 10.0),
-  Text(
-    "Being physically fit doesn’t require you have a strict schedule, but just have enough discipline to repeat it regularly. This aspect of self-care directly impacts all others and hence we encourage evryone user to actively utilize the features within this track!",
-    textAlign: TextAlign.justify, style: TextStyle(
-      fontWeight: FontWeight.w300,
-      fontSize: 14.0
-  ),),
-  const SizedBox(height: 10.0),
-  Text(
-    "Having an enthusiastic and active lifestyle overhauls your personality. It lets you perform physical activities without being tired or restless. It also ensures that you are mentally fit and stress-free. So here is your cue to embark on your fitness journey while starting your journey with Epione",
-    textAlign: TextAlign.justify, style: TextStyle(
-      fontWeight: FontWeight.w300,
-      fontSize: 14.0
-  ),),
   const SizedBox(height: 20.0),
+  Text(
+    "High levels of mental health can lead to a wide range of positive developments. These include –",
+    textAlign: TextAlign.justify, style: TextStyle(
+      fontWeight: FontWeight.w300,
+      fontSize: 14.0
+  ),),
+  const SizedBox(height: 10.0),
+  Text(
+    "Increase in the capacity to learn",
+    textAlign: TextAlign.justify, style: TextStyle(
+      fontWeight: FontWeight.w300,
+      fontSize: 14.0
+  ),),
+  const SizedBox(height: 10.0),
+  Text(
+    "Positive social behavior",
+    textAlign: TextAlign.justify, style: TextStyle(
+      fontWeight: FontWeight.w300,
+      fontSize: 14.0
+  ),),
+  const SizedBox(height: 10.0),
+  Text(
+    "Increase in productivity",
+    textAlign: TextAlign.justify, style: TextStyle(
+      fontWeight: FontWeight.w300,
+      fontSize: 14.0
+  ),),
+  const SizedBox(height: 10.0),
+  Text(
+    "Enhancement of creativity",
+    textAlign: TextAlign.justify, style: TextStyle(
+      fontWeight: FontWeight.w300,
+      fontSize: 14.0
+  ),),
+  const SizedBox(height: 10.0),
+  Text(
+    "Development of better physical health",
+    textAlign: TextAlign.justify, style: TextStyle(
+      fontWeight: FontWeight.w300,
+      fontSize: 14.0
+  ),),
+  const SizedBox(height: 10.0),
+  Text(
+    "Increase in life expectancy",
+    textAlign: TextAlign.justify, style: TextStyle(
+      fontWeight: FontWeight.w300,
+      fontSize: 14.0
+  ),),
+  const SizedBox(height: 10.0),
+  Text(
+    "An individual spends most of their youth in an educational institution. As such, the people they come across, the things they observe, and the behavior they feel can have an impact on their overall development.",
+    textAlign: TextAlign.justify, style: TextStyle(
+      fontWeight: FontWeight.w300,
+      fontSize: 14.0
+  ),),
+  const SizedBox(height: 10.0),
+  Text(
+    "For instance, if a student obtaining high grades suddenly slips, there is a cause. Giving destructive criticism to make them feel guilty is a bad idea. Here, it is much more important to understand the student’s psyche and find the cause of the lack of concentration.",
+    textAlign: TextAlign.justify, style: TextStyle(
+      fontWeight: FontWeight.w300,
+      fontSize: 14.0
+  ),),
+  const SizedBox(height: 10.0),
+  Text(
+    "In order to deal with this situation, students need to be aware that mental health is equally important. Making sure that your mind is in complete sync with your body is crucial. Moreover, if you feel any disturbance or emotional upheaval, share it with your parents and educators. There is no need to feel embarrassed or upset about it.",
+    textAlign: TextAlign.justify, style: TextStyle(
+      fontWeight: FontWeight.w300,
+      fontSize: 14.0
+  ),),
+  const SizedBox(height: 10.0),
+  Text(
+    "It is important for students to share their dilemmas with someone who can guide them correctly. Here, a healthy student-teacher relationship also comes to play. If your teachers encourage you to share your issues with them, go ahead.",
+    textAlign: TextAlign.justify, style: TextStyle(
+      fontWeight: FontWeight.w300,
+      fontSize: 14.0
+  ),),
+  const SizedBox(height: 10.0),
+  Text(
+    "The importance of mental health for students is simply undeniable. It is vital for increased creativity, learning, and developing positive relationships in society. With positive mental health, one can thrive in academics with ease. At Doaba School Parowal, the best school in Hoshiarpur, we focus on spreading mental health awareness among the students.",
+    textAlign: TextAlign.justify, style: TextStyle(
+      fontWeight: FontWeight.w300,
+      fontSize: 14.0
+  ),),
 ];
 
 //index == 2 early warning signs
@@ -223,32 +285,75 @@ List<Widget> list2 = [
 //index == 3 myth vs fact
 List<Widget> list3 = [
   const SizedBox(height: 30.0),
-  Text("Why is it important for students?".toUpperCase(), style: TextStyle(
-      fontWeight: FontWeight.w600,
-      fontSize: 14.0
-  ),),
-  const SizedBox(height: 10.0),
   Text(
-    "There has been researches that show the positive correlation between being physically active and improving as a student. Being a young student means you have a lot of potentials to be able to develop new hobbies that can benefit your fitness. It can be anything like running, skipping, or doing yoga. Exercising at least four times a week increases your metabolic rate which reduces the risk of cardiovascular diseases in the future which is just one of the numerous benefits.",
+    "Myth: If a person has a mental health condition, it means the person has low intelligence.",
     textAlign: TextAlign.justify, style: TextStyle(
       fontWeight: FontWeight.w300,
       fontSize: 14.0
   ),),
   const SizedBox(height: 10.0),
   Text(
-    "Being physically fit doesn’t require you have a strict schedule, but just have enough discipline to repeat it regularly. This aspect of self-care directly impacts all others and hence we encourage evryone user to actively utilize the features within this track!",
+    "Fact: Mental illness, like physical illness, can affect anyone regardless of intelligence, social class, or income level.",
+    textAlign: TextAlign.justify, style: TextStyle(
+      fontWeight: FontWeight.w300,
+      fontSize: 14.0
+  ),),
+  const SizedBox(height: 30.0),
+  Text(
+    "Myth: You only need to take care of your mental health if you have a mental health condition.",
     textAlign: TextAlign.justify, style: TextStyle(
       fontWeight: FontWeight.w300,
       fontSize: 14.0
   ),),
   const SizedBox(height: 10.0),
   Text(
-    "Having an enthusiastic and active lifestyle overhauls your personality. It lets you perform physical activities without being tired or restless. It also ensures that you are mentally fit and stress-free. So here is your cue to embark on your fitness journey while starting your journey with Epione",
+    "Fact: Everyone can benefit from taking active steps to promote their well-being and improve their mental health. Similarly, everyone can take active steps and engage in healthy habits to optimize their physical health.",
     textAlign: TextAlign.justify, style: TextStyle(
       fontWeight: FontWeight.w300,
       fontSize: 14.0
   ),),
-  const SizedBox(height: 20.0),
+  const SizedBox(height: 30.0),
+  Text(
+    "Myth: Poor mental health is not a big issue for teenagers. They just have mood swings caused by hormonal fluctuations and act out due to a desire for attention.",
+    textAlign: TextAlign.justify, style: TextStyle(
+      fontWeight: FontWeight.w300,
+      fontSize: 14.0
+  ),),
+  const SizedBox(height: 10.0),
+  Text(
+    "Teenagers often have mood swings, but that does not mean that adolescents may not also struggle with their mental health. Fourteen per cent of the world’s adolescents experience mental-health problems. Globally, among those aged 10–15, suicide is the fifth most prevalent cause of death, and for adolescents aged 15–19 it is the fourth most common cause. Half of all mental health conditions start by the age of 14.",
+    textAlign: TextAlign.justify, style: TextStyle(
+      fontWeight: FontWeight.w300,
+      fontSize: 14.0
+  ),),
+  const SizedBox(height: 30.0),
+  Text(
+    "Myth: Nothing can be done to protect people from developing mental health conditions.",
+    textAlign: TextAlign.justify, style: TextStyle(
+      fontWeight: FontWeight.w300,
+      fontSize: 14.0
+  ),),
+  const SizedBox(height: 10.0),
+  Text(
+    "Fact: Many factors can protect people from developing mental health conditions, including strengthening social and emotional skills, seeking help and support early on, developing supportive, loving, warm family relationships, and having a positive school environment and healthy sleep patterns.",
+    textAlign: TextAlign.justify, style: TextStyle(
+      fontWeight: FontWeight.w300,
+      fontSize: 14.0
+  ),),
+  const SizedBox(height: 30.0),
+  Text(
+    "Myth: A mental health condition is a sign of weakness; if the person were stronger, they would not have this condition.",
+    textAlign: TextAlign.justify, style: TextStyle(
+      fontWeight: FontWeight.w300,
+      fontSize: 14.0
+  ),),
+  const SizedBox(height: 10.0),
+  Text(
+    "Fact: A mental health condition has nothing to do with being weak or lacking willpower. It is not a condition people choose to have or not have. In fact, recognizing the need to accept help for a mental health condition requires great strength and courage. Anyone can develop a mental health condition.",
+    textAlign: TextAlign.justify, style: TextStyle(
+      fontWeight: FontWeight.w300,
+      fontSize: 14.0
+  ),),
 ];
 
 //index == 4 suicide prevention
