@@ -171,7 +171,6 @@ class _MeditationScreenState extends State<MeditationScreen>
                                           Data.tabBarView1Title[i],
                                           style: TextStyle(
                                             fontSize: 15,
-                                            fontFamily: "Avenir",
                                             fontWeight: FontWeight.bold,
                                           ),
                                         ),
@@ -233,7 +232,6 @@ class _MeditationScreenState extends State<MeditationScreen>
                                           Data.tabBarView2Title[i],
                                           style: TextStyle(
                                             fontSize: 15,
-                                            fontFamily: "Avenir",
                                             fontWeight: FontWeight.bold,
                                           ),
                                         ),
@@ -295,7 +293,6 @@ class _MeditationScreenState extends State<MeditationScreen>
                                           Data.tabBarView3Title[i],
                                           style: TextStyle(
                                             fontSize: 15,
-                                            fontFamily: "Avenir",
                                             fontWeight: FontWeight.bold,
                                           ),
                                         ),
