@@ -100,7 +100,7 @@ class _FurtherReadSocialScreenState extends State<FurtherReadSocialScreen> {
   }
 }
 
-//index == 0 means diagnosis and treatment
+//index == 0 means Dimensions of Social Health
 List<Widget> list0 = [
   Text(
     "According to Corey Lee M. Keyes, there are 5 dimensions of social health and well- being i.e social integration, social contribution, social coherence, social actualization and social acceptance.",
