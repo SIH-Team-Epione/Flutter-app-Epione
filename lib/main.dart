@@ -14,7 +14,7 @@ import 'package:quiz_app/screens/learn_more/further_read_mental.dart';
 import 'package:quiz_app/screens/learn_more/further_read_social.dart';
 import 'package:quiz_app/screens/learn_more/learn_time.dart';
 import 'package:quiz_app/screens/learn_more/social_health.dart';
-import 'package:quiz_app/screens/learn_more/time_techniques.dart';
+import 'package:quiz_app/screens/work_health/time_techniques.dart';
 import 'package:quiz_app/screens/learn_more/work_health.dart';
 import 'package:quiz_app/screens/login_screen.dart';
 //importing mental health screens
