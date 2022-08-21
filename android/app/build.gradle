@@ -49,6 +49,7 @@ android {
         applicationId "com.sih_epione.epione"
         minSdkVersion 21
         targetSdkVersion 32
+        multiDexEnabled true
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
     }
