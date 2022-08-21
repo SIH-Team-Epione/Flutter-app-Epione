@@ -325,38 +325,102 @@ List<Widget> list2 = [
       fontWeight: FontWeight.w300,
       fontSize: 14.0
   ),),
-  const SizedBox(height: 30.0),
 ];
 
-//index == 3 myth vs fact
+//index == 3 Emotional Well Being
 List<Widget> list3 = [
-  const SizedBox(height: 30.0),
-  Text("Why is it important for students?".toUpperCase(), style: TextStyle(
+  Text("What is emotional well-being?", style: TextStyle(
       fontWeight: FontWeight.w600,
       fontSize: 14.0
   ),),
   const SizedBox(height: 10.0),
   Text(
-    "There has been researches that show the positive correlation between being physically active and improving as a student. Being a young student means you have a lot of potentials to be able to develop new hobbies that can benefit your fitness. It can be anything like running, skipping, or doing yoga. Exercising at least four times a week increases your metabolic rate which reduces the risk of cardiovascular diseases in the future which is just one of the numerous benefits.",
+    "The National Center for Emotional Wellness (NCEW) describes emotional wellness or well-being as an awareness, understanding, and acceptance of feelings and an ability to manage effectively through times of change or challenge.",
     textAlign: TextAlign.justify, style: TextStyle(
       fontWeight: FontWeight.w300,
       fontSize: 14.0
   ),),
   const SizedBox(height: 10.0),
   Text(
-    "Being physically fit doesn’t require you have a strict schedule, but just have enough discipline to repeat it regularly. This aspect of self-care directly impacts all others and hence we encourage evryone user to actively utilize the features within this track!",
+    "Uncomfortable or painful emotions and overwhelming thoughts can affect how well individuals function and may make people feel they are losing control of their lives.",
+    textAlign: TextAlign.justify, style: TextStyle(
+      fontWeight: FontWeight.w300,
+      fontSize: 14.0
+  ),),
+  const SizedBox(height: 30.0),
+  Text("Why is emotional well-being important?", style: TextStyle(
+      fontWeight: FontWeight.w600,
+      fontSize: 14.0
+  ),),
+  const SizedBox(height: 10.0),
+  Text(
+    "According to the National Institutes of Health (NIH)Trusted Source, emotional well-being is important because it can affect how people function and carry out everyday tasks.",
     textAlign: TextAlign.justify, style: TextStyle(
       fontWeight: FontWeight.w300,
       fontSize: 14.0
   ),),
   const SizedBox(height: 10.0),
   Text(
-    "Having an enthusiastic and active lifestyle overhauls your personality. It lets you perform physical activities without being tired or restless. It also ensures that you are mentally fit and stress-free. So here is your cue to embark on your fitness journey while starting your journey with Epione",
+    "It can also affect how well individuals are able to handle stressful situations and challenges, how they adapt to change, and how they respond to difficult life events.",
     textAlign: TextAlign.justify, style: TextStyle(
       fontWeight: FontWeight.w300,
+      fontSize: 14.0
+  ),),
+  const SizedBox(height: 10.0),
+  Text(
+    "Emotional well-being can affect relationships, work, and overall mental and physical health.",
+    textAlign: TextAlign.justify, style: TextStyle(
+      fontWeight: FontWeight.w300,
+      fontSize: 14.0
+  ),),
+  const SizedBox(height: 30.0),
+  Text("Factors that can influence emotional well-being may include:", style: TextStyle(
+      fontWeight: FontWeight.w600,
       fontSize: 14.0
   ),),
   const SizedBox(height: 20.0),
+  Text(
+    "challenges with work, school, relationships, or home life",
+    textAlign: TextAlign.justify, style: TextStyle(
+      fontWeight: FontWeight.w300,
+      fontSize: 14.0
+  ),),
+  const SizedBox(height: 10.0),
+  Text(
+    "changes in health",
+    textAlign: TextAlign.justify, style: TextStyle(
+      fontWeight: FontWeight.w300,
+      fontSize: 14.0
+  ),),
+  const SizedBox(height: 10.0),
+  Text(
+    "changes in relationships",
+    textAlign: TextAlign.justify, style: TextStyle(
+      fontWeight: FontWeight.w300,
+      fontSize: 14.0
+  ),),
+  const SizedBox(height: 10.0),
+  Text(
+    "retirement, which may affect social circles or sense of purpose",
+    textAlign: TextAlign.justify, style: TextStyle(
+      fontWeight: FontWeight.w300,
+      fontSize: 14.0
+  ),),
+  const SizedBox(height: 10.0),
+  Text(
+    "losing loved ones",
+    textAlign: TextAlign.justify, style: TextStyle(
+      fontWeight: FontWeight.w300,
+      fontSize: 14.0
+  ),),
+  const SizedBox(height: 10.0),
+  Text(
+    "moving away from family and friends",
+    textAlign: TextAlign.justify, style: TextStyle(
+      fontWeight: FontWeight.w300,
+      fontSize: 14.0
+  ),),
+  const SizedBox(height: 30.0),
 ];
 
 
