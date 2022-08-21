@@ -173,66 +173,159 @@ List<Widget> list0 = [
 
 ];
 
-//index == 1 means relevance for students
+//index == 1 means Strategies to improve
 List<Widget> list1 = [
-  const SizedBox(height: 30.0),
-  Text("Why is it important for students?".toUpperCase(), style: TextStyle(
+  Text("Make connections", style: TextStyle(
       fontWeight: FontWeight.w600,
       fontSize: 14.0
   ),),
-  const SizedBox(height: 10.0),
+  const SizedBox(height: 20.0),
   Text(
-    "There has been researches that show the positive correlation between being physically active and improving as a student. Being a young student means you have a lot of potentials to be able to develop new hobbies that can benefit your fitness. It can be anything like running, skipping, or doing yoga. Exercising at least four times a week increases your metabolic rate which reduces the risk of cardiovascular diseases in the future which is just one of the numerous benefits.",
+    "Develop new hobbies by joining groups of reading, drawing, writing, yoga etc.",
     textAlign: TextAlign.justify, style: TextStyle(
       fontWeight: FontWeight.w300,
       fontSize: 14.0
   ),),
   const SizedBox(height: 10.0),
   Text(
-    "Being physically fit doesn’t require you have a strict schedule, but just have enough discipline to repeat it regularly. This aspect of self-care directly impacts all others and hence we encourage evryone user to actively utilize the features within this track!",
+    "Learn new skills like art, dance, cooking, swimming etc.",
     textAlign: TextAlign.justify, style: TextStyle(
       fontWeight: FontWeight.w300,
       fontSize: 14.0
   ),),
   const SizedBox(height: 10.0),
   Text(
-    "Having an enthusiastic and active lifestyle overhauls your personality. It lets you perform physical activities without being tired or restless. It also ensures that you are mentally fit and stress-free. So here is your cue to embark on your fitness journey while starting your journey with Epione",
+    "Volunteer at schools or events outside.",
     textAlign: TextAlign.justify, style: TextStyle(
       fontWeight: FontWeight.w300,
+      fontSize: 14.0
+  ),),
+  const SizedBox(height: 10.0),
+  Text(
+    "Travel and meet new people.",
+    textAlign: TextAlign.justify, style: TextStyle(
+      fontWeight: FontWeight.w300,
+      fontSize: 14.0
+  ),),
+  const SizedBox(height: 30.0),
+  Text("Get active", style: TextStyle(
+      fontWeight: FontWeight.w600,
       fontSize: 14.0
   ),),
   const SizedBox(height: 20.0),
+  Text(
+    "Participate in debates and discussions.",
+    textAlign: TextAlign.justify, style: TextStyle(
+      fontWeight: FontWeight.w300,
+      fontSize: 14.0
+  ),),
+  const SizedBox(height: 10.0),
+  Text(
+    "Join an exercise group or start new outdoor activities with friends.",
+    textAlign: TextAlign.justify, style: TextStyle(
+      fontWeight: FontWeight.w300,
+      fontSize: 14.0
+  ),),
+  const SizedBox(height: 10.0),
+  Text(
+    "Help parents in household chores.",
+    textAlign: TextAlign.justify, style: TextStyle(
+      fontWeight: FontWeight.w300,
+      fontSize: 14.0
+  ),),
+  const SizedBox(height: 30.0),
+  Text("Build healthy relations", style: TextStyle(
+      fontWeight: FontWeight.w600,
+      fontSize: 14.0
+  ),),
+  const SizedBox(height: 20.0),
+  Text(
+    "Share your feeling with parents or friends.",
+    textAlign: TextAlign.justify, style: TextStyle(
+      fontWeight: FontWeight.w300,
+      fontSize: 14.0
+  ),),
+  const SizedBox(height: 10.0),
+  Text(
+    "Ask for help in need.",
+    textAlign: TextAlign.justify, style: TextStyle(
+      fontWeight: FontWeight.w300,
+      fontSize: 14.0
+  ),),
+  const SizedBox(height: 10.0),
+  Text(
+    "Listen to others without being judgmental.",
+    textAlign: TextAlign.justify, style: TextStyle(
+      fontWeight: FontWeight.w300,
+      fontSize: 14.0
+  ),),
+  const SizedBox(height: 10.0),
+  Text(
+    "Compromise and work on agreements.",
+    textAlign: TextAlign.justify, style: TextStyle(
+      fontWeight: FontWeight.w300,
+      fontSize: 14.0
+  ),),
+  const SizedBox(height: 10.0),
+  Text(
+    "Avoid conflicts and anger.",
+    textAlign: TextAlign.justify, style: TextStyle(
+      fontWeight: FontWeight.w300,
+      fontSize: 14.0
+  ),),
+  const SizedBox(height: 30.0),
 ];
 
-//index == 2 early warning signs
+//index == 2 Signs that you are socially healthy
 List<Widget> list2 = [
-  const SizedBox(height: 30.0),
-  Text("Why is it important for students?".toUpperCase(), style: TextStyle(
+  Text("You balance your alone and social time", style: TextStyle(
       fontWeight: FontWeight.w600,
       fontSize: 14.0
   ),),
   const SizedBox(height: 10.0),
   Text(
-    "There has been researches that show the positive correlation between being physically active and improving as a student. Being a young student means you have a lot of potentials to be able to develop new hobbies that can benefit your fitness. It can be anything like running, skipping, or doing yoga. Exercising at least four times a week increases your metabolic rate which reduces the risk of cardiovascular diseases in the future which is just one of the numerous benefits.",
+    "Everyone needs a different ratio of alone versus social time. Introverted people may need more solitude, but extroverted people might need the reverse. Either way, you know how to stay connected with your friends while taking care of yourself. Finding and striking the right balance means you’re socially healthy.",
     textAlign: TextAlign.justify, style: TextStyle(
       fontWeight: FontWeight.w300,
+      fontSize: 14.0
+  ),),
+  const SizedBox(height: 30.0),
+  Text("You’re assertive but not aggressive", style: TextStyle(
+      fontWeight: FontWeight.w600,
       fontSize: 14.0
   ),),
   const SizedBox(height: 10.0),
   Text(
-    "Being physically fit doesn’t require you have a strict schedule, but just have enough discipline to repeat it regularly. This aspect of self-care directly impacts all others and hence we encourage evryone user to actively utilize the features within this track!",
+    "You know how to communicate your needs and set healthy boundaries, and you can do it without experiencing negative emotions. That is, you don’t feel angry or resentful when you state your needs. You also don’t feel apologetic, fearful, or ashamed.",
     textAlign: TextAlign.justify, style: TextStyle(
       fontWeight: FontWeight.w300,
+      fontSize: 14.0
+  ),),
+  const SizedBox(height: 30.0),
+  Text("You can be yourself", style: TextStyle(
+      fontWeight: FontWeight.w600,
       fontSize: 14.0
   ),),
   const SizedBox(height: 10.0),
   Text(
-    "Having an enthusiastic and active lifestyle overhauls your personality. It lets you perform physical activities without being tired or restless. It also ensures that you are mentally fit and stress-free. So here is your cue to embark on your fitness journey while starting your journey with Epione",
+    "Healthy connections should make you feel comfortable in your skin, not the opposite. You feel a sense of belonging, meaning that you’re seen for who you are, valued, appreciated, and accepted. Being yourself means not covering or feeling ashamed or afraid of exclusion. Friends and family may challenge us and pull us beyond our comfort zone, but you should feel relaxed enough that not rising to the challenge doesn’t threaten your sense of belonging.",
     textAlign: TextAlign.justify, style: TextStyle(
       fontWeight: FontWeight.w300,
       fontSize: 14.0
   ),),
-  const SizedBox(height: 20.0),
+  const SizedBox(height: 30.0),
+  Text("You treat others with respect", style: TextStyle(
+      fontWeight: FontWeight.w600,
+      fontSize: 14.0
+  ),),
+  const SizedBox(height: 10.0),
+  Text(
+    "If you’re respectful, it’s a sign that you probably have your social needs met and you aren't feeling threatened. You don’t have to bring others down to improve your self-esteem.",
+    textAlign: TextAlign.justify, style: TextStyle(
+      fontWeight: FontWeight.w300,
+      fontSize: 14.0
+  ),),
+  const SizedBox(height: 30.0),
 ];
 
 //index == 3 myth vs fact
