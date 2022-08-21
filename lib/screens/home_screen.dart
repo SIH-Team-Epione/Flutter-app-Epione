@@ -36,9 +36,9 @@ class _HomeScreenState extends State<HomeScreen> {
       Navigator.push(context, MaterialPageRoute(builder: (context) => DoctorConsultationScreen()));
     }
 
-    final firstDay = DateTime(2022, 8, 18);
+    final firstDay = DateTime(2022, 8, 21);
     final dateNow = DateTime.now();
-    final difference = daysBetween(firstDay, dateNow);
+    final difference = daysBetween(firstDay, dateNow)%15;
     print(difference);
 
     return Scaffold(

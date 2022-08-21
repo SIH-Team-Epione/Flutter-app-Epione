@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:quiz_app/models/WorkHealthHome.dart';
 
-import '../learn_more/time_techniques.dart';
+import 'time_techniques.dart';
 
 class WorkHealthScreen extends StatefulWidget {
   const WorkHealthScreen({Key? key}) : super(key: key);

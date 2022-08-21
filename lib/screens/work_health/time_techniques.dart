@@ -35,7 +35,7 @@ class _TimeTechScreenState extends State<TimeTechScreen> {
    controller = YoutubePlayerController(
       initialVideoId: YoutubePlayer.convertUrlToId(paretoUrl)!,
       flags: YoutubePlayerFlags(
-        autoPlay: true,
+        autoPlay: false,
         mute: false,
 
       ),
