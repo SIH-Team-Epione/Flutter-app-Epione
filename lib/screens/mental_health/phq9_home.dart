@@ -31,11 +31,11 @@ class WelcomeScreen extends StatelessWidget {
                     ),
                   ),
                   SizedBox(height: 10.0,),
-                  Text("The PHQ-9 is a multipurpose instrument for screening, diagnosing, monitoring and measuring the severity of depression. This analysis will help us guide you further. Please answer over the last 2 weeks, how often have you been bothered by the following problems?"),
+                  Text("The PHQ-9 is a multipurpose instrument for screening, diagnosing, monitoring and measuring the severity of depression. This easy to use patient questionnaire is a self-administered version of the PRIME-MD (Primary Care Evaluation of Mental Disorders) diagnostic instrument for common mental disorders. This analysis will help us guide you further. Please answer over the last 2 weeks, how often have you been bothered by the following problems?"),
                   Spacer(), // 1/6
                   Spacer(), // 1/6
                   InkWell(
-                    onTap: () => Get.to(QuizScreen()),
+                    onTap: () =>  Get.to(QuizScreen()),
                     child: Container(
                       width: double.infinity,
                       alignment: Alignment.center,

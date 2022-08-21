@@ -29,7 +29,7 @@ class MyIconButton extends StatelessWidget {
               borderRadius: BorderRadius.circular(20),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.grey.shade300,
+                  color: Colors.grey.shade100,
                   blurRadius: 20,
                   spreadRadius: 10,
                 )

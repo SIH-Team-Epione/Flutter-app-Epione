@@ -1,4 +1,4 @@
-package com.example.quiz_app
+package com.sih_epione.epione
 
 import io.flutter.embedding.android.FlutterActivity
 
