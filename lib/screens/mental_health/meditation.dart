@@ -136,6 +136,7 @@ class _MeditationScreenState extends State<MeditationScreen>
                                         blurRadius: 2,
                                         offset: Offset(0, 0),
                                         color: Colors.grey.withOpacity(0.2),
+
                                       ),
                                     ],
                                   ),
@@ -154,6 +155,7 @@ class _MeditationScreenState extends State<MeditationScreen>
                                               image: AssetImage(
                                                   Data.imagetabBarView1[i]),
                                             ),
+
                                           ),
                                         ),
                                         SizedBox(width: 10),
@@ -216,6 +218,7 @@ class _MeditationScreenState extends State<MeditationScreen>
                                               image: AssetImage(
                                                   Data.imagetabBarView2[i]),
                                             ),
+
                                           ),
                                         ),
                                         SizedBox(width: 10),
