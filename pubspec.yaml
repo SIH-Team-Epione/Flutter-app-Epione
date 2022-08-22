@@ -55,6 +55,11 @@ dependencies:
   sleek_circular_slider: ^2.0.1
   dialogflow_grpc: ^0.2.9
   rxdart: ^0.27.5
+  permission_handler: ^9.2.0
+  teachable: ^0.0.2
+  flutter_inappwebview: ^5.4.3+7
+  carousel_slider: ^4.1.1
+  smooth_page_indicator: ^1.0.0+2
 
 dev_dependencies:
   flutter_test:
@@ -78,6 +83,7 @@ flutter:
     - assets/svg/
     - assets/images/doctors/
     - assets/credentials.json
+    - pose/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
