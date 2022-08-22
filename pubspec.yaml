@@ -55,7 +55,14 @@ dependencies:
   sleek_circular_slider: ^2.0.1
   dialogflow_grpc: ^0.2.9
   rxdart: ^0.27.5
-
+  pedometer: ^3.0.0
+  heart_bpm: ^1.1.1+0
+  firebase_database_web: ^0.2.1+4
+  permission_handler: ^9.2.0
+  agora_rtc_engine: ^5.3.0
+  firebase_database: ^9.1.1
+  http: ^0.13.3
+  
 dev_dependencies:
   flutter_test:
     sdk: flutter
