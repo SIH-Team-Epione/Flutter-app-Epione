@@ -19,11 +19,11 @@ class _Psqi3State extends State<Psqi3> {
     fieldText.clear();
   }
 
-  final Map<String, int> qna3 = {
+  final Map<String, num> qna3 = {
     "How would you rate your sleep quality overall": 0,
   };
-  List Convert(Map<String, int> qna) {
-    var valuesList = qna.values.toList();
+  List<num> Convert(Map<String, num> qna) {
+    List<num> valuesList = qna.values.toList();
     return valuesList;
   }
 
@@ -160,7 +160,7 @@ class _Psqi3State extends State<Psqi3> {
                     onSubmitted: ((value) {
                       print(value);
                       setState(() {
-                        qna3[question] = int.parse(value);
+                        qna3[question] = num.parse(value);
                         ;
                       });
                     }),

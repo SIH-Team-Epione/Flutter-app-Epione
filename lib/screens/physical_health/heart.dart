@@ -87,6 +87,55 @@ class _HeartState extends State<Heart> {
                 onPressed: () => setState(() => isBPMEnabled = !isBPMEnabled),
               ),
             ),
+            SizedBox(height: 20),
+            Stack(
+              children: [
+                Card(
+
+                  elevation: 5,
+                  shape: RoundedRectangleBorder(
+                      side: BorderSide(width: 0.5, color: Colors.white60),
+                      borderRadius: BorderRadius.circular(
+                        20,
+                      )),
+                  child: Container(
+
+                    //margin: EdgeInsets.all(10),
+                    child: Column(
+
+                      children: [
+                        Image(
+                          image: AssetImage('assets/images/bpm.jpg'),
+                          width: 200,
+                          height: 300,
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(top: 10),
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: Colors.teal[200],
+                              borderRadius: BorderRadius.only(bottomLeft: Radius.circular(20),bottomRight: Radius.circular(20)),
+                            ),
+
+                            child: Container(
+                              padding: EdgeInsets.all(10),
+                              child: Text(
+                                'A normal resting heart rate for adults ranges from 60 to 100 beats per minute. Generally, a lower heart rate at rest implies more efficient heart function and better cardiovascular fitness. Keep in mind if your resting heart rate is consistently above 100 beats a minute then this might be a consequence of an underlying problem so consult your doctor. Monitor your heart rate daily and report any unusual high or low.    ',
+                                style: TextStyle(
+                                    color: Colors.grey[50],
+                                    fontSize: 14.0,
+                                    ),
+                              ),
+                            ),
+                          ),
+                        ),
+
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ],
         ),
       ),
