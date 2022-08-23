@@ -15,6 +15,8 @@ import 'package:quiz_app/screens/learn_more/further_read_mental.dart';
 import 'package:quiz_app/screens/learn_more/further_read_social.dart';
 import 'package:quiz_app/screens/learn_more/learn_time.dart';
 import 'package:quiz_app/screens/learn_more/social_health.dart';
+import 'package:quiz_app/screens/social_health/contacts.dart';
+import 'package:quiz_app/screens/social_health/index.dart';
 import 'package:quiz_app/screens/work_health/time_techniques.dart';
 import 'package:quiz_app/screens/learn_more/work_health.dart';
 import 'package:quiz_app/screens/login_screen.dart';
@@ -63,6 +65,7 @@ Future main() async {
 
   await Permission.camera.request();
   await Permission.microphone.request();
+  await Permission.phone.request();
 
   runApp(MyApp());
 }
@@ -115,8 +118,8 @@ class _MyAppState extends State<MyApp> {
 
               '/social_health_home': (BuildContext context) => new SocialHealthScreen(),
               '/learn_more_social_health': (BuildContext context) => new LearnMoreSocialScreen(),
-              '/connect_friends': (BuildContext context) => new ConnectFriendsScreen(),
-              '/connect_family': (BuildContext context) => new ConnectFamilyScreen(),
+              '/Contacts': (BuildContext context) => new Contacts(),
+              '/index': (BuildContext context) => new IndexPage(),
               '/communication_skills': (BuildContext context) => new CommunicationSkillsScreen(),
               '/more_social_health': (BuildContext context) => new MoreSocialHealth(),
 
