@@ -18,7 +18,7 @@ class Feature {
 }
 
 const title = 'Mental Health';
-const learnMoreText = 'Mental health disorders are not uncommon amongst students and its prevalence imposes many challenges and thus being aware and knowing how to tackle...';
+const learnMoreText = 'Mental health disorders are not uncommon amongst students and its prevalence imposes many challenges and thus being aware and knowing how to tackle them significantly improves a student''s lifestyle and mindset. When it comes to your mental health, self-care can help you manage stress, lower your risk of illness, and increase your energy. Even small acts of self-care in your daily life can have a big impact.';
 
 List<Feature> featuresList = [
   const Feature(

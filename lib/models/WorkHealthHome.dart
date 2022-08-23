@@ -88,7 +88,7 @@ List<Feature> featuresList = [
     id: 1,
     title: 'Eat That Frog Technique',
     description: '',
-    urlImage: 'assets/images/ear_frog_learn.jpg',
+    urlImage: 'assets/images/eat_frog_learn.jpg',
     ageGroup: 'Time Management',
     nextScreenRoute: '',
   ),

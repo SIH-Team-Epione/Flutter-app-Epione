@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:get/get_navigation/src/routes/get_route.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:permission_handler/permission_handler.dart';
 import 'package:provider/provider.dart';
 import 'package:quiz_app/screens/doctor_consultation_screen.dart';
 import 'package:quiz_app/screens/google_sign_in.dart';
@@ -54,13 +55,28 @@ import 'controllers/question_controller_phq.dart';
 
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
+  await Firebase.initializeApp(
+    // options: FirebaseOptions(
+    //     apiKey: 'AIzaSyCof7TFo6DH-cHndhmCKfcPTyjubQOoo4A',
+    //     appId: '1:782675839270:android:f3318f5ac8bba2ade099e7',
+    //     messagingSenderId: '782675839270',
+    //     projectId: 'epione-992ee')
+  );
+
+  await Permission.camera.request();
+  await Permission.microphone.request();
+  await Permission.phone.request();
 
   runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
 
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) => ChangeNotifierProvider(
       create: (context) => GoogleSignInProvider(),
