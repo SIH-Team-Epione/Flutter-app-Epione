@@ -70,7 +70,7 @@ class _PoseEstimatorPageState extends State<PoseEstimatorPage> {
                           animation: true,
                           lineHeight: 34.0,
                           percent: acc/100.0,
-                          center: Text(accuracy, style: TextStyle(fontWeight: FontWeight.w700,
+                          center: Text(accuracy+"%", style: TextStyle(fontWeight: FontWeight.w700,
                           fontSize: 20),),
                           barRadius: const Radius.circular(16),
                           progressColor: Colors.teal,
