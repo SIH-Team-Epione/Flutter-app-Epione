@@ -296,7 +296,7 @@ packages:
     source: hosted
     version: "0.2.2+2"
   firebase_database_web:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: firebase_database_web
       url: "https://pub.dartlang.org"

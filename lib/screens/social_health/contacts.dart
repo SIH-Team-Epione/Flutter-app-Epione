@@ -1,5 +1,7 @@
 // ignore_for_file: deprecated_member_use
 
+import 'package:url_launcher/url_launcher.dart';
+
 import 'add_contacts.dart';
 import 'package:firebase_database/ui/firebase_animated_list.dart';
 import 'package:flutter/material.dart';
@@ -99,7 +101,11 @@ class _ContactsState extends State<Contacts> {
                   GestureDetector(
                       onTap: () async {
                         final phoneNumber = contact['number'];
-                        final url = Uri.parse('tel:$phoneNumber');
+                        final url = Uri.parse('tel://$phoneNumber');
+                        if (!await launchUrl(url, mode: LaunchMode.externalApplication)) {
+                          throw 'Could not launch';
+                        }
+
                       },
                       child: Row(
                         children: [
