@@ -63,7 +63,6 @@ dependencies:
 
   pedometer: ^3.0.0
   heart_bpm: ^1.1.1+0
-  firebase_database_web: ^0.2.1+4
   agora_rtc_engine: ^5.3.0
   firebase_database: ^9.1.1
   http: ^0.13.3
