@@ -15,6 +15,7 @@ class PoseEstimatorPage extends StatefulWidget {
 
 class _PoseEstimatorPageState extends State<PoseEstimatorPage> {
   String accuracy = "";
+  double acc=0.0;
   @override
   Widget build(BuildContext context) {
 
@@ -34,6 +35,9 @@ class _PoseEstimatorPageState extends State<PoseEstimatorPage> {
                           // print("The values are ${}");
                           setState(() {
                             accuracy = (resp[widget.posename] * 100.0).toStringAsFixed(2);
+                            Future.delayed(const Duration(milliseconds: 3000), () {
+                              acc = double.parse(accuracy);
+                            });
                           });
                         },
                       ),
@@ -44,7 +48,7 @@ class _PoseEstimatorPageState extends State<PoseEstimatorPage> {
               alignment: Alignment.bottomCenter,
               child: Container(
                   width: double.infinity,
-                  height: 60,
+                  height: 140,
                   decoration: BoxDecoration(
                     color: Colors.black.withOpacity(0.5),
                   ),
@@ -55,20 +59,23 @@ class _PoseEstimatorPageState extends State<PoseEstimatorPage> {
                         widget.posename+" Accuracy: ",
                         style: TextStyle(
                           color: Colors.white,
+                          fontSize: 18,
+                          fontWeight: FontWeight.w500
                         ),
                       ),
-                      // Padding(
-                      //   padding: EdgeInsets.all(10.0),
-                      //   child: new LinearPercentIndicator(
-                      //     width: MediaQuery.of(context).size.width - 50,
-                      //     animation: true,
-                      //     lineHeight: 20.0,
-                      //     percent: (double.parse(accuracy)/100.0),
-                      //     center: Text(accuracy),
-                      //     linearStrokeCap: LinearStrokeCap.roundAll,
-                      //     progressColor: Colors.teal,
-                      //   ),
-                      // ),
+                      Padding(
+                        padding: EdgeInsets.all(10.0),
+                        child: new LinearPercentIndicator(
+                          width: MediaQuery.of(context).size.width - 50,
+                          animation: true,
+                          lineHeight: 34.0,
+                          percent: acc/100.0,
+                          center: Text(accuracy, style: TextStyle(fontWeight: FontWeight.w700,
+                          fontSize: 20),),
+                          barRadius: const Radius.circular(16),
+                          progressColor: Colors.teal,
+                        ),
+                      ),
                     ],
                   )),
             )
