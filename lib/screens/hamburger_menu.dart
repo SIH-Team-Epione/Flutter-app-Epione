@@ -9,11 +9,10 @@ class NavBar extends StatefulWidget {
 }
 
 class _NavBarState extends State<NavBar> {
-  Color activeColor = Color(0xFFf6d6d7);
-
+  Color activeColor = Color(0xFFe0f4f0);
   Color inactiveColor = Color(0xFFfafafa);
-
   Color textColor = Color(0xFF000000);
+  Color iconClr = Colors.teal;
 
   List<bool> selected_opt = [
     false,
@@ -83,7 +82,7 @@ class _NavBarState extends State<NavBar> {
             selectedTileColor: activeColor,
             leading: Icon(
               FontAwesomeIcons.house,
-              color: Color(0xFFFF5252),
+              color: iconClr,
               size: 24,
             ),
             title: Text('Home'),
@@ -103,7 +102,7 @@ class _NavBarState extends State<NavBar> {
             selectedTileColor: activeColor,
             leading: Icon(
               FontAwesomeIcons.brain,
-              color: Color(0xFFFF5252),
+              color: iconClr,
               size: 24,
             ),
             title: Text('Mental Health'),
@@ -112,7 +111,7 @@ class _NavBarState extends State<NavBar> {
                 setState(() {
                   textColor = Color(0xFF000000);
                   set_opt(1);
-                  Navigator.pushNamed(context, '/');
+                  Navigator.pushNamed(context, '/mental_health_home');
                 });
               }
             },
@@ -123,7 +122,7 @@ class _NavBarState extends State<NavBar> {
             selectedTileColor: activeColor,
             leading: Icon(
               FontAwesomeIcons.personWalking,
-              color: Color(0xFFFF5252),
+              color: iconClr,
               size: 24,
             ),
             title: Text('Physical Health'),
@@ -132,7 +131,7 @@ class _NavBarState extends State<NavBar> {
                 setState(() {
                   textColor = Color(0xFF000000);
                   set_opt(2);
-                  Navigator.pushNamed(context, '/');
+                  Navigator.pushNamed(context, '/physical_health_home');
                 });
               }
             },
@@ -143,17 +142,19 @@ class _NavBarState extends State<NavBar> {
             selectedTileColor: activeColor,
             leading: Icon(
               FontAwesomeIcons.peopleGroup,
-              color: Color(0xFFFF5252),
+              color: iconClr,
               size: 24,
             ),
             title: Text("Social Health"),
             onTap: () {
               if (!selected_opt[3]) {
-                setState(() {
-                  textColor = Color(0xFF000000);
-                  set_opt(3);
-                  Navigator.pushNamed(context, '/');
-                });
+                setState(
+                  () {
+                    textColor = Color(0xFF000000);
+                    set_opt(3);
+                    Navigator.pushNamed(context, '/social_health_home');
+                  },
+                );
               }
             },
           ),
@@ -163,7 +164,7 @@ class _NavBarState extends State<NavBar> {
             selectedTileColor: activeColor,
             leading: Icon(
               FontAwesomeIcons.houseLaptop,
-              color: Color(0xFFFF5252),
+              color: iconClr,
               size: 24,
             ),
             title: Text("Work Health"),
@@ -172,78 +173,78 @@ class _NavBarState extends State<NavBar> {
                 setState(() {
                   textColor = Color(0xFF000000);
                   set_opt(4);
-                  Navigator.pushNamed(context, '/');
+                  Navigator.pushNamed(context, '/work_health_home');
                 });
               }
             },
           ),
-          ListTile(
-            tileColor: inactiveColor,
-            selected: selected_opt[5],
-            selectedTileColor: activeColor,
-            leading: Icon(
-              FontAwesomeIcons.solidAddressCard,
-              color: Color(0xFFFF5252),
-              size: 24,
-            ),
-            title: Text("About Us"),
-            onTap: () {
-              if (!selected_opt[5]) {
-                setState(() {
-                  textColor = Color(0xFF000000);
-                  set_opt(5);
-                  Navigator.pushNamed(context, '/');
-                });
-              }
-            },
-          ),
-          ListTile(
-            tileColor: inactiveColor,
-            selected: selected_opt[6],
-            selectedTileColor: activeColor,
-            leading: Icon(
-              FontAwesomeIcons.solidAddressBook,
-              color: Color(0xFFFF5252),
-              size: 24,
-            ),
-            title: Text("Contact Us"),
-            onTap: () {
-              if (!selected_opt[6]) {
-                setState(() {
-                  textColor = Color(0xFF000000);
-                  set_opt(6);
-                  Navigator.pushNamed(context, '/');
-                });
-              }
-            },
-          ),
-          ListTile(
-            tileColor: inactiveColor,
-            selected: selected_opt[7],
-            selectedTileColor: activeColor,
-            leading: Icon(
-              FontAwesomeIcons.chalkboardUser,
-              color: Color(0xFFFF5252),
-              size: 24,
-            ),
-            title: Text('Learn More'),
-            onTap: () {
-              if (!selected_opt[7]) {
-                setState(() {
-                  textColor = Color(0xFF000000);
-                  set_opt(7);
-                  Navigator.pushNamed(context, '/');
-                });
-              }
-            },
-          ),
+          // ListTile(
+          //   tileColor: inactiveColor,
+          //   selected: selected_opt[5],
+          //   selectedTileColor: activeColor,
+          //   leading: Icon(
+          //     FontAwesomeIcons.solidAddressCard,
+          //     color: iconClr,
+          //     size: 24,
+          //   ),
+          //   title: Text("About Us"),
+          //   onTap: () {
+          //     if (!selected_opt[5]) {
+          //       setState(() {
+          //         textColor = Color(0xFF000000);
+          //         set_opt(5);
+          //         Navigator.pushNamed(context, '/');
+          //       });
+          //     }
+          //   },
+          // ),
+          // ListTile(
+          //   tileColor: inactiveColor,
+          //   selected: selected_opt[6],
+          //   selectedTileColor: activeColor,
+          //   leading: Icon(
+          //     FontAwesomeIcons.solidAddressBook,
+          //     color: iconClr,
+          //     size: 24,
+          //   ),
+          //   title: Text("Contact Us"),
+          //   onTap: () {
+          //     if (!selected_opt[6]) {
+          //       setState(() {
+          //         textColor = Color(0xFF000000);
+          //         set_opt(6);
+          //         Navigator.pushNamed(context, '/');
+          //       });
+          //     }
+          //   },
+          // ),
+          // ListTile(
+          //   tileColor: inactiveColor,
+          //   selected: selected_opt[7],
+          //   selectedTileColor: activeColor,
+          //   leading: Icon(
+          //     FontAwesomeIcons.chalkboardUser,
+          //     color: iconClr,
+          //     size: 24,
+          //   ),
+          //   title: Text('Learn More'),
+          //   onTap: () {
+          //     if (!selected_opt[7]) {
+          //       setState(() {
+          //         textColor = Color(0xFF000000);
+          //         set_opt(7);
+          //         Navigator.pushNamed(context, '/');
+          //       });
+          //     }
+          //   },
+          // ),
           ListTile(
             tileColor: inactiveColor,
             selected: selected_opt[8],
             selectedTileColor: activeColor,
             leading: Icon(
               FontAwesomeIcons.userDoctor,
-              color: Color(0xFFFF5252),
+              color: iconClr,
               size: 24,
             ),
             title: Text('Consult Doctor'),
@@ -252,7 +253,7 @@ class _NavBarState extends State<NavBar> {
                 setState(() {
                   textColor = Color(0xFF000000);
                   set_opt(8);
-                  Navigator.pushNamed(context, '/');
+                  Navigator.pushNamed(context, '/doctor_consultation');
                 });
               }
             },
@@ -266,7 +267,7 @@ class _NavBarState extends State<NavBar> {
             selectedTileColor: activeColor,
             leading: Icon(
               FontAwesomeIcons.rightFromBracket,
-              color: Color(0xFFFF5252),
+              color: iconClr,
               size: 24,
             ),
             title: Text('Logout'),
