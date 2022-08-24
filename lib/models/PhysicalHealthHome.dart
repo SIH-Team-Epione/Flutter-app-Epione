@@ -30,8 +30,8 @@ List<Feature> featuresList = [
   ),
   const Feature(
       id: 1,
-      title: 'Exercises',
-      description: 'Boost your stamina and keep track of your physical exercises by using this feature which uses plugins to integrate your health details in the app.',
+      title: 'Guide to Physical Well Being',
+      description: 'Track your sleep quality, heartbeat count and the daily step count by using this feature which uses plugins to integrate these health details in the app.',
       urlImage: 'assets/images/exercise_list.jpg',
     ageGroup: '10 above',
       nextScreenRoute: '/exercises'

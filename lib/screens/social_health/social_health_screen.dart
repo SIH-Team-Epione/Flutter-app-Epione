@@ -38,7 +38,7 @@ class _SocialHealthScreenState extends State<SocialHealthScreen> {
                   shape: new RoundedRectangleBorder(
                     borderRadius: new BorderRadius.circular(20.0),
                   ),
-                  color: Color(0xffdea23e),
+                  color: Color(0xff307473),
                   //0xfff3dbdd,
                   child: Container(
                     margin: EdgeInsets.symmetric(
