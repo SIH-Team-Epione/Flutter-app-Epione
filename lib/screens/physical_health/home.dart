@@ -38,7 +38,7 @@ class _HomeState extends State<Home> {
   void onPedestrianStatusChanged(PedestrianStatus event) {
     print(event);
     setState(() {
-      _status = event.status;
+      _status = event.status.toString();
     });
   }
 
@@ -175,8 +175,8 @@ class _HomeState extends State<Home> {
                             ),
                             subtitle: Text(
                               _status,
-                              style: _status == 'walking' || _status == 'stopped'
-                                  ? TextStyle(fontSize: 30)
+                              style: _status == 'walking'
+                                  ? TextStyle(fontSize: 15)
                                   : TextStyle(fontSize: 20, color: Colors.red),
                             ),
                           ),

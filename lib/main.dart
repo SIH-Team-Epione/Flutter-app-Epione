@@ -66,6 +66,7 @@ Future main() async {
   await Permission.camera.request();
   await Permission.microphone.request();
   await Permission.phone.request();
+  await Permission.activityRecognition.request();
 
   runApp(MyApp());
 }
