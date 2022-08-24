@@ -40,6 +40,12 @@ class Audio extends ChangeNotifier {
     });
   }
 
+  void dispose() {
+    audioPlayer.stop();
+    audioPlayer.dispose();
+    super.dispose();
+  }
+
   Future setAudio() async {
     // final player = AudioCache(prefix: 'assets/sounds/');
     // final url = await player.load('white-noise.mp3');
