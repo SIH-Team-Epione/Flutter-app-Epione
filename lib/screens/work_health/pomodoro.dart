@@ -120,10 +120,10 @@ class _PomodoroScreenState extends State<PomodoroScreen> {
                                   shadowWidth: 0,
                                 ),
                                 customColors: CustomSliderColors(
-                                  trackColor: green1,
-                                  progressBarColor: green4,
+                                  trackColor: Colors.tealAccent.shade100,
+                                  progressBarColor: Colors.tealAccent.shade700,
                                   hideShadow: true,
-                                  dotColor: green4,
+                                  dotColor: Colors.tealAccent.shade700,
                                 ),
                                 size: 250,
                                 angleRange: 360,
