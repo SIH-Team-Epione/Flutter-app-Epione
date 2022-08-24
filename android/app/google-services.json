@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "782675839270",
+    "firebase_url": "https://epione-992ee-default-rtdb.firebaseio.com",
     "project_id": "epione-992ee",
     "storage_bucket": "epione-992ee.appspot.com"
   },
@@ -13,6 +14,38 @@
         }
       },
       "oauth_client": [
+        {
+          "client_id": "782675839270-daqd5mhb7aro47tnogl44be3la3l5gbm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.sih_epione.epione",
+            "certificate_hash": "6ce79b8334f6e024fca849e32a08ca6902153b67"
+          }
+        },
+        {
+          "client_id": "782675839270-fsc9e2l1hkjdul1jo0jm75b6ntqf30e2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.sih_epione.epione",
+            "certificate_hash": "04b6d1830b9bd04a81248a114b21ad3eb34bb0b6"
+          }
+        },
+        {
+          "client_id": "782675839270-fshbnch2nqr88k9chltasusfk2rag6ld.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.sih_epione.epione",
+            "certificate_hash": "e54ddf9f7ed5a899183bc9f3605d1d5722410230"
+          }
+        },
+        {
+          "client_id": "782675839270-jmndr7864862vkrsukgv7mmlt28mp1dt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.sih_epione.epione",
+            "certificate_hash": "670dfc7b46de89cd3c65cb6c5d2b12da344196ab"
+          }
+        },
         {
           "client_id": "782675839270-op9c965gnvvp8a97h9pqqn08gjrqfm5b.apps.googleusercontent.com",
           "client_type": 3
@@ -29,6 +62,13 @@
             {
               "client_id": "782675839270-op9c965gnvvp8a97h9pqqn08gjrqfm5b.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "782675839270-2lugucittoq1sh0uk1km5odr34kefuai.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.sih-epione.epione"
+              }
             }
           ]
         }
