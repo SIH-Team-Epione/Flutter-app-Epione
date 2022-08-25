@@ -21,16 +21,9 @@ class _MeditationScreenState extends State<MeditationScreen>
       length: 3,
       child: Scaffold(
         appBar: AppBar(
-          elevation: 0,
           title: Text(
             "Guide to meditation",
-            style: TextStyle(
-              fontSize: 20,
-              color: Color(0xFF000000),
-            ),
           ),
-          iconTheme: IconThemeData(color: Color(0xFF000000)),
-          backgroundColor: Color(0xFFfafafa),
         ),
         body: SafeArea(
           child: Scaffold(
@@ -103,13 +96,13 @@ class _MeditationScreenState extends State<MeditationScreen>
                                     ]),
                                 tabs: [
                                   MyTabs(
-                                      color: AppColors.menu1Color,
+                                      color: Colors.tealAccent.shade200,
                                       text: "6-13 yrs"),
                                   MyTabs(
-                                      color: AppColors.menu2Color,
+                                      color: Colors.tealAccent.shade400,
                                       text: "14-18 yrs"),
                                   MyTabs(
-                                      color: AppColors.menu3Color,
+                                      color: Colors.tealAccent.shade700,
                                       text: "19-30 yrs")
                                 ],
                               ),
