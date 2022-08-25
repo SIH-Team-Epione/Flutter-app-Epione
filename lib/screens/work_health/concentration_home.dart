@@ -22,17 +22,17 @@ class ConcentrationHomeScreen extends StatelessWidget {
           leading: IconButton(
             icon: Icon(
               Icons.arrow_back,
-              color: Colors.black,
+              color: Colors.white,
             ),
             onPressed: () {
               Navigator.of(context).pop();
             },
           ),
           iconTheme: IconThemeData(
-              color: Colors.black
+              color: Colors.white
           ),
           // backgroundColor: Color(0xFF85F4FF),
-          backgroundColor: Color(0xFFE0F4F0),
+          backgroundColor: Colors.teal,
           title: Row(
             children: <Widget> [
               // IconButton(
@@ -45,13 +45,13 @@ class ConcentrationHomeScreen extends StatelessWidget {
               Expanded(
                 flex: 7,
                 child: const Text(
-                  'Concentration',
+                  'Increase concentration',
                   style: TextStyle(
                       fontFamily: 'Montserrat',
-                      fontSize: 20.0,
+                      fontSize: 18.0,
                       fontWeight: FontWeight.w700,
                       // letterSpacing: 1.05
-                      color: Colors.black
+                      color: Colors.white
                   ),
                 ),
               ),
@@ -62,7 +62,7 @@ class ConcentrationHomeScreen extends StatelessWidget {
                   onPressed: () {},
                   icon: Icon(
                       Icons.person,
-                      color: Color(0xFF293241)
+                      color: Colors.white
                   ),
                 ),
               )

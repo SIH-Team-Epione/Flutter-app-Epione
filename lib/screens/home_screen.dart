@@ -9,6 +9,7 @@ import 'package:quiz_app/constants.dart';
 import 'package:quiz_app/models/Quotes.dart';
 import 'package:quiz_app/screens/doctor_consultation_screen.dart';
 import 'package:quiz_app/screens/google_sign_in.dart';
+import 'package:quiz_app/screens/hamburger_menu.dart';
 import 'package:quiz_app/util/long_img_container.dart';
 import 'package:quiz_app/screens/chatbot/main.dart';
 
@@ -42,44 +43,59 @@ class _HomeScreenState extends State<HomeScreen> {
     print(difference);
 
     return Scaffold(
+      appBar: AppBar(
+        title: Text('Hi '+ user!.displayName!+"!",
+        style: TextStyle(
+          fontSize: 14,
+        ),),
+        actions: [
+          IconButton(onPressed: (){}, icon: ClipRRect(
+            borderRadius: BorderRadius.circular(50),
+            child: Image.network(
+              user!.photoURL!,
+            ),
+          ),)
+        ],
+      ),
+      drawer: NavBar(),
       body: Container(
         margin: EdgeInsets.only(top: 4),
         child: ListView(
           physics: ClampingScrollPhysics(),
           children: <Widget>[
             // Custom Appbar
-            Container(
-              margin: EdgeInsets.only(left: 16, right: 16, top: 5),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: <Widget>[
-                  GestureDetector(onTap:() {
-                    print('Drawer Tapped!');
-                  },
-                      child: SvgPicture.asset('assets/svg/drawer_icon2.svg')),
-                  Text('Hi '+ user!.displayName!.split(' ')[0] + '!'),
-                  TextButton(
-                      onPressed: (){
-                        final provider = Provider.of<GoogleSignInProvider>(context, listen: false);
-                        provider.logout();
-                      },
-                      child: Text('Logout')
-                  ),
-                  CircleAvatar(
-                    radius: 20,
-                    backgroundImage: NetworkImage(user.photoURL!),
-                  ),
-                  // Container(
-                  //   height: 45,
-                  //   width: 45,
-                    // decoration: BoxDecoration(
-                    //   borderRadius: BorderRadius.circular(20),
-                    //   image: DecorationImage(image: AssetImage('assets/images/user_image.png'))
-                    // ),
-                  // )
-                ],
-              ),
-            ),
+            // Container(
+            //   margin: EdgeInsets.only(left: 16, right: 16, top: 5),
+            //   child: Row(
+            //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            //     children: <Widget>[
+            //       GestureDetector(onTap:() {
+            //         print('Drawer Tapped!');
+            //       },
+            //           child: SvgPicture.asset('assets/svg/drawer_icon2.svg')),
+            //       Text('Hi '+ user!.displayName!.split(' ')[0] + '!'),
+            //       TextButton(
+            //           onPressed: (){
+            //             final provider = Provider.of<GoogleSignInProvider>(context, listen: false);
+            //             provider.logout();
+            //           },
+            //           child: Text('Logout')
+            //       ),
+            //       CircleAvatar(
+            //         radius: 20,
+            //         backgroundImage: NetworkImage(user.photoURL!),
+            //       ),
+            //       // Container(
+            //       //   height: 45,
+            //       //   width: 45,
+            //         // decoration: BoxDecoration(
+            //         //   borderRadius: BorderRadius.circular(20),
+            //         //   image: DecorationImage(image: AssetImage('assets/images/user_image.png'))
+            //         // ),
+            //       // )
+            //     ],
+            //   ),
+            // ),
             // card section
             SizedBox(
               height: 15,
