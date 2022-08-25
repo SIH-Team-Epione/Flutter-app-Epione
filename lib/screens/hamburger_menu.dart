@@ -1,5 +1,9 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+import 'google_sign_in.dart';
 
 class NavBar extends StatefulWidget {
   NavBar({Key? key}) : super(key: key);
@@ -13,6 +17,8 @@ class _NavBarState extends State<NavBar> {
   Color inactiveColor = Color(0xFFfafafa);
   Color textColor = Color(0xFF000000);
   Color iconClr = Colors.teal;
+
+  final user = FirebaseAuth.instance.currentUser;
 
   List<bool> selected_opt = [
     false,
@@ -44,14 +50,14 @@ class _NavBarState extends State<NavBar> {
         children: [
           UserAccountsDrawerHeader(
             accountName: Text(
-              "User",
+              user!.displayName!,
               style: TextStyle(
                 fontSize: 15,
                 color: Color(0xFFfafafa),
               ),
             ),
             accountEmail: Text(
-              "user@gmail.com",
+              user!.email!,
               style: TextStyle(
                 fontSize: 15,
                 color: Color(0xFFfafafa),
@@ -60,8 +66,8 @@ class _NavBarState extends State<NavBar> {
             ),
             currentAccountPicture: CircleAvatar(
               child: ClipOval(
-                child: Image.asset(
-                  'assets/images/demouser.jpeg',
+                child: Image.network(
+                  user!.photoURL!,
                   height: 90,
                   width: 90,
                   fit: BoxFit.cover,
@@ -276,7 +282,8 @@ class _NavBarState extends State<NavBar> {
                 setState(() {
                   textColor = Color(0xFF000000);
                   set_opt(9);
-                  Navigator.pushNamed(context, '/');
+                  final provider = Provider.of<GoogleSignInProvider>(context, listen: false);
+                  provider.logout();
                 });
               }
             },

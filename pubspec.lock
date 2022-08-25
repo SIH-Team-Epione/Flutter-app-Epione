@@ -190,8 +190,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "5.9.55"
-<<<<<<< HEAD
-=======
   cross_file:
     dependency: transitive
     description:
@@ -199,7 +197,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.3.3+1"
->>>>>>> d14043e043b6a49346d317384a3caa34f78e79a7
   crypto:
     dependency: transitive
     description:
@@ -607,8 +604,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.1.2"
-<<<<<<< HEAD
-=======
   pedometer:
     dependency: "direct main"
     description:
@@ -616,7 +611,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "3.0.0"
->>>>>>> d14043e043b6a49346d317384a3caa34f78e79a7
   percent_indicator:
     dependency: "direct main"
     description:
@@ -624,8 +618,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "4.2.2"
-<<<<<<< HEAD
-=======
   permission_handler:
     dependency: "direct main"
     description:
@@ -661,7 +653,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.1.0"
->>>>>>> d14043e043b6a49346d317384a3caa34f78e79a7
   petitparser:
     dependency: transitive
     description:
