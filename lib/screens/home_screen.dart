@@ -7,6 +7,7 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:quiz_app/constants.dart';
 import 'package:quiz_app/models/Quotes.dart';
+import 'package:quiz_app/screens/SharedLearnings.dart';
 import 'package:quiz_app/screens/doctor_consultation_screen.dart';
 import 'package:quiz_app/screens/google_sign_in.dart';
 import 'package:quiz_app/screens/hamburger_menu.dart';
@@ -245,6 +246,29 @@ class _HomeScreenState extends State<HomeScreen> {
                   children: [
                     Text('Shared Experiences'),
                     Text('Read posts and engage with others on their self-care journey'),
+                  ],
+                ),
+              ),
+            ),
+            SizedBox(height: 10,),
+            Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(15),
+                color: Colors.white,
+
+              ),
+              child: RaisedButton(
+                onPressed: (){
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => SharedLearnings(),
+                      ));
+                },
+                child: Column(
+                  children: [
+                    Text('Share your good activities'),
+                    Text('Learn what others learnt today and share what you learnt today'),
                   ],
                 ),
               ),

@@ -1,28 +1,35 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:firebase_database/ui/firebase_animated_list.dart';
 import 'package:flutter/material.dart';
-import 'package:quiz_app/screens/work_health/create_post.dart';
+import 'package:quiz_app/screens/create_shared_learning_post.dart';
 
-class SharedExperiences extends StatefulWidget {
-  const SharedExperiences({Key? key}) : super(key: key);
+class SharedLearnings extends StatefulWidget {
+  const SharedLearnings({Key? key}) : super(key: key);
 
   @override
-  State<SharedExperiences> createState() => _SharedExperiencesState();
+  State<SharedLearnings> createState() => _SharedLearningsState();
 }
 
-class _SharedExperiencesState extends State<SharedExperiences> {
+//If user chooses to view his posts only just use this list
+List<Map<dynamic, dynamic>> myLearnings = [];
+List<Map<dynamic, dynamic>> allLearnings = [];
+
+//track chosen by user
+var track = "";
+
+class _SharedLearningsState extends State<SharedLearnings> {
 
   void createPost(){
     Navigator.push(context,
-      MaterialPageRoute(builder: (context) => CreatePostScreen())
-    );
+    MaterialPageRoute(builder: (context) => CreateSharedLearningPost()));
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("User posts"),
+        title: Text("Shared Learnings"),
       ),
       body: PostsSection(),
       floatingActionButton: FloatingActionButton(
@@ -31,6 +38,7 @@ class _SharedExperiencesState extends State<SharedExperiences> {
     );
   }
 }
+
 
 class PostsSection extends StatefulWidget {
   const PostsSection({Key? key}) : super(key: key);
@@ -41,7 +49,7 @@ class PostsSection extends StatefulWidget {
 
 class _PostsSectionState extends State<PostsSection> {
 
-  Query dbRef = FirebaseDatabase.instance.ref().child('posts');
+  Query dbRef = FirebaseDatabase.instance.ref().child('learnings');
 
   Widget listItem({required Map post}){
      return Container(
@@ -65,7 +73,10 @@ class _PostsSectionState extends State<PostsSection> {
         itemBuilder: (BuildContext context, DataSnapshot snapshot, Animation<double> animation, int index){
           Map post = snapshot.value as Map;
           post['key'] = snapshot.key;
-
+          allLearnings.add(post);
+          if(post['uid']==(FirebaseAuth.instance.currentUser?.uid)){
+            myLearnings.add(post);
+          }
           return listItem(post: post);
         },
       ),
@@ -73,3 +84,12 @@ class _PostsSectionState extends State<PostsSection> {
   }
 }
 
+List<Map<dynamic, dynamic>> filter(String track){
+  List<Map<dynamic, dynamic>> filteredList = [];
+  for(var p in allLearnings){
+    if(p['track']==track){
+      filteredList.add(p);
+    }
+  }
+  return filteredList;
+}
