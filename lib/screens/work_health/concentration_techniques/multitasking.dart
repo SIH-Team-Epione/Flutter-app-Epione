@@ -26,48 +26,7 @@ class _ReducingMultitasking extends State<ReducingMultiTasking> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(
-          icon: Icon(
-            Icons.arrow_back,
-            color: Colors.black,
-          ),
-          onPressed: () {
-            Navigator.of(context).pop();
-          },
-        ),
-        iconTheme: IconThemeData(
-            color: Colors.black
-        ),
-        // backgroundColor: Color(0xFF85F4FF),
-        backgroundColor: Color(0xFFFF5252),
-        title: Row(
-          children: <Widget> [
-            Expanded(
-              flex: 7,
-              child: const Text(
-                'Reduce Multitasking',
-                style: TextStyle(
-                    fontFamily: 'Montserrat',
-                    fontSize: 20.0,
-                    fontWeight: FontWeight.w700,
-                    // letterSpacing: 1.05
-                    color: Colors.black
-                ),
-              ),
-            ),
-            // SizedBox(width: MediaQuery.of(context).size.width / 3),
-            Expanded(
-              flex: 1,
-              child: IconButton(
-                onPressed: () {},
-                icon: Icon(
-                    Icons.person,
-                    color: Colors.black
-                ),
-              ),
-            )
-          ],
-        ),
+        title: const Text('Reduce Multitasking'),
       ),
       body: Column(
         children: [
@@ -275,7 +234,7 @@ class TaskItem extends StatelessWidget {
             fontSize: 20.0,
           ),
         ),
-        backgroundColor: task.checked ? Color(0xFFBDBDBD) : Color(0xFFDC758F),
+        backgroundColor: task.checked ? Color(0xFFBDBDBD) : Colors.tealAccent.shade400,
       ),
       title: Column(
         crossAxisAlignment: CrossAxisAlignment.start,

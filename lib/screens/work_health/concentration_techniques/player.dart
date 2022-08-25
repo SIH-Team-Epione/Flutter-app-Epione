@@ -48,49 +48,8 @@ class _MusicPlayer extends State<MusicPlayer> {
     // TODO: implement build
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(
-          icon: Icon(
-            Icons.arrow_back,
-            color: Colors.white,
-          ),
-          onPressed: () {
-            Navigator.of(context).pop();
-          },
+        title: const Text('Sound Player'),
         ),
-        iconTheme: IconThemeData(
-            color: Colors.white
-        ),
-        // backgroundColor: Color(0xFF85F4FF),
-        backgroundColor: Colors.teal,
-        title: Row(
-          children: <Widget> [
-            Expanded(
-              flex: 7,
-              child: const Text(
-                'Reduce Multitasking',
-                style: TextStyle(
-                    fontFamily: 'Montserrat',
-                    fontSize: 20.0,
-                    fontWeight: FontWeight.w700,
-                    // letterSpacing: 1.05
-                    color: Colors.white
-                ),
-              ),
-            ),
-            // SizedBox(width: MediaQuery.of(context).size.width / 3),
-            Expanded(
-              flex: 1,
-              child: IconButton(
-                onPressed: () {},
-                icon: Icon(
-                    Icons.person,
-                    color: Colors.white
-                ),
-              ),
-            )
-          ],
-        ),
-      ),
       body: ChangeNotifierProvider(
         create: (_) => Audio(),
         child: Container(
@@ -104,7 +63,7 @@ class _MusicPlayer extends State<MusicPlayer> {
                   style: TextStyle(
                     fontWeight: FontWeight.w600,
                     fontFamily: 'Montserrat',
-                    fontSize: 22.0,
+                    fontSize: 20.0,
                   ),
                   textAlign: TextAlign.center,
                 ),
@@ -119,20 +78,20 @@ class _MusicPlayer extends State<MusicPlayer> {
                       //'https://www.99images.com/download-image/869224/2880x2560',
                       '${sounds[myAudioModel.index]['imageUrl']}',
                       width: double.infinity,
-                      height: 350.0,
+                      height: MediaQuery.of(context).size.width * 0.85,
                       fit: BoxFit.cover,
                     ),
                   ),
                 ),
               ),
-              SizedBox(height: 20.0),
+              SizedBox(height: 18.0),
               Consumer<Audio>(
                 builder: (_, myAudioModel, child) => Text(
                   '${sounds[myAudioModel.index]['title']}',
                   style: TextStyle(
                       fontWeight: FontWeight.w600,
                       fontFamily: 'Montserrat',
-                      fontSize: 28.0
+                      fontSize: 24.0
                   ),
                 ),
               ),
@@ -143,7 +102,7 @@ class _MusicPlayer extends State<MusicPlayer> {
                   style: TextStyle(
                       fontWeight: FontWeight.w400,
                       fontFamily: 'Montserrat',
-                      fontSize: 20.0
+                      fontSize: 16.0
                   ),
                 ),
               ),

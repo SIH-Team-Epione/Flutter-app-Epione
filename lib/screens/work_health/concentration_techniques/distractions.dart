@@ -84,57 +84,7 @@ class _EliminateDistractionsState extends State<EliminateDistractions> with Widg
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(
-          icon: Icon(
-            Icons.arrow_back,
-            color: Colors.white,
-          ),
-          onPressed: () {
-            Navigator.of(context).pop();
-          },
-        ),
-        iconTheme: IconThemeData(
-            color: Colors.white
-        ),
-        // backgroundColor: Color(0xFF85F4FF),
-        backgroundColor: Color(0xFF000000),
-        title: Row(
-          children: <Widget> [
-            // IconButton(
-            //   onPressed: () {},
-            //   icon: Icon(
-            //       Icons.menu,
-            //       color: Color(0xFF293241)
-            //   ),
-            // ),
-            Expanded(
-              flex: 7,
-              child: const Text(
-                'Eliminate Distractions',
-                style: TextStyle(
-                    fontFamily: 'Montserrat',
-                    fontSize: 20.0,
-                    fontWeight: FontWeight.w700,
-                    // letterSpacing: 1.05
-                    color: Colors.white
-                ),
-              ),
-            ),
-            // SizedBox(width: MediaQuery.of(context).size.width / 3),
-            Expanded(
-              flex: 1,
-              child: IconButton(
-                onPressed: () {
-
-                },
-                icon: Icon(
-                    Icons.person,
-                    color: Color(0xFFFFFFFF)
-                ),
-              ),
-            )
-          ],
-        ),
+        title: const Text('Eliminate Distractions'),
       ),
       body: _isLoading ? Center(child: CircularProgressIndicator()) : Container(
         color: Color(0xFFFFFFFF),
@@ -159,10 +109,10 @@ class _EliminateDistractionsState extends State<EliminateDistractions> with Widg
                   ),
                   decoration: BoxDecoration(
                     // color: _filterName == "INTERRUPTION_FILTER_ALL" ? Colors.red[400] : Color(0xFF000000),
-                    color: _filterName == "INTERRUPTION_FILTER_ALL" ? Colors.red[300] : Colors.cyan[300],
+                    color: _filterName == "INTERRUPTION_FILTER_ALL" ? Colors.grey[900] : Colors.cyan[300],
                     shape: BoxShape.circle,
                     border: Border.all(
-                        color: Colors.lime,
+                        color: Colors.teal.shade500,
                         width: 15.0
                     ),
                     //borderRadius: BorderRadius.all(Radius.circular(20.0))
@@ -236,7 +186,7 @@ class _EliminateDistractionsState extends State<EliminateDistractions> with Widg
                 FlutterDnd.gotoPolicySettings();
               },
               elevation: 4.0,
-              color: Color(0xFFE0F4F0),
+              color: Colors.tealAccent.shade400,
               padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 30.0),
               child: Text(
                 'GO TO POLICY SETTINGS',
@@ -244,7 +194,7 @@ class _EliminateDistractionsState extends State<EliminateDistractions> with Widg
                   fontFamily: 'Montserrat',
                   fontWeight: FontWeight.w700,
                   fontSize: 16.0,
-                  color: Colors.black,
+                  color: Colors.white,
                 ),
               ),
             ),

@@ -9,6 +9,7 @@ import 'package:quiz_app/constants.dart';
 import 'package:quiz_app/models/Quotes.dart';
 import 'package:quiz_app/screens/doctor_consultation_screen.dart';
 import 'package:quiz_app/screens/google_sign_in.dart';
+import 'package:quiz_app/screens/hamburger_menu.dart';
 import 'package:quiz_app/util/long_img_container.dart';
 import 'package:quiz_app/screens/chatbot/main.dart';
 
@@ -42,44 +43,59 @@ class _HomeScreenState extends State<HomeScreen> {
     print(difference);
 
     return Scaffold(
+      appBar: AppBar(
+        title: Text('Hi '+ user!.displayName!+"!",
+        style: TextStyle(
+          fontSize: 14,
+        ),),
+        actions: [
+          IconButton(onPressed: (){}, icon: ClipRRect(
+            borderRadius: BorderRadius.circular(50),
+            child: Image.network(
+              user!.photoURL!,
+            ),
+          ),)
+        ],
+      ),
+      drawer: NavBar(),
       body: Container(
         margin: EdgeInsets.only(top: 4),
         child: ListView(
           physics: ClampingScrollPhysics(),
           children: <Widget>[
             // Custom Appbar
-            Container(
-              margin: EdgeInsets.only(left: 16, right: 16, top: 5),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: <Widget>[
-                  GestureDetector(onTap:() {
-                    print('Drawer Tapped!');
-                  },
-                      child: SvgPicture.asset('assets/svg/drawer_icon2.svg')),
-                  Text('Hi '+ user!.displayName!.split(' ')[0] + '!'),
-                  TextButton(
-                      onPressed: (){
-                        final provider = Provider.of<GoogleSignInProvider>(context, listen: false);
-                        provider.logout();
-                      },
-                      child: Text('Logout')
-                  ),
-                  CircleAvatar(
-                    radius: 20,
-                    backgroundImage: NetworkImage(user.photoURL!),
-                  ),
-                  // Container(
-                  //   height: 45,
-                  //   width: 45,
-                    // decoration: BoxDecoration(
-                    //   borderRadius: BorderRadius.circular(20),
-                    //   image: DecorationImage(image: AssetImage('assets/images/user_image.png'))
-                    // ),
-                  // )
-                ],
-              ),
-            ),
+            // Container(
+            //   margin: EdgeInsets.only(left: 16, right: 16, top: 5),
+            //   child: Row(
+            //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            //     children: <Widget>[
+            //       GestureDetector(onTap:() {
+            //         print('Drawer Tapped!');
+            //       },
+            //           child: SvgPicture.asset('assets/svg/drawer_icon2.svg')),
+            //       Text('Hi '+ user!.displayName!.split(' ')[0] + '!'),
+            //       TextButton(
+            //           onPressed: (){
+            //             final provider = Provider.of<GoogleSignInProvider>(context, listen: false);
+            //             provider.logout();
+            //           },
+            //           child: Text('Logout')
+            //       ),
+            //       CircleAvatar(
+            //         radius: 20,
+            //         backgroundImage: NetworkImage(user.photoURL!),
+            //       ),
+            //       // Container(
+            //       //   height: 45,
+            //       //   width: 45,
+            //         // decoration: BoxDecoration(
+            //         //   borderRadius: BorderRadius.circular(20),
+            //         //   image: DecorationImage(image: AssetImage('assets/images/user_image.png'))
+            //         // ),
+            //       // )
+            //     ],
+            //   ),
+            // ),
             // card section
             SizedBox(
               height: 15,
@@ -250,7 +266,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Padding(
-                                padding: const EdgeInsets.fromLTRB(110, 25, 0, 0),
+                                padding: const EdgeInsets.fromLTRB(90, 25, 0, 0),
                                 child: Container(
                                   //width:150,
                                   child: Text(
@@ -266,8 +282,8 @@ class _HomeScreenState extends State<HomeScreen> {
                               Padding(
                                 padding: const EdgeInsets.fromLTRB(0, 15, 10,0),
                                 child: Icon(
-                                    Icons.arrow_circle_right_rounded,
-                                size: 40,
+                                  Icons.arrow_forward_ios_rounded,
+                                size: 30,
                                 color: Colors.black,
                                 ),
                               )
@@ -292,7 +308,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         child: ClipRRect(
                             borderRadius: BorderRadius.circular(20.0),
                             child: Image(
-                              width: 110,
+                              width: 90,
                               image: AssetImage('assets/images/home_mental.png'),
                               fit: BoxFit.cover,
                             )
@@ -326,7 +342,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Padding(
-                                padding: const EdgeInsets.fromLTRB(110, 25, 0, 0),
+                                padding: const EdgeInsets.fromLTRB(90, 25, 0, 0),
                                 child: Container(
                                   //width:MediaQuery.of(context).size.width,
                                   child: Text(
@@ -342,8 +358,8 @@ class _HomeScreenState extends State<HomeScreen> {
                               Padding(
                                 padding: const EdgeInsets.fromLTRB(0, 15, 10,0),
                                 child: Icon(
-                                  Icons.arrow_circle_right_rounded,
-                                  size: 40,
+                                  Icons.arrow_forward_ios_rounded,
+                                  size: 30,
                                   color: Color(0xff000000),
                                 ),
                               )
@@ -358,7 +374,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         child: ClipRRect(
                             borderRadius: BorderRadius.circular(20.0),
                             child: Image(
-                              width: 110,
+                              width: 90,
                               image: AssetImage('assets/images/home_physical.png'),
                               fit: BoxFit.cover,
                             )
@@ -392,7 +408,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Padding(
-                                padding: const EdgeInsets.fromLTRB(110, 25, 0, 0),
+                                padding: const EdgeInsets.fromLTRB(90, 25, 0, 0),
                                 child: Container(
                                   //width:150,
                                   child: Text(
@@ -408,8 +424,8 @@ class _HomeScreenState extends State<HomeScreen> {
                               Padding(
                                 padding: const EdgeInsets.fromLTRB(0, 15, 10,0),
                                 child: Icon(
-                                  Icons.arrow_circle_right_rounded,
-                                  size: 40,
+                                  Icons.arrow_forward_ios_rounded,
+                                  size: 30,
                                   color: Color(0xff000000),
                                 ),
                               )
@@ -424,7 +440,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         child: ClipRRect(
                             borderRadius: BorderRadius.circular(20.0),
                             child: Image(
-                              width: 110,
+                              width: 90,
                               image: AssetImage('assets/images/home_social.png'),
                               fit: BoxFit.cover,
                             )
@@ -458,7 +474,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Padding(
-                                padding: const EdgeInsets.fromLTRB(110, 25, 0, 0),
+                                padding: const EdgeInsets.fromLTRB(90, 25, 0, 0),
                                 child: Container(
                                   //width:150,
                                   child: Text(
@@ -474,8 +490,8 @@ class _HomeScreenState extends State<HomeScreen> {
                               Padding(
                                 padding: const EdgeInsets.fromLTRB(0, 15, 10,0),
                                 child: Icon(
-                                  Icons.arrow_circle_right_rounded,
-                                  size: 40,
+                                  Icons.arrow_forward_ios_rounded,
+                                  size: 30,
                                   color: Color(0xff000000),
                                 ),
                               )
@@ -490,7 +506,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         child: ClipRRect(
                             borderRadius: BorderRadius.circular(20.0),
                             child: Image(
-                              width: 110,
+                              width: 90,
                               image: AssetImage('assets/images/home_work.png'),
                               fit: BoxFit.cover,
                             )
