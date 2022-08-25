@@ -115,3 +115,30 @@ List<String> mindfulnessimg = [
   "assets/images/lazyhammochmed.jpg",
   "assets/images/safespacevisualisationmed.jpg"
 ];
+
+List<String> pmrmed = [
+  'https://www.youtube.com/watch?v=ihO02wUzgkc',
+  'https://www.youtube.com/watch?v=ClqPtWzozXs',
+  'https://www.youtube.com/watch?v=kdLTOurs2lA'
+      'https://www.youtube.com/watch?v=912eRrbes2g',
+  'https://www.youtube.com/watch?v=Q_diV-uqV9w',
+  'https://www.youtube.com/watch?v=QjP9UGWxTLM',
+];
+
+List<String> pmrimg = [
+  'assets/images/pmr1.jpg',
+  'assets/images/pmr2.jpg',
+  'assets/images/pmr3.jpg',
+  'assets/images/pmr4.jpg',
+  'assets/images/pmr5.jpeg',
+  'assets/images/pmr6.jpeg'
+];
+
+List<String> pmrText = [
+  "Progressive Muscle Relaxation Training",
+  "Reduce Stress through Progressive Muscle Relaxation",
+  "How to reduce stress with progressive muscle relaxation",
+  "Progressive Muscle Relaxation - Female Voice",
+  "Breathing Technique",
+  "Steps for Stress  |Muscle relaxation  exercise"
+];
