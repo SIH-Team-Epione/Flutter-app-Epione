@@ -10,6 +10,7 @@ import 'package:quiz_app/models/Quotes.dart';
 import 'package:quiz_app/screens/doctor_consultation_screen.dart';
 import 'package:quiz_app/screens/google_sign_in.dart';
 import 'package:quiz_app/screens/hamburger_menu.dart';
+import 'package:quiz_app/screens/work_health/shared_exp.dart';
 import 'package:quiz_app/util/long_img_container.dart';
 import 'package:quiz_app/screens/chatbot/main.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -225,6 +226,30 @@ class _HomeScreenState extends State<HomeScreen> {
                           verticalImageContainer('assets/images/pmr_home2.jpg',
                               'Practice Progressive Muscle relaxation', "Releases strain")),
                     ),
+                  ],
+                ),
+              ),
+            ),
+
+            SizedBox(height: 10,),
+            Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(15),
+                color: Colors.white,
+
+              ),
+              child: RaisedButton(
+                onPressed: (){
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => SharedExperiences(),
+                      ));
+                },
+                child: Column(
+                  children: [
+                    Text('Shared Experiences'),
+                    Text('Read posts and engage with others on their self-care journey'),
                   ],
                 ),
               ),

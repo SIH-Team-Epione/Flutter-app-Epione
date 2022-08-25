@@ -17,6 +17,7 @@ import 'package:quiz_app/screens/learn_more/learn_time.dart';
 import 'package:quiz_app/screens/learn_more/social_health.dart';
 import 'package:quiz_app/screens/social_health/contacts.dart';
 import 'package:quiz_app/screens/social_health/index.dart';
+import 'package:quiz_app/screens/work_health/shared_exp.dart';
 import 'package:quiz_app/screens/work_health/time_techniques.dart';
 import 'package:quiz_app/screens/learn_more/work_health.dart';
 import 'package:quiz_app/screens/login_screen.dart';
@@ -147,6 +148,7 @@ class _MyAppState extends State<MyApp> {
             '/pomodoro': (BuildContext context) => new PomodoroScreen(),
             '/concentration_home': (BuildContext context) =>
                 new ConcentrationHomeScreen(),
+            '/shared_exp': (BuildContext context) => new SharedExperiences(),
             //'/learn_conc': (BuildContext context) => new LearnConcScreen(),
           },
         ),
