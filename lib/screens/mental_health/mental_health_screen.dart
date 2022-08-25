@@ -113,7 +113,6 @@ class _MentalHealthScreenState extends State<MentalHealthScreen> {
                       highlightColor: Color(0xffe0f4f0),
                       child: Container(
                         margin: EdgeInsets.fromLTRB(20, 15, 20, 10),
-                        height: 170,
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(15),
                             color: Colors.white,
@@ -160,11 +159,12 @@ class _MentalHealthScreenState extends State<MentalHealthScreen> {
                                         const Padding(
                                             padding: EdgeInsets.symmetric(
                                                 vertical: 2.0)),
-                                        Text(
+                                        ExpandableText(
                                           feature.description,
-                                          style: const TextStyle(
-                                              fontSize: 10.0,
-                                              color: Color(0xff8e8e8e)),
+                                          expandText: 'show more',
+                                          collapseText: 'show less',
+                                          expandOnTextTap: true,
+                                          collapseOnTextTap: true,
                                         ),
                                         const Padding(
                                             padding: EdgeInsets.symmetric(
