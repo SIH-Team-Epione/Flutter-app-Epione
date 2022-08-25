@@ -31,13 +31,10 @@ class _MeditationScreenState extends State<MeditationScreen>
         elevation: 0,
         title: Text(
           "Guide to meditation",
-          style: TextStyle(
-            fontSize: 30,
-            color: Color(0xFF000000),
-          ),
+          style: TextStyle(),
         ),
         iconTheme: IconThemeData(color: Color(0xFF000000)),
-        backgroundColor: Color(0xFFfafafa),
+        backgroundColor: Colors.teal,
       ),
       body: SafeArea(
         child: Scaffold(

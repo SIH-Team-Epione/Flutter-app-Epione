@@ -31,25 +31,28 @@ class _PMRScreenState extends State<PMRScreen> {
             Container(
               margin: EdgeInsets.all(10),
               width: MediaQuery.of(context).size.width,
-              height: MediaQuery.of(context).size.width / 2,
+              height: MediaQuery.of(context).size.width / 3,
               child: Container(
+                padding: EdgeInsets.all(5),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
                       'What is PMR?',
                       style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 15,
-                          color: Colors.white),
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20,
+                        color: Colors.black,
+                      ),
                       textAlign: TextAlign.center,
                     ),
+                    SizedBox(height: 10),
                     Text(
-                      'Progressive muscle relaxation (PMR) is a deep \nrelaxation technique that has been effectively \nused to control stress and anxiety, relieve insomnia, and \nreduce symptoms of certain types of chronic pain.\nProgressive muscle relaxation is based upon the simple \npractice of tensing, or tightening, one muscle group at \na time followed by a relaxation phase with release \nof the tension. ',
+                      'Progressive muscle relaxation (PMR) is a deep relaxation technique that has been effectively used to control stress and anxiety, relieve insomnia, and reduce symptoms of certain types of chronic pain. Progressive muscle relaxation is based upon the simple practice of tensing, or tightening, one muscle group at a time followed by a relaxation phase with release of the tension. ',
                       style: TextStyle(
-                        fontSize: 13,
+                        fontSize: 15,
                         fontWeight: FontWeight.w500,
-                        color: Colors.white,
+                        color: Colors.black,
                       ),
                       textAlign: TextAlign.center,
                     ),
