@@ -73,7 +73,7 @@ class _PMRScreenState extends State<PMRScreen> {
               child: SizedBox(
                 height: 100.0,
                 child: ListView.builder(
-                  itemCount: Data.pmrimg.length,
+                  itemCount: Data.pmrmed.length,
                   itemBuilder: (_, i) {
                     return Container(
                       margin: EdgeInsets.all(10),
@@ -91,8 +91,9 @@ class _PMRScreenState extends State<PMRScreen> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) =>
-                                  PmrVdPlayer(path: Data.pmrmed[i]),
+                              builder: (context) => PmrVdPlayer(
+                                path: Data.pmrmed[i],
+                              ),
                             ),
                           );
                         },

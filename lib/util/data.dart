@@ -119,8 +119,8 @@ List<String> mindfulnessimg = [
 List<String> pmrmed = [
   'https://www.youtube.com/watch?v=ihO02wUzgkc',
   'https://www.youtube.com/watch?v=ClqPtWzozXs',
-  'https://www.youtube.com/watch?v=kdLTOurs2lA'
-      'https://www.youtube.com/watch?v=912eRrbes2g',
+  'https://www.youtube.com/watch?v=kdLTOurs2lA',
+  'https://www.youtube.com/watch?v=912eRrbes2g',
   'https://www.youtube.com/watch?v=Q_diV-uqV9w',
   'https://www.youtube.com/watch?v=QjP9UGWxTLM',
 ];
