@@ -16,7 +16,7 @@ class _SocialHealthScreenState extends State<SocialHealthScreen> {
       backgroundColor: Colors.white,
       appBar: AppBar(
         title: const Text(title),
-        centerTitle: false,
+        // centerTitle: false,
         backgroundColor: Colors.teal,
       ),
       body: SingleChildScrollView(

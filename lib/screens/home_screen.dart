@@ -57,7 +57,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     print('Drawer Tapped!');
                   },
                       child: SvgPicture.asset('assets/svg/drawer_icon2.svg')),
-                  Text('Hi '+ user!.displayName!),
+                  Text('Hi '+ user!.displayName!.split(' ')[0] + '!'),
                   TextButton(
                       onPressed: (){
                         final provider = Provider.of<GoogleSignInProvider>(context, listen: false);
