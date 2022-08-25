@@ -145,7 +145,7 @@ class _MyAppState extends State<MyApp> {
             '/pomodoro': (BuildContext context) => new PomodoroScreen(),
             '/concentration_home': (BuildContext context) =>
                 new ConcentrationHomeScreen(),
-            '/shared_exp': (BuildContext context) => new SharedExperiencesScreen(),
+            '/shared_exp': (BuildContext context) => new SharedExperiences(),
             //'/learn_conc': (BuildContext context) => new LearnConcScreen(),
           },
         ),
