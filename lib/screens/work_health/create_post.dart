@@ -58,7 +58,7 @@ class _CreatePostScreenState extends State<CreatePostScreen> {
                   dropdownValue = newValue!;
                 });
               },
-              items: <String>['Select Track', 'One', 'Two', 'Free', 'Four']
+              items: <String>['Select Track', 'Mental Health', 'Physical Health', 'Social Health', 'Work Health']
                   .map<DropdownMenuItem<String>>((String value) {
                 return DropdownMenuItem<String>(
                   value: value,
