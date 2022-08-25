@@ -25,13 +25,6 @@ class _MeditationScreenState extends State<MeditationScreen>
   }
 
   @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-    _tabController = TabController(length: 3, vsync: this);
-    _scrollController = ScrollController();
-  }
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -159,7 +152,7 @@ class _MeditationScreenState extends State<MeditationScreen>
                                         width: 90,
                                         decoration: BoxDecoration(
                                           borderRadius:
-                                          BorderRadius.circular(10),
+                                              BorderRadius.circular(10),
                                           image: DecorationImage(
                                             image: AssetImage(
                                                 Data.imagetabBarView1[i]),
@@ -220,7 +213,7 @@ class _MeditationScreenState extends State<MeditationScreen>
                                         width: 90,
                                         decoration: BoxDecoration(
                                           borderRadius:
-                                          BorderRadius.circular(10),
+                                              BorderRadius.circular(10),
                                           image: DecorationImage(
                                             image: AssetImage(
                                                 Data.imagetabBarView2[i]),
@@ -281,7 +274,7 @@ class _MeditationScreenState extends State<MeditationScreen>
                                         width: 90,
                                         decoration: BoxDecoration(
                                           borderRadius:
-                                          BorderRadius.circular(10),
+                                              BorderRadius.circular(10),
                                           image: DecorationImage(
                                             image: AssetImage(
                                                 Data.imagetabBarView3[i]),
@@ -326,4 +319,3 @@ class _MeditationScreenState extends State<MeditationScreen>
     );
   }
 }
-
