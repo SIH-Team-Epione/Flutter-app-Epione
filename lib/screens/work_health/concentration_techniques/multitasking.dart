@@ -29,17 +29,17 @@ class _ReducingMultitasking extends State<ReducingMultiTasking> {
         leading: IconButton(
           icon: Icon(
             Icons.arrow_back,
-            color: Colors.black,
+            color: Colors.white,
           ),
           onPressed: () {
             Navigator.of(context).pop();
           },
         ),
         iconTheme: IconThemeData(
-            color: Colors.black
+            color: Colors.white
         ),
         // backgroundColor: Color(0xFF85F4FF),
-        backgroundColor: Color(0xFFFF5252),
+        backgroundColor: Colors.teal,
         title: Row(
           children: <Widget> [
             Expanded(
@@ -51,7 +51,7 @@ class _ReducingMultitasking extends State<ReducingMultiTasking> {
                     fontSize: 20.0,
                     fontWeight: FontWeight.w700,
                     // letterSpacing: 1.05
-                    color: Colors.black
+                    color: Colors.white
                 ),
               ),
             ),
@@ -62,7 +62,7 @@ class _ReducingMultitasking extends State<ReducingMultiTasking> {
                 onPressed: () {},
                 icon: Icon(
                     Icons.person,
-                    color: Colors.black
+                    color: Colors.white
                 ),
               ),
             )
@@ -275,7 +275,7 @@ class TaskItem extends StatelessWidget {
             fontSize: 20.0,
           ),
         ),
-        backgroundColor: task.checked ? Color(0xFFBDBDBD) : Color(0xFFDC758F),
+        backgroundColor: task.checked ? Color(0xFFBDBDBD) : Colors.tealAccent.shade400,
       ),
       title: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
