@@ -17,13 +17,9 @@ class _PMRScreenState extends State<PMRScreen> {
         elevation: 0,
         title: Text(
           'Progressive Muscle Relaxation',
-          style: TextStyle(
-            fontSize: 25,
-            color: Color(0xFF000000),
-          ),
         ),
         iconTheme: IconThemeData(color: Color(0xFF000000)),
-        backgroundColor: Color(0xFFfafafa),
+        backgroundColor: Colors.teal,
       ),
       body: SafeArea(
         child: Column(
@@ -60,10 +56,6 @@ class _PMRScreenState extends State<PMRScreen> {
                 ),
               ),
               decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage('assets/images/pmr.jpg'),
-                  fit: BoxFit.cover,
-                ),
                 borderRadius: BorderRadius.circular(10),
               ),
             ),
