@@ -266,8 +266,8 @@ class _HomeScreenState extends State<HomeScreen> {
                               Padding(
                                 padding: const EdgeInsets.fromLTRB(0, 15, 10,0),
                                 child: Icon(
-                                    Icons.arrow_circle_right_rounded,
-                                size: 40,
+                                  Icons.arrow_forward_ios_rounded,
+                                size: 30,
                                 color: Colors.black,
                                 ),
                               )
@@ -342,8 +342,8 @@ class _HomeScreenState extends State<HomeScreen> {
                               Padding(
                                 padding: const EdgeInsets.fromLTRB(0, 15, 10,0),
                                 child: Icon(
-                                  Icons.arrow_circle_right_rounded,
-                                  size: 40,
+                                  Icons.arrow_forward_ios_rounded,
+                                  size: 30,
                                   color: Color(0xff000000),
                                 ),
                               )
@@ -358,7 +358,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         child: ClipRRect(
                             borderRadius: BorderRadius.circular(20.0),
                             child: Image(
-                              width: 110,
+                              width: 90,
                               image: AssetImage('assets/images/home_physical.png'),
                               fit: BoxFit.cover,
                             )
@@ -408,8 +408,8 @@ class _HomeScreenState extends State<HomeScreen> {
                               Padding(
                                 padding: const EdgeInsets.fromLTRB(0, 15, 10,0),
                                 child: Icon(
-                                  Icons.arrow_circle_right_rounded,
-                                  size: 40,
+                                  Icons.arrow_forward_ios_rounded,
+                                  size: 30,
                                   color: Color(0xff000000),
                                 ),
                               )
@@ -424,7 +424,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         child: ClipRRect(
                             borderRadius: BorderRadius.circular(20.0),
                             child: Image(
-                              width: 110,
+                              width: 90,
                               image: AssetImage('assets/images/home_social.png'),
                               fit: BoxFit.cover,
                             )
@@ -474,8 +474,8 @@ class _HomeScreenState extends State<HomeScreen> {
                               Padding(
                                 padding: const EdgeInsets.fromLTRB(0, 15, 10,0),
                                 child: Icon(
-                                  Icons.arrow_circle_right_rounded,
-                                  size: 40,
+                                  Icons.arrow_forward_ios_rounded,
+                                  size: 30,
                                   color: Color(0xff000000),
                                 ),
                               )
@@ -490,7 +490,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         child: ClipRRect(
                             borderRadius: BorderRadius.circular(20.0),
                             child: Image(
-                              width: 110,
+                              width: 90,
                               image: AssetImage('assets/images/home_work.png'),
                               fit: BoxFit.cover,
                             )
