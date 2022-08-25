@@ -1,5 +1,6 @@
 // ignore_for_file: deprecated_member_use
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import 'add_contacts.dart';
@@ -18,6 +19,8 @@ class Contacts extends StatefulWidget {
 }
 
 class _ContactsState extends State<Contacts> {
+  final user=FirebaseAuth.instance.currentUser;
+  var emailid;
   late Query _ref;
   DatabaseReference reference = FirebaseDatabase.instance.reference().child(
       'Contacts'); //by making it a member function we will have to call it only once in our dialog box (app) below otherwise we had to instanciate every time user clicks on delete button
@@ -31,6 +34,7 @@ class _ContactsState extends State<Contacts> {
         .reference()
         .child('Contacts')
         .orderByChild('name');
+    emailid=user?.email;
   }
 
   Widget _buildContactItem({required Map contact}) {
@@ -223,7 +227,8 @@ class _ContactsState extends State<Contacts> {
               Animation<double> animation, int index) {
             Map contact = snapshot.value as Map;
             contact['key'] = snapshot.key;
-            return _buildContactItem(contact: contact);
+            if(contact['id']==emailid) return _buildContactItem(contact: contact);
+            else return Container();
           },
         ),
       ),

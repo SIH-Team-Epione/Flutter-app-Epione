@@ -22,7 +22,7 @@ class _MentalHealthScreenState extends State<MentalHealthScreen> {
         //   onPressed: () => Navigator.of(context).pop(),
         // ),
         title: const Text(title),
-        centerTitle: true,
+        // centerTitle: true,
       ),
       body: SingleChildScrollView(
         physics: ScrollPhysics(),

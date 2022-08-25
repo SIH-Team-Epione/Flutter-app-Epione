@@ -22,7 +22,7 @@ class _WorkHealthScreenState extends State<WorkHealthScreen> {
         //   onPressed: () => Navigator.of(context).pop(),
         // ),
         title: const Text(title),
-        centerTitle: true,
+        // centerTitle: true,
       ),
       body: SingleChildScrollView(
         physics: ScrollPhysics(),

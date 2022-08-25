@@ -1,4 +1,4 @@
-// ignore_for_file: deprecated_member_use
+ // ignore_for_file: deprecated_member_use
 
 import 'PSQI2.dart';
 import 'package:flutter/material.dart';
@@ -22,7 +22,7 @@ class _PsqiState extends State<Psqi> {
     fieldText.clear();
   }
 
-  final Map<String, int> qna = {
+  final Map<String, num> qna = {
     "When have you usually gone to bed (hr[0-23])": 0,
     "When have you usually gone to bed (min[0-59])": 0,
     "How long (in minutes) has it taken you to fall asleep each night": 0,
@@ -31,8 +31,8 @@ class _PsqiState extends State<Psqi> {
     "How many hours of actual sleep did you get at night": 0,
     "How many hours were you in bed": 0,
   };
-  List Convert(Map<String, int> qna) {
-    var valuesList = qna.values.toList();
+  List<num> Convert(Map<String, num> qna) {
+    List<num> valuesList = qna.values.toList();
     return valuesList;
   }
 
@@ -127,7 +127,7 @@ class _PsqiState extends State<Psqi> {
                 )),
             child: Container(
               padding: const EdgeInsets.all(20.0),
-  //margin: EdgeInsets.all(10),
+              //margin: EdgeInsets.all(10),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -149,7 +149,7 @@ class _PsqiState extends State<Psqi> {
                     onSubmitted: ((value) {
                       print(value);
                       setState(() {
-                        qna[question] = int.parse(value);
+                        qna[question] = num.parse(value);
                         ;
                       });
                     }),
