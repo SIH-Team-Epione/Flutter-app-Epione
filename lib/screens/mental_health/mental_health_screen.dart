@@ -22,7 +22,7 @@ class _MentalHealthScreenState extends State<MentalHealthScreen> {
         //   onPressed: () => Navigator.of(context).pop(),
         // ),
         title: const Text(title),
-        centerTitle: true,
+        // centerTitle: true,
       ),
       body: SingleChildScrollView(
         physics: ScrollPhysics(),
@@ -34,7 +34,7 @@ class _MentalHealthScreenState extends State<MentalHealthScreen> {
               SizedBox(height: 20,),
               Container(
                 width: 350,
-                height: 120,
+                height: 200,
                 child: RaisedButton(
                   onPressed: (){
                     Navigator.pushNamed(context, '/learn_more_mental_health');
@@ -54,7 +54,7 @@ class _MentalHealthScreenState extends State<MentalHealthScreen> {
                         vertical: 5,
                     ),
                     width: double.infinity,
-                    height: 90,
+                    height: 190,
                     decoration: BoxDecoration(
                       color: Color(307473),
                       borderRadius: BorderRadius.circular(60),

@@ -16,7 +16,7 @@ class _SocialHealthScreenState extends State<SocialHealthScreen> {
       backgroundColor: Colors.white,
       appBar: AppBar(
         title: const Text(title),
-        centerTitle: false,
+        // centerTitle: false,
         backgroundColor: Colors.teal,
       ),
       body: SingleChildScrollView(
@@ -38,7 +38,7 @@ class _SocialHealthScreenState extends State<SocialHealthScreen> {
                   shape: new RoundedRectangleBorder(
                     borderRadius: new BorderRadius.circular(20.0),
                   ),
-                  color: Color(0xffdea23e),
+                  color: Color(0xff307473),
                   //0xfff3dbdd,
                   child: Container(
                     margin: EdgeInsets.symmetric(

@@ -95,7 +95,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   children: <Widget>[
                     SizedBox(
                       height: 200,
-                      child: Image.asset("assets/icons/logo_sample.png", fit: BoxFit.contain,),
+                      child: Image.asset("assets/icons/epione-logo.png", fit: BoxFit.contain,),
                     ),
                     SizedBox(height: 45,),
                     //
@@ -117,33 +117,8 @@ class _LoginScreenState extends State<LoginScreen> {
                           provider.googleLogIn();
                         },
                         icon: FaIcon(FontAwesomeIcons.google, color: Colors.red),
-                        label: Text('Sign Up with Google')
+                        label: Text('Sign In with Google')
                     ),
-                    SizedBox(height: 15,),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        Text("Don't have an account?"),
-                        GestureDetector(
-                          onTap: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) =>
-                                    RegistrationScreen()));
-                          },
-                            child: Text(
-                                "Signup",
-                                style: TextStyle(
-                                  fontWeight: FontWeight.w600,
-                                  fontSize: 15,
-                                  color: Colors.redAccent,
-                                )
-                            )
-                        )
-
-                      ],
-                    )
                   ],
                 ),
               ),

@@ -21,7 +21,7 @@ class _PhysicalHealthScreenState extends State<PhysicalHealthScreen> {
         //   onPressed: () => Navigator.of(context).pop(),
         // ),
         title: const Text(title),
-        centerTitle: true,
+        // centerTitle: true,
       ),
       body: SingleChildScrollView(
         physics: ScrollPhysics(),
@@ -33,7 +33,7 @@ class _PhysicalHealthScreenState extends State<PhysicalHealthScreen> {
               SizedBox(height: 20,),
               Container(
                 width: 350,
-                height: 120,
+                height: 180,
                 child: RaisedButton(
                   onPressed: (){
                     Navigator.pushNamed(context, '/learn_more_physical_health');
@@ -52,7 +52,7 @@ class _PhysicalHealthScreenState extends State<PhysicalHealthScreen> {
                         vertical: 5,
                     ),
                     width: double.infinity,
-                    height: 90,
+                    height: 160,
                     decoration: BoxDecoration(
                       color: Color(307473),
                       borderRadius: BorderRadius.circular(60),

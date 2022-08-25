@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'home.dart';
+
 class ExercisesScreen extends StatefulWidget {
   const ExercisesScreen({Key? key}) : super(key: key);
 
@@ -10,13 +12,13 @@ class ExercisesScreen extends StatefulWidget {
 class _ExercisesScreenState extends State<ExercisesScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Exercises'),
+    return MaterialApp(
+      title: 'Exercises',
+      theme: ThemeData(
+        primarySwatch: Colors.teal,
       ),
+      debugShowCheckedModeBanner: false,
+      home: Home(),
     );
   }
 }
-
-
-
