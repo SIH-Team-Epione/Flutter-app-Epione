@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/gestures.dart';
 import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'diap_help.dart';
 
 import '../color_pomo/colors.dart';
 import 'package:sleek_circular_slider/sleek_circular_slider.dart';
@@ -15,6 +17,7 @@ class DiaphragmScreen extends StatefulWidget {
 }
 int a=0;
 double z=4;
+bool _isVisible = true;
 String text='Breathe For 4 Second';
 class _DiaphragmScreenState extends State<DiaphragmScreen> {
   double defaultValue = 4;
@@ -91,18 +94,79 @@ class _DiaphragmScreenState extends State<DiaphragmScreen> {
       appBar: AppBar(
         title:const Text("Diaphragmatic Breathing"),
       ),
-      body: SafeArea(
-        child: Container(
-          width: MediaQuery.of(context).size.width,
-          height: MediaQuery.of(context).size.height,
-          padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 10),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              
-              Expanded(
-                child: Column(
+      body: Column(
+        children: [
+        Visibility(
+        visible: _isVisible,
+        child: Dismissible(
+          key: Key('tips'),
+          child: Container(
+            color: Color(0xFFF6D6D7),
+            child: Row(
+              children: <Widget> [
+                Expanded(
+                  flex: 2,
+                  // padding: const EdgeInsets.fromLTRB(5.0, 2.0, 0.0, 2.0),
+                  child: Icon(
+                    Icons.lightbulb,
+                    color: Color(0xFFFEBD40),
+                    size: 28.0,
+                  ),
+                ),
+                Expanded(
+                  flex: 10,
+                  // padding: const EdgeInsets.fromLTRB(8.0, 2.0, 220.0, 2.0),
+                  child: RichText(
+                    text: TextSpan(
+                        text: 'If you want see how to perform this exercise then click here',
+                        // text: 'Tips to increase concentration',
+                        // children: [
+                        //   Container(padding: EdgeInsets.only(bottom: 5.0)),
+                        // ],
+                        style: TextStyle(
+                            fontSize: 15.0,
+                            fontFamily: 'Montserrat',
+                            fontWeight: FontWeight.w500,
+                            color: Colors.black,
+                            decoration: TextDecoration.underline,
+                            decorationThickness: 1.0
+                        ),
+                        recognizer: TapGestureRecognizer()
+                          ..onTap = () {
+                            Navigator.push(context,
+                              MaterialPageRoute(
+                                  builder: (context) => Diap_Help()),
+                            );
+                            print('I was clicked');
+                          }
+                    ),
+                  ),
+                ),
+                Expanded(
+                  flex: 2,
+                  child: IconButton(
+                    onPressed: () {
+                      setState(() {
+                        _isVisible = false;
+                      });
+                    },
+                    icon: Icon(Icons.close_rounded),
+                    color: Color(0xFF293241),
+                  ),
+                )
+              ],
+            ),
+          ),
+        ),
+      ),
+          Container(
+            width: MediaQuery.of(context).size.width,
+            padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 10),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisSize: MainAxisSize.max,
@@ -119,14 +183,13 @@ class _DiaphragmScreenState extends State<DiaphragmScreen> {
                             ),
                             margin: new EdgeInsets.symmetric(vertical: 40.0),
                     ),
-                  
+
                     Center(
                       child: SizedBox(
                         width: 250,
-                        height: 250,
                         child: Stack(
                           children: [
-                            
+
                             SleekCircularSlider(
                               initialValue: value,
                               // initialValue: 0,
@@ -186,9 +249,6 @@ class _DiaphragmScreenState extends State<DiaphragmScreen> {
                         ),
                       ),
                     ),
-                    const SizedBox(
-                      height: 100,
-                    ),
                     GestureDetector(
                       onTap: () {
                         setState(() {
@@ -212,10 +272,10 @@ class _DiaphragmScreenState extends State<DiaphragmScreen> {
                       child: Container(
                         width: 200,
                         height: 50,
-                        
+
                         decoration: BoxDecoration(
                           color: green1,
-                          
+
                           borderRadius: BorderRadius.circular(7),
                           boxShadow: [
                             BoxShadow(
@@ -231,7 +291,7 @@ class _DiaphragmScreenState extends State<DiaphragmScreen> {
                           // isStarted ? "STOP" : "START",
                           isStarted ? "STOP": "START",
 
-                          
+
                           style: TextStyle(
                             color: color4,
                             fontSize: 24,
@@ -242,10 +302,10 @@ class _DiaphragmScreenState extends State<DiaphragmScreen> {
                     ),
                   ],
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
-        ),
+        ],
       ),
     );
   }
