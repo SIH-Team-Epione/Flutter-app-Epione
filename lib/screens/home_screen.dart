@@ -12,7 +12,12 @@ import 'package:quiz_app/screens/google_sign_in.dart';
 import 'package:quiz_app/screens/hamburger_menu.dart';
 import 'package:quiz_app/util/long_img_container.dart';
 import 'package:quiz_app/screens/chatbot/main.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 import 'SOS.dart';
+import 'package:url_launcher_android/url_launcher_android.dart';
+import 'package:location/location.dart';
+import 'package:share_plus/share_plus.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({key}) : super(key: key);
@@ -571,11 +576,64 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Text(
           'SOS'
         ),
-        onPressed: () {
+        onPressed: () async {
           print('Clicked');
-          Navigator.push(context,
-            MaterialPageRoute(builder: (context) => const SOS()),
-          );
+          // Navigator.push(context,
+          //   MaterialPageRoute(builder: (context) => const SOS()),
+          // );
+          final phoneNumber = '9820466726';
+          Location location = new Location();
+
+          bool _serviceEnabled;
+          PermissionStatus _permissionGranted;
+          LocationData _locationData;
+
+          _serviceEnabled = await location.serviceEnabled();
+          if (!_serviceEnabled) {
+            _serviceEnabled = await location.requestService();
+            if (!_serviceEnabled) {
+              return;
+            }
+          }
+
+          _permissionGranted = await location.hasPermission();
+          if (_permissionGranted == PermissionStatus.denied) {
+            _permissionGranted = await location.requestPermission();
+            if (_permissionGranted != PermissionStatus.granted) {
+              return;
+            }
+          }
+
+          _locationData = await location.getLocation();
+
+          String loc=_locationData.toString();
+          // List<String> rec=[phoneNumber];
+          // void _sendSMS(String message, List<String> recipents) async {
+          //   String _result = await sendSMS(message: loc, recipients: recipents)
+          //       .catchError((onError) {
+          //     print(onError);
+          //   });
+          //   print(_result);
+          // }
+          // _sendSMS(loc, rec);
+          String googleUrl='https:/maps.google.com/?q=${_locationData.latitude},${_locationData.longitude}';
+          _textMe() async{
+            String s='sms:+09820466726?body=Please provide aid I am having suicidal thoughts, Reach me at '+googleUrl;
+            var uri=s;
+            if(await canLaunchUrlString(uri)){
+              await launchUrlString(uri);
+            }else{
+              print('Could not launch');
+            }
+
+          }
+          _textMe();
+
+          final url  = Uri.parse('tel://$phoneNumber');
+          if (!await launchUrl(url, mode: LaunchMode.externalApplication)) {
+            print('Could not launch');
+          }
+
         }
     ),
   );
