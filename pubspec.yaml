@@ -70,6 +70,7 @@ dependencies:
   camera: ^0.9.4+5
   flutter_launcher_icons: ^0.10.0
   flutter_native_splash: ^2.2.8
+  expandable_text: ^2.3.0
 
 dev_dependencies:
   flutter_test:
