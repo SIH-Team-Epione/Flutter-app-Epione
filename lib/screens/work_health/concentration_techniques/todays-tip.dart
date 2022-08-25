@@ -19,48 +19,7 @@ class TodaysTip extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(
-          icon: Icon(
-            Icons.arrow_back,
-            color: Colors.white,
-          ),
-          onPressed: () {
-            Navigator.of(context).pop();
-          },
-        ),
-        iconTheme: IconThemeData(
-            color: Colors.white
-        ),
-        // backgroundColor: Color(0xFF85F4FF),
-        backgroundColor: Colors.teal,
-        title: Row(
-          children: <Widget> [
-            Expanded(
-              flex: 7,
-              child: const Text(
-                'Tip of the day',
-                style: TextStyle(
-                    fontFamily: 'Montserrat',
-                    fontSize: 20.0,
-                    fontWeight: FontWeight.w700,
-                    // letterSpacing: 1.05
-                    color: Colors.white
-                ),
-              ),
-            ),
-            // SizedBox(width: MediaQuery.of(context).size.width / 3),
-            Expanded(
-              flex: 1,
-              child: IconButton(
-                onPressed: () {},
-                icon: Icon(
-                    Icons.person,
-                    color: Colors.white
-                ),
-              ),
-            )
-          ],
-        ),
+        title: const Text('Tip of the day'),
       ),
       body: Container(
         margin: EdgeInsets.all(10.0),
