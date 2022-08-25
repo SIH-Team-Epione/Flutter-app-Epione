@@ -20,7 +20,7 @@ class _HomeState extends State<Home> {
 
   late Stream<StepCount> _stepCountStream;
   late Stream<PedestrianStatus> _pedestrianStatusStream;
-  String _status = '?', _steps = '?';
+  String _status = '?', _steps = '0';
 
   @override
   void initState() {
