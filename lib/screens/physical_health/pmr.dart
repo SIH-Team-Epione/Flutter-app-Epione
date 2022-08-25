@@ -1,3 +1,4 @@
+import 'package:expandable_text/expandable_text.dart';
 import 'package:flutter/material.dart';
 import 'package:quiz_app/util/videoPlayer.dart';
 import 'package:quiz_app/util/data.dart' as Data;
@@ -30,7 +31,7 @@ class _PMRScreenState extends State<PMRScreen> {
             Container(
               margin: EdgeInsets.all(10),
               width: MediaQuery.of(context).size.width,
-              height: MediaQuery.of(context).size.width / 3,
+              height: MediaQuery.of(context).size.width / 2,
               child: Container(
                 padding: EdgeInsets.all(5),
                 child: Column(
@@ -46,15 +47,10 @@ class _PMRScreenState extends State<PMRScreen> {
                       textAlign: TextAlign.center,
                     ),
                     SizedBox(height: 10),
-                    Text(
-                      'Progressive muscle relaxation (PMR) is a deep relaxation technique that has been effectively used to control stress and anxiety, relieve insomnia, and reduce symptoms of certain types of chronic pain. Progressive muscle relaxation is based upon the simple practice of tensing, or tightening, one muscle group at a time followed by a relaxation phase with release of the tension. ',
-                      style: TextStyle(
-                        fontSize: 15,
-                        fontWeight: FontWeight.w500,
-                        color: Colors.black,
-                      ),
-                      textAlign: TextAlign.center,
-                    ),
+                    Expanded(
+                      child: Text(
+                          'Priogressive muscle relaxation (PMR) is a deep relaxation technique that has been effectively used to control stress and anxiety, relieve insomnia, and reduce symptoms of certain types of chronic pain. Progressive muscle relaxation is based upon the simple practice of tensing, or tightening, one muscle group at a time followed by a relaxation phase with release of the tension.'),
+                    )
                   ],
                 ),
               ),
