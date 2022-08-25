@@ -224,6 +224,26 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
 
+            SizedBox(height: 10,),
+            Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(15),
+                color: Colors.white,
+
+              ),
+              child: RaisedButton(
+                onPressed: (){
+                  Navigator.pushNamed(context, '/shared_exp');
+                },
+                child: Column(
+                  children: [
+                    Text('Shared Experiences'),
+                    Text('Read posts and engage with others on their self-care journey'),
+                  ],
+                ),
+              ),
+            ),
+
             // Text widget for 'Explore Tracks'
             Padding(
               padding: EdgeInsets.only(top: 48, left: 32, right: 28),

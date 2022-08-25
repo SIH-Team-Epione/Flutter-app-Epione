@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:quiz_app/constants.dart';
+import 'package:expandable_text/expandable_text.dart';
 import 'package:quiz_app/screens/mental_health/phq9_home.dart';
 import 'package:quiz_app/models/MentalHealthHome.dart';
 
@@ -10,6 +12,11 @@ class MentalHealthScreen extends StatefulWidget {
   @override
   State<MentalHealthScreen> createState() => _MentalHealthScreenState();
 }
+
+// onPressed: () {
+// Navigator.pushNamed(
+// context, '/learn_more_mental_health');
+// }
 
 class _MentalHealthScreenState extends State<MentalHealthScreen> {
   @override
@@ -27,77 +34,73 @@ class _MentalHealthScreenState extends State<MentalHealthScreen> {
       body: SingleChildScrollView(
         physics: ScrollPhysics(),
         child: Container(
-          alignment: Alignment.center,
           color: Colors.white,
           child: Column(
             children: [
-              SizedBox(height: 20,),
               Container(
-                width: 350,
-                height: 200,
-                child: RaisedButton(
-                  onPressed: (){
-                    Navigator.pushNamed(context, '/learn_more_mental_health');
-                  },
-                  highlightColor: Colors.greenAccent.withOpacity(0.3),
-                  shape: new RoundedRectangleBorder(
-                    borderRadius: new BorderRadius.circular(20.0),
-                  ),
-                  color: Color(0xff307473),
-                  //0xfff3dbdd,
-                  child: Container(
-                    margin: EdgeInsets.symmetric(
-                        horizontal: 20
+                margin: EdgeInsets.fromLTRB(20, 20, 20, 10),
+                padding: EdgeInsets.fromLTRB(20, 20, 20, 20),
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(20),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.teal.shade50,
+                        blurRadius: 10,
+                        spreadRadius: 5,
+                      )
+                    ]),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    ExpandableText(
+                      learnMoreText,
+                      expandText: "show more",
+                      collapseText: "show less",
+                      expandOnTextTap: true,
+                      collapseOnTextTap: true,
                     ),
-                    padding: EdgeInsets.symmetric(
-                        horizontal: 4,
-                        vertical: 5,
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.pushNamed(
+                          context, '/learn_more_mental_health');
+                        },
+                      child: Container(
+                        margin: EdgeInsets.only(top: 10),
+                        padding: EdgeInsets.all(5),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            color: Color(0xffe0f4f0)
+                        ),
+                        child: Text(
+                          'Learn More',
+                          style: const TextStyle(fontSize: 14.0),
+                        ),
+                      ),
                     ),
-                    width: double.infinity,
-                    height: 190,
-                    decoration: BoxDecoration(
-                      color: Color(307473),
-                      borderRadius: BorderRadius.circular(60),
-                    ),
-                    child: Text.rich(
-                        TextSpan(
-                            text: "Learn more\n",
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 18
-                            ),
-                            children: [
-                              TextSpan(
-                                  text: learnMoreText,
-                                  style: TextStyle(
-                                      fontWeight: FontWeight.w300,
-                                      fontSize: 12
-                                  )
-                              )
-                            ]
-                        )
-                    ),
-                  ),
-                ),
 
-              ),
-              SizedBox(height: 25,),
-              Container(
-                child: Text(
-                  'Features',
-                  style: GoogleFonts.playfairDisplay(
-                    fontSize: 22,
-                    fontWeight: FontWeight.w700,
-                  )
+                  ],
                 ),
               ),
-              SizedBox(height: 20,),
+              SizedBox(
+                height: 25,
+              ),
+              Container(
+                child: Text('Features',
+                    style: GoogleFonts.playfairDisplay(
+                      fontSize: 22,
+                      fontWeight: FontWeight.w700,
+                    )),
+              ),
+              SizedBox(
+                height: 20,
+              ),
 
               // List of features
               ListView.builder(
-                physics: NeverScrollableScrollPhysics(),
-                shrinkWrap: true,
+                  physics: NeverScrollableScrollPhysics(),
+                  shrinkWrap: true,
                   scrollDirection: Axis.vertical,
                   itemCount: featuresList.length,
                   itemBuilder: (context, index) {
@@ -110,16 +113,16 @@ class _MentalHealthScreenState extends State<MentalHealthScreen> {
                       highlightColor: Color(0xffe0f4f0),
                       child: Container(
                         margin: EdgeInsets.fromLTRB(20, 15, 20, 10),
-                        height: 170,
                         decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(15),
-                          color: Colors.white,
-                          boxShadow: [BoxShadow(
-                            color: Colors.grey.shade200,
-                            blurRadius: 10,
-                            spreadRadius: 10,
-                          )]
-                        ),
+                            borderRadius: BorderRadius.circular(15),
+                            color: Colors.white,
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.grey.shade200,
+                                blurRadius: 10,
+                                spreadRadius: 10,
+                              )
+                            ]),
                         child: Padding(
                           padding: const EdgeInsets.symmetric(vertical: 5.0),
                           child: Row(
@@ -136,43 +139,51 @@ class _MentalHealthScreenState extends State<MentalHealthScreen> {
                                 ),
                               ),
                               Expanded(
-                                flex: 3,
-                                child:
-                                Padding(
-                                  padding: const EdgeInsets.fromLTRB(10.0, 0.0, 20.0, 0.0),
-                                  child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: <Widget>[
-                                      Text(
-                                        feature.title,
-                                        style: const TextStyle(
-                                          fontWeight: FontWeight.w700,
-                                          fontSize: 14.0,
+                                  flex: 3,
+                                  child: Padding(
+                                    padding: const EdgeInsets.fromLTRB(
+                                        10.0, 0.0, 20.0, 0.0),
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: <Widget>[
+                                        Text(
+                                          feature.title,
+                                          style: const TextStyle(
+                                            fontWeight: FontWeight.w700,
+                                            fontSize: 14.0,
+                                          ),
                                         ),
-                                      ),
-                                      const Padding(padding: EdgeInsets.symmetric(vertical: 2.0)),
-                                      Text(
-                                        feature.description,
-                                        style: const TextStyle(fontSize: 10.0,
-                                        color: Color(0xff8e8e8e)),
-                                      ),
-                                      const Padding(padding: EdgeInsets.symmetric(vertical: 1.0)),
-                                      Container(
-                                        padding: EdgeInsets.all(5),
-                                        decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.circular(10),
-                                          color: Color(0xffe0f4f0)
+                                        const Padding(
+                                            padding: EdgeInsets.symmetric(
+                                                vertical: 2.0)),
+                                        ExpandableText(
+                                          feature.description,
+                                          expandText: 'show more',
+                                          collapseText: 'show less',
+                                          expandOnTextTap: true,
+                                          collapseOnTextTap: true,
                                         ),
-                                        child: Text(
-                                          feature.ageGroup,
-                                          style: const TextStyle(fontSize: 10.0),
+                                        const Padding(
+                                            padding: EdgeInsets.symmetric(
+                                                vertical: 1.0)),
+                                        Container(
+                                          padding: EdgeInsets.all(5),
+                                          decoration: BoxDecoration(
+                                              borderRadius:
+                                                  BorderRadius.circular(10),
+                                              color: Color(0xffe0f4f0)),
+                                          child: Text(
+                                            feature.ageGroup,
+                                            style:
+                                                const TextStyle(fontSize: 10.0),
+                                          ),
                                         ),
-                                      ),
-                                    ],
-                                  ),
-                                )
-                              ),
+                                      ],
+                                    ),
+                                  )),
                             ],
                           ),
                         ),
@@ -195,15 +206,11 @@ class _MentalHealthScreenState extends State<MentalHealthScreen> {
                     //     trailing: const Icon(Icons.arrow_forward),
                     //   ),
                     // );
-                  }
-              )
+                  })
             ],
           ),
         ),
-
       ),
     );
   }
 }
-
-

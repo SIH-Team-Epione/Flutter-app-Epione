@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:expandable_text/expandable_text.dart';
 import 'package:quiz_app/models/PhysicalHealthHome.dart';
 
 class PhysicalHealthScreen extends StatefulWidget {
@@ -9,6 +10,8 @@ class PhysicalHealthScreen extends StatefulWidget {
   @override
   State<PhysicalHealthScreen> createState() => _PhysicalHealthScreenState();
 }
+
+///learn_more_physical_health
 
 class _PhysicalHealthScreenState extends State<PhysicalHealthScreen> {
   @override
@@ -30,55 +33,51 @@ class _PhysicalHealthScreenState extends State<PhysicalHealthScreen> {
           color: Colors.white,
           child: Column(
             children: [
-              SizedBox(height: 20,),
               Container(
-                width: 350,
-                height: 180,
-                child: RaisedButton(
-                  onPressed: (){
-                    Navigator.pushNamed(context, '/learn_more_physical_health');
-                  },
-                  highlightColor: Colors.greenAccent.withOpacity(0.3),
-                  shape: new RoundedRectangleBorder(
-                    borderRadius: new BorderRadius.circular(20.0),
-                  ),
-                  color: Color(0xff307473),
-                  child: Container(
-                    margin: EdgeInsets.symmetric(
-                        horizontal: 20
+                margin: EdgeInsets.fromLTRB(20, 20, 20, 10),
+                padding: EdgeInsets.fromLTRB(20, 20, 20, 20),
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(20),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.teal.shade50,
+                        blurRadius: 10,
+                        spreadRadius: 5,
+                      )
+                    ]),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    ExpandableText(
+                      learnMoreText,
+                      expandText: "show more",
+                      collapseText: "show less",
+                      expandOnTextTap: true,
+                      collapseOnTextTap: true,
                     ),
-                    padding: EdgeInsets.symmetric(
-                        horizontal: 4,
-                        vertical: 5,
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.pushNamed(
+                            context, '/learn_more_physical_health');
+                      },
+                      child: Container(
+                        margin: EdgeInsets.only(top: 10),
+                        padding: EdgeInsets.all(5),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            color: Color(0xffe0f4f0)
+                        ),
+                        child: Text(
+                          'Learn More',
+                          style: const TextStyle(fontSize: 14.0),
+                        ),
+                      ),
                     ),
-                    width: double.infinity,
-                    height: 160,
-                    decoration: BoxDecoration(
-                      color: Color(307473),
-                      borderRadius: BorderRadius.circular(60),
-                    ),
-                    child: Text.rich(
-                        TextSpan(
-                            text: "Learn more\n",
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 18
-                            ),
-                            children: [
-                              TextSpan(
-                                  text: learnMoreText,
-                                  style: TextStyle(
-                                      fontWeight: FontWeight.w300,
-                                      fontSize: 12
-                                  )
-                              )
-                            ]
-                        )
-                    ),
-                  ),
-                ),
 
+                  ],
+                ),
               ),
               SizedBox(height: 25,),
               Container(
@@ -108,7 +107,6 @@ class _PhysicalHealthScreenState extends State<PhysicalHealthScreen> {
                       highlightColor: Color(0xffe0f4f0),
                       child: Container(
                         margin: EdgeInsets.fromLTRB(20, 15, 20, 10),
-                        height: 170,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(15),
                           color: Colors.white,
@@ -132,7 +130,6 @@ class _PhysicalHealthScreenState extends State<PhysicalHealthScreen> {
                                     child: Image.asset(
                                       feature.urlImage,
                                       fit: BoxFit.cover,
-                                      height:170,
                                     ),
                                   ),
                                 ),
@@ -154,10 +151,12 @@ class _PhysicalHealthScreenState extends State<PhysicalHealthScreen> {
                                         ),
                                       ),
                                       const Padding(padding: EdgeInsets.symmetric(vertical: 2.0)),
-                                      Text(
+                                      ExpandableText(
                                         feature.description,
-                                        style: const TextStyle(fontSize: 10.0,
-                                        color: Color(0xff8e8e8e)),
+                                        expandText: 'show more',
+                                        collapseText: 'show less',
+                                        expandOnTextTap: true,
+                                        collapseOnTextTap: true,
                                       ),
                                       const Padding(padding: EdgeInsets.symmetric(vertical: 1.0)),
                                       Container(
