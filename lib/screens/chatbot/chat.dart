@@ -221,7 +221,7 @@ class _ChatState extends State<Chat> {
                 ]
           ),
           child: IconTheme(
-            data: IconThemeData(color: Color(0xFFFEBD40)),
+            data: IconThemeData(color: Colors.teal.shade400),
             child: Container(
               margin: const EdgeInsets.symmetric(vertical: 7.0),
               // margin: const EdgeInsets.symmetric(horizontal: 8.0),
@@ -372,7 +372,7 @@ class ChatMessage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.fromLTRB((this.type ? MediaQuery.of(context).size.width*0.25 : 10.0), 15.0, (this.type ? 10.0 : MediaQuery.of(context).size.width*0.25), 10.0),
+      margin: EdgeInsets.fromLTRB((this.type ? MediaQuery.of(context).size.width*0.25 : 10.0), 15.0, (this.type ? 10.0 : MediaQuery.of(context).size.width*0.15), 10.0),
       child: Container(
         padding: EdgeInsets.fromLTRB((this.type? 45.0 : 0.0), 14.0, (this.type? 0.0 : 45.0), 14.0),
         decoration: BoxDecoration(
@@ -385,7 +385,7 @@ class ChatMessage extends StatelessWidget {
                   spreadRadius: 1.0
               )
             ],
-            color: !this.type ? Color(0xFFFFFFFF) : Color(0xFFFEBD40),
+            color: !this.type ? Color(0xFFFFFFFF) : Color(0xffe0f4f0),
         ),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
