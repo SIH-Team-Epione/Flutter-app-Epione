@@ -22,17 +22,17 @@ class Chatbot extends StatelessWidget {
           leading: IconButton(
             icon: Icon(
                 Icons.arrow_back,
-                color: Colors.black,
+                color: Colors.white,
             ),
             onPressed: () {
               Navigator.of(context).pop();
             },
           ),
             iconTheme: IconThemeData(
-              color: Colors.black
+              color: Colors.white
             ),
             // backgroundColor: Color(0xFF85F4FF),
-            backgroundColor: Color(0xFFFEBD40),
+            // backgroundColor: Colors.teal,
           title: Row(
             children: <Widget> [
               // IconButton(
@@ -51,7 +51,7 @@ class Chatbot extends StatelessWidget {
                     fontSize: 20.0,
                     fontWeight: FontWeight.w700,
                     // letterSpacing: 1.05
-                    color: Colors.black
+                    color: Colors.white
                   ),
                 ),
               ),
@@ -62,7 +62,7 @@ class Chatbot extends StatelessWidget {
                     onPressed: () {},
                     icon: Icon(
                         Icons.person,
-                        color: Color(0xFF293241)
+                        color: Colors.white
                     ),
                 ),
               )
