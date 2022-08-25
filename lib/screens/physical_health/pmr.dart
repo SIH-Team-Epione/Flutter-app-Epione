@@ -17,12 +17,7 @@ class _PMRScreenState extends State<PMRScreen> {
       appBar: AppBar(
         title: Text(
           'Progressive Muscle Relaxation',
-          style: TextStyle(
-            fontSize: 25,
-            color: Color(0xFFfafafa),
-          ),
         ),
-        iconTheme: IconThemeData(color: Color(0xFF000000)),
         backgroundColor: Colors.teal,
       ),
       body: SafeArea(
@@ -47,12 +42,10 @@ class _PMRScreenState extends State<PMRScreen> {
                       textAlign: TextAlign.center,
                     ),
                     SizedBox(height: 10),
-                    Expanded(
-                      child: Text(
-                        'Priogressive muscle relaxation (PMR) is a deep relaxation technique that has been effectively used to control stress and anxiety, relieve insomnia, and reduce symptoms of certain types of chronic pain. Progressive muscle relaxation is based upon the simple practice of tensing, or tightening, one muscle group at a time followed by a relaxation phase with release of the tension.',
-                        overflow: TextOverflow.clip,
-                      ),
-                    )
+                    Text(
+                      'Priogressive muscle relaxation (PMR) is a deep relaxation technique that has been effectively used to control stress and anxiety, relieve insomnia, and reduce symptoms of certain types of chronic pain. Progressive muscle relaxation is based upon the simple practice of tensing, or tightening, one muscle group at a time followed by a relaxation phase with release of the tension.',
+                      overflow: TextOverflow.clip,
+                    ),
                   ],
                 ),
               ),

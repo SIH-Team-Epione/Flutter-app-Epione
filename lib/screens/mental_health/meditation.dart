@@ -178,6 +178,7 @@ class _MeditationScreenState extends State<MeditationScreen>
                                             fontSize: 15,
                                             fontWeight: FontWeight.bold,
                                           ),
+                                          overflow: TextOverflow.clip,
                                         ),
                                       ),
                                     ],
