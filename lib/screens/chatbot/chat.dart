@@ -221,49 +221,58 @@ class _ChatState extends State<Chat> {
                 ]
           ),
           child: IconTheme(
-            data: IconThemeData(color: Color(0xFFFEBD40)),
+            data: IconThemeData(color: Colors.teal.shade400),
             child: Container(
               margin: const EdgeInsets.symmetric(vertical: 7.0),
               // margin: const EdgeInsets.symmetric(horizontal: 8.0),
               child: Row(
                 children: <Widget>[
                   SizedBox(width: 10.0),
-                  Container(
-                    margin: EdgeInsets.fromLTRB(1.0, 3.0, 5.0, 3.0),
-                    padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
-                      border: Border.all(color: Color(0xFFBDBDBD), width: 1.0)
-                    ),
-                    child: ConstrainedBox(
-                      constraints: BoxConstraints(
-                        maxHeight: 40.0,
-                        maxWidth: 249.0
+                  Expanded(
+                    flex: 10,
+                    child: Container(
+                      margin: EdgeInsets.fromLTRB(1.0, 3.0, 5.0, 3.0),
+                      padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        border: Border.all(color: Color(0xFFBDBDBD), width: 1.0)
                       ),
-                      child: TextField(
-                        controller: _textController,
-                        onSubmitted: handleSubmitted,
-                        decoration: InputDecoration.collapsed(hintText: "Send a message"),
-                        showCursor: true,
-                        // minLines: 1,
-                        maxLines: null,
+                      child: ConstrainedBox(
+                        constraints: BoxConstraints(
+                          maxHeight: 40.0,
+                          maxWidth: 249.0
+                        ),
+                        child: TextField(
+                          controller: _textController,
+                          onSubmitted: handleSubmitted,
+                          decoration: InputDecoration.collapsed(hintText: "Send a message"),
+                          showCursor: true,
+                          // minLines: 1,
+                          maxLines: null,
+                        ),
                       ),
                     ),
                   ),
-                  Container(
-                    margin: EdgeInsets.symmetric(horizontal: 4.0),
+                  Expanded(
+                    flex: 2,
+                    child: Container(
+                      margin: EdgeInsets.symmetric(horizontal: 4.0),
+                      child: IconButton(
+                        icon: Icon(Icons.send),
+                        onPressed: () {
+                            _isClicked = true;
+                            handleSubmitted(_textController.text);
+                          },
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                    flex: 2,
                     child: IconButton(
-                      icon: Icon(Icons.send),
-                      onPressed: () {
-                          _isClicked = true;
-                          handleSubmitted(_textController.text);
-                        },
+                      iconSize: 30.0,
+                      icon: Icon(_isRecording ? Icons.mic : Icons.mic_off),
+                      onPressed: _isRecording ? stopStream : handleStream,
                     ),
-                  ),
-                  IconButton(
-                    iconSize: 30.0,
-                    icon: Icon(_isRecording ? Icons.mic : Icons.mic_off),
-                    onPressed: _isRecording ? stopStream : handleStream,
                   ),
                 ],
               ),
@@ -363,7 +372,7 @@ class ChatMessage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.fromLTRB((this.type ? MediaQuery.of(context).size.width*0.25 : 10.0), 15.0, (this.type ? 10.0 : MediaQuery.of(context).size.width*0.25), 10.0),
+      margin: EdgeInsets.fromLTRB((this.type ? MediaQuery.of(context).size.width*0.25 : 10.0), 15.0, (this.type ? 10.0 : MediaQuery.of(context).size.width*0.15), 10.0),
       child: Container(
         padding: EdgeInsets.fromLTRB((this.type? 45.0 : 0.0), 14.0, (this.type? 0.0 : 45.0), 14.0),
         decoration: BoxDecoration(
@@ -376,7 +385,7 @@ class ChatMessage extends StatelessWidget {
                   spreadRadius: 1.0
               )
             ],
-            color: !this.type ? Color(0xFFFFFFFF) : Color(0xFFFEBD40),
+            color: !this.type ? Color(0xFFFFFFFF) : Color(0xffe0f4f0),
         ),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,

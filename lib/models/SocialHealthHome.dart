@@ -23,19 +23,19 @@ const learnMoreText = 'Another aspect that we wanted to cover in our app, one th
 List<Feature> featuresList = [
   const Feature(
     id: 0,
-    title: 'Connect with friends',
-    description: 'Friends also play a significant role in promoting your overall health. Strong Social Connections Help Offset Stressors in Your Life. They are the ones who stay with you through thick and thin and know you the best. So, take out time from your schedule and talk to a friend now to boost your happy hormones!',
+    title: 'Connect with Friends and Family',
+    description: 'Friends and Family play a significant role in promoting your overall health. Strong Social Connections Help Offset Stressors in Your Life. They are the ones who stay with you through thick and thin and know you the best. So, take out time from your schedule and talk to a friend and fam-jam now to boost your happy hormones!',
     urlImage: 'assets/images/friend_list.jpg',
     ageGroup: 'All ages',
-    nextScreenRoute: '/connect_friends'
+    nextScreenRoute: '/Contacts'
   ),
   const Feature(
       id: 1,
-      title: 'Connect with family',
-      description: 'Owing to our jam-packed schedules we often tend to forget about our family, even when we''re living under the same roof! Good family communications bring a sense of togetherness, security and contributes to our happiness. This feature would remind you that as part of your self-care journey, you can connect with your loved ones, seek their support and comfort and stay connected.',
+      title: 'Video Conferencing and Panel Discussion',
+      description: 'Owing to our jam-packed schedules we often tend to forget to take out time for our near & dear ones, this feature helps you spend time more time with them bringing a sense of togetherness, delight and happiness. As part of your self-care journey, you can connect with your loved ones, seek their support & comfort and stay connected.',
       urlImage: 'assets/images/family_list.jpg',
     ageGroup: 'All ages',
-      nextScreenRoute: '/connect_family'
+      nextScreenRoute: '/index'
   ),
   const Feature(
       id: 2,

@@ -16,6 +16,14 @@ class _MeditationScreenState extends State<MeditationScreen>
   late ScrollController _scrollController;
   late TabController _tabController;
   @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    _tabController = TabController(length: 3, vsync: this);
+    _scrollController = ScrollController();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(

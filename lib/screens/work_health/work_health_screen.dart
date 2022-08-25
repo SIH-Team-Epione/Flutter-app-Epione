@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:quiz_app/models/WorkHealthHome.dart';
+import 'package:expandable_text/expandable_text.dart';
+
 
 import 'time_techniques.dart';
 
@@ -10,6 +12,8 @@ class WorkHealthScreen extends StatefulWidget {
   @override
   State<WorkHealthScreen> createState() => _WorkHealthScreenState();
 }
+
+//learn_more_work_health
 
 class _WorkHealthScreenState extends State<WorkHealthScreen> {
   @override
@@ -22,7 +26,7 @@ class _WorkHealthScreenState extends State<WorkHealthScreen> {
         //   onPressed: () => Navigator.of(context).pop(),
         // ),
         title: const Text(title),
-        centerTitle: true,
+        // centerTitle: true,
       ),
       body: SingleChildScrollView(
         physics: ScrollPhysics(),
@@ -31,56 +35,51 @@ class _WorkHealthScreenState extends State<WorkHealthScreen> {
           color: Colors.white,
           child: Column(
             children: [
-              SizedBox(height: 20,),
               Container(
-                width: 350,
-                height: 250,
-                child: RaisedButton(
-                  onPressed: (){
-                    Navigator.pushNamed(context, '/learn_more_work_health');
-                  },
-                  highlightColor: Colors.greenAccent.withOpacity(0.3),
-                  shape: new RoundedRectangleBorder(
-                    borderRadius: new BorderRadius.circular(20.0),
-                  ),
-                  color: Color(0xff307473),
-                  //0xfff3dbdd,
-                  child: Container(
-                    margin: EdgeInsets.symmetric(
-                        horizontal: 20
+                margin: EdgeInsets.fromLTRB(20, 20, 20, 10),
+                padding: EdgeInsets.fromLTRB(20, 20, 20, 20),
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(20),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.teal.shade50,
+                        blurRadius: 10,
+                        spreadRadius: 5,
+                      )
+                    ]),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    ExpandableText(
+                      learnMoreText,
+                      expandText: "show more",
+                      collapseText: "show less",
+                      expandOnTextTap: true,
+                      collapseOnTextTap: true,
                     ),
-                    padding: EdgeInsets.symmetric(
-                        horizontal: 4,
-                        vertical: 5,
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.pushNamed(
+                            context, '/learn_more_work_health');
+                      },
+                      child: Container(
+                        margin: EdgeInsets.only(top: 10),
+                        padding: EdgeInsets.all(5),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            color: Color(0xffe0f4f0)
+                        ),
+                        child: Text(
+                          'Learn More',
+                          style: const TextStyle(fontSize: 14.0),
+                        ),
+                      ),
                     ),
-                    width: double.infinity,
-                    height: 230,
-                    decoration: BoxDecoration(
-                      color: Color(307473),
-                      borderRadius: BorderRadius.circular(60),
-                    ),
-                    child: Text.rich(
-                        TextSpan(
-                            text: "Learn more\n",
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 18
-                            ),
-                            children: [
-                              TextSpan(
-                                  text: learnMoreText,
-                                  style: TextStyle(
-                                      fontWeight: FontWeight.w300,
-                                      fontSize: 12
-                                  )
-                              )
-                            ]
-                        )
-                    ),
-                  ),
-                ),
 
+                  ],
+                ),
               ),
               SizedBox(height: 25,),
               Container(
@@ -144,7 +143,6 @@ class _WorkHealthScreenState extends State<WorkHealthScreen> {
                                     child: Image.asset(
                                       feature.urlImage,
                                       fit: BoxFit.cover,
-                                      height:170,
                                     ),
                                   ),
                                 ),
