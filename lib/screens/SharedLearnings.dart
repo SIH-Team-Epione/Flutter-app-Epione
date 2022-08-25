@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:firebase_database/ui/firebase_animated_list.dart';
 import 'package:flutter/material.dart';
@@ -9,6 +10,13 @@ class SharedLearnings extends StatefulWidget {
   @override
   State<SharedLearnings> createState() => _SharedLearningsState();
 }
+
+//If user chooses to view his posts only just use this list
+List<Map<dynamic, dynamic>> myLearnings = [];
+List<Map<dynamic, dynamic>> allLearnings = [];
+
+//track chosen by user
+var track = "";
 
 class _SharedLearningsState extends State<SharedLearnings> {
 
@@ -41,7 +49,7 @@ class PostsSection extends StatefulWidget {
 
 class _PostsSectionState extends State<PostsSection> {
 
-  Query dbRef = FirebaseDatabase.instance.ref().child('');
+  Query dbRef = FirebaseDatabase.instance.ref().child('learnings');
 
   Widget listItem({required Map post}){
      return Container(
@@ -65,7 +73,10 @@ class _PostsSectionState extends State<PostsSection> {
         itemBuilder: (BuildContext context, DataSnapshot snapshot, Animation<double> animation, int index){
           Map post = snapshot.value as Map;
           post['key'] = snapshot.key;
-
+          allLearnings.add(post);
+          if(post['uid']==(FirebaseAuth.instance.currentUser?.uid)){
+            myLearnings.add(post);
+          }
           return listItem(post: post);
         },
       ),
@@ -73,3 +84,12 @@ class _PostsSectionState extends State<PostsSection> {
   }
 }
 
+List<Map<dynamic, dynamic>> filter(String track){
+  List<Map<dynamic, dynamic>> filteredList = [];
+  for(var p in allLearnings){
+    if(p['track']==track){
+      filteredList.add(p);
+    }
+  }
+  return filteredList;
+}
