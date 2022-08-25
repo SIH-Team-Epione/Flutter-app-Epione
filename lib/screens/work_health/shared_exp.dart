@@ -1,13 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:quiz_app/screens/work_health/create_post.dart';
+import 'package:quiz_app/screens/work_health/shared_first_tab.dart';
+import 'package:quiz_app/screens/work_health/shared_second_tab.dart';
 
-class SharedExperiencesScreen extends StatefulWidget {
-  const SharedExperiencesScreen({Key? key}) : super(key: key);
+class SharedExperiences extends StatefulWidget {
+  const SharedExperiences({Key? key}) : super(key: key);
 
   @override
-  State<SharedExperiencesScreen> createState() => _SharedExperiencesScreenState();
+  State<SharedExperiences> createState() => _SharedExperiencesState();
 }
 
-class _SharedExperiencesScreenState extends State<SharedExperiencesScreen> {
+class _SharedExperiencesState extends State<SharedExperiences> {
+
+  void createPost(){
+    Navigator.push(context,
+      MaterialPageRoute(builder: (context) => CreatePostScreen())
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -27,17 +37,18 @@ class _SharedExperiencesScreenState extends State<SharedExperiencesScreen> {
             ],
           ),
         ),
+          floatingActionButton: FloatingActionButton(
+            onPressed: createPost,
+          ),
         body: TabBarView(
           children: [
-            Container(
-              child: Text('First'),
-            ),
-            Container(
-              child: Text('second'),
-            )
+            PostsTab(),
+            MyPostsTab(),
           ],
         )
       ),
     );
   }
 }
+
+
