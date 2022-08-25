@@ -10,12 +10,33 @@ class SharedExperiencesScreen extends StatefulWidget {
 class _SharedExperiencesScreenState extends State<SharedExperiencesScreen> {
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
+    return DefaultTabController(
+      length: 2,
       child: Scaffold(
         appBar: AppBar(
           title: Text('Shared Experiences'),
           centerTitle: false,
+          bottom: TabBar(
+            tabs: [
+              Tab(
+                text: 'Posts',
+              ),
+              Tab(
+                text: 'My Posts',
+              )
+            ],
+          ),
         ),
+        body: TabBarView(
+          children: [
+            Container(
+              child: Text('First'),
+            ),
+            Container(
+              child: Text('second'),
+            )
+          ],
+        )
       ),
     );
   }

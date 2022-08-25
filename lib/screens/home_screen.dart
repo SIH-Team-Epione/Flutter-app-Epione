@@ -227,10 +227,11 @@ class _HomeScreenState extends State<HomeScreen> {
 
             SizedBox(height: 10,),
             Container(
+              margin: EdgeInsets.all(8.0),
+              width: MediaQuery.of(context).size.width*0.8,
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(15),
+                borderRadius: BorderRadius.circular(25),
                 color: Colors.white,
-
               ),
               child: RaisedButton(
                 onPressed: (){
@@ -238,8 +239,17 @@ class _HomeScreenState extends State<HomeScreen> {
                 },
                 child: Column(
                   children: [
-                    Text('Shared Experiences'),
-                    Text('Read posts and engage with others on their self-care journey'),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text('Shared Experiences',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w700,
+                      ),),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text('Read posts and engage with others on their self-care journey'),
+                    ),
                   ],
                 ),
               ),
@@ -247,7 +257,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
             // Text widget for 'Explore Tracks'
             Padding(
-              padding: EdgeInsets.only(top: 48, left: 32, right: 28),
+              padding: EdgeInsets.only(top: 46, left: 32, right: 28),
               child: Text(
                 'Explore Tracks',
                 style: GoogleFonts.playfairDisplay(
