@@ -19,7 +19,7 @@ class _Psqi2State extends State<Psqi2> {
     fieldText.clear();
   }
 
-  final Map<String, int> qna2 = {
+  final Map<String, num> qna2 = {
     "A. Cannot get to sleep wihtin 30 minutes": 0,
     "B. Wake up in the middle of the night or early morning ": 0,
     "C. Have to get up to use the bathroom": 0,
@@ -31,12 +31,12 @@ class _Psqi2State extends State<Psqi2> {
     "I. Have pain": 0,
     "How often have you taken medicine to help you sleep ": 0,
     "How often have you had trouble staying awake while driving, eating meals, or engaging in social activities":
-        0,
+    0,
     "How much of a problem has it been for you to keep up enthusiasm to get things done":
-        0,
+    0,
   };
-  List Convert(Map<String, int> qna) {
-    var valuesList = qna2.values.toList();
+  List<num> Convert(Map<String, num> qna) {
+    List<num> valuesList = qna2.values.toList();
     return valuesList;
   }
 
@@ -195,7 +195,7 @@ class _Psqi2State extends State<Psqi2> {
                     onSubmitted: ((value) {
                       print(value);
                       setState(() {
-                        qna2[question] = int.parse(value);
+                        qna2[question] = num.parse(value);
                         ;
                       });
                     }),

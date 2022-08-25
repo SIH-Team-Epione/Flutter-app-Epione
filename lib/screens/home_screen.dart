@@ -64,38 +64,38 @@ class _HomeScreenState extends State<HomeScreen> {
           physics: ClampingScrollPhysics(),
           children: <Widget>[
             // Custom Appbar
-            // Container(
-            //   margin: EdgeInsets.only(left: 16, right: 16, top: 5),
-            //   child: Row(
-            //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            //     children: <Widget>[
-            //       GestureDetector(onTap:() {
-            //         print('Drawer Tapped!');
-            //       },
-            //           child: SvgPicture.asset('assets/svg/drawer_icon2.svg')),
-            //       Text('Hi '+ user!.displayName!),
-            //       TextButton(
-            //           onPressed: (){
-            //             final provider = Provider.of<GoogleSignInProvider>(context, listen: false);
-            //             provider.logout();
-            //           },
-            //           child: Text('Logout')
-            //       ),
-            //       CircleAvatar(
-            //         radius: 20,
-            //         backgroundImage: NetworkImage(user.photoURL!),
-            //       ),
-            //       // Container(
-            //       //   height: 45,
-            //       //   width: 45,
-            //         // decoration: BoxDecoration(
-            //         //   borderRadius: BorderRadius.circular(20),
-            //         //   image: DecorationImage(image: AssetImage('assets/images/user_image.png'))
-            //         // ),
-            //       // )
-            //     ],
-            //   ),
-            // ),
+            Container(
+              margin: EdgeInsets.only(left: 16, right: 16, top: 5),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  GestureDetector(onTap:() {
+                    print('Drawer Tapped!');
+                  },
+                      child: SvgPicture.asset('assets/svg/drawer_icon2.svg')),
+                  Text('Hi '+ user!.displayName!.split(' ')[0] + '!'),
+                  TextButton(
+                      onPressed: (){
+                        final provider = Provider.of<GoogleSignInProvider>(context, listen: false);
+                        provider.logout();
+                      },
+                      child: Text('Logout')
+                  ),
+                  CircleAvatar(
+                    radius: 20,
+                    backgroundImage: NetworkImage(user.photoURL!),
+                  ),
+                  // Container(
+                  //   height: 45,
+                  //   width: 45,
+                    // decoration: BoxDecoration(
+                    //   borderRadius: BorderRadius.circular(20),
+                    //   image: DecorationImage(image: AssetImage('assets/images/user_image.png'))
+                    // ),
+                  // )
+                ],
+              ),
+            ),
             // card section
             SizedBox(
               height: 15,

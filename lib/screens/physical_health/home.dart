@@ -18,56 +18,56 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   bool _customTileExpanded = false;
 
-  // late Stream<StepCount> _stepCountStream;
-  // late Stream<PedestrianStatus> _pedestrianStatusStream;
-  // String _status = '?', _steps = '?';
+  late Stream<StepCount> _stepCountStream;
+  late Stream<PedestrianStatus> _pedestrianStatusStream;
+  String _status = '?', _steps = '?';
 
-  // @override
-  // void initState() {
-  //   super.initState();
-  //   initPlatformState();
-  // }
+  @override
+  void initState() {
+    super.initState();
+    initPlatformState();
+  }
 
-  // void onStepCount(StepCount event) {
-  //   print(event);
-  //   setState(() {
-  //     _steps = event.steps.toString();
-  //   });
-  // }
+  void onStepCount(StepCount event) {
+    print(event);
+    setState(() {
+      _steps = event.steps.toString();
+    });
+  }
 
-  // void onPedestrianStatusChanged(PedestrianStatus event) {
-  //   print(event);
-  //   setState(() {
-  //     _status = event.status;
-  //   });
-  // }
+  void onPedestrianStatusChanged(PedestrianStatus event) {
+    print(event);
+    setState(() {
+      _status = event.status;
+    });
+  }
 
-  // void onPedestrianStatusError(error) {
-  //   print('onPedestrianStatusError: $error');
-  //   setState(() {
-  //     _status = 'Pedestrian Status not available';
-  //   });
-  //   print(_status);
-  // }
+  void onPedestrianStatusError(error) {
+    print('onPedestrianStatusError: $error');
+    setState(() {
+      _status = 'Pedestrian Status not available';
+    });
+    print(_status);
+  }
 
-  // void onStepCountError(error) {
-  //   print('onStepCountError: $error');
-  //   setState(() {
-  //     _steps = 'Step Count not available';
-  //   });
-  // }
+  void onStepCountError(error) {
+    print('onStepCountError: $error');
+    setState(() {
+      _steps = 'Step Count not available';
+    });
+  }
 
-  // void initPlatformState() {
-  //   _pedestrianStatusStream = Pedometer.pedestrianStatusStream;
-  //   _pedestrianStatusStream
-  //       .listen(onPedestrianStatusChanged)
-  //       .onError(onPedestrianStatusError);
+  void initPlatformState() {
+    _pedestrianStatusStream = Pedometer.pedestrianStatusStream;
+    _pedestrianStatusStream
+        .listen(onPedestrianStatusChanged)
+        .onError(onPedestrianStatusError);
 
-  //   _stepCountStream = Pedometer.stepCountStream;
-  //   _stepCountStream.listen(onStepCount).onError(onStepCountError);
+    _stepCountStream = Pedometer.stepCountStream;
+    _stepCountStream.listen(onStepCount).onError(onStepCountError);
 
-  //   if (!mounted) return;
-  // }
+    if (!mounted) return;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -159,12 +159,12 @@ class _HomeState extends State<Home> {
                                 color: Color.fromARGB(255, 38, 71, 64),
                               ),
                             ),
-                            // subtitle: Text(
-                            //   _steps,
-                            //   style: TextStyle(
-                            //     color: Color.fromARGB(255, 127, 160, 153),
-                            //   ),
-                            // ),
+                            subtitle: Text(
+                              _steps,
+                              style: TextStyle(
+                                color: Color.fromARGB(255, 127, 160, 153),
+                              ),
+                            ),
                           ),
                           ListTile(
                             title: Text(
@@ -173,12 +173,12 @@ class _HomeState extends State<Home> {
                                 color: Color.fromARGB(255, 38, 71, 64),
                               ),
                             ),
-                            //subtitle: Text(
-                            // _status,
-                            // style: _status == 'walking' || _status == 'stopped'
-                            //     ? TextStyle(fontSize: 30)
-                            //     : TextStyle(fontSize: 20, color: Colors.red),
-                            // ),
+                            subtitle: Text(
+                              _status,
+                              style: _status == 'walking' || _status == 'stopped'
+                                  ? TextStyle(fontSize: 30)
+                                  : TextStyle(fontSize: 20, color: Colors.red),
+                            ),
                           ),
                         ],
                         onExpansionChanged: (bool expanded) {
@@ -275,8 +275,8 @@ class _HomeState extends State<Home> {
                             onTap: () {
                               Navigator.push(context,
                                   MaterialPageRoute(builder: (_) {
-                                return Psqi();
-                              }));
+                                    return Psqi();
+                                  }));
                             },
                           ),
                         ],
@@ -384,8 +384,8 @@ class _HomeState extends State<Home> {
                             onTap: () {
                               Navigator.push(context,
                                   MaterialPageRoute(builder: (_) {
-                                return Heart();
-                              }));
+                                    return Heart();
+                                  }));
                             },
                           ),
                         ],
