@@ -15,7 +15,6 @@ import 'package:quiz_app/util/long_img_container.dart';
 import 'package:quiz_app/screens/chatbot/main.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:url_launcher/url_launcher_string.dart';
-import 'SOS.dart';
 import 'package:url_launcher_android/url_launcher_android.dart';
 import 'package:location/location.dart';
 import 'package:share_plus/share_plus.dart';
