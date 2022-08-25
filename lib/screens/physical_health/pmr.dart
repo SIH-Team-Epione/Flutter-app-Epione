@@ -30,7 +30,7 @@ class _PMRScreenState extends State<PMRScreen> {
             Container(
               // margin: EdgeInsets.all(10),
               width: MediaQuery.of(context).size.width,
-              height: MediaQuery.of(context).size.width / 3,
+              height: MediaQuery.of(context).size.width / 2,
               child: Container(
                 padding: EdgeInsets.all(5),
                 child: Column(
