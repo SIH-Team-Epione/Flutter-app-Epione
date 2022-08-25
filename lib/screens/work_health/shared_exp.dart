@@ -1,3 +1,5 @@
+import 'package:firebase_database/firebase_database.dart';
+import 'package:firebase_database/ui/firebase_animated_list.dart';
 import 'package:flutter/material.dart';
 import 'package:quiz_app/screens/work_health/create_post.dart';
 import 'package:quiz_app/screens/work_health/shared_first_tab.dart';
@@ -17,6 +19,8 @@ class _SharedExperiencesState extends State<SharedExperiences> {
       MaterialPageRoute(builder: (context) => CreatePostScreen())
     );
   }
+
+  Query dbRef = FirebaseDatabase.instance.ref().child('posts');
 
   @override
   Widget build(BuildContext context) {
