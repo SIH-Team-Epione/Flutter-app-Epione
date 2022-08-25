@@ -69,10 +69,10 @@ class _MoreSocialHealthState extends State<MoreSocialHealth> {
                               );
                             },
                             child: Column(
+                              mainAxisAlignment: MainAxisAlignment.end,
                               children: [
-                                SizedBox(height: 75,),
                                 Padding(
-                                  padding: const EdgeInsets.only(left:5.0,right: 30,top:20,bottom: 10),
+                                  padding: const EdgeInsets.only(left:10.0,right: 30,top:20,bottom: 30),
                                   child: Stack(
                                     alignment: Alignment.bottomLeft,
                                     children: <Widget>[

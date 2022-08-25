@@ -105,7 +105,7 @@ class _SocialHealthScreenState extends State<SocialHealthScreen> {
                       highlightColor: Color(0xffe0f4f0),
                       child: Container(
                         margin: EdgeInsets.fromLTRB(20, 15, 20, 10),
-                        height: 220,
+                        height: 250,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(15),
                           color: Colors.white,
@@ -129,7 +129,7 @@ class _SocialHealthScreenState extends State<SocialHealthScreen> {
                                     child: Image.asset(
                                       feature.urlImage,
                                       fit: BoxFit.cover,
-                                      height:220,
+                                      height:250,
                                     ),
                                   ),
                                 ),
@@ -156,7 +156,7 @@ class _SocialHealthScreenState extends State<SocialHealthScreen> {
                                         style: const TextStyle(fontSize: 10.0,
                                         color: Color(0xff8e8e8e)),
                                       ),
-                                      const Padding(padding: EdgeInsets.symmetric(vertical: 1.0)),
+                                      const Padding(padding: EdgeInsets.symmetric(vertical: 2.0)),
                                       Container(
                                         padding: EdgeInsets.all(5),
                                         decoration: BoxDecoration(

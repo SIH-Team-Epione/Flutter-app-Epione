@@ -48,49 +48,8 @@ class _MusicPlayer extends State<MusicPlayer> {
     // TODO: implement build
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(
-          icon: Icon(
-            Icons.arrow_back,
-            color: Colors.white,
-          ),
-          onPressed: () {
-            Navigator.of(context).pop();
-          },
+        title: const Text('Sound Player'),
         ),
-        iconTheme: IconThemeData(
-            color: Colors.white
-        ),
-        // backgroundColor: Color(0xFF85F4FF),
-        backgroundColor: Colors.teal,
-        title: Row(
-          children: <Widget> [
-            Expanded(
-              flex: 7,
-              child: const Text(
-                'Sound Player',
-                style: TextStyle(
-                    fontFamily: 'Montserrat',
-                    fontSize: 20.0,
-                    fontWeight: FontWeight.w700,
-                    // letterSpacing: 1.05
-                    color: Colors.white
-                ),
-              ),
-            ),
-            // SizedBox(width: MediaQuery.of(context).size.width / 3),
-            Expanded(
-              flex: 1,
-              child: IconButton(
-                onPressed: () {},
-                icon: Icon(
-                    Icons.person,
-                    color: Colors.white
-                ),
-              ),
-            )
-          ],
-        ),
-      ),
       body: ChangeNotifierProvider(
         create: (_) => Audio(),
         child: Container(
