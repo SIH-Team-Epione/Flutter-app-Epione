@@ -19,7 +19,7 @@ class Chatbot extends StatelessWidget {
       },
       child: Scaffold(
         appBar: AppBar(
-          title: const Text('Sound Player'),
+          title: const Text('Chatbot'),
         ),
         body: Container(
           color: Color(0xFFFAFAFA),
