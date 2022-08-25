@@ -1,22 +1,48 @@
 import 'package:flutter/material.dart';
+import 'package:quiz_app/screens/work_health/create_post.dart';
 
-class SharedExperiencesScreen extends StatefulWidget {
-  const SharedExperiencesScreen({Key? key}) : super(key: key);
+class SharedExperiences extends StatefulWidget {
+  const SharedExperiences({Key? key}) : super(key: key);
 
   @override
-  State<SharedExperiencesScreen> createState() => _SharedExperiencesScreenState();
+  State<SharedExperiences> createState() => _SharedExperiencesState();
 }
 
-class _SharedExperiencesScreenState extends State<SharedExperiencesScreen> {
+class _SharedExperiencesState extends State<SharedExperiences> {
+
+  void createPost(){
+    Navigator.push(context,
+      MaterialPageRoute(builder: (context) => CreatePostScreen())
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Scaffold(
-        appBar: AppBar(
-          title: Text('Shared Experiences'),
-          centerTitle: false,
-        ),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("User posts"),
+      ),
+      body: PostsSection(),
+      floatingActionButton: FloatingActionButton(
+        onPressed: createPost,
       ),
     );
   }
 }
+
+class PostsSection extends StatefulWidget {
+  const PostsSection({Key? key}) : super(key: key);
+
+  @override
+  State<PostsSection> createState() => _PostsSectionState();
+}
+
+class _PostsSectionState extends State<PostsSection> {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: Colors.white,
+    );
+  }
+}
+

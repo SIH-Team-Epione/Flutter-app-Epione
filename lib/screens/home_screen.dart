@@ -10,6 +10,7 @@ import 'package:quiz_app/models/Quotes.dart';
 import 'package:quiz_app/screens/doctor_consultation_screen.dart';
 import 'package:quiz_app/screens/google_sign_in.dart';
 import 'package:quiz_app/screens/hamburger_menu.dart';
+import 'package:quiz_app/screens/work_health/shared_exp.dart';
 import 'package:quiz_app/util/long_img_container.dart';
 import 'package:quiz_app/screens/chatbot/main.dart';
 import 'SOS.dart';
@@ -234,7 +235,11 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               child: RaisedButton(
                 onPressed: (){
-                  Navigator.pushNamed(context, '/shared_exp');
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => SharedExperiences(),
+                      ));
                 },
                 child: Column(
                   children: [
