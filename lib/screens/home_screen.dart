@@ -12,6 +12,7 @@ import 'package:quiz_app/screens/google_sign_in.dart';
 import 'package:quiz_app/screens/hamburger_menu.dart';
 import 'package:quiz_app/util/long_img_container.dart';
 import 'package:quiz_app/screens/chatbot/main.dart';
+import 'SOS.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({key}) : super(key: key);
@@ -542,7 +543,14 @@ class _HomeScreenState extends State<HomeScreen> {
           ],
         ),
       ),
-      floatingActionButton: buildChatbotButton(),
+      floatingActionButton: Column(
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: <Widget> [
+          buildChatbotButton(),
+          SizedBox(height: 5.0,),
+          buildSOSButton()
+        ]
+      ),
     );
   }
   Widget buildChatbotButton() => Container(
@@ -573,5 +581,24 @@ class _HomeScreenState extends State<HomeScreen> {
         }
     ),
   );
+
+  Widget buildSOSButton() => Container(
+    margin: EdgeInsets.only(right: 8.0, bottom: 8.0),
+    width: 65.0,
+    height: 65.0,
+    child: FloatingActionButton(
+        backgroundColor: Colors.red.shade400,
+        child: Text(
+          'SOS'
+        ),
+        onPressed: () {
+          print('Clicked');
+          Navigator.push(context,
+            MaterialPageRoute(builder: (context) => const SOS()),
+          );
+        }
+    ),
+  );
 }
+
 
