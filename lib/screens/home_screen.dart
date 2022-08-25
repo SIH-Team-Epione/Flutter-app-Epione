@@ -266,7 +266,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Padding(
-                                padding: const EdgeInsets.fromLTRB(110, 25, 0, 0),
+                                padding: const EdgeInsets.fromLTRB(90, 25, 0, 0),
                                 child: Container(
                                   //width:150,
                                   child: Text(
@@ -342,7 +342,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Padding(
-                                padding: const EdgeInsets.fromLTRB(110, 25, 0, 0),
+                                padding: const EdgeInsets.fromLTRB(90, 25, 0, 0),
                                 child: Container(
                                   //width:MediaQuery.of(context).size.width,
                                   child: Text(
@@ -408,7 +408,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Padding(
-                                padding: const EdgeInsets.fromLTRB(110, 25, 0, 0),
+                                padding: const EdgeInsets.fromLTRB(90, 25, 0, 0),
                                 child: Container(
                                   //width:150,
                                   child: Text(
@@ -474,7 +474,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Padding(
-                                padding: const EdgeInsets.fromLTRB(110, 25, 0, 0),
+                                padding: const EdgeInsets.fromLTRB(90, 25, 0, 0),
                                 child: Container(
                                   //width:150,
                                   child: Text(
