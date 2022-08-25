@@ -32,7 +32,7 @@ List<Feature> featuresList = [
   const Feature(
       id: 1,
       title: 'Video Conferencing and Panel Discussion',
-      description: 'Owing to our jam-packed schedules we often tend to forget to take out time and enjoy with our near and dear ones, this feature helps you have good time with your friends and family bringing a sense of togetherness, delight and contributes to our happiness. This will also remind you that as part of your self-care journey, you can connect with your loved ones, seek their support and comfort and stay connected.',
+      description: 'Owing to our jam-packed schedules we often tend to forget to take out time for our near & dear ones, this feature helps you spend time more time with them bringing a sense of togetherness, delight and happiness. As part of your self-care journey, you can connect with your loved ones, seek their support & comfort and stay connected.',
       urlImage: 'assets/images/family_list.jpg',
     ageGroup: 'All ages',
       nextScreenRoute: '/index'
