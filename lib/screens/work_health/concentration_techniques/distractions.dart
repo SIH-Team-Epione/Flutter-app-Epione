@@ -97,7 +97,7 @@ class _EliminateDistractionsState extends State<EliminateDistractions> with Widg
             color: Colors.white
         ),
         // backgroundColor: Color(0xFF85F4FF),
-        backgroundColor: Color(0xFF000000),
+        backgroundColor: Colors.teal,
         title: Row(
           children: <Widget> [
             // IconButton(
@@ -159,10 +159,10 @@ class _EliminateDistractionsState extends State<EliminateDistractions> with Widg
                   ),
                   decoration: BoxDecoration(
                     // color: _filterName == "INTERRUPTION_FILTER_ALL" ? Colors.red[400] : Color(0xFF000000),
-                    color: _filterName == "INTERRUPTION_FILTER_ALL" ? Colors.red[300] : Colors.cyan[300],
+                    color: _filterName == "INTERRUPTION_FILTER_ALL" ? Colors.grey[900] : Colors.cyan[300],
                     shape: BoxShape.circle,
                     border: Border.all(
-                        color: Colors.lime,
+                        color: Colors.teal.shade500,
                         width: 15.0
                     ),
                     //borderRadius: BorderRadius.all(Radius.circular(20.0))
@@ -236,7 +236,7 @@ class _EliminateDistractionsState extends State<EliminateDistractions> with Widg
                 FlutterDnd.gotoPolicySettings();
               },
               elevation: 4.0,
-              color: Color(0xFFE0F4F0),
+              color: Colors.tealAccent.shade400,
               padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 30.0),
               child: Text(
                 'GO TO POLICY SETTINGS',
@@ -244,7 +244,7 @@ class _EliminateDistractionsState extends State<EliminateDistractions> with Widg
                   fontFamily: 'Montserrat',
                   fontWeight: FontWeight.w700,
                   fontSize: 16.0,
-                  color: Colors.black,
+                  color: Colors.white,
                 ),
               ),
             ),
