@@ -119,7 +119,6 @@ class _WorkHealthScreenState extends State<WorkHealthScreen> {
                       highlightColor: Color(0xffe0f4f0),
                       child: Container(
                         margin: EdgeInsets.fromLTRB(20, 15, 20, 10),
-                        height: 100,
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(15),
                             color: Colors.white,
@@ -143,6 +142,7 @@ class _WorkHealthScreenState extends State<WorkHealthScreen> {
                                     child: Image.asset(
                                       feature.urlImage,
                                       fit: BoxFit.cover,
+                                      height: 100,
                                     ),
                                   ),
                                 ),

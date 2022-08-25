@@ -1,5 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:quiz_app/screens/work_health/concentration_techniques/app-timers.dart';
 import 'concentration_techniques/distractions.dart';
 import 'concentration_techniques/multitasking.dart';
 import 'concentration_techniques/player.dart';
@@ -31,7 +32,8 @@ class ConcentrationHomeScreen extends StatelessWidget {
                       children: [
                         BuildCard(1, 'https://domf5oio6qrcr.cloudfront.net/medialibrary/11743/5fe19ffb-2adb-4c15-a66d-70bb6f33da16.jpg', 'Eliminate distractions', 'Distractions such as social media can affect your focus. If you want to concentrate, try our focus mode to block unnecessary notifications!', context),
                         BuildCard(2, 'https://img.freepik.com/free-vector/business-man-dealing-multi-task-new-idea-working-laptop-concept-business-goals-success-satisfying-achievement_1150-39765.jpg?w=996&t=st=1661110478~exp=1661111078~hmac=40546a2dd505842865dfa173d87a741aa2c74c517f09dd254a12c0611a412cdb', 'Reduce multitasking', "For increased concentration on a task, let's try to reduce multitasking in our daily life and focus on one task at a time!", context),
-                        BuildCard(3, 'https://media.istockphoto.com/vectors/work-pause-take-break-concept-vector-id1187579395?k=20&m=1187579395&s=612x612&w=0&h=8o4ddacearZq0Ip5QAF7MBw2xrwY6fox_pHTDpztTPc=', 'Concentration sounds', "Using nature sounds or white noise to mask background sounds could also help improve concentration and other brain functions. Try it out!", context)
+                        BuildCard(3, 'https://media.istockphoto.com/vectors/work-pause-take-break-concept-vector-id1187579395?k=20&m=1187579395&s=612x612&w=0&h=8o4ddacearZq0Ip5QAF7MBw2xrwY6fox_pHTDpztTPc=', 'Concentration sounds', "Using nature sounds or white noise to mask background sounds could also help improve concentration and other brain functions. Try it out!", context),
+                        BuildCard(4, 'https://img.freepik.com/free-vector/people-using-their-mobile-phones-news_52683-39976.jpg?w=2000', 'Set App Timers', "Set daily timers for apps to limit excessive usage, try it for setting goals on screen time for each app!", context)
                       ]
                   )
                 ],
@@ -103,6 +105,11 @@ class ConcentrationHomeScreen extends StatelessWidget {
                     case 3: Navigator.push(context,
                       MaterialPageRoute(
                           builder: (context) => MusicPlayer()),
+                    );
+                    break;
+                    case 4: Navigator.push(context,
+                      MaterialPageRoute(
+                          builder: (context) => AppTimer()),
                     );
                     break;
                   }
