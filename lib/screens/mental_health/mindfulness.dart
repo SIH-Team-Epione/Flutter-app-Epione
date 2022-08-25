@@ -19,8 +19,6 @@ class _MindfulnessScreenState extends State<MindfulnessScreen> {
         title: Text(
           'Mindfulness',
         ),
-        iconTheme: IconThemeData(color: Color(0xFF000000)),
-        backgroundColor: Color(0xFFfafafa),
       ),
       body: SafeArea(
         child: Column(
