@@ -56,12 +56,12 @@ import 'controllers/question_controller_phq.dart';
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
-    // options: FirebaseOptions(
-    //     apiKey: 'AIzaSyCof7TFo6DH-cHndhmCKfcPTyjubQOoo4A',
-    //     appId: '1:782675839270:android:f3318f5ac8bba2ade099e7',
-    //     messagingSenderId: '782675839270',
-    //     projectId: 'epione-992ee')
-  );
+      // options: FirebaseOptions(
+      //     apiKey: 'AIzaSyCof7TFo6DH-cHndhmCKfcPTyjubQOoo4A',
+      //     appId: '1:782675839270:android:f3318f5ac8bba2ade099e7',
+      //     messagingSenderId: '782675839270',
+      //     projectId: 'epione-992ee')
+      );
 
   await Permission.camera.request();
   await Permission.microphone.request();
@@ -71,7 +71,6 @@ Future main() async {
 }
 
 class MyApp extends StatefulWidget {
-
   @override
   State<MyApp> createState() => _MyAppState();
 }
@@ -79,59 +78,74 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) => ChangeNotifierProvider(
-      create: (context) => GoogleSignInProvider(),
-          child:
-          GetMaterialApp(
-            title: 'Epione',
-            debugShowCheckedModeBanner: false,
-            theme: ThemeData(
-              // TODO: change the color schemes
-              primarySwatch: Colors.teal,
-              scaffoldBackgroundColor: const Color(0xFFffffff),
-              fontFamily: 'Montserrat',
-            ),
-            initialRoute: '/',
-            routes:  <String, WidgetBuilder> {
-              '/': (context) => const HomePage(),
-              '/login': (BuildContext context) => const LoginScreen(),
-              '/learn_more_self_care': (BuildContext context) => new LearnMoreSelfCare(),
-              '/doctor_consultation': (BuildContext context) =>DoctorConsultationScreen(),
+        create: (context) => GoogleSignInProvider(),
+        child: GetMaterialApp(
+          title: 'Epione',
+          debugShowCheckedModeBanner: false,
+          theme: ThemeData(
+            // TODO: change the color schemes
+            primarySwatch: Colors.teal,
+            scaffoldBackgroundColor: const Color(0xFFffffff),
+            fontFamily: 'Montserrat',
+          ),
+          initialRoute: '/',
+          routes: <String, WidgetBuilder>{
+            '/': (context) => const HomePage(),
+            '/login': (BuildContext context) => const LoginScreen(),
+            '/learn_more_self_care': (BuildContext context) =>
+                new LearnMoreSelfCare(),
+            '/doctor_consultation': (BuildContext context) =>
+                DoctorConsultationScreen(),
 
-              '/mental_health_home': (BuildContext context) => new MentalHealthScreen(),
-              '/learn_more_mental_health': (BuildContext context) => new LearnMoreMentalScreen(),
-              '/phq_home': (BuildContext context) => new WelcomeScreen(),
-              '/gad_home': (BuildContext context) => new GADScreen(),
-              '/cbt_home': (BuildContext context) => new CBTScreen(),
-              '/diaphragm_home': (BuildContext context) => new DiaphragmScreen(),
-              '/meditation_home': (BuildContext context) => new MeditationScreen(),
-              '/mindfulness_home': (BuildContext context) => new MindfulnessScreen(),
+            '/mental_health_home': (BuildContext context) =>
+                new MentalHealthScreen(),
+            '/learn_more_mental_health': (BuildContext context) =>
+                new LearnMoreMentalScreen(),
+            '/phq_home': (BuildContext context) => new WelcomeScreen(),
+            '/gad_home': (BuildContext context) => new GADScreen(),
+            '/cbt_home': (BuildContext context) => new CBTScreen(),
+            '/diaphragm_home': (BuildContext context) => new DiaphragmScreen(),
+            '/meditation_home': (BuildContext context) =>
+                new MeditationScreen(),
+            '/mindfulness_home': (BuildContext context) =>
+                new MindfulnessScreen(),
 
-              '/further_read_mental': (BuildContext context) => new FurtherReadMentalHealth(),
+            '/further_read_mental': (BuildContext context) =>
+                new FurtherReadMentalHealth(),
 
-              '/physical_health_home': (BuildContext context) => new PhysicalHealthScreen(),
-              '/learn_more_physical_health': (BuildContext context) => new LearnMorePhysicalScreen(),
-              '/yoga': (BuildContext context) => new YogaScreen(),
-              '/pmr': (BuildContext context) => new PMRScreen(),
-              '/exercises': (BuildContext context) => new ExercisesScreen(),
-              '/diets': (BuildContext context) => new DietsScreen(),
-              '/benefits_physical': (BuildContext context) => new BenefitsPhysical(),
+            '/physical_health_home': (BuildContext context) =>
+                new PhysicalHealthScreen(),
+            '/learn_more_physical_health': (BuildContext context) =>
+                new LearnMorePhysicalScreen(),
+            '/yoga': (BuildContext context) => new YogaScreen(),
+            '/pmr': (BuildContext context) => new PMRScreen(),
+            '/exercises': (BuildContext context) => new ExercisesScreen(),
+            '/diets': (BuildContext context) => new DietsScreen(),
+            '/benefits_physical': (BuildContext context) =>
+                new BenefitsPhysical(),
 
-              '/social_health_home': (BuildContext context) => new SocialHealthScreen(),
-              '/learn_more_social_health': (BuildContext context) => new LearnMoreSocialScreen(),
-              '/Contacts': (BuildContext context) => new Contacts(),
-              '/index': (BuildContext context) => new IndexPage(),
-              '/communication_skills': (BuildContext context) => new CommunicationSkillsScreen(),
-              '/more_social_health': (BuildContext context) => new MoreSocialHealth(),
+            '/social_health_home': (BuildContext context) =>
+                new SocialHealthScreen(),
+            '/learn_more_social_health': (BuildContext context) =>
+                new LearnMoreSocialScreen(),
+            '/Contacts': (BuildContext context) => new Contacts(),
+            '/index': (BuildContext context) => new IndexPage(),
+            '/communication_skills': (BuildContext context) =>
+                new CommunicationSkillsScreen(),
+            '/more_social_health': (BuildContext context) =>
+                new MoreSocialHealth(),
 
-              '/work_health_home': (BuildContext context) => new WorkHealthScreen(),
-              '/learn_more_work_health': (BuildContext context) => new LearnMoreWorkScreen(),
-              //'/time_management_home': (BuildContext context) => new TimeHomeScreen(),
-              '/learn_time': (BuildContext context) => new LearnTimeScreen(),
-              '/pomodoro': (BuildContext context) => new PomodoroScreen(),
-              '/concentration_home': (BuildContext context) => new ConcentrationHomeScreen(),
-              //'/learn_conc': (BuildContext context) => new LearnConcScreen(),
-
-    },
-  )
-  );
+            '/work_health_home': (BuildContext context) =>
+                new WorkHealthScreen(),
+            '/learn_more_work_health': (BuildContext context) =>
+                new LearnMoreWorkScreen(),
+            //'/time_management_home': (BuildContext context) => new TimeHomeScreen(),
+            '/learn_time': (BuildContext context) => new LearnTimeScreen(),
+            '/pomodoro': (BuildContext context) => new PomodoroScreen(),
+            '/concentration_home': (BuildContext context) =>
+                new ConcentrationHomeScreen(),
+            //'/learn_conc': (BuildContext context) => new LearnConcScreen(),
+          },
+        ),
+      );
 }

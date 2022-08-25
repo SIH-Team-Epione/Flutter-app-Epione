@@ -73,7 +73,7 @@ class TodaysTip extends StatelessWidget {
                 //'https://www.99images.com/download-image/869224/2880x2560',
                 '${concentration_tips[difference]['imgUrl']}',
                 width: MediaQuery.of(context).size.width - 20,
-                height: 350.0,
+                height: MediaQuery.of(context).size.height * 0.40,
                 fit: BoxFit.cover,
               ),
             ),
@@ -82,7 +82,7 @@ class TodaysTip extends StatelessWidget {
               '${concentration_tips[difference]['title']}',
               style: TextStyle(
                   fontFamily: 'Montserrat',
-                  fontSize: 24.0,
+                  fontSize: 22.0,
                   fontWeight: FontWeight.w500
               ),
             ),
@@ -93,7 +93,7 @@ class TodaysTip extends StatelessWidget {
                 '${concentration_tips[difference]['description']}',
                 style: TextStyle(
                     fontFamily: 'Montserrat',
-                    fontSize: 18.0,
+                    fontSize: 16.0,
                     fontWeight: FontWeight.w300
                 ),
                 textAlign: TextAlign.justify,
