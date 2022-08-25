@@ -14,9 +14,12 @@ class _PMRScreenState extends State<PMRScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        elevation: 0,
         title: Text(
           'Progressive Muscle Relaxation',
+          style: TextStyle(
+            fontSize: 25,
+            color: Color(0xFFfafafa),
+          ),
         ),
         iconTheme: IconThemeData(color: Color(0xFF000000)),
         backgroundColor: Colors.teal,
@@ -64,6 +67,7 @@ class _PMRScreenState extends State<PMRScreen> {
             ),
             Divider(
               height: 1,
+              color: Colors.black,
             ),
             Expanded(
               child: SizedBox(
@@ -83,17 +87,6 @@ class _PMRScreenState extends State<PMRScreen> {
                         ),
                       ),
                       child: ListTile(
-                        title: Container(
-                          child: Text(
-                            Data.pmrText[i],
-                            style: TextStyle(
-                              color: Colors.white,
-                            ),
-                          ),
-                          decoration: BoxDecoration(
-                            color: Colors.black.withOpacity(0.5),
-                          ),
-                        ),
                         onTap: () {
                           Navigator.push(
                             context,
