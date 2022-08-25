@@ -17,6 +17,8 @@ class _AddContactsState extends State<AddContacts> {
   String _typeSelected = '';
   late DatabaseReference _ref;
 
+  final user=FirebaseAuth.instance.currentUser;
+  var emailid;
   @override
   void initState() {
     // TODO: implement initState
@@ -25,6 +27,7 @@ class _AddContactsState extends State<AddContacts> {
     _numberController = TextEditingController();
     // ignore: deprecated_member_use
     _ref = FirebaseDatabase.instance.reference().child('Contacts');
+    emailid=user?.email;
   }
 
   Widget _buildContactType(String title) {
@@ -151,6 +154,7 @@ class _AddContactsState extends State<AddContacts> {
       'name': name,
       'number': '+91' + number,
       'type': _typeSelected,
+      'id': emailid,
     };
     _ref.push().set(contact).then((value) {
       Navigator.pop(context);

@@ -9,27 +9,26 @@ class Result extends StatefulWidget {
   final qnaList, qnaList2, qnaList3;
   Result(
       {Key? key,
-      required this.qnaList,
-      required this.qnaList2,
-      required this.qnaList3})
+        required this.qnaList,
+        required this.qnaList2,
+        required this.qnaList3})
       : super(key: key);
 
   @override
   State<Result> createState() => _ResultState();
-  int sum = 0;
 }
 
 class _ResultState extends State<Result> {
-  int sum = 0;
+  num sum = 0;
   // var KeyList=qna.values.toList();
   // var KeyList=qna2.values.toList();
   // var KeyList=qna3.values.toList();
 
   void Cal() {
-    int c1, c2, c3, c4, c5, c6, c7;
+    num c1, c2, c3, c4, c5, c6, c7;
     c1 = widget.qnaList3[0];
     '$c1';
-    int v2 = widget.qnaList[2];
+    num v2 = widget.qnaList[2];
     if (v2 < 15)
       c2 = 0;
     else if (v2 < 30)
@@ -38,7 +37,7 @@ class _ResultState extends State<Result> {
       c2 = 2;
     } else
       c2 = 3;
-    int v5a = widget.qnaList2[0];
+    num v5a = widget.qnaList2[0];
     c2 = c2 + v5a;
     if (c2 == 0)
       c2 = 0;
@@ -56,10 +55,10 @@ class _ResultState extends State<Result> {
       c3 = 2;
     else
       c3 = 3;
-    int v4a = widget.qnaList[5];
-    int v4b = widget.qnaList[6];
+    num v4a = widget.qnaList[5];
+    num v4b = widget.qnaList[6];
     v4a = v4a * 100;
-    c4 = (v4a / v4b) as int;
+    c4 = (v4a / v4b);
     if (c4 > 85)
       c4 = 0;
     else if (c4 > 75)
@@ -68,14 +67,14 @@ class _ResultState extends State<Result> {
       c4 = 2;
     else
       c4 = 3;
-    int v5b = widget.qnaList2[1];
-    int v5c = widget.qnaList2[2];
-    int v5d = widget.qnaList2[3];
-    int v5e = widget.qnaList2[4];
-    int v5f = widget.qnaList2[5];
-    int v5g = widget.qnaList2[6];
-    int v5h = widget.qnaList2[7];
-    int v5i = widget.qnaList2[8];
+    num v5b = widget.qnaList2[1];
+    num v5c = widget.qnaList2[2];
+    num v5d = widget.qnaList2[3];
+    num v5e = widget.qnaList2[4];
+    num v5f = widget.qnaList2[5];
+    num v5g = widget.qnaList2[6];
+    num v5h = widget.qnaList2[7];
+    num v5i = widget.qnaList2[8];
     c5 = v5a + v5c + v5d + v5e + v5f + v5g + v5h + v5i;
     if (c5 == 0)
       c5 = 0;
@@ -84,8 +83,8 @@ class _ResultState extends State<Result> {
     else if (c5 < 18)
       c5 = 2;
     else if (c5 < 27) c5 = 3;
-    c6 = widget.qnaList[9];
-    c7 = widget.qnaList[10] + widget.qnaList[11];
+    c6 = widget.qnaList2[9];
+    c7 = widget.qnaList2[10] + widget.qnaList2[11];
     sum = c1 + c2 + c3 + c4 + c5 + c6 + c7;
     return;
   }
@@ -110,6 +109,36 @@ class _ResultState extends State<Result> {
             Column(
               children: [
                 Container(
+                  width: double.infinity,
+                  padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 2),
+                  margin: EdgeInsets.fromLTRB(0, 0, 0, 10),
+                  decoration: BoxDecoration(
+                    color: Colors.teal[200],
+                    // border: Border.symmetric(color: Colors.black),
+                    borderRadius: BorderRadius.only(
+                        bottomLeft: Radius.circular(10),
+                        bottomRight: Radius.circular(10)),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Color.fromARGB(255, 155, 155, 155),
+                        offset: Offset(5.0, 5.0),
+                        blurRadius: 6.0,
+                      ),
+                    ],
+                  ),
+                  child: Container(
+                    padding: EdgeInsets.all(10),
+                    child: Text(
+                      'This questionnaire assessed different aspects of your sleep, as well as some features of your daytime functioning. The following result is used to get an idea about the quantity and quality of your sleep.\n',
+                      style: TextStyle(
+                        color: Colors.teal[100],
+                        fontSize: 15,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ),
+                Container(
                   padding: EdgeInsets.all(10.0),
                   margin: EdgeInsets.all(10.0),
                   decoration: BoxDecoration(
@@ -131,6 +160,52 @@ class _ResultState extends State<Result> {
                       Text('Your PSQI Score is $sum'),
                     ],
                   ),
+                ),
+                Stack(
+                  children: [
+                    Card(
+
+                      elevation: 5,
+                      shape: RoundedRectangleBorder(
+                          side: BorderSide(width: 0.5, color: Colors.white60),
+                          borderRadius: BorderRadius.circular(
+                            20,
+                          )),
+                      child: Container(
+
+                        //margin: EdgeInsets.all(10),
+                        child: Column(
+
+                          children: [
+                            Image(
+                              image: AssetImage('assets/images/psqi.jpg'),
+
+                            ),
+                            Container(
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  color: Colors.teal[200],
+                                  borderRadius: BorderRadius.only(bottomLeft: Radius.circular(20),bottomRight: Radius.circular(20)),
+                                ),
+
+                                child: Container(
+                                  padding: EdgeInsets.all(10),
+                                  child: Text(
+                                    'A total score of "5" or greater is indicative of poor sleep quality. If you scored "5" or more it is suggested that you discuss your sleep habits with a healthcare provider\n',
+                                    style: TextStyle(
+                                      color: Colors.grey[50],
+                                      fontSize: 14.0,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
               ],
             ),
