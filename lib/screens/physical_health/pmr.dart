@@ -49,7 +49,9 @@ class _PMRScreenState extends State<PMRScreen> {
                     SizedBox(height: 10),
                     Expanded(
                       child: Text(
-                          'Priogressive muscle relaxation (PMR) is a deep relaxation technique that has been effectively used to control stress and anxiety, relieve insomnia, and reduce symptoms of certain types of chronic pain. Progressive muscle relaxation is based upon the simple practice of tensing, or tightening, one muscle group at a time followed by a relaxation phase with release of the tension.'),
+                        'Priogressive muscle relaxation (PMR) is a deep relaxation technique that has been effectively used to control stress and anxiety, relieve insomnia, and reduce symptoms of certain types of chronic pain. Progressive muscle relaxation is based upon the simple practice of tensing, or tightening, one muscle group at a time followed by a relaxation phase with release of the tension.',
+                        overflow: TextOverflow.clip,
+                      ),
                     )
                   ],
                 ),

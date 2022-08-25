@@ -18,6 +18,7 @@ class MyTabs extends StatelessWidget {
       height: 50,
       child: Text(
         this.text,
+        overflow: TextOverflow.clip,
         style: TextStyle(color: Colors.white, fontSize: 18),
       ),
       decoration: BoxDecoration(
