@@ -21,7 +21,6 @@ class _PostsTabState extends State<PostsTab> {
 
     }
 
-
     Widget listItem({required Map post}){
       final userId = currentuser?.uid;
       return Container(
@@ -30,6 +29,7 @@ class _PostsTabState extends State<PostsTab> {
         height: 180,
         decoration: BoxDecoration(
             color: Colors.white,
+            borderRadius: BorderRadius.circular(15),
             boxShadow: [BoxShadow(
                 color: Colors.black12,
                 offset: Offset(0.0,10.0),

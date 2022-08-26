@@ -36,6 +36,7 @@ class _MyPostsTabState extends State<MyPostsTab> {
       width: 460,
       height: 160,
       decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(15),
           color: Colors.white,
           boxShadow: [BoxShadow(
               color: Colors.black12,
