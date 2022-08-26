@@ -26,39 +26,48 @@ class _PMRScreenState extends State<PMRScreen> {
             Container(
               margin: EdgeInsets.all(10),
               width: MediaQuery.of(context).size.width,
-              height: MediaQuery.of(context).size.width / 2,
+              height: MediaQuery.of(context).size.width / 3,
               child: Container(
                 padding: EdgeInsets.all(5),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      'What is PMR?',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 20,
-                        color: Colors.black,
+                child: SingleChildScrollView(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        'What is PMR?',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20,
+                          color: Colors.black,
+                        ),
+                        textAlign: TextAlign.center,
                       ),
-                      textAlign: TextAlign.center,
-                    ),
-                    SizedBox(height: 10),
-                    Text(
-                      'Priogressive muscle relaxation (PMR) is a deep relaxation technique that has been effectively used to control stress and anxiety, relieve insomnia, and reduce symptoms of certain types of chronic pain. Progressive muscle relaxation is based upon the simple practice of tensing, or tightening, one muscle group at a time followed by a relaxation phase with release of the tension.',
-                      overflow: TextOverflow.clip,
-                    ),
-                  ],
+                      SizedBox(height: 10),
+                      Text(
+                        'Priogressive muscle relaxation (PMR) is a deep relaxation technique that has been effectively used to control stress and anxiety, relieve insomnia, and reduce symptoms of certain types of chronic pain. Progressive muscle relaxation is based upon the simple practice of tensing, or tightening, one muscle group at a time followed by a relaxation phase with release of the tension.',
+                        overflow: TextOverflow.clip,
+                      ),
+                    ],
+                  ),
                 ),
               ),
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-              ),
+                  borderRadius: BorderRadius.circular(10),
+                  border: Border.all(
+                    color: Color(0xFFbdbdbd),
+                  )),
             ),
             SizedBox(
-              height: 30,
+              height: 10,
             ),
-            Divider(
-              height: 1,
-              color: Colors.black,
+            Text(
+              'Suggestive Videos for PMR',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 20,
+                color: Colors.black,
+              ),
+              textAlign: TextAlign.center,
             ),
             Expanded(
               child: SizedBox(

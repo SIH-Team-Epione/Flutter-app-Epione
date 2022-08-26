@@ -16,10 +16,12 @@ class MyTabs extends StatelessWidget {
       alignment: Alignment.center,
       width: 120,
       height: 50,
-      child: Text(
-        this.text,
-        overflow: TextOverflow.clip,
-        style: TextStyle(color: Colors.white, fontSize: 18),
+      child: Flexible(
+        child: Text(
+          this.text,
+          // overflow: TextOverflow.clip,
+          style: TextStyle(color: Colors.white, fontSize: 18),
+        ),
       ),
       decoration: BoxDecoration(
         color: this.color,

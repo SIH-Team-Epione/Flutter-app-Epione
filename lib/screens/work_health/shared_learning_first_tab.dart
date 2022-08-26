@@ -5,16 +5,16 @@ import 'package:firebase_database/firebase_database.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:intl/intl.dart';
 
-class PostsTab extends StatefulWidget {
-  const PostsTab({Key? key}) : super(key: key);
+class PostsTabLearning extends StatefulWidget {
+  const PostsTabLearning({Key? key}) : super(key: key);
 
   @override
-  State<PostsTab> createState() => _PostsTabState();
+  State<PostsTabLearning> createState() => _PostsTabLearningState();
 }
 
-class _PostsTabState extends State<PostsTab> {
+class _PostsTabLearningState extends State<PostsTabLearning> {
 
-    Query dbRef = FirebaseDatabase.instance.ref().child('posts');
+    Query dbRef = FirebaseDatabase.instance.ref().child('learnings');
     final currentuser = FirebaseAuth.instance.currentUser;
 
     handleLike(){
@@ -52,13 +52,6 @@ class _PostsTabState extends State<PostsTab> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text(
-                            post['track'].toString(),
-                            style: TextStyle(
-                              color: Colors.grey,
-                              fontSize: 14.0,
-                            ),
-                          ),
                           Row(
                             children: <Widget>[
                               GestureDetector(
