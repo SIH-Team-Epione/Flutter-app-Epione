@@ -142,7 +142,7 @@ class _MeditationScreenState extends State<MeditationScreen>
                                   ],
                                 ),
                                 child: Container(
-                                  padding: EdgeInsets.all(8),
+                                  // padding: EdgeInsets.all(8),
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.start,
                                     children: [
@@ -160,6 +160,7 @@ class _MeditationScreenState extends State<MeditationScreen>
                                         ),
                                       ),
                                       SizedBox(width: 10),
+                                      Flexible(child:
                                       GestureDetector(
                                         onTap: () {
                                           Navigator.push(
@@ -175,11 +176,12 @@ class _MeditationScreenState extends State<MeditationScreen>
                                         child: Text(
                                           Data.tabBarView1Title[i],
                                           style: TextStyle(
-                                            fontSize: 15,
+                                            fontSize: 13,
                                             fontWeight: FontWeight.bold,
                                           ),
                                           overflow: TextOverflow.clip,
                                         ),
+                                      ),
                                       ),
                                     ],
                                   ),
@@ -222,6 +224,7 @@ class _MeditationScreenState extends State<MeditationScreen>
                                         ),
                                       ),
                                       SizedBox(width: 10),
+                                      Flexible(child:
                                       GestureDetector(
                                         onTap: () {
                                           Navigator.push(
@@ -234,11 +237,13 @@ class _MeditationScreenState extends State<MeditationScreen>
                                             ),
                                           );
                                         },
-                                        child: Text(
-                                          Data.tabBarView2Title[i],
-                                          style: TextStyle(
-                                            fontSize: 15,
-                                            fontWeight: FontWeight.bold,
+                                            child: Text(
+                                              Data.tabBarView2Title[i],
+                                              style: TextStyle(
+                                                fontSize: 13,
+                                                fontWeight: FontWeight.bold,
+                                                overflow: TextOverflow.ellipsis,
+                                              ),
                                           ),
                                         ),
                                       ),
@@ -283,6 +288,7 @@ class _MeditationScreenState extends State<MeditationScreen>
                                         ),
                                       ),
                                       SizedBox(width: 10),
+                                      Flexible(child:
                                       GestureDetector(
                                         onTap: () {
                                           Navigator.push(
@@ -298,10 +304,11 @@ class _MeditationScreenState extends State<MeditationScreen>
                                         child: Text(
                                           Data.tabBarView3Title[i],
                                           style: TextStyle(
-                                            fontSize: 15,
+                                            fontSize: 13,
                                             fontWeight: FontWeight.bold,
                                           ),
                                         ),
+                                      ),
                                       ),
                                     ],
                                   ),
