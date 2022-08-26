@@ -28,6 +28,7 @@ class _SharedLearningsState extends State<SharedLearnings> {
     return DefaultTabController(
       length: 2,
       child: Scaffold(
+        backgroundColor: Color(0xffe0f4f0),
         appBar: AppBar(
           title: Text("Shared Learnings"),
           bottom: TabBar(
@@ -45,6 +46,7 @@ class _SharedLearningsState extends State<SharedLearnings> {
         ),
         floatingActionButton: FloatingActionButton(
           onPressed: createPost,
+          child: Icon(Icons.add),
         ),
       ),
     );

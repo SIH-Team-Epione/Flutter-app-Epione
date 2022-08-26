@@ -153,9 +153,6 @@ class _PhysicalHealthScreenState extends State<PhysicalHealthScreen> {
                                             fontSize: 14.0,
                                           ),
                                         ),
-                                        const Padding(
-                                            padding: EdgeInsets.symmetric(
-                                                vertical: 2.0)),
                                         ExpandableText(
                                           feature.description,
                                           expandText: 'show more',
@@ -163,19 +160,6 @@ class _PhysicalHealthScreenState extends State<PhysicalHealthScreen> {
                                           expandOnTextTap: true,
                                           collapseOnTextTap: true,
                                         ),
-                                        const Padding(
-                                            padding: EdgeInsets.symmetric(
-                                                vertical: 1.0)),
-                                        Container(
-                                          padding: EdgeInsets.all(5),
-                                          decoration: BoxDecoration(
-                                              borderRadius:
-                                                  BorderRadius.circular(10),
-                                              color: Color(0xffe0f4f0)),
-                                        ),
-                                        const Padding(
-                                            padding: EdgeInsets.symmetric(
-                                                vertical: 1.0)),
                                         Container(
                                           padding: EdgeInsets.all(5),
                                           decoration: BoxDecoration(
