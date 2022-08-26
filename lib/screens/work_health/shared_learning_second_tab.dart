@@ -37,6 +37,7 @@ class _MyPostsTabLearningState extends State<MyPostsTabLearning> {
       height: 160,
       decoration: BoxDecoration(
           color: Colors.white,
+          borderRadius: BorderRadius.circular(15),
           boxShadow: [BoxShadow(
               color: Colors.black12,
               offset: Offset(0.0,10.0),
