@@ -50,14 +50,14 @@ class _PostsTabLearningState extends State<PostsTabLearning> {
                     children: <Widget>[
                       SizedBox(height: 5.0),
                       Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        mainAxisAlignment: MainAxisAlignment.end,
                         children: [
                           Row(
                             children: <Widget>[
                               GestureDetector(
                                 onTap: handleLike,
                                 child: Icon(
-                                  Icons.favorite_border,
+                                  Icons.favorite,
                                   color: Colors.red,
                                   size: 12.0,
                                 ),
