@@ -2,6 +2,8 @@ import 'package:firebase_database/firebase_database.dart';
 import 'package:firebase_database/ui/firebase_animated_list.dart';
 import 'package:flutter/material.dart';
 import 'package:quiz_app/screens/work_health/create_post.dart';
+import 'package:quiz_app/screens/work_health/shared_first_tab.dart';
+import 'package:quiz_app/screens/work_health/shared_second_tab.dart';
 
 class SharedExperiences extends StatefulWidget {
   const SharedExperiences({Key? key}) : super(key: key);
@@ -18,58 +20,41 @@ class _SharedExperiencesState extends State<SharedExperiences> {
     );
   }
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("User posts"),
-      ),
-      body: PostsSection(),
-      floatingActionButton: FloatingActionButton(
-        onPressed: createPost,
-      ),
-    );
-  }
-}
-
-class PostsSection extends StatefulWidget {
-  const PostsSection({Key? key}) : super(key: key);
-
-  @override
-  State<PostsSection> createState() => _PostsSectionState();
-}
-
-class _PostsSectionState extends State<PostsSection> {
-
   Query dbRef = FirebaseDatabase.instance.ref().child('posts');
 
-  Widget listItem({required Map post}){
-     return Container(
-        child: Column(
-          children: [
-            Text(post['title'].toString()),
-            Text(post['likes'].toString()),
-            Text(post['text'].toString()),
-            Text(post['name'].toString())
-          ],
-        ),
-     );
-  }
-
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: double.infinity,
-      child: FirebaseAnimatedList(
-        query: dbRef,
-        itemBuilder: (BuildContext context, DataSnapshot snapshot, Animation<double> animation, int index){
-          Map post = snapshot.value as Map;
-          post['key'] = snapshot.key;
-
-          return listItem(post: post);
-        },
+    return DefaultTabController(
+      length: 2,
+      child: Scaffold(
+        backgroundColor: Color(0xffe0f4f0),
+        appBar: AppBar(
+          title: Text('Shared Experiences'),
+          centerTitle: false,
+          bottom: TabBar(
+            tabs: [
+              Tab(
+                text: 'Posts',
+              ),
+              Tab(
+                text: 'My Posts',
+              )
+            ],
+          ),
+        ),
+          floatingActionButton: FloatingActionButton(
+            onPressed: createPost,
+            child: Icon(Icons.add),
+          ),
+        body: TabBarView(
+          children: [
+            PostsTab(),
+            MyPostsTab(),
+          ],
+        )
       ),
     );
   }
 }
+
 
