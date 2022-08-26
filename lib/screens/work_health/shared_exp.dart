@@ -27,6 +27,7 @@ class _SharedExperiencesState extends State<SharedExperiences> {
     return DefaultTabController(
       length: 2,
       child: Scaffold(
+        backgroundColor: Color(0xffe0f4f0),
         appBar: AppBar(
           title: Text('Shared Experiences'),
           centerTitle: false,
@@ -43,6 +44,7 @@ class _SharedExperiencesState extends State<SharedExperiences> {
         ),
           floatingActionButton: FloatingActionButton(
             onPressed: createPost,
+            child: Icon(Icons.add),
           ),
         body: TabBarView(
           children: [

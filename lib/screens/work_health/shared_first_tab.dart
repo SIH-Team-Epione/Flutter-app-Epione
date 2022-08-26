@@ -17,121 +17,128 @@ class _PostsTabState extends State<PostsTab> {
 
     Widget listItem({required Map post}){
       return Container(
-        margin: EdgeInsets.only(bottom: 15.0),
-        width: MediaQuery.of(context).size.width*0.8,
-        height: 140,
+        margin: EdgeInsets.fromLTRB(10, 20, 10, 15),
+        width: 460,
+        height: 160,
         decoration: BoxDecoration(
             color: Colors.white,
             boxShadow: [BoxShadow(
-                color: Color(0xFFFAFAFA),
+                color: Colors.black12,
                 offset: Offset(0.0,10.0),
                 blurRadius: 10.0,
                 spreadRadius: 0.5
             )]
         ),
         child: Padding(
-          padding: EdgeInsets.symmetric(vertical: 15.0,horizontal: 20.0),
-          child: Row(
-            children: <Widget>[
-              Container(
-                width: MediaQuery.of(context).size.width * 0.66,
-                padding: EdgeInsets.symmetric(horizontal: 20.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[
-                    SizedBox(height: 5.0),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          'Mental health',
+          padding: EdgeInsets.symmetric(vertical: 15.0,horizontal: 0.0),
+          child: Expanded(
+            child: Row(
+              children: <Widget>[
+                Container(
+                  width: MediaQuery.of(context).size.width * 0.80,
+                  padding: EdgeInsets.symmetric(horizontal: 10.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      SizedBox(height: 5.0),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            post['track'].toString(),
+                            style: TextStyle(
+                              color: Colors.grey,
+                              fontSize: 14.0,
+                            ),
+                          ),
+                          Row(
+                            children: <Widget>[
+                              GestureDetector(
+                                onTap: handleLike,
+                                child: Icon(
+                                  Icons.favorite_border,
+                                  color: Colors.grey,
+                                  size: 12.0,
+                                ),
+                              ),
+                              SizedBox(width: 5.0),
+                              Text(
+                                post['likes'].toString(),
+                                style: TextStyle(
+                                  color: Colors.grey,
+                                ),
+                              )
+                            ],
+                          ),
+                        ],
+                      ),
+                      SizedBox(height: 5.0),
+                      Container(
+                        height: 35,
+                        child: Text(
+                          post['title'].toString(),
                           style: TextStyle(
-                            color: Colors.grey,
-                            fontSize: 14.0,
+                              fontSize: 18.0,
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold
                           ),
                         ),
-                        Row(
-                          children: <Widget>[
-                            Icon(
-                              Icons.favorite_border_outlined,
-                              color: Colors.grey,
-                              size: 12.0,
+                      ),
+                      Container(
+                        height: 30,
+                        child: Flexible(
+                          child: Text(
+                            post['text'].toString(),
+                            style: TextStyle(
+                                fontSize: 12.0,
+                                color: Colors.black,
                             ),
-                            SizedBox(width: 5.0),
-                            Text(
-                              post['likes'].toString(),
-                              style: TextStyle(
-                                color: Colors.grey,
-                              ),
-                            )
-                          ],
-                        ),
-                      ],
-                    ),
-                    SizedBox(height: 5.0),
-                    Container(
-                      height: 65,
-                      child: Text(
-                        post['title'].toString(),
-                        style: TextStyle(
-                            fontSize: 18.0,
-                            color: Colors.black,
-                            fontWeight: FontWeight.bold
+                          ),
                         ),
                       ),
-                    ),
-                    SizedBox(height: 7.0),
-                    Container(
-                      height: 65,
-                      child: Text(
-                        post['text'].toString(),
-                        style: TextStyle(
-                            fontSize: 12.0,
-                            color: Colors.black,
-                        ),
-                      ),
-                    ),
-                    Row(
-                      children: <Widget>[
-                        Row(
-                          children: <Widget>[
-                            Icon(
-                              Icons.timer,
-                              color: Colors.grey,
-                              size: 12.0,
-                            ),
-                            SizedBox(width: 5.0),
-                            Text(
-                              '28.08.2022',
-                              style: TextStyle(
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: <Widget>[
+                          Row(
+                            children: <Widget>[
+                              Icon(
+                                Icons.timer,
                                 color: Colors.grey,
+                                size: 12.0,
                               ),
-                            )
-                          ],
-                        ),
-                        SizedBox(width: 20.0),
-                        Row(
-                          children: <Widget>[
-                            Icon(
-                              Icons.person,
-                              color: Colors.grey,
-                              size: 12.0,
-                            ),
-                            SizedBox(width: 5.0),
-                            Text(
-                              post['name'].toString(),
-                              style: TextStyle(
+                              SizedBox(width: 5.0),
+                              Text(
+                                post['date'].toString(),
+                                style: TextStyle(
+                                  color: Colors.grey,
+                                ),
+                              )
+                            ],
+                          ),
+                          SizedBox(width: 20.0),
+                          Row(
+                            children: <Widget>[
+                              Icon(
+                                Icons.person,
                                 color: Colors.grey,
+                                size: 12.0,
                               ),
-                            )
-                          ],
-                        ),
-                      ],
-                    )
-                  ],
-                ),
-              )
-            ],
+                              SizedBox(width: 5.0),
+                              Text(
+                                post['name'].toString(),
+                                style: TextStyle(
+                                  color: Colors.grey,
+                                ),
+                              )
+                            ],
+                          ),
+                        ],
+                      )
+                    ],
+                  ),
+                )
+              ],
+            ),
           ),
         ),
       );
@@ -148,6 +155,10 @@ class _PostsTabState extends State<PostsTab> {
       //     ],
       //   ),
       // );
+
+      handleLike(){
+
+      }
     }
 
     @override
