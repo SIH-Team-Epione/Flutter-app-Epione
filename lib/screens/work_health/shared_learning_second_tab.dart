@@ -2,59 +2,35 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:firebase_database/ui/firebase_animated_list.dart';
 import 'package:flutter/material.dart';
-import 'package:quiz_app/screens/create_shared_learning_post.dart';
 
-class SharedLearnings extends StatefulWidget {
-  const SharedLearnings({Key? key}) : super(key: key);
-
-  @override
-  State<SharedLearnings> createState() => _SharedLearningsState();
-}
-
-//If user chooses to view his posts only just use this list
-List<Map<dynamic, dynamic>> myLearnings = [];
-List<Map<dynamic, dynamic>> allLearnings = [];
-
-//track chosen by user
-var track = "";
-
-class _SharedLearningsState extends State<SharedLearnings> {
-
-  void createPost(){
-    Navigator.push(context,
-    MaterialPageRoute(builder: (context) => CreateSharedLearningPost()));
-  }
+class MyPostsTabLearning extends StatefulWidget {
+  const MyPostsTabLearning({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("Shared Learnings"),
-      ),
-      body: PostsSection(),
-      floatingActionButton: FloatingActionButton(
-        onPressed: createPost,
-      ),
-    );
-  }
+  State<MyPostsTabLearning> createState() => _MyPostsTabLearningState();
 }
 
-class PostsSection extends StatefulWidget {
-  const PostsSection({Key? key}) : super(key: key);
-
-  @override
-  State<PostsSection> createState() => _PostsSectionState();
-}
-
-class _PostsSectionState extends State<PostsSection> {
+class _MyPostsTabLearningState extends State<MyPostsTabLearning> {
 
   Query dbRef = FirebaseDatabase.instance.ref().child('learnings');
+  final currentuser = FirebaseAuth.instance.currentUser;
 
   handleLike(){
 
   }
 
+  Widget empty({required Map post}){
+    final userId = currentuser?.uid;
+    return Container(
+      width: 0,
+      height: 0,
+    );
+
+
+  }
+
   Widget listItem({required Map post}){
+    final userId = currentuser?.uid;
     return Container(
       margin: EdgeInsets.fromLTRB(10, 20, 10, 15),
       width: 460,
@@ -83,20 +59,12 @@ class _PostsSectionState extends State<PostsSection> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        // Text(
-                        //   post['track'].toString(),
-                        //   style: TextStyle(
-                        //     color: Colors.grey,
-                        //     fontSize: 14.0,
-                        //   ),
-                        // ),
                         Row(
-                          mainAxisAlignment: MainAxisAlignment.end,
                           children: <Widget>[
                             GestureDetector(
                               onTap: handleLike,
                               child: Icon(
-                                Icons.favorite,
+                                Icons.favorite_border,
                                 color: Colors.red,
                                 size: 12.0,
                               ),
@@ -125,7 +93,7 @@ class _PostsSectionState extends State<PostsSection> {
                       ),
                     ),
                     Container(
-                      //height: 50,
+                      height: 50,
                       child: Flexible(
                         child: Text(
                           post['text'].toString(),
@@ -195,9 +163,8 @@ class _PostsSectionState extends State<PostsSection> {
         itemBuilder: (BuildContext context, DataSnapshot snapshot, Animation<double> animation, int index){
           Map post = snapshot.value as Map;
           post['key'] = snapshot.key;
-          allLearnings.add(post);
-          if(post['uid']==(FirebaseAuth.instance.currentUser?.uid)){
-            myLearnings.add(post);
+          if(post['uid']!=FirebaseAuth.instance.currentUser!.uid){
+            return empty(post: post);
           }
           return listItem(post: post);
         },
@@ -205,4 +172,3 @@ class _PostsSectionState extends State<PostsSection> {
     );
   }
 }
-

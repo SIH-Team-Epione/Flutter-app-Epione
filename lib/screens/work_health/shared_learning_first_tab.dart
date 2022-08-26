@@ -5,32 +5,29 @@ import 'package:firebase_database/firebase_database.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:intl/intl.dart';
 
-import '../SharedLearnings.dart';
-
-class PostsTab extends StatefulWidget {
-  const PostsTab({Key? key}) : super(key: key);
+class PostsTabLearning extends StatefulWidget {
+  const PostsTabLearning({Key? key}) : super(key: key);
 
   @override
-  State<PostsTab> createState() => _PostsTabState();
+  State<PostsTabLearning> createState() => _PostsTabLearningState();
 }
 
-class _PostsTabState extends State<PostsTab> {
+class _PostsTabLearningState extends State<PostsTabLearning> {
 
-    Query dbRef = FirebaseDatabase.instance.ref().child('posts');
+    Query dbRef = FirebaseDatabase.instance.ref().child('learnings');
     final currentuser = FirebaseAuth.instance.currentUser;
-
-    var dropdownValue = "Filter by Track";
 
     handleLike(){
 
     }
+
 
     Widget listItem({required Map post}){
       final userId = currentuser?.uid;
       return Container(
         margin: EdgeInsets.fromLTRB(10, 20, 10, 15),
         width: 460,
-        height: 190,
+        height: 160,
         decoration: BoxDecoration(
             color: Colors.white,
             boxShadow: [BoxShadow(
@@ -55,19 +52,12 @@ class _PostsTabState extends State<PostsTab> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text(
-                            post['track'].toString(),
-                            style: TextStyle(
-                              color: Colors.grey,
-                              fontSize: 14.0,
-                            ),
-                          ),
                           Row(
                             children: <Widget>[
                               GestureDetector(
                                 onTap: handleLike,
                                 child: Icon(
-                                  Icons.favorite,
+                                  Icons.favorite_border,
                                   color: Colors.red,
                                   size: 12.0,
                                 ),
@@ -96,7 +86,7 @@ class _PostsTabState extends State<PostsTab> {
                         ),
                       ),
                       Container(
-                        //height: 50,
+                        height: 50,
                         child: Flexible(
                           child: Text(
                             post['text'].toString(),
@@ -107,7 +97,6 @@ class _PostsTabState extends State<PostsTab> {
                           ),
                         ),
                       ),
-                      SizedBox(height: 10,),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: <Widget>[
@@ -154,6 +143,8 @@ class _PostsTabState extends State<PostsTab> {
           ),
         ),
       );
+
+
     }
 
     @override
@@ -165,22 +156,12 @@ class _PostsTabState extends State<PostsTab> {
           itemBuilder: (BuildContext context, DataSnapshot snapshot, Animation<double> animation, int index){
             Map post = snapshot.value as Map;
             post['key'] = snapshot.key;
-
             return listItem(post: post);
           },
         ),
       );
     }
-}
 
-List<Map<dynamic, dynamic>> filter(String track){
-  List<Map<dynamic, dynamic>> filteredList = [];
-  for(var p in allLearnings){
-    if(p['track']==track){
-      filteredList.add(p);
-    }
-  }
-  return filteredList;
 }
 
 
