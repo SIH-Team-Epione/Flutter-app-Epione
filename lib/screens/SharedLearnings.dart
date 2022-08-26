@@ -45,6 +45,7 @@ class _SharedLearningsState extends State<SharedLearnings> {
         ),
         floatingActionButton: FloatingActionButton(
           onPressed: createPost,
+          child: Icon(Icons.add),
         ),
       ),
     );
