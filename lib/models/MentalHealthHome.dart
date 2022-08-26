@@ -18,7 +18,7 @@ class Feature {
 }
 
 const title = 'Mental Health';
-const learnMoreText = 'Mental health disorders are not uncommon amongst students and its prevalence imposes many challenges and thus being aware and knowing how to tackle...';
+const learnMoreText = 'Mental health disorders are not uncommon amongst students and its prevalence imposes many challenges and thus being aware and knowing how to tackle them significantly improves a student''s lifestyle and mindset. When it comes to your mental health, self-care can help you manage stress, lower your risk of illness, and increase your energy. Even small acts of self-care in your daily life can have a big impact.';
 
 List<Feature> featuresList = [
   const Feature(
@@ -59,7 +59,7 @@ List<Feature> featuresList = [
       description: 'Meditation can give you a sense of calm, peace and balance that can benefit both your emotional well-being and your overall health. You can also use it to relax and cope with stress by refocusing your attention on something calming.',
       urlImage: 'assets/images/meditation_list_image.jpg',
     ageGroup: '15 above',
-      nextScreenRoute: 'meditation_home',
+      nextScreenRoute: '/meditation_home',
   ),
   const Feature(
       id: 5,
@@ -67,6 +67,6 @@ List<Feature> featuresList = [
       description: 'Mindfulness is a technique by which you can learn to be fully present and engaged in the moment without judging anything. It can help you manage your thoughts, feelings and mental health.',
       urlImage: 'assets/images/mindfulness_list_image.jpg',
     ageGroup: '15 above',
-      nextScreenRoute: 'mindfulness_home',
+      nextScreenRoute: '/mindfulness_home',
   )
 ];
