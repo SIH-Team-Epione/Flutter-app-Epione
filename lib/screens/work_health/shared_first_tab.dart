@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_database/ui/firebase_animated_list.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_database/firebase_database.dart';
@@ -14,8 +15,15 @@ class PostsTab extends StatefulWidget {
 class _PostsTabState extends State<PostsTab> {
 
     Query dbRef = FirebaseDatabase.instance.ref().child('posts');
+    final currentuser = FirebaseAuth.instance.currentUser;
+
+    handleLike(){
+
+    }
+
 
     Widget listItem({required Map post}){
+      final userId = currentuser?.uid;
       return Container(
         margin: EdgeInsets.fromLTRB(10, 20, 10, 15),
         width: 460,
@@ -57,7 +65,7 @@ class _PostsTabState extends State<PostsTab> {
                                 onTap: handleLike,
                                 child: Icon(
                                   Icons.favorite_border,
-                                  color: Colors.grey,
+                                  color: Colors.red,
                                   size: 12.0,
                                 ),
                               ),
@@ -85,7 +93,7 @@ class _PostsTabState extends State<PostsTab> {
                         ),
                       ),
                       Container(
-                        height: 30,
+                        height: 50,
                         child: Flexible(
                           child: Text(
                             post['text'].toString(),
@@ -142,23 +150,8 @@ class _PostsTabState extends State<PostsTab> {
           ),
         ),
       );
-      // return Container(
-      //   child: Column(
-      //     children: [
-      //       Row(
-      //
-      //       ),
-      //       Text(post['title'].toString()),
-      //       Text(post['likes'].toString()),
-      //       Text(post['text'].toString()),
-      //       Text(post['name'].toString())
-      //     ],
-      //   ),
-      // );
 
-      handleLike(){
 
-      }
     }
 
     @override

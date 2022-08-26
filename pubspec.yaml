@@ -72,6 +72,9 @@ dependencies:
   flutter_native_splash: ^2.2.8
   expandable_text: ^2.3.0
   app_usage: ^2.0.0
+  location: ^4.4.0
+  flutter_sms: ^2.3.1
+  share_plus: ^4.0.10+1
 
 
 dev_dependencies:
