@@ -15,6 +15,7 @@ class _MeditationScreenState extends State<MeditationScreen>
     with SingleTickerProviderStateMixin {
   late ScrollController _scrollController;
   late TabController _tabController;
+
   @override
   void initState() {
     // TODO: implement initState
@@ -27,16 +28,11 @@ class _MeditationScreenState extends State<MeditationScreen>
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        elevation: 0,
         title: Text(
           "Guide to meditation",
-          style: TextStyle(
-            fontSize: 30,
-            color: Color(0xFF000000),
-          ),
+          style: TextStyle(),
         ),
-        iconTheme: IconThemeData(color: Color(0xFF000000)),
-        backgroundColor: Color(0xFFfafafa),
+        backgroundColor: Colors.teal,
       ),
       body: SafeArea(
         child: Scaffold(
@@ -158,7 +154,8 @@ class _MeditationScreenState extends State<MeditationScreen>
                                               BorderRadius.circular(10),
                                           image: DecorationImage(
                                             image: AssetImage(
-                                                Data.imagetabBarView1[i]),
+                                              Data.imagetabBarView1[i],
+                                            ),
                                           ),
                                         ),
                                       ),
@@ -181,6 +178,7 @@ class _MeditationScreenState extends State<MeditationScreen>
                                             fontSize: 15,
                                             fontWeight: FontWeight.bold,
                                           ),
+                                          overflow: TextOverflow.clip,
                                         ),
                                       ),
                                     ],
