@@ -1,7 +1,7 @@
 #!/bin/sh
 # This is a generated file; do not edit or check into version control.
-export "FLUTTER_ROOT=C:\Users\AREFA\flutter_windows_2.10.3-stable\flutter"
-export "FLUTTER_APPLICATION_PATH=C:\Users\AREFA\StudioProjects\epione_app_flutter"
+export "FLUTTER_ROOT=/home/fatima/snap/flutter/common/flutter"
+export "FLUTTER_APPLICATION_PATH=/home/fatima/Documents/Essentials/Personal/Flutter/Team Epione/Flutter-app-Epione"
 export "COCOAPODS_PARALLEL_CODE_SIGN=true"
 export "FLUTTER_BUILD_DIR=build"
 export "FLUTTER_BUILD_NAME=1.0.0"

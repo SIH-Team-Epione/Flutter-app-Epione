@@ -32,7 +32,6 @@ class _MeditationScreenState extends State<MeditationScreen>
           "Guide to meditation",
           style: TextStyle(),
         ),
-        iconTheme: IconThemeData(color: Color(0xFF000000)),
         backgroundColor: Colors.teal,
       ),
       body: SafeArea(
@@ -155,7 +154,8 @@ class _MeditationScreenState extends State<MeditationScreen>
                                               BorderRadius.circular(10),
                                           image: DecorationImage(
                                             image: AssetImage(
-                                                Data.imagetabBarView1[i]),
+                                              Data.imagetabBarView1[i],
+                                            ),
                                           ),
                                         ),
                                       ),

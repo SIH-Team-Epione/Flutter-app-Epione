@@ -125,16 +125,13 @@ class _PhysicalHealthScreenState extends State<PhysicalHealthScreen> {
                             children: <Widget>[
                               Expanded(
                                 flex: 2,
-                                child: Padding(
-                                  padding: const EdgeInsets.all(0.0),
-                                  child: ClipRRect(
-                                    borderRadius: BorderRadius.only(
-                                        topLeft: Radius.circular(15),
-                                        bottomLeft: Radius.circular(15)),
-                                    child: Image.asset(
-                                      feature.urlImage,
-                                      fit: BoxFit.cover,
-                                    ),
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.only(
+                                      topLeft: Radius.circular(15),
+                                      bottomLeft: Radius.circular(15)),
+                                  child: Image.asset(
+                                    feature.urlImage,
+                                    fit: BoxFit.fill,
                                   ),
                                 ),
                               ),

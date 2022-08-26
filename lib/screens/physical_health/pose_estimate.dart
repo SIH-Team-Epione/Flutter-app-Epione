@@ -35,9 +35,9 @@ class _PoseEstimatorPageState extends State<PoseEstimatorPage> {
                           // print("The values are ${}");
                           setState(() {
                             accuracy = (resp[widget.posename] * 100.0).toStringAsFixed(2);
-                            Future.delayed(const Duration(milliseconds: 3000), () {
-                              acc = double.parse(accuracy);
-                            });
+                            // Future.delayed(const Duration(milliseconds: 3000), () {
+                            //   acc = double.parse(accuracy);
+                            // });
                           });
                         },
                       ),

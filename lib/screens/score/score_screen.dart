@@ -143,6 +143,42 @@ class ScoreScreen extends StatelessWidget {
                               ),),
                               SizedBox(height: 10,),
                               Text(catsList[catId].treatmentAction,),
+                              // ButtonWidget(
+                              //   text: "Download report",
+                              //   onClicked: () async {
+                              //     final date = DateTime.now();
+                              //     final dueDate = date.add(Duration(days: ));
+                              //     final invoice = Invoice(
+                              //       supplier: Supplier(
+                              //         name: 'Sarah Field',
+                              //         email: '123@gmail'
+                              //       )
+                              //       info: InvoiceInfo(
+                              //         date: date,
+                              //         dueDate: dueDate,
+                              //         description: 'My desc...',
+                              //           number: '${DateTime.now().year}-9999' ),
+                              //     items: [
+                              //       InvoiceItem(
+                              //     description: 'coffee',
+                              //     date: DateTime.now(),
+                              //     quantity: 3,
+                              //     vat: 0.19
+                              //     ),
+                              //     InvoiceItem(
+                              //     description: 'coffee',
+                              //     date: DateTime.now(),
+                              //     quantity: 3,
+                              //     vat: 0.19
+                              //     ),
+                              //
+                              //     ]
+                              //     );
+                              //     final pdfFile = await PdfInvoiceApi.generate(invoice);
+                              //
+                              //     PdfApi.openFile(pdfFile);
+                              //   }
+                              // ),
                               SizedBox(height: 20,),
                               Text(
                                 'Suggested Features',
@@ -425,4 +461,14 @@ class ScoreScreen extends StatelessWidget {
       )
     );
   }
-}
+
+//   static Future openFile(File file) async {
+//     final url = file.path;
+//     await OpenFile.open(url);
+//   }
+// }
+//
+//
+//
+// class Invoice {
+ }
