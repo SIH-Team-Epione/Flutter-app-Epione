@@ -90,7 +90,7 @@ class _AppTimerState extends State<AppTimer> {
               children: [
                 SizedBox(width: 20.0,),
                 Container(
-                  width: MediaQuery.of(context).size.width * 0.3,
+                  width: MediaQuery.of(context).size.width * 0.45 - 20.0,
                   child: TextFormField(
                     controller: _hourFieldController,
                     decoration: const InputDecoration(hintText: 'Hours'),
@@ -111,7 +111,7 @@ class _AppTimerState extends State<AppTimer> {
                 ),
                 SizedBox(width: 20.0),
                 Container(
-                  width: MediaQuery.of(context).size.width * 0.3,
+                  width: MediaQuery.of(context).size.width * 0.45 - 20.0,
                   child: TextFormField(
                     controller: _minFieldController,
                     decoration: const InputDecoration(hintText: 'Minutes'),
@@ -130,31 +130,32 @@ class _AppTimerState extends State<AppTimer> {
                     },
                   ),
                 ),
-                SizedBox(width: 20.0,),
-                RaisedButton(
-                    child: Text(
-                        'Set',
-                      style: TextStyle(
-                        color: Colors.white
-                      ),
-                    ),
-                    color: Colors.teal.shade400,
-                    onPressed: () {
-                      if (_formKey.currentState!.validate())
-                        _formKey.currentState!.save();
-                      print('INDEX: $idx');
-                      limits[idx] = helper(_hourFieldController.text, _minFieldController.text);
-                      hours = int.parse(_hourFieldController.text);
-                      minutes = int.parse(_minFieldController.text).remainder(60);
-                      if (limits[idx].compareTo(_infos[idx].usage) >= 0) {
-                        isUnderLimit[idx] = true;
-                      }
-                      else {
-                        isUnderLimit[idx] = false;
-                      }
-                    }
-                )
+                // SizedBox(width: 20.0,),
               ],
+            ),
+            SizedBox(height: 10.0,),
+            RaisedButton(
+                child: Text(
+                  'Set',
+                  style: TextStyle(
+                      color: Colors.white
+                  ),
+                ),
+                color: Colors.teal.shade400,
+                onPressed: () {
+                  if (_formKey.currentState!.validate())
+                    _formKey.currentState!.save();
+                  print('INDEX: $idx');
+                  limits[idx] = helper(_hourFieldController.text, _minFieldController.text);
+                  hours = int.parse(_hourFieldController.text);
+                  minutes = int.parse(_minFieldController.text).remainder(60);
+                  if (limits[idx].compareTo(_infos[idx].usage) >= 0) {
+                    isUnderLimit[idx] = true;
+                  }
+                  else {
+                    isUnderLimit[idx] = false;
+                  }
+                }
             ),
             SizedBox(height: 15.0,),
             // Container(
