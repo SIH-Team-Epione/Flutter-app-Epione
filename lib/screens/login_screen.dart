@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
 import 'package:quiz_app/screens/google_sign_in.dart';
+import 'package:quiz_app/screens/registerscreen.dart';
 import 'package:quiz_app/screens/signup_screen.dart';
 import 'package:quiz_app/screens/google_sign_in.dart';
 
@@ -119,6 +120,29 @@ class _LoginScreenState extends State<LoginScreen> {
                         icon: FaIcon(FontAwesomeIcons.google, color: Colors.red),
                         label: Text('Sign In with Google')
                     ),
+                    GestureDetector(
+                      onTap: (){
+                        Navigator.of(context).pushReplacement(
+                          MaterialPageRoute(
+                            builder: (context) => RegisterScreen(),
+                          ),
+                        );
+                      },
+                      child: Container(
+                        margin: EdgeInsets.fromLTRB(10, 30, 10, 0),
+                        padding: EdgeInsets.all(20),
+                        decoration: BoxDecoration(
+                          color: Colors.teal,
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                        child: Text("Continue with Phone Number",
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16,
+                          color: Colors.white
+                        ),),
+                      ),
+                    )
                   ],
                 ),
               ),
