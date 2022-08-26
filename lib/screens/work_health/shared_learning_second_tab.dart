@@ -3,16 +3,16 @@ import 'package:firebase_database/firebase_database.dart';
 import 'package:firebase_database/ui/firebase_animated_list.dart';
 import 'package:flutter/material.dart';
 
-class MyPostsTab extends StatefulWidget {
-  const MyPostsTab({Key? key}) : super(key: key);
+class MyPostsTabLearning extends StatefulWidget {
+  const MyPostsTabLearning({Key? key}) : super(key: key);
 
   @override
-  State<MyPostsTab> createState() => _MyPostsTabState();
+  State<MyPostsTabLearning> createState() => _MyPostsTabLearningState();
 }
 
-class _MyPostsTabState extends State<MyPostsTab> {
+class _MyPostsTabLearningState extends State<MyPostsTabLearning> {
 
-  Query dbRef = FirebaseDatabase.instance.ref().child('posts');
+  Query dbRef = FirebaseDatabase.instance.ref().child('learnings');
   final currentuser = FirebaseAuth.instance.currentUser;
 
   handleLike(){
@@ -59,13 +59,6 @@ class _MyPostsTabState extends State<MyPostsTab> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text(
-                          post['track'].toString(),
-                          style: TextStyle(
-                            color: Colors.grey,
-                            fontSize: 14.0,
-                          ),
-                        ),
                         Row(
                           children: <Widget>[
                             GestureDetector(
