@@ -36,6 +36,7 @@ class _MyPostsTabState extends State<MyPostsTab> {
       width: 460,
       height: 160,
       decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(15),
           color: Colors.white,
           boxShadow: [BoxShadow(
               color: Colors.black12,
@@ -89,7 +90,7 @@ class _MyPostsTabState extends State<MyPostsTab> {
                     ),
                     SizedBox(height: 5.0),
                     Container(
-                      height: 35,
+                      //height: 35,
                       child: Text(
                         post['title'].toString(),
                         style: TextStyle(
@@ -100,7 +101,7 @@ class _MyPostsTabState extends State<MyPostsTab> {
                       ),
                     ),
                     Container(
-                      height: 50,
+                      //height: 50,
                       child: Flexible(
                         child: Text(
                           post['text'].toString(),

@@ -37,6 +37,7 @@ class _MyPostsTabLearningState extends State<MyPostsTabLearning> {
       height: 160,
       decoration: BoxDecoration(
           color: Colors.white,
+          borderRadius: BorderRadius.circular(15),
           boxShadow: [BoxShadow(
               color: Colors.black12,
               offset: Offset(0.0,10.0),
@@ -82,7 +83,7 @@ class _MyPostsTabLearningState extends State<MyPostsTabLearning> {
                     ),
                     SizedBox(height: 5.0),
                     Container(
-                      height: 35,
+                      //height: 35,
                       child: Text(
                         post['title'].toString(),
                         style: TextStyle(
@@ -93,7 +94,7 @@ class _MyPostsTabLearningState extends State<MyPostsTabLearning> {
                       ),
                     ),
                     Container(
-                      height: 50,
+                      //height: 50,
                       child: Flexible(
                         child: Text(
                           post['text'].toString(),
