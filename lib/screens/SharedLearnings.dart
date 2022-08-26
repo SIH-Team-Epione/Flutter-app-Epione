@@ -3,6 +3,8 @@ import 'package:firebase_database/firebase_database.dart';
 import 'package:firebase_database/ui/firebase_animated_list.dart';
 import 'package:flutter/material.dart';
 import 'package:quiz_app/screens/create_shared_learning_post.dart';
+import 'package:quiz_app/screens/work_health/shared_learning_first_tab.dart';
+import 'package:quiz_app/screens/work_health/shared_learning_second_tab.dart';
 
 class SharedLearnings extends StatefulWidget {
   const SharedLearnings({Key? key}) : super(key: key);
@@ -10,10 +12,6 @@ class SharedLearnings extends StatefulWidget {
   @override
   State<SharedLearnings> createState() => _SharedLearningsState();
 }
-
-//If user chooses to view his posts only just use this list
-List<Map<dynamic, dynamic>> myLearnings = [];
-List<Map<dynamic, dynamic>> allLearnings = [];
 
 //track chosen by user
 var track = "";
@@ -27,69 +25,28 @@ class _SharedLearningsState extends State<SharedLearnings> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("Shared Learnings"),
-      ),
-      body: PostsSection(),
-      floatingActionButton: FloatingActionButton(
-        onPressed: createPost,
-      ),
-    );
-  }
-}
-
-
-class PostsSection extends StatefulWidget {
-  const PostsSection({Key? key}) : super(key: key);
-
-  @override
-  State<PostsSection> createState() => _PostsSectionState();
-}
-
-class _PostsSectionState extends State<PostsSection> {
-
-  Query dbRef = FirebaseDatabase.instance.ref().child('learnings');
-
-  Widget listItem({required Map post}){
-     return Container(
-        child: Column(
-          children: [
-            Text(post['title'].toString()),
-            Text(post['likes'].toString()),
-            Text(post['text'].toString()),
-            Text(post['name'].toString())
-          ],
+    return DefaultTabController(
+      length: 2,
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text("Shared Learnings"),
+          bottom: TabBar(
+            tabs: [
+              Tab(text: "All Posts",),
+              Tab(text: "My Posts"),
+            ],
+          ),
         ),
-     );
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      height: double.infinity,
-      child: FirebaseAnimatedList(
-        query: dbRef,
-        itemBuilder: (BuildContext context, DataSnapshot snapshot, Animation<double> animation, int index){
-          Map post = snapshot.value as Map;
-          post['key'] = snapshot.key;
-          allLearnings.add(post);
-          if(post['uid']==(FirebaseAuth.instance.currentUser?.uid)){
-            myLearnings.add(post);
-          }
-          return listItem(post: post);
-        },
+        body: TabBarView(
+          children:[
+            PostsTabLearning(),
+            MyPostsTabLearning()
+          ]
+        ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: createPost,
+        ),
       ),
     );
   }
-}
-
-List<Map<dynamic, dynamic>> filter(String track){
-  List<Map<dynamic, dynamic>> filteredList = [];
-  for(var p in allLearnings){
-    if(p['track']==track){
-      filteredList.add(p);
-    }
-  }
-  return filteredList;
 }
