@@ -26,7 +26,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
   int screenState = 0;
 
-  Color blue = const Color(0xff8cccff);
+  Color blue = Colors.teal;
 
   Future<void> verifyPhone(String number) async {
     await FirebaseAuth.instance.verifyPhoneNumber(
