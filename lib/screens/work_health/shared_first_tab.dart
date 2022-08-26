@@ -5,6 +5,8 @@ import 'package:firebase_database/firebase_database.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:intl/intl.dart';
 
+import '../SharedLearnings.dart';
+
 class PostsTab extends StatefulWidget {
   const PostsTab({Key? key}) : super(key: key);
 
@@ -17,17 +19,18 @@ class _PostsTabState extends State<PostsTab> {
     Query dbRef = FirebaseDatabase.instance.ref().child('posts');
     final currentuser = FirebaseAuth.instance.currentUser;
 
+    var dropdownValue = "Filter by Track";
+
     handleLike(){
 
     }
-
 
     Widget listItem({required Map post}){
       final userId = currentuser?.uid;
       return Container(
         margin: EdgeInsets.fromLTRB(10, 20, 10, 15),
         width: 460,
-        height: 160,
+        height: 190,
         decoration: BoxDecoration(
             color: Colors.white,
             boxShadow: [BoxShadow(
@@ -64,7 +67,7 @@ class _PostsTabState extends State<PostsTab> {
                               GestureDetector(
                                 onTap: handleLike,
                                 child: Icon(
-                                  Icons.favorite_border,
+                                  Icons.favorite,
                                   color: Colors.red,
                                   size: 12.0,
                                 ),
@@ -93,7 +96,7 @@ class _PostsTabState extends State<PostsTab> {
                         ),
                       ),
                       Container(
-                        height: 50,
+                        //height: 50,
                         child: Flexible(
                           child: Text(
                             post['text'].toString(),
@@ -104,6 +107,7 @@ class _PostsTabState extends State<PostsTab> {
                           ),
                         ),
                       ),
+                      SizedBox(height: 10,),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: <Widget>[
@@ -150,26 +154,60 @@ class _PostsTabState extends State<PostsTab> {
           ),
         ),
       );
-
-
     }
 
     @override
     Widget build(BuildContext context) {
       return Container(
         height: double.infinity,
-        child: FirebaseAnimatedList(
-          query: dbRef,
-          itemBuilder: (BuildContext context, DataSnapshot snapshot, Animation<double> animation, int index){
-            Map post = snapshot.value as Map;
-            post['key'] = snapshot.key;
+        child: Column(
+          children: [
+            DropdownButton<String>(
+              value: dropdownValue,
+              icon: const Icon(Icons.arrow_downward),
+              elevation: 16,
+              style: const TextStyle(color: Colors.black, fontSize: 14),
+              underline: Container(
+                height: 2,
+                color: Colors.black,
+              ),
+              onChanged: (String? newValue) {
+                setState(() {
+                  dropdownValue = newValue!;
+                });
+              },
+              items: <String>['Filter by Track', 'Mental health', 'Physical health', 'Social Health', 'Work Health']
+                  .map<DropdownMenuItem<String>>((String value) {
+                return DropdownMenuItem<String>(
+                  value: value,
+                  child: Text(value),
+                );
+              }).toList(),
+            ),
+            SizedBox(height: 20,),
+            FirebaseAnimatedList(
+              query: dbRef,
+              itemBuilder: (BuildContext context, DataSnapshot snapshot, Animation<double> animation, int index){
+                Map post = snapshot.value as Map;
+                post['key'] = snapshot.key;
 
-            return listItem(post: post);
-          },
+                return listItem(post: post);
+              },
+            ),
+          ],
         ),
       );
     }
+}
 
+List<Map<dynamic, dynamic>> filter(String track){
+  List<Map<dynamic, dynamic>> filteredList = [];
+  for(var p in allLearnings){
+    if(p['track']==track){
+      filteredList.add(p);
+    }
+  }
+  return filteredList;
 }
 
 
