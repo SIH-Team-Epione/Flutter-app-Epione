@@ -23,51 +23,8 @@ class _PMRScreenState extends State<PMRScreen> {
       body: SafeArea(
         child: Column(
           children: [
-            Container(
-              margin: EdgeInsets.all(10),
-              width: MediaQuery.of(context).size.width,
-              height: MediaQuery.of(context).size.width / 3,
-              child: Container(
-                padding: EdgeInsets.all(5),
-                child: SingleChildScrollView(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        'What is PMR?',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20,
-                          color: Colors.black,
-                        ),
-                        textAlign: TextAlign.center,
-                      ),
-                      SizedBox(height: 10),
-                      Text(
-                        'Priogressive muscle relaxation (PMR) is a deep relaxation technique that has been effectively used to control stress and anxiety, relieve insomnia, and reduce symptoms of certain types of chronic pain. Progressive muscle relaxation is based upon the simple practice of tensing, or tightening, one muscle group at a time followed by a relaxation phase with release of the tension.',
-                        overflow: TextOverflow.clip,
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  border: Border.all(
-                    color: Color(0xFFbdbdbd),
-                  )),
-            ),
             SizedBox(
               height: 10,
-            ),
-            Text(
-              'Suggestive Videos for PMR',
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 20,
-                color: Colors.black,
-              ),
-              textAlign: TextAlign.center,
             ),
             Expanded(
               child: SizedBox(
@@ -75,18 +32,8 @@ class _PMRScreenState extends State<PMRScreen> {
                 child: ListView.builder(
                   itemCount: Data.pmrmed.length,
                   itemBuilder: (_, i) {
-                    return Container(
-                      margin: EdgeInsets.all(10),
-                      height: MediaQuery.of(context).size.height / 4,
-                      decoration: BoxDecoration(
-                        image: DecorationImage(
-                          image: AssetImage(
-                            Data.pmrimg[i],
-                          ),
-                          fit: BoxFit.cover,
-                        ),
-                      ),
-                      child: ListTile(
+                    return Expanded(
+                      child: InkWell(
                         onTap: () {
                           Navigator.push(
                             context,
@@ -97,8 +44,87 @@ class _PMRScreenState extends State<PMRScreen> {
                             ),
                           );
                         },
+                        child: Container(
+                          margin: EdgeInsets.all(10),
+                          padding: EdgeInsets.all(2),
+                          decoration: BoxDecoration(
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.grey.shade200,
+                                blurRadius: 10,
+                                spreadRadius: 3,
+                              ),
+                            ],
+                          ),
+                          child: Container(
+                            padding: EdgeInsets.all(5),
+                            color: Colors.white,
+                            child: Row(
+                              children: [
+                                Flexible(
+                                  child: Container(
+                                    height: 90,
+                                    width: 120,
+                                    decoration: BoxDecoration(
+                                      // borderRadius: BorderRadius.circular(10),
+                                      image: DecorationImage(
+                                        image: AssetImage(
+                                          Data.pmrimg[i],
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                Flexible(child: SizedBox(width: 30)),
+                                Flexible(
+                                    child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(Data.pmrText[i]),
+                                    SizedBox(height: 10),
+                                    Container(
+                                      padding: EdgeInsets.all(5),
+                                      decoration: BoxDecoration(
+                                          borderRadius:
+                                              BorderRadius.circular(10),
+                                          color: Color(0xffe0f4f0)),
+                                      child: Text(
+                                        "Watch",
+                                        style: const TextStyle(fontSize: 10.0),
+                                      ),
+                                    ),
+                                  ],
+                                )),
+                              ],
+                            ),
+                          ),
+                        ),
                       ),
                     );
+                    // return Container(
+                    //   margin: EdgeInsets.all(10),
+                    //   height: MediaQuery.of(context).size.height / 4,
+                    //   decoration: BoxDecoration(
+                    //     image: DecorationImage(
+                    //       image: AssetImage(
+                    //         Data.pmrimg[i],
+                    //       ),
+                    //       fit: BoxFit.cover,
+                    //     ),
+                    //   ),
+                    //   child: ListTile(
+                    //     onTap: () {
+                    //       Navigator.push(
+                    //         context,
+                    //         MaterialPageRoute(
+                    //           builder: (context) => PmrVdPlayer(
+                    //             path: Data.pmrmed[i],
+                    //           ),
+                    //         ),
+                    //       );
+                    //     },
+                    //   ),
+                    // );
                   },
                 ),
               ),
