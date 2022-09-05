@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:quiz_app/util/app_colors.dart' as AppColors;
 import 'package:quiz_app/util/data.dart' as Data;
 import 'package:quiz_app/util/audio_file.dart';
@@ -46,15 +47,32 @@ class MeditationScreenState extends State<MeditationScreen>
           builder: (context, player) => Scaffold(
             backgroundColor: Colors.teal.shade50,
             body: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisSize: MainAxisSize.min,
               children: <Widget>[
                 Container(
-                  // color: Colors.teal.shade50,
-                  padding: EdgeInsets.all(20),
-                  child: player,
+                  margin: EdgeInsets.only(top: 20),
+                  child: Flexible(
+                    child: Text(
+                      'Watch to find correct Posture for Meditation below',
+                      style: GoogleFonts.playfairDisplay(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                  ),
                 ),
                 Expanded(
+                  flex: 1,
+                  child: Container(
+                    // color: Colors.teal.shade50,
+                    padding: EdgeInsets.only(
+                        left: 20, right: 20, top: 10, bottom: 10),
+                    child: player,
+                  ),
+                ),
+                Expanded(
+                  flex: 2,
                   child: NestedScrollView(
                     controller: _scrollController,
                     headerSliverBuilder: (BuildContext context, bool isScroll) {
