@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:quiz_app/util/app_colors.dart' as AppColors;
 import 'package:quiz_app/util/data.dart' as Data;
 import 'package:quiz_app/util/audio_file.dart';
 
@@ -23,44 +22,50 @@ class _MindfulnessScreenState extends State<MindfulnessScreen> {
       body: SafeArea(
         child: Column(
           children: [
-            Container(
-              margin: EdgeInsets.all(10),
-              width: MediaQuery.of(context).size.width,
-              height: MediaQuery.of(context).size.width / 2,
+            Expanded(
+              flex: 1,
               child: Container(
-                padding: EdgeInsets.only(
-                  left: MediaQuery.of(context).size.width / 3,
+                margin: EdgeInsets.all(10),
+                width: MediaQuery.of(context).size.width,
+                height: MediaQuery.of(context).size.width / 2,
+                child: Container(
+                  padding: EdgeInsets.only(
+                    left: MediaQuery.of(context).size.width / 3,
+                  ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        'What is Mindfulness?',
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 15),
+                        textAlign: TextAlign.center,
+                      ),
+                      Flexible(
+                        child: Text(
+                          'Mindfulness is the basic human \nability to be fully present,\naware of where we are \nand what we are doing,\nand not overly reactive or \noverwhelmed by what is going \non around us.',
+                          style: TextStyle(
+                              fontSize: 13, fontWeight: FontWeight.w500),
+                          textAlign: TextAlign.center,
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      'What is Mindfulness?',
-                      style:
-                          TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
-                      textAlign: TextAlign.center,
-                    ),
-                    Text(
-                      'Mindfulness is the basic human \nability to be fully present,\naware of where we are \nand what we are doing,\nand not overly reactive or \noverwhelmed by what is going \non around us.',
-                      style:
-                          TextStyle(fontSize: 13, fontWeight: FontWeight.w500),
-                      textAlign: TextAlign.center,
-                    ),
-                  ],
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage('assets/images/mindfulnessimg.jpg'),
+                    fit: BoxFit.cover,
+                  ),
+                  borderRadius: BorderRadius.circular(10),
                 ),
-              ),
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage('assets/images/mindfulnessimg.jpg'),
-                  fit: BoxFit.cover,
-                ),
-                borderRadius: BorderRadius.circular(10),
               ),
             ),
             SizedBox(
-              height: 30,
+              height: 10,
             ),
             Expanded(
+              flex: 3,
               child: SizedBox(
                 height: 100.0,
                 child: ListView.builder(
