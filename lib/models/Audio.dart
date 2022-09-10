@@ -18,20 +18,20 @@ class Audio extends ChangeNotifier {
 
     // playing, paused, stopped
     audioPlayer.onPlayerStateChanged.listen((state) {
-        isPlaying = state == PlayerState.playing;
-        notifyListeners();
+      isPlaying = state == PlayerState.playing;
+      notifyListeners();
     });
 
     // handle duration state
     audioPlayer.onDurationChanged.listen((newDuration) {
-        duration = newDuration;
-        notifyListeners();
+      duration = newDuration;
+      notifyListeners();
     });
 
     // audio position
     audioPlayer.onPositionChanged.listen((newPosition) {
-        position = newPosition;
-        notifyListeners();
+      position = newPosition;
+      notifyListeners();
     });
 
     audioPlayer.onPlayerComplete.listen((value) {
@@ -66,25 +66,24 @@ class Audio extends ChangeNotifier {
   }
 
   setNextIndex() {
-      Duration start = Duration(hours: 0, minutes: 0, seconds: 0);
-      index = (index + 1) % 3;
-      pauseAudio();
-      audioPlayer.setSourceUrl('${sounds[index]['soundUrl']}');
-      audioPlayer.seek(start);
-      notifyListeners();
+    Duration start = Duration(hours: 0, minutes: 0, seconds: 0);
+    index = (index + 1) % 3;
+    pauseAudio();
+    audioPlayer.setSourceUrl('${sounds[index]['soundUrl']}');
+    audioPlayer.seek(start);
+    notifyListeners();
   }
 
   setPrevIndex() {
     Duration start = Duration(hours: 0, minutes: 0, seconds: 0);
     if (index == 0) {
-        index = 2;
-      }
-      else {
-        index = (index - 1);
-      }
-      pauseAudio();
-      audioPlayer.setSourceUrl('${sounds[index]['soundUrl']}');
-      audioPlayer.seek(start);
-      notifyListeners();
+      index = 2;
+    } else {
+      index = (index - 1);
+    }
+    pauseAudio();
+    audioPlayer.setSourceUrl('${sounds[index]['soundUrl']}');
+    audioPlayer.seek(start);
+    notifyListeners();
   }
 }

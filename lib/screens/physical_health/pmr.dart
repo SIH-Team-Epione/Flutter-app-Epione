@@ -32,52 +32,51 @@ class _PMRScreenState extends State<PMRScreen> {
                 child: ListView.builder(
                   itemCount: Data.pmrmed.length,
                   itemBuilder: (_, i) {
-                    return Expanded(
-                      child: InkWell(
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => PmrVdPlayer(
-                                path: Data.pmrmed[i],
-                              ),
+                    return InkWell(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => PmrVdPlayer(
+                              path: Data.pmrmed[i],
                             ),
-                          );
-                        },
-                        child: Container(
-                          margin: EdgeInsets.all(10),
-                          padding: EdgeInsets.all(2),
-                          decoration: BoxDecoration(
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.grey.shade200,
-                                blurRadius: 10,
-                                spreadRadius: 3,
-                              ),
-                            ],
                           ),
-                          child: Container(
-                            padding: EdgeInsets.all(5),
-                            color: Colors.white,
-                            child: Row(
-                              children: [
-                                Flexible(
-                                  child: Container(
-                                    height: 90,
-                                    width: 120,
-                                    decoration: BoxDecoration(
-                                      // borderRadius: BorderRadius.circular(10),
-                                      image: DecorationImage(
-                                        image: AssetImage(
-                                          Data.pmrimg[i],
-                                        ),
+                        );
+                      },
+                      child: Container(
+                        margin: EdgeInsets.all(10),
+                        padding: EdgeInsets.all(2),
+                        decoration: BoxDecoration(
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.grey.shade200,
+                              blurRadius: 10,
+                              spreadRadius: 3,
+                            ),
+                          ],
+                        ),
+                        child: Container(
+                          padding: EdgeInsets.all(5),
+                          color: Colors.white,
+                          child: Row(
+                            children: [
+                              Flexible(
+                                child: Container(
+                                  height: 90,
+                                  width: 120,
+                                  decoration: BoxDecoration(
+                                    // borderRadius: BorderRadius.circular(10),
+                                    image: DecorationImage(
+                                      image: AssetImage(
+                                        Data.pmrimg[i],
                                       ),
                                     ),
                                   ),
                                 ),
-                                Flexible(child: SizedBox(width: 30)),
-                                Flexible(
-                                    child: Column(
+                              ),
+                              Flexible(child: SizedBox(width: 30)),
+                              Flexible(
+                                child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Text(Data.pmrText[i]),
@@ -94,9 +93,9 @@ class _PMRScreenState extends State<PMRScreen> {
                                       ),
                                     ),
                                   ],
-                                )),
-                              ],
-                            ),
+                                ),
+                              ),
+                            ],
                           ),
                         ),
                       ),

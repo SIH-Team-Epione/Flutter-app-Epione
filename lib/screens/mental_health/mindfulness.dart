@@ -90,7 +90,8 @@ class _MindfulnessScreenState extends State<MindfulnessScreen> {
                               context,
                               MaterialPageRoute(
                                 builder: (context) => AudioPlayerAsset(
-                                    path: Data.mindfulnessTracks[i]),
+                                  path: Data.mindfulnessTracks[i],
+                                ),
                               ),
                             );
                           },
