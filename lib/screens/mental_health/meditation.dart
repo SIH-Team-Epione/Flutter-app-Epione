@@ -15,6 +15,7 @@ class _MeditationScreenState extends State<MeditationScreen>
     with SingleTickerProviderStateMixin {
   late ScrollController _scrollController;
   late TabController _tabController;
+
   @override
   void initState() {
     // TODO: implement initState
@@ -27,16 +28,11 @@ class _MeditationScreenState extends State<MeditationScreen>
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        elevation: 0,
         title: Text(
           "Guide to meditation",
-          style: TextStyle(
-            fontSize: 30,
-            color: Color(0xFF000000),
-          ),
+          style: TextStyle(),
         ),
-        iconTheme: IconThemeData(color: Color(0xFF000000)),
-        backgroundColor: Color(0xFFfafafa),
+        backgroundColor: Colors.teal,
       ),
       body: SafeArea(
         child: Scaffold(
@@ -158,28 +154,32 @@ class _MeditationScreenState extends State<MeditationScreen>
                                               BorderRadius.circular(10),
                                           image: DecorationImage(
                                             image: AssetImage(
-                                                Data.imagetabBarView1[i]),
+                                              Data.imagetabBarView1[i],
+                                            ),
                                           ),
                                         ),
                                       ),
                                       SizedBox(width: 10),
-                                      GestureDetector(
-                                        onTap: () {
-                                          Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                              builder: (context) =>
-                                                  AudioPlayerAsset(
-                                                      path: Data
-                                                          .tabBarView1Audio[i]),
+                                      Flexible(
+                                        child: GestureDetector(
+                                          onTap: () {
+                                            Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                builder: (context) =>
+                                                    AudioPlayerAsset(
+                                                        path: Data
+                                                            .tabBarView1Audio[i]),
+                                              ),
+                                            );
+                                          },
+                                          child: Text(
+                                            Data.tabBarView1Title[i],
+                                            style: TextStyle(
+                                              fontSize: 13,
+                                              fontWeight: FontWeight.bold,
                                             ),
-                                          );
-                                        },
-                                        child: Text(
-                                          Data.tabBarView1Title[i],
-                                          style: TextStyle(
-                                            fontSize: 15,
-                                            fontWeight: FontWeight.bold,
+                                            overflow: TextOverflow.clip,
                                           ),
                                         ),
                                       ),
@@ -224,23 +224,25 @@ class _MeditationScreenState extends State<MeditationScreen>
                                         ),
                                       ),
                                       SizedBox(width: 10),
-                                      GestureDetector(
-                                        onTap: () {
-                                          Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                              builder: (context) =>
-                                                  AudioPlayerAsset(
-                                                      path: Data
-                                                          .tabBarView2Audio[i]),
+                                      Flexible(
+                                        child: GestureDetector(
+                                          onTap: () {
+                                            Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                builder: (context) =>
+                                                    AudioPlayerAsset(
+                                                        path: Data
+                                                            .tabBarView2Audio[i]),
+                                              ),
+                                            );
+                                          },
+                                          child: Text(
+                                            Data.tabBarView2Title[i],
+                                            style: TextStyle(
+                                              fontSize: 13,
+                                              fontWeight: FontWeight.bold,
                                             ),
-                                          );
-                                        },
-                                        child: Text(
-                                          Data.tabBarView2Title[i],
-                                          style: TextStyle(
-                                            fontSize: 15,
-                                            fontWeight: FontWeight.bold,
                                           ),
                                         ),
                                       ),
@@ -285,23 +287,25 @@ class _MeditationScreenState extends State<MeditationScreen>
                                         ),
                                       ),
                                       SizedBox(width: 10),
-                                      GestureDetector(
-                                        onTap: () {
-                                          Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                              builder: (context) =>
-                                                  AudioPlayerAsset(
-                                                      path: Data
-                                                          .tabBarView3Audio[i]),
+                                      Flexible(
+                                        child: GestureDetector(
+                                          onTap: () {
+                                            Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                builder: (context) =>
+                                                    AudioPlayerAsset(
+                                                        path: Data
+                                                            .tabBarView3Audio[i]),
+                                              ),
+                                            );
+                                          },
+                                          child: Text(
+                                            Data.tabBarView3Title[i],
+                                            style: TextStyle(
+                                              fontSize: 13,
+                                              fontWeight: FontWeight.bold,
                                             ),
-                                          );
-                                        },
-                                        child: Text(
-                                          Data.tabBarView3Title[i],
-                                          style: TextStyle(
-                                            fontSize: 15,
-                                            fontWeight: FontWeight.bold,
                                           ),
                                         ),
                                       ),

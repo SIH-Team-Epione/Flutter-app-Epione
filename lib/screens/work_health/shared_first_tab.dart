@@ -30,9 +30,10 @@ class _PostsTabState extends State<PostsTab> {
       return Container(
         margin: EdgeInsets.fromLTRB(10, 20, 10, 15),
         width: 460,
-        height: 190,
+        height: 180,
         decoration: BoxDecoration(
             color: Colors.white,
+            borderRadius: BorderRadius.circular(15),
             boxShadow: [BoxShadow(
                 color: Colors.black12,
                 offset: Offset(0.0,10.0),
@@ -85,7 +86,7 @@ class _PostsTabState extends State<PostsTab> {
                       ),
                       SizedBox(height: 5.0),
                       Container(
-                        height: 35,
+                        //height: 35,
                         child: Text(
                           post['title'].toString(),
                           style: TextStyle(
@@ -136,10 +137,12 @@ class _PostsTabState extends State<PostsTab> {
                                 size: 12.0,
                               ),
                               SizedBox(width: 5.0),
-                              Text(
-                                post['name'].toString(),
-                                style: TextStyle(
-                                  color: Colors.grey,
+                              SingleChildScrollView(
+                                child: Text(
+                                  post['name'].toString(),
+                                  style: TextStyle(
+                                    color: Colors.grey,
+                                  ),
                                 ),
                               )
                             ],

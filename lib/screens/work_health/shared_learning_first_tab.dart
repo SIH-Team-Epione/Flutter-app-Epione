@@ -29,6 +29,7 @@ class _PostsTabLearningState extends State<PostsTabLearning> {
         width: 460,
         height: 160,
         decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(15),
             color: Colors.white,
             boxShadow: [BoxShadow(
                 color: Colors.black12,
@@ -50,14 +51,14 @@ class _PostsTabLearningState extends State<PostsTabLearning> {
                     children: <Widget>[
                       SizedBox(height: 5.0),
                       Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        mainAxisAlignment: MainAxisAlignment.end,
                         children: [
                           Row(
                             children: <Widget>[
                               GestureDetector(
                                 onTap: handleLike,
                                 child: Icon(
-                                  Icons.favorite_border,
+                                  Icons.favorite,
                                   color: Colors.red,
                                   size: 12.0,
                                 ),
@@ -75,7 +76,7 @@ class _PostsTabLearningState extends State<PostsTabLearning> {
                       ),
                       SizedBox(height: 5.0),
                       Container(
-                        height: 35,
+                        //height: 35,
                         child: Text(
                           post['title'].toString(),
                           style: TextStyle(
@@ -86,7 +87,7 @@ class _PostsTabLearningState extends State<PostsTabLearning> {
                         ),
                       ),
                       Container(
-                        height: 50,
+                        //height: 50,
                         child: Flexible(
                           child: Text(
                             post['text'].toString(),
@@ -161,7 +162,6 @@ class _PostsTabLearningState extends State<PostsTabLearning> {
         ),
       );
     }
-
 }
 
 

@@ -40,54 +40,49 @@ class _CreateSharedLearningPostState extends State<CreateSharedLearningPost> {
         title: Text("New Post"),
       ),
       body: Container(
-        margin: EdgeInsets.only(left: 15, right: 15),
-        child: Padding(
-          padding: EdgeInsets.all(10.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              SizedBox(height: 20,),
-              Center(
-                child: TextField(
-                  controller: _titleTextController,
-                  decoration: InputDecoration.collapsed(hintText: "Title"),
-                  showCursor: true,
-                  maxLines: null,
-                  style: TextStyle(
-                    fontSize: 14,
-                  ),
-                ),
+        child: Column(
+          children: [
+            SizedBox(height: 100.0),
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: 15.0),
+              child: TextField(
+                controller: _titleTextController,
+                decoration: InputDecoration(hintText: "Title"),
+                showCursor: true,
+                maxLines: null,
               ),
-              SizedBox(height: 20,),
-              Center(
-                child: TextField(
-                  controller: _postTextController,
-                  decoration: InputDecoration.collapsed(hintText: "Text"),
-                  showCursor: true,
-                  maxLines: null,
-                  style: TextStyle(
-                    fontSize: 14,
-                  ),
-                ),
+            ),
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: 15.0),
+              child: TextField(
+                controller: _postTextController,
+                decoration: InputDecoration(hintText: "Text"),
+                showCursor: true,
+                maxLines: null,
               ),
-              SizedBox(height: 20,),
-              GestureDetector(
-                child: Container(
-                    decoration: BoxDecoration(
-                        color: Colors.teal.shade100
+            ),
+            SizedBox(height: 25.0,),
+            GestureDetector(
+              child: Container(
+                  decoration: BoxDecoration(
+                      color: Colors.teal.shade100,
+                      borderRadius: BorderRadius.circular(10.0)
+                  ),
+                  padding: EdgeInsets.all(20),
+                  child: Text(
+                    "Submit Post",
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 14.0,
                     ),
-                    padding: EdgeInsets.all(20),
-                    child: Text("Submit Post",
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold
-                      ),)),
-                onTap: () {
-                  createPost();
-                  Navigator.pop(context);
-                },
-              )
-            ],
-          ),
+                  )
+              ),
+              onTap: () {
+                createPost();
+                Navigator.pop(context);
+              },
+            )
+          ],
         ),
       ),
     );

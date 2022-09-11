@@ -1,6 +1,7 @@
+import 'package:expandable_text/expandable_text.dart';
 import 'package:flutter/material.dart';
-import 'package:quiz_app/util/data.dart' as Data;
 import 'package:quiz_app/util/videoPlayer.dart';
+import 'package:quiz_app/util/data.dart' as Data;
 
 class PMRScreen extends StatefulWidget {
   const PMRScreen({Key? key}) : super(key: key);
@@ -16,58 +17,57 @@ class _PMRScreenState extends State<PMRScreen> {
       appBar: AppBar(
         title: Text(
           'Progressive Muscle Relaxation',
-          style: TextStyle(
-            fontSize: 25,
-            color: Color(0xFFfafafa),
-          ),
         ),
-        iconTheme: IconThemeData(color: Color(0xFF000000)),
         backgroundColor: Colors.teal,
       ),
       body: SafeArea(
         child: Column(
           children: [
             Container(
-              // margin: EdgeInsets.all(10),
+              margin: EdgeInsets.all(10),
               width: MediaQuery.of(context).size.width,
-              height: MediaQuery.of(context).size.width / 2,
+              height: MediaQuery.of(context).size.width / 3,
               child: Container(
                 padding: EdgeInsets.all(5),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      'What is PMR?',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 20,
-                        color: Colors.black,
+                child: SingleChildScrollView(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        'What is PMR?',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20,
+                          color: Colors.black,
+                        ),
+                        textAlign: TextAlign.center,
                       ),
-                      textAlign: TextAlign.center,
-                    ),
-                    SizedBox(height: 10),
-                    Text(
-                      'Progressive muscle relaxation (PMR) is a deep relaxation technique that has been effectively used to control stress and anxiety, relieve insomnia, and reduce symptoms of certain types of chronic pain. Progressive muscle relaxation is based upon the simple practice of tensing, or tightening, one muscle group at a time followed by a relaxation phase with release of the tension. ',
-                      style: TextStyle(
-                        fontSize: 15,
-                        fontWeight: FontWeight.w500,
-                        color: Colors.black,
+                      SizedBox(height: 10),
+                      Text(
+                        'Priogressive muscle relaxation (PMR) is a deep relaxation technique that has been effectively used to control stress and anxiety, relieve insomnia, and reduce symptoms of certain types of chronic pain. Progressive muscle relaxation is based upon the simple practice of tensing, or tightening, one muscle group at a time followed by a relaxation phase with release of the tension.',
+                        overflow: TextOverflow.clip,
                       ),
-                      textAlign: TextAlign.center,
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-              ),
+                  borderRadius: BorderRadius.circular(10),
+                  border: Border.all(
+                    color: Color(0xFFbdbdbd),
+                  )),
             ),
             SizedBox(
-              height: 30,
+              height: 10,
             ),
-            Divider(
-              height: 1,
-              color: Colors.black,
+            Text(
+              'Suggestive Videos for PMR',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 20,
+                color: Colors.black,
+              ),
+              textAlign: TextAlign.center,
             ),
             Expanded(
               child: SizedBox(
@@ -91,8 +91,9 @@ class _PMRScreenState extends State<PMRScreen> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) =>
-                                  PmrVdPlayer(path: Data.pmrmed[i]),
+                              builder: (context) => PmrVdPlayer(
+                                path: Data.pmrmed[i],
+                              ),
                             ),
                           );
                         },

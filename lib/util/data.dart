@@ -40,7 +40,7 @@ List<String> imagetabBarView2 = [
 ];
 List<String> tabBarView2Title = [
   "Riding a Horse Across the Plains ",
-  "Sunrise On the Beach Mindfulness",
+  "Sunrise On the Beach \nMindfulness",
   "Tropical Garden Mindfulness",
   "Finding Your Path To Decision\nMaking",
   "Weight gain"
