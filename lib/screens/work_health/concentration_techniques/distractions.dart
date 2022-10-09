@@ -1,5 +1,8 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_dnd/flutter_dnd.dart';
+import 'package:permission_handler/permission_handler.dart';
 
 class EliminateDistractions extends StatefulWidget {
   @override
@@ -18,23 +21,11 @@ class _EliminateDistractionsState extends State<EliminateDistractions> with Widg
     'Do not Disturb On',
     'Alarms only',
   ];
-  List<int> _filtersInt = [
-    1,
-    2,
-    3,
-    4,
-  ];
   List<String> _filtersDescription = [
     'DnD is turned off, notifications will be received.',
     'Only Priority Notifications shown. Everything else is suppressed.',
     'DnD is turned on, no notifications will be received.',
     'Only Alarms can trigger notifications.',
-  ];
-  List<String> _filterStates = [
-    'INTERRUPTION_FILTER_ALL',
-    'INTERRUPTION_FILTER_PRIORITY',
-    'INTERRUPTION_FILTER_NONE',
-    'INTERRUPTION_FILTER_ALARMS',
   ];
   @override
   void initState() {
@@ -55,6 +46,7 @@ class _EliminateDistractionsState extends State<EliminateDistractions> with Widg
     updateUI();
   }
   void updateUI() async {
+    checkPermission();
     int? filter = await FlutterDnd.getCurrentInterruptionFilter();
     print('filter: $filter');
 
@@ -65,8 +57,8 @@ class _EliminateDistractionsState extends State<EliminateDistractions> with Widg
       setState(() {
         _isNotificationPolicyAccessGranted = isNotificationPolicyAccessGranted;
         _filterName = filterName;
-        _currentFilter = _filtersInt.indexOf(filter);
-        _filterTitle = _filters[filter-1];
+        _currentFilter = filter-1;
+        _filterTitle = _filters[_currentFilter];
         _isLoading = false;
       });
     }
@@ -80,6 +72,15 @@ class _EliminateDistractionsState extends State<EliminateDistractions> with Widg
       updateUI();
     }
   }
+
+  void checkPermission() async {
+    PermissionStatus status = await Permission.accessNotificationPolicy.request();
+    print(status);
+    if (status.isDenied == true) {
+      FlutterDnd.gotoPolicySettings();
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -157,13 +158,13 @@ class _EliminateDistractionsState extends State<EliminateDistractions> with Widg
                   break;
                   case 2: FlutterDnd.setInterruptionFilter(FlutterDnd.INTERRUPTION_FILTER_PRIORITY);
                   break;
-                  case 3: FlutterDnd.setInterruptionFilter(FlutterDnd.INTERRUPTION_FILTER_ALARMS);
+                  case 3: FlutterDnd.setInterruptionFilter(FlutterDnd.INTERRUPTION_FILTER_NONE);
                   break;
-                  case 4: FlutterDnd.setInterruptionFilter(FlutterDnd.INTERRUPTION_FILTER_NONE);
+                  case 4: FlutterDnd.setInterruptionFilter(FlutterDnd.INTERRUPTION_FILTER_ALARMS);
                   break;
                   default: FlutterDnd.setInterruptionFilter(FlutterDnd.INTERRUPTION_FILTER_UNKNOWN);
                 }
-                setInterruptionFilter(_filtersInt.indexOf(int.parse(value.toString())));
+                setInterruptionFilter(idx-1);
               },
             ),
             SizedBox(height: 12.0),
@@ -180,6 +181,8 @@ class _EliminateDistractionsState extends State<EliminateDistractions> with Widg
                 textAlign: TextAlign.center,
               ),
             ),
+            SizedBox(height: 15.0),
+            // (checkPermission() == false) ? Text('Hello') : SizedBox(height: 0),
             SizedBox(height: 15.0),
             RaisedButton(
               onPressed: () {
