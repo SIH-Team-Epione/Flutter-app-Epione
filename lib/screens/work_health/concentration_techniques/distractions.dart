@@ -46,7 +46,7 @@ class _EliminateDistractionsState extends State<EliminateDistractions> with Widg
     updateUI();
   }
   void updateUI() async {
-    checkPermission();
+
     int? filter = await FlutterDnd.getCurrentInterruptionFilter();
     print('filter: $filter');
 
@@ -63,7 +63,9 @@ class _EliminateDistractionsState extends State<EliminateDistractions> with Widg
       });
     }
   }
+
   void setInterruptionFilter(int filter) async {
+    checkPermission();
     final bool? isNotificationPolicyAccessGranted =
     await FlutterDnd.isNotificationPolicyAccessGranted;
     if (isNotificationPolicyAccessGranted != null &&
@@ -182,7 +184,21 @@ class _EliminateDistractionsState extends State<EliminateDistractions> with Widg
               ),
             ),
             SizedBox(height: 15.0),
-            // (checkPermission() == false) ? Text('Hello') : SizedBox(height: 0),
+            // // (checkPermission() == false) ? Text('Hello') : SizedBox(height: 0),
+            // SizedBox(height: 15.0),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 5.0, horizontal: 30
+              ),
+              child: Text(
+                'Please grant Do Not Disturb access permission to the application for using this feature.',
+                style: TextStyle(
+                  fontFamily: 'Montserrat',
+                  fontWeight: FontWeight.w500,
+                  fontSize: 12
+                ),
+                textAlign: TextAlign.center,
+              ),
+            ),
             SizedBox(height: 15.0),
             RaisedButton(
               onPressed: () {
