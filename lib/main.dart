@@ -1,3 +1,4 @@
+import 'package:assets_audio_player/assets_audio_player.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
@@ -56,13 +57,7 @@ import 'controllers/question_controller_phq.dart';
 
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(
-      // options: FirebaseOptions(
-      //     apiKey: 'AIzaSyCof7TFo6DH-cHndhmCKfcPTyjubQOoo4A',
-      //     appId: '1:782675839270:android:f3318f5ac8bba2ade099e7',
-      //     messagingSenderId: '782675839270',
-      //     projectId: 'epione-992ee')
-      );
+  await Firebase.initializeApp();
 
   await Permission.camera.request();
   await Permission.microphone.request();
