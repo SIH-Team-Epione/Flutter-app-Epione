@@ -25,16 +25,18 @@ class AudioPlayerAssetState extends State<AudioPlayerAsset> {
     try {
       await audioPlayer.open(
         Audio.network(this.widget.path),
+        autoStart: false,
       );
+      audioPlayer.pause();
     } catch (t) {
       //mp3 unreachable
     }
   }
 
-  @override
   void dispose() {
-    super.dispose();
+    audioPlayer.stop();
     audioPlayer.dispose();
+    super.dispose();
   }
 
   Widget circularAudioPalyer(
@@ -73,7 +75,9 @@ class AudioPlayerAssetState extends State<AudioPlayerAsset> {
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-              image: AssetImage('assets/images/img7.jpg'), fit: BoxFit.cover),
+            image: AssetImage('assets/images/img7.jpg'),
+            fit: BoxFit.cover,
+          ),
         ),
         alignment: Alignment.center,
         child: audioPlayer.builderRealtimePlayingInfos(

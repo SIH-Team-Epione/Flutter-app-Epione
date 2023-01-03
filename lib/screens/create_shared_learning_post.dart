@@ -3,7 +3,6 @@ import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-
 class CreateSharedLearningPost extends StatefulWidget {
   const CreateSharedLearningPost({Key? key}) : super(key: key);
 
@@ -34,7 +33,6 @@ class _CreateSharedLearningPostState extends State<CreateSharedLearningPost> {
       await ref.child(currTimeInMilli.toString()).child('name').set(FirebaseAuth.instance.currentUser?.displayName);
       await ref.child(currTimeInMilli.toString()).child('likes').set(0);
       await ref.child(currTimeInMilli.toString()).child('date').set(cdate1);
-
     }
 
     return Scaffold(
