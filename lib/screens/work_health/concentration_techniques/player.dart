@@ -6,7 +6,6 @@ import '/models/Audio.dart';
 import '/models/Sounds.dart';
 
 class MusicPlayer extends StatefulWidget {
-
   @override
   _MusicPlayer createState() => _MusicPlayer();
 }
@@ -49,7 +48,7 @@ class _MusicPlayer extends State<MusicPlayer> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Sound Player'),
-        ),
+      ),
       body: ChangeNotifierProvider(
         create: (_) => Audio(),
         child: Container(
@@ -91,8 +90,7 @@ class _MusicPlayer extends State<MusicPlayer> {
                   style: TextStyle(
                       fontWeight: FontWeight.w600,
                       fontFamily: 'Montserrat',
-                      fontSize: 24.0
-                  ),
+                      fontSize: 24.0),
                 ),
               ),
               SizedBox(height: 5.0),
@@ -102,8 +100,7 @@ class _MusicPlayer extends State<MusicPlayer> {
                   style: TextStyle(
                       fontWeight: FontWeight.w400,
                       fontFamily: 'Montserrat',
-                      fontSize: 16.0
-                  ),
+                      fontSize: 16.0),
                 ),
               ),
               SizedBox(height: 5.0),
@@ -118,20 +115,19 @@ class _MusicPlayer extends State<MusicPlayer> {
 
                       // Play audio if audio was paused
                       await myAudioModel.audioPlayer.resume();
-                    }
-                ),
+                    }),
               ),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 16.0),
                 child: Consumer<Audio>(
-                  builder: (_, myAudioModel, child) =>
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(formatTime(myAudioModel.position)),
-                          Text(formatTime(myAudioModel.duration)),     // (duration - position)
-                        ],
-                      ),
+                  builder: (_, myAudioModel, child) => Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(formatTime(myAudioModel.position)),
+                      Text(formatTime(
+                          myAudioModel.duration)), // (duration - position)
+                    ],
+                  ),
                 ),
               ),
               SizedBox(height: 5.0),
