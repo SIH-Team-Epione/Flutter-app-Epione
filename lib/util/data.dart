@@ -117,12 +117,12 @@ List<String> mindfulnessimg = [
 ];
 
 List<String> pmrmed = [
-  //'https://www.youtube.com/watch?v=ihO02wUzgkc',//commented
+  'https://www.youtube.com/watch?v=ihO02wUzgkc',//commented-allowed
   'https://www.youtube.com/watch?v=Z21Xslddz3Y',//replied, new video, wants to see app
   //'https://www.youtube.com/watch?v=ClqPtWzozXs',//john hopkins medicine
   'https://www.youtube.com/watch?v=kdLTOurs2lA',//insta hss-allowed
   'https://www.youtube.com/watch?v=912eRrbes2g',//sent mail-allowed
-  'https://www.youtube.com/watch?v=Q_diV-uqV9w',//instead sent mail to 	hello@generationcalm.com/no reply
+  //'https://www.youtube.com/watch?v=Q_diV-uqV9w',//instead sent mail to 	hello@generationcalm.com/no reply
   'https://www.youtube.com/watch?v=QjP9UGWxTLM',// mail sent-allowed
 ];
 
