@@ -34,6 +34,7 @@ class _AppTimerState extends State<AppTimer> {
       DateTime startDate = DateTime(endDate.year, endDate.month, endDate.day);
       List<AppUsageInfo> infoList =
           await AppUsage.getAppUsage(startDate, endDate);
+      infoList = removeSystemApps(infoList);
       infoList.sort((a, b) => b.usage.toString().compareTo(a.usage.toString()));
       setState(() {
         _infos = infoList;
@@ -48,6 +49,15 @@ class _AppTimerState extends State<AppTimer> {
     } on AppUsageException catch (exception) {
       print(exception);
     }
+  }
+
+  List<AppUsageInfo> removeSystemApps(List<AppUsageInfo> infoList) {
+    // add names of system apps here
+    List<String> sysAppNames = ['android', 'launcher', 'user', 'app', 'gm', 'telephonyui', 'daemonapp', 'permissioncontroller', 'gms', 'packageinstaller', 'systemui'];
+    for (String sysApp in sysAppNames) {
+      infoList.removeWhere((info) => info.appName.toString() == sysApp);
+    }
+    return infoList;
   }
 
   @override
@@ -71,7 +81,7 @@ class _AppTimerState extends State<AppTimer> {
                     value: _info.appName.toString().toUpperCase(),
                     child: Text(_info.appName.toString().toUpperCase()),
                   );
-                }).toList(),
+                }).toSet().toList(),
                 onChanged: (info) {
                   // int idx = -1;
                   setState(() {
