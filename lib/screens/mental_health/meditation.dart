@@ -19,9 +19,10 @@ class MeditationScreenState extends State<MeditationScreen>
   late TabController _tabController;
 
   @override
+  //https://www.youtube.com/watch?v=fZrJPUU9fTE&t=25s
   void initState() {
     super.initState();
-    final vdPath = "https://www.youtube.com/watch?v=fZrJPUU9fTE&t=25s";
+    final vdPath = "";
     _tabController = TabController(length: 3, vsync: this);
     _scrollController = ScrollController();
 
