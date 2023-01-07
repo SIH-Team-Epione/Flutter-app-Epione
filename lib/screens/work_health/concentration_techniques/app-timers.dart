@@ -21,7 +21,7 @@ class _AppTimerState extends State<AppTimer> {
     try {
       DateTime endDate = new DateTime.now();
       DateTime startDate = DateTime(endDate.year, endDate.month, endDate.day);
-      List<AppUsageInfo> infoList = await AppUsage.getAppUsage(
+      List<AppUsageInfo> infoList = await AppUsage().getAppUsage(
           startDate, endDate);
       setState(() {
         _infos = infoList;

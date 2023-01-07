@@ -61,7 +61,11 @@ class _FurtherReadMentalHealthState extends State<FurtherReadMentalHealth> {
                                 Colors.black.withOpacity(.1),
                               ])
                           ),
-                          child: FlatButton(
+                          child: ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                              elevation: 0,
+                              primary: Colors.transparent,
+                            ),
                             onPressed: (){
                               Navigator.push(
                                   context,

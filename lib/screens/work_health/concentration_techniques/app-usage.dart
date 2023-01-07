@@ -33,7 +33,7 @@ class _AppTimerState extends State<AppTimer> {
       DateTime endDate = new DateTime.now();
       DateTime startDate = DateTime(endDate.year, endDate.month, endDate.day);
       List<AppUsageInfo> infoList =
-      await AppUsage.getAppUsage(startDate, endDate);
+      await AppUsage().getAppUsage(startDate, endDate);
       infoList = removeSystemApps(infoList);
       infoList.sort((a, b) => b.usage.toString().compareTo(a.usage.toString()));
       setState(() {
@@ -144,14 +144,14 @@ class _AppTimerState extends State<AppTimer> {
             ],
           ),
           SizedBox(height: 10.0,),
-          RaisedButton(
+          ElevatedButton(
+            style: ElevatedButton.styleFrom(backgroundColor: Colors.teal.shade400,),
               child: Text(
                 'Set',
                 style: TextStyle(
                     color: Colors.white
                 ),
               ),
-              color: Colors.teal.shade400,
               onPressed: () {
                 if (_formKey.currentState!.validate())
                   _formKey.currentState!.save();
