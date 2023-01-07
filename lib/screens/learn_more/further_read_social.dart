@@ -15,7 +15,6 @@ class MoreSocialHealth extends StatefulWidget {
 }
 
 class _MoreSocialHealthState extends State<MoreSocialHealth> {
-
   @override
   Widget build(BuildContext context) {
     int columnCount = 2;
@@ -31,68 +30,71 @@ class _MoreSocialHealthState extends State<MoreSocialHealth> {
           crossAxisCount: columnCount,
           children: List.generate(
             4,
-                (int index) {
+            (int index) {
               return AnimationConfiguration.staggeredGrid(
                 position: index,
                 duration: const Duration(milliseconds: 375),
                 columnCount: columnCount,
                 child: ScaleAnimation(
                   child: FadeInAnimation(
-                    child: Card(
-                      color: Colors.transparent,
-                      margin: EdgeInsets.all(15),
-                      elevation: 10,
+                      child: Card(
+                    color: Colors.transparent,
+                    margin: EdgeInsets.all(15),
+                    elevation: 10,
+                    child: Container(
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20),
+                          image: DecorationImage(
+                              image: AssetImage(articlesList[index].urlImage),
+                              fit: BoxFit.cover)),
                       child: Container(
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(20),
-                            image: DecorationImage(
-                                image: AssetImage(articlesList[index].urlImage),
-                                fit: BoxFit.cover
-                            )
-                        ),
-                        child: Container(
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(20),
-                              gradient: LinearGradient(begin: Alignment.bottomCenter, stops: [
-                                .1,
-                                .9
-                              ], colors: [
-                                Colors.black.withOpacity(.5),
-                                Colors.black.withOpacity(.1),
-                              ])),
-                          child: FlatButton(
-                            onPressed: (){
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => FurtherReadSocialScreen(index: index))
-                              );
-                            },
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.end,
-                              children: [
-                                Padding(
-                                  padding: const EdgeInsets.only(left:10.0,right: 30,top:20,bottom: 30),
-                                  child: Stack(
-                                    alignment: Alignment.bottomLeft,
-                                    children: <Widget>[
-                                      Text(articlesList[index].title,
-                                        style: TextStyle(
+                            gradient: LinearGradient(
+                                begin: Alignment.bottomCenter,
+                                stops: [
+                                  .1,
+                                  .9
+                                ],
+                                colors: [
+                                  Colors.black.withOpacity(.5),
+                                  Colors.black.withOpacity(.1),
+                                ])),
+                        child: TextButton(
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        FurtherReadSocialScreen(index: index)));
+                          },
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                    left: 10.0, right: 30, top: 20, bottom: 30),
+                                child: Stack(
+                                  alignment: Alignment.bottomLeft,
+                                  children: <Widget>[
+                                    Text(
+                                      articlesList[index].title,
+                                      style: TextStyle(
                                           fontSize: 14,
                                           color: Colors.white,
-                                          fontWeight: FontWeight.bold
-                                      ),)
-                                    ],
-                                  ),
+                                          fontWeight: FontWeight.bold),
+                                    )
+                                  ],
                                 ),
-                              ],
-                            ),
+                              ),
+                            ],
                           ),
                         ),
                       ),
-                    )),
-                  ),
-                );
+                    ),
+                  )),
+                ),
+              );
             },
           ),
         ),
@@ -100,6 +102,3 @@ class _MoreSocialHealthState extends State<MoreSocialHealth> {
     );
   }
 }
-
-
-

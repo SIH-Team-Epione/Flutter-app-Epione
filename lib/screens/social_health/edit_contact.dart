@@ -121,8 +121,10 @@ class _EditContactState extends State<EditContact> {
             Container(
               width: double.infinity,
               padding: EdgeInsets.symmetric(horizontal: 10),
-              child: RaisedButton(
-                color: Colors.teal,
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  foregroundColor: Colors.teal,
+                ),
                 child: Text(
                   'Update Contact',
                   style: TextStyle(

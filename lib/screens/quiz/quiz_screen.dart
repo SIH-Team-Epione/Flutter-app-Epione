@@ -4,7 +4,6 @@ import 'package:quiz_app/controllers/question_controller_phq.dart';
 import 'components/body.dart';
 
 class QuizScreen extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     QuestionController _controller = Get.put(QuestionController());
@@ -16,9 +15,7 @@ class QuizScreen extends StatelessWidget {
         backgroundColor: Colors.transparent,
         elevation: 0,
         actions: [
-          FlatButton(
-              onPressed: _controller.nextQuestion,
-              child: Text("Skip")),
+          TextButton(onPressed: _controller.nextQuestion, child: Text("Skip")),
         ],
       ),
       body: Body(),

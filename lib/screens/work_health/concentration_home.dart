@@ -20,7 +20,13 @@ class ConcentrationHomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: const Text('Increase Concentration'),
+          title: const Text(
+              'Increase Concentration',
+              style: TextStyle(
+                fontFamily: 'Montserrat',
+              ),
+          ),
+          backgroundColor: Colors.teal,
         ),
         body: Container(
             color: Color(0xFFFAFAFA),
@@ -104,7 +110,7 @@ class ConcentrationHomeScreen extends StatelessWidget {
                     break;
                     case 3: Navigator.push(context,
                       MaterialPageRoute(
-                          builder: (context) => MusicPlayer()),
+                          builder: (context) => Player()),
                     );
                     break;
                     case 4: Navigator.push(context,
