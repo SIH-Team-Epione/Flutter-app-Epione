@@ -200,13 +200,15 @@ class _EliminateDistractionsState extends State<EliminateDistractions> with Widg
               ),
             ),
             SizedBox(height: 15.0),
-            RaisedButton(
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                elevation: 4.0,
+                backgroundColor: Colors.tealAccent.shade400,
+                padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 30.0),
+              ),
               onPressed: () {
                 FlutterDnd.gotoPolicySettings();
               },
-              elevation: 4.0,
-              color: Colors.tealAccent.shade400,
-              padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 30.0),
               child: Text(
                 'GO TO POLICY SETTINGS',
                 style: TextStyle(

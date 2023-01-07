@@ -10,7 +10,6 @@ class CreatePostScreen extends StatefulWidget {
   @override
   State<CreatePostScreen> createState() => _CreatePostScreenState();
 }
-
 var dropdownValue = "Select Track";
 
 class _CreatePostScreenState extends State<CreatePostScreen> {
@@ -37,7 +36,6 @@ class _CreatePostScreenState extends State<CreatePostScreen> {
       await ref.child(currTimeInMilli.toString()).child('track').set(dropdownValue);
       await ref.child(currTimeInMilli.toString()).child('likes').set(0);
       await ref.child(currTimeInMilli.toString()).child('date').set(cdate1);
-
     }
 
     return Scaffold(
@@ -45,6 +43,7 @@ class _CreatePostScreenState extends State<CreatePostScreen> {
         title: Text("New Post"),
       ),
       body: Container(
+        margin: EdgeInsets.only(left: 15, right: 15),
         child: Padding(
           padding: EdgeInsets.all(10.0),
           child: Column(

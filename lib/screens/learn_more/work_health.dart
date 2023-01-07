@@ -134,17 +134,19 @@ class _LearnMoreWorkScreenState extends State<LearnMoreWorkScreen> {
                       const SizedBox(height: 30.0),
                       SizedBox(
                         width: double.infinity,
-                        child: RaisedButton(
-                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.0)),
-                          color: Colors.teal,
-                          textColor: Colors.white,
-                          child: Text("Time Management", style: TextStyle(
-                              fontWeight: FontWeight.normal
-                          ),),
-                          padding: const EdgeInsets.symmetric(
-                            vertical: 16.0,
-                            horizontal: 32.0,
+                        child: ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.0)),
+                            backgroundColor: Colors.teal,
+                            padding: const EdgeInsets.symmetric(
+                              vertical: 16.0,
+                              horizontal: 32.0,
+                            ),
                           ),
+                          child: Text("Time Management", style: TextStyle(
+                              fontWeight: FontWeight.normal,
+                              color: Colors.white
+                          ),),
                           onPressed: () {
                             Navigator.pushNamed(context, '/learn_time');
                           },
@@ -153,17 +155,19 @@ class _LearnMoreWorkScreenState extends State<LearnMoreWorkScreen> {
                       const SizedBox(height: 30.0),
                       SizedBox(
                         width: double.infinity,
-                        child: RaisedButton(
-                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.0)),
-                          color: Colors.teal,
-                          textColor: Colors.white,
-                          child: Text("Concentration Techniques", style: TextStyle(
-                              fontWeight: FontWeight.normal
-                          ),),
-                          padding: const EdgeInsets.symmetric(
-                            vertical: 16.0,
-                            horizontal: 32.0,
+                        child: ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.0)),
+                            backgroundColor: Colors.teal,
+                            padding: const EdgeInsets.symmetric(
+                              vertical: 16.0,
+                              horizontal: 32.0,
+                            ),
                           ),
+                          child: Text("Concentration Techniques", style: TextStyle(
+                              fontWeight: FontWeight.normal,
+                              color: Colors.white
+                          ),),
                           onPressed: () {
                             Navigator.pushNamed(context, '/learn_conc');
                           },

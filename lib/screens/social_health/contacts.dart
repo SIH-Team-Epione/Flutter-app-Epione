@@ -188,12 +188,18 @@ class _ContactsState extends State<Contacts> {
           title: Text('Delete ${contact['name']}'),
           content: Text('Are you sure you want to delete?'),
           actions: [
-            FlatButton(
+            ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                    elevation: 0
+                ),
                 onPressed: () {
                   Navigator.pop(context);
                 },
                 child: Text('Cancel')),
-            FlatButton(
+            ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                    elevation: 0
+                ),
                 onPressed: () {
                   reference
                       .child(contact['key'])

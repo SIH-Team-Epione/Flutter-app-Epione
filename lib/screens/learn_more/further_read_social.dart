@@ -60,7 +60,11 @@ class _MoreSocialHealthState extends State<MoreSocialHealth> {
                                 Colors.black.withOpacity(.5),
                                 Colors.black.withOpacity(.1),
                               ])),
-                          child: FlatButton(
+                          child: ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                                elevation: 0,
+                                primary: Colors.transparent,
+                            ),
                             onPressed: (){
                               Navigator.push(
                                   context,

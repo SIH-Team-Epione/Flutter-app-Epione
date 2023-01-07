@@ -96,10 +96,12 @@ class _Psqi3State extends State<Psqi3> {
               ],
             ),
             for (var q in qna3.keys) question(q),
-            RaisedButton(
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(20)),
-              color: Colors.white,
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20)),
+                backgroundColor: Colors.white,
+              ),
               child: Padding(
                 padding: EdgeInsets.all(10),
                 child: Text(
