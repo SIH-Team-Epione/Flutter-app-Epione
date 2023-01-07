@@ -21,8 +21,8 @@ class _AppTimerState extends State<AppTimer> {
     try {
       DateTime endDate = new DateTime.now();
       DateTime startDate = DateTime(endDate.year, endDate.month, endDate.day);
-      List<AppUsageInfo> infoList = await AppUsage.getAppUsage(
-          startDate, endDate);
+      List<AppUsageInfo> infoList =
+          await AppUsage.getAppUsage(startDate, endDate);
       setState(() {
         _infos = infoList;
       });
@@ -34,34 +34,33 @@ class _AppTimerState extends State<AppTimer> {
       print(exception);
     }
   }
-    @override
-    Widget build(BuildContext context) {
-      return Scaffold(
-          appBar: AppBar(
-            title: const Text('App Timers'),
-          ),
-          body: ListView.builder(
-              itemCount: _infos.length,
-              itemBuilder: (context, index) {
-                return ListTile(
-                    title: Text(_infos[index].appName),
-                    trailing: Text(formatTime(_infos[index].usage))
-                );
-              }),
-      );
-    }
 
-    String formatTime(Duration duration) {
-      String twoDigits(int n) => n.toString().padLeft(2, '0');
-      final hours = twoDigits(duration.inHours);
-      final minutes = twoDigits(duration.inMinutes.remainder(60));
-      final seconds = twoDigits(duration.inSeconds.remainder(60));
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('App Timers'),
+      ),
+      body: ListView.builder(
+          itemCount: _infos.length,
+          itemBuilder: (context, index) {
+            return ListTile(
+                title: Text(_infos[index].appName),
+                trailing: Text(formatTime(_infos[index].usage)));
+          }),
+    );
+  }
 
-      return [
-        if (duration.inHours > 0) hours,
-        minutes,
-        seconds,
-      ].join(':');
-    }
+  String formatTime(Duration duration) {
+    String twoDigits(int n) => n.toString().padLeft(2, '0');
+    final hours = twoDigits(duration.inHours);
+    final minutes = twoDigits(duration.inMinutes.remainder(60));
+    final seconds = twoDigits(duration.inSeconds.remainder(60));
+
+    return [
+      if (duration.inHours > 0) hours,
+      minutes,
+      seconds,
+    ].join(':');
+  }
 }
-

@@ -143,19 +143,31 @@ class _LearnMoreWorkScreenState extends State<LearnMoreWorkScreen> {
                         width: double.infinity,
                         child: ElevatedButton(
                           style: ElevatedButton.styleFrom(
+<<<<<<< HEAD
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(30.0)),
                             foregroundColor: Colors.teal,
                             backgroundColor: Colors.white,
+=======
+                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.0)),
+                            backgroundColor: Colors.teal,
+>>>>>>> d56cc8fff6f0eec653bc6b27a5c5fa6d483cbfd7
                             padding: const EdgeInsets.symmetric(
                               vertical: 16.0,
                               horizontal: 32.0,
                             ),
+<<<<<<< HEAD
                           ),
                           child: Text(
                             "Time Management",
                             style: TextStyle(fontWeight: FontWeight.normal),
+=======
+>>>>>>> d56cc8fff6f0eec653bc6b27a5c5fa6d483cbfd7
                           ),
+                          child: Text("Time Management", style: TextStyle(
+                              fontWeight: FontWeight.normal,
+                              color: Colors.white
+                          ),),
                           onPressed: () {
                             Navigator.pushNamed(context, '/learn_time');
                           },
@@ -166,19 +178,17 @@ class _LearnMoreWorkScreenState extends State<LearnMoreWorkScreen> {
                         width: double.infinity,
                         child: ElevatedButton(
                           style: ElevatedButton.styleFrom(
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(30.0)),
-                            foregroundColor: Colors.teal,
-                            backgroundColor: Colors.white,
+                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.0)),
+                            backgroundColor: Colors.teal,
                             padding: const EdgeInsets.symmetric(
                               vertical: 16.0,
                               horizontal: 32.0,
                             ),
                           ),
-                          child: Text(
-                            "Concentration Techniques",
-                            style: TextStyle(fontWeight: FontWeight.normal),
-                          ),
+                          child: Text("Concentration Techniques", style: TextStyle(
+                              fontWeight: FontWeight.normal,
+                              color: Colors.white
+                          ),),
                           onPressed: () {
                             Navigator.pushNamed(context, '/learn_conc');
                           },

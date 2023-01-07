@@ -135,8 +135,7 @@ class _LearnMorePhysicalScreenState extends State<LearnMorePhysicalScreen> {
                           style: ElevatedButton.styleFrom(
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(30.0)),
-                            foregroundColor: Colors.teal,
-                            backgroundColor: Colors.white,
+                            backgroundColor: Colors.teal,
                             padding: const EdgeInsets.symmetric(
                               vertical: 16.0,
                               horizontal: 32.0,
@@ -144,7 +143,9 @@ class _LearnMorePhysicalScreenState extends State<LearnMorePhysicalScreen> {
                           ),
                           child: Text(
                             "Benefits",
-                            style: TextStyle(fontWeight: FontWeight.normal),
+                            style: TextStyle(
+                                fontWeight: FontWeight.normal,
+                                color: Colors.white),
                           ),
                           onPressed: () {
                             Navigator.pushNamed(context, '/benefits_physical');

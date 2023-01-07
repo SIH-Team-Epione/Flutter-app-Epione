@@ -17,7 +17,8 @@ class QuizScreen2 extends StatelessWidget {
         backgroundColor: Colors.transparent,
         elevation: 0,
         actions: [
-          TextButton(
+          ElevatedButton(
+            style: ElevatedButton.styleFrom(elevation: 0),
             onPressed: _controller.nextQuestion,
             child: Text("Next"),
           ),

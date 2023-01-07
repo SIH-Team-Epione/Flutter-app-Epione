@@ -132,8 +132,7 @@ class _LearnMoreSocialScreenState extends State<LearnMoreSocialScreen> {
                           style: ElevatedButton.styleFrom(
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(30.0)),
-                            foregroundColor: Colors.teal,
-                            backgroundColor: Colors.white,
+                            backgroundColor: Colors.teal,
                             padding: const EdgeInsets.symmetric(
                               vertical: 16.0,
                               horizontal: 32.0,
@@ -141,7 +140,9 @@ class _LearnMoreSocialScreenState extends State<LearnMoreSocialScreen> {
                           ),
                           child: Text(
                             "More on social self care",
-                            style: TextStyle(fontWeight: FontWeight.normal),
+                            style: TextStyle(
+                                fontWeight: FontWeight.normal,
+                                color: Colors.white),
                           ),
                           onPressed: () {
                             Navigator.pushNamed(context, '/more_social_health');

@@ -1,6 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_database/firebase_database.dart';
-import 'package:firebase_database/ui/firebase_animated_list.dart';
 import 'package:flutter/material.dart';
 
 class MyPostsTab extends StatefulWidget {
@@ -157,19 +156,6 @@ class _MyPostsTabState extends State<MyPostsTab> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: double.infinity,
-      child: FirebaseAnimatedList(
-        query: dbRef,
-        itemBuilder: (BuildContext context, DataSnapshot snapshot, Animation<double> animation, int index){
-          Map post = snapshot.value as Map;
-          post['key'] = snapshot.key;
-          if(post['uid']!=FirebaseAuth.instance.currentUser!.uid){
-            return empty(post: post);
-          }
-          return listItem(post: post);
-        },
-      ),
-    );
+    return Container();
   }
 }

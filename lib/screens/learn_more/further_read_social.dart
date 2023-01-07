@@ -50,36 +50,43 @@ class _MoreSocialHealthState extends State<MoreSocialHealth> {
                       child: Container(
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(20),
-                            gradient: LinearGradient(
-                                begin: Alignment.bottomCenter,
-                                stops: [
-                                  .1,
-                                  .9
-                                ],
-                                colors: [
-                                  Colors.black.withOpacity(.5),
-                                  Colors.black.withOpacity(.1),
-                                ])),
-                        child: TextButton(
-                          onPressed: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) =>
-                                        FurtherReadSocialScreen(index: index)));
-                          },
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.end,
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.only(
-                                    left: 10.0, right: 30, top: 20, bottom: 30),
-                                child: Stack(
-                                  alignment: Alignment.bottomLeft,
-                                  children: <Widget>[
-                                    Text(
-                                      articlesList[index].title,
-                                      style: TextStyle(
+                            image: DecorationImage(
+                                image: AssetImage(articlesList[index].urlImage),
+                                fit: BoxFit.cover
+                            )
+                        ),
+                        child: Container(
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(20),
+                              gradient: LinearGradient(begin: Alignment.bottomCenter, stops: [
+                                .1,
+                                .9
+                              ], colors: [
+                                Colors.black.withOpacity(.5),
+                                Colors.black.withOpacity(.1),
+                              ])),
+                          child: ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                                elevation: 0,
+                                primary: Colors.transparent,
+                            ),
+                            onPressed: (){
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => FurtherReadSocialScreen(index: index))
+                              );
+                            },
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.only(left:10.0,right: 30,top:20,bottom: 30),
+                                  child: Stack(
+                                    alignment: Alignment.bottomLeft,
+                                    children: <Widget>[
+                                      Text(articlesList[index].title,
+                                        style: TextStyle(
                                           fontSize: 14,
                                           color: Colors.white,
                                           fontWeight: FontWeight.bold),

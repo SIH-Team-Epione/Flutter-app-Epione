@@ -166,12 +166,12 @@ class _AppTimerState extends State<AppTimer> {
             height: 10.0,
           ),
           ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.teal.shade400,
+              ),
               child: Text(
                 'Set',
                 style: TextStyle(color: Colors.white),
-              ),
-              style: ElevatedButton.styleFrom(
-                foregroundColor: Colors.teal.shade400,
               ),
               onPressed: () {
                 if (_formKey.currentState!.validate())
