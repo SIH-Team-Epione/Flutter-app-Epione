@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:app_usage/app_usage.dart';
-import 'package:provider/provider.dart';
 
 class AppTimer extends StatefulWidget {
   const AppTimer({Key? key}) : super(key: key);
