@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 import 'google_sign_in.dart';
 
@@ -30,6 +31,7 @@ class _NavBarState extends State<NavBar> {
     false,
     false,
     false,
+    false,
     false
   ];
 
@@ -40,6 +42,11 @@ class _NavBarState extends State<NavBar> {
       else
         selected_opt[k] = false;
     }
+  }
+
+  deletedata() async {
+    await user?.delete();
+    // print("Delete account");
   }
 
   @override
@@ -184,66 +191,6 @@ class _NavBarState extends State<NavBar> {
               }
             },
           ),
-          // ListTile(
-          //   tileColor: inactiveColor,
-          //   selected: selected_opt[5],
-          //   selectedTileColor: activeColor,
-          //   leading: Icon(
-          //     FontAwesomeIcons.solidAddressCard,
-          //     color: iconClr,
-          //     size: 24,
-          //   ),
-          //   title: Text("About Us"),
-          //   onTap: () {
-          //     if (!selected_opt[5]) {
-          //       setState(() {
-          //         textColor = Color(0xFF000000);
-          //         set_opt(5);
-          //         Navigator.pushNamed(context, '/');
-          //       });
-          //     }
-          //   },
-          // ),
-          // ListTile(
-          //   tileColor: inactiveColor,
-          //   selected: selected_opt[6],
-          //   selectedTileColor: activeColor,
-          //   leading: Icon(
-          //     FontAwesomeIcons.solidAddressBook,
-          //     color: iconClr,
-          //     size: 24,
-          //   ),
-          //   title: Text("Contact Us"),
-          //   onTap: () {
-          //     if (!selected_opt[6]) {
-          //       setState(() {
-          //         textColor = Color(0xFF000000);
-          //         set_opt(6);
-          //         Navigator.pushNamed(context, '/');
-          //       });
-          //     }
-          //   },
-          // ),
-          // ListTile(
-          //   tileColor: inactiveColor,
-          //   selected: selected_opt[7],
-          //   selectedTileColor: activeColor,
-          //   leading: Icon(
-          //     FontAwesomeIcons.chalkboardUser,
-          //     color: iconClr,
-          //     size: 24,
-          //   ),
-          //   title: Text('Learn More'),
-          //   onTap: () {
-          //     if (!selected_opt[7]) {
-          //       setState(() {
-          //         textColor = Color(0xFF000000);
-          //         set_opt(7);
-          //         Navigator.pushNamed(context, '/');
-          //       });
-          //     }
-          //   },
-          // ),
           ListTile(
             tileColor: inactiveColor,
             selected: selected_opt[8],
@@ -264,7 +211,7 @@ class _NavBarState extends State<NavBar> {
               }
             },
           ),
-          Divider(
+          const Divider(
             thickness: 1.5,
           ),
           ListTile(
@@ -282,8 +229,52 @@ class _NavBarState extends State<NavBar> {
                 setState(() {
                   textColor = Color(0xFF000000);
                   set_opt(9);
-                  final provider = Provider.of<GoogleSignInProvider>(context, listen: false);
+                  final provider =
+                      Provider.of<GoogleSignInProvider>(context, listen: false);
                   provider.logout();
+                });
+              }
+            },
+          ),
+          ListTile(
+            tileColor: inactiveColor,
+            selected: selected_opt[10],
+            selectedTileColor: activeColor,
+            leading: Icon(
+              FontAwesomeIcons.userMinus,
+              color: iconClr,
+              size: 24,
+            ),
+            title: Text('Delete Account'),
+            onTap: () {
+              if (!selected_opt[10]) {
+                setState(() {
+                  textColor = Color(0xFF000000);
+                  set_opt(8);
+                  showDialog(
+                      context: context,
+                      builder: (context) {
+                        return Container(
+                          child: AlertDialog(
+                            title: Text("Are You Sure ?"),
+                            actions: [
+                              TextButton(
+                                onPressed: () {
+                                  Navigator.pop(context, true);
+                                  deletedata();
+                                },
+                                child: Text("Yes"),
+                              ),
+                              TextButton(
+                                onPressed: () {
+                                  Navigator.pop(context);
+                                },
+                                child: Text("No"),
+                              ),
+                            ],
+                          ),
+                        );
+                      });
                 });
               }
             },

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:app_usage/app_usage.dart';
-import 'package:provider/provider.dart';
 
 class AppTimer extends StatefulWidget {
   const AppTimer({Key? key}) : super(key: key);
@@ -33,7 +32,7 @@ class _AppTimerState extends State<AppTimer> {
       DateTime endDate = new DateTime.now();
       DateTime startDate = DateTime(endDate.year, endDate.month, endDate.day);
       List<AppUsageInfo> infoList =
-      await AppUsage().getAppUsage(startDate, endDate);
+          await AppUsage().getAppUsage(startDate, endDate);
       infoList = removeSystemApps(infoList);
       infoList.sort((a, b) => b.usage.toString().compareTo(a.usage.toString()));
       setState(() {
@@ -53,7 +52,19 @@ class _AppTimerState extends State<AppTimer> {
 
   List<AppUsageInfo> removeSystemApps(List<AppUsageInfo> infoList) {
     // add names of system apps here
-    List<String> sysAppNames = ['android', 'launcher', 'user', 'app', 'gm', 'telephonyui', 'daemonapp', 'permissioncontroller', 'gms', 'packageinstaller', 'systemui'];
+    List<String> sysAppNames = [
+      'android',
+      'launcher',
+      'user',
+      'app',
+      'gm',
+      'telephonyui',
+      'daemonapp',
+      'permissioncontroller',
+      'gms',
+      'packageinstaller',
+      'systemui'
+    ];
     for (String sysApp in sysAppNames) {
       infoList.removeWhere((info) => info.appName.toString() == sysApp);
     }
@@ -70,24 +81,29 @@ class _AppTimerState extends State<AppTimer> {
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          SizedBox(height: 10.0,),
+          SizedBox(
+            height: 10.0,
+          ),
           Form(
             key: _formKey,
             child: DropdownButton<String>(
               hint: Text('Choose application'),
               value: selectedApp,
-              items: _infos.map((_info) {
-                return DropdownMenuItem<String>(
-                  value: _info.appName.toString().toUpperCase(),
-                  child: Text(_info.appName.toString().toUpperCase()),
-                );
-              }).toSet().toList(),
+              items: _infos
+                  .map((_info) {
+                    return DropdownMenuItem<String>(
+                      value: _info.appName.toString().toUpperCase(),
+                      child: Text(_info.appName.toString().toUpperCase()),
+                    );
+                  })
+                  .toSet()
+                  .toList(),
               onChanged: (info) {
                 // int idx = -1;
                 setState(() {
                   selectedApp = info!;
                 });
-                for (idx = 0 ; idx < _infos.length; idx++) {
+                for (idx = 0; idx < _infos.length; idx++) {
                   if (_infos[idx].appName.toString().toUpperCase() == info) {
                     break;
                   }
@@ -98,7 +114,9 @@ class _AppTimerState extends State<AppTimer> {
           ),
           Row(
             children: [
-              SizedBox(width: 20.0,),
+              SizedBox(
+                width: 20.0,
+              ),
               Container(
                 width: MediaQuery.of(context).size.width * 0.45 - 20.0,
                 child: TextFormField(
@@ -143,37 +161,39 @@ class _AppTimerState extends State<AppTimer> {
               // SizedBox(width: 20.0,),
             ],
           ),
-          SizedBox(height: 10.0,),
+          SizedBox(
+            height: 10.0,
+          ),
           ElevatedButton(
-            style: ElevatedButton.styleFrom(backgroundColor: Colors.teal.shade400,),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.teal.shade400,
+              ),
               child: Text(
                 'Set',
-                style: TextStyle(
-                    color: Colors.white
-                ),
+                style: TextStyle(color: Colors.white),
               ),
               onPressed: () {
                 if (_formKey.currentState!.validate())
                   _formKey.currentState!.save();
                 print('INDEX: $idx');
-                limits[idx] = helper(_hourFieldController.text, _minFieldController.text);
+                limits[idx] =
+                    helper(_hourFieldController.text, _minFieldController.text);
                 hours = int.parse(_hourFieldController.text);
                 minutes = int.parse(_minFieldController.text).remainder(60);
                 if (limits[idx].compareTo(_infos[idx].usage) >= 0) {
                   isUnderLimit[idx] = true;
-                }
-                else {
+                } else {
                   isUnderLimit[idx] = false;
                 }
-              }
+              }),
+          SizedBox(
+            height: 15.0,
           ),
-          SizedBox(height: 15.0,),
           // Container(
           //   height: MediaQuery.of(context).size.height * 0.75,
           //   child:
           Flexible(
-            child:
-            ListView.builder(
+            child: ListView.builder(
                 itemCount: _infos.length,
                 shrinkWrap: true,
                 itemBuilder: (context, index) {
@@ -184,22 +204,33 @@ class _AppTimerState extends State<AppTimer> {
                             fontSize: 20.0,
                             fontWeight: FontWeight.w500,
                             color:
-                            // isCrossed(_infos[index].usage, hours, minutes) ?
-                            isUnderLimit[index] ?
-                            // isCrossed(_infos[index].usage, _infos[index].usage.inHours, _infos[index].usage.inMinutes.remainder(60)) ?
-                            Colors.green.shade400 : Colors.red.shade400
-                        ),
+                                // isCrossed(_infos[index].usage, hours, minutes) ?
+                                isUnderLimit[index]
+                                    ?
+                                    // isCrossed(_infos[index].usage, _infos[index].usage.inHours, _infos[index].usage.inMinutes.remainder(60)) ?
+                                    Colors.green.shade400
+                                    : Colors.red.shade400),
                       ),
-                      subtitle: Text(
-                          _infos[index].usage.inHours.toString() + ' hours ' + _infos[index].usage.inMinutes.remainder(60).toString() + ' minutes'
-                      ),
+                      subtitle: Text(_infos[index].usage.inHours.toString() +
+                          ' hours ' +
+                          _infos[index]
+                              .usage
+                              .inMinutes
+                              .remainder(60)
+                              .toString() +
+                          ' minutes'),
                       trailing:
-                      // isCrossed(_infos[index].usage, hours, minutes) ?
-                      // isCrossed(_infos[index].usage, _infos[index].usage.inHours, _infos[index].usage.inMinutes.remainder(60)) ?
-                      isUnderLimit[index] ?
-                      Icon(Icons.check_rounded, color: Colors.green.shade400,) :
-                      Icon(Icons.close_rounded, color: Colors.red.shade400,)
-                  );
+                          // isCrossed(_infos[index].usage, hours, minutes) ?
+                          // isCrossed(_infos[index].usage, _infos[index].usage.inHours, _infos[index].usage.inMinutes.remainder(60)) ?
+                          isUnderLimit[index]
+                              ? Icon(
+                                  Icons.check_rounded,
+                                  color: Colors.green.shade400,
+                                )
+                              : Icon(
+                                  Icons.close_rounded,
+                                  color: Colors.red.shade400,
+                                ));
                 }),
           ),
         ],
@@ -212,11 +243,10 @@ class _AppTimerState extends State<AppTimer> {
     return a.inHours > hours;
   }
 
-  Duration helper (String hours, String minutes) {
+  Duration helper(String hours, String minutes) {
     int hrs = int.parse(hours);
     int mins = int.parse(minutes);
 
     return Duration(hours: hrs, minutes: mins);
   }
-
 }

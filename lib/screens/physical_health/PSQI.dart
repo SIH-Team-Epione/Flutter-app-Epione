@@ -1,4 +1,4 @@
- // ignore_for_file: deprecated_member_use
+// ignore_for_file: deprecated_member_use
 
 import 'PSQI2.dart';
 import 'package:flutter/material.dart';
@@ -89,7 +89,8 @@ class _PsqiState extends State<Psqi> {
             for (var q in qna.keys) question(q),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20)),
                 backgroundColor: Colors.white,
               ),
               child: Padding(
@@ -116,7 +117,7 @@ class _PsqiState extends State<Psqi> {
     final myController = TextEditingController();
     return Container(
       padding: const EdgeInsets.only(top: 15),
-      margin: const EdgeInsets.only(left:10,right: 10),
+      margin: const EdgeInsets.only(left: 10, right: 10),
       child: Stack(
         children: [
           Card(

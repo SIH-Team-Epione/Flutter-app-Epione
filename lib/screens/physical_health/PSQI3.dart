@@ -129,7 +129,7 @@ class _Psqi3State extends State<Psqi3> {
     final myController = TextEditingController();
     return Container(
       padding: const EdgeInsets.only(top: 15),
-      margin: const EdgeInsets.only(left:10,right: 10),
+      margin: const EdgeInsets.only(left: 10, right: 10),
       child: Stack(
         children: [
           Card(
