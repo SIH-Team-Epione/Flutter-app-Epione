@@ -241,7 +241,7 @@ class _NavBarState extends State<NavBar> {
             selected: selected_opt[10],
             selectedTileColor: activeColor,
             leading: Icon(
-              FontAwesomeIcons.userMinus,
+              FontAwesomeIcons.trash,
               color: iconClr,
               size: 24,
             ),
@@ -256,20 +256,22 @@ class _NavBarState extends State<NavBar> {
                       builder: (context) {
                         return Container(
                           child: AlertDialog(
-                            title: Text("Are You Sure ?"),
+                            title: Text("Are you sure you want to delete your account?", style: TextStyle(fontSize: 18, fontWeight: FontWeight.w400),),
+                            content: Text("This action is permanent and cannot be undone.", style: TextStyle(fontSize: 14, color: Colors.grey[500]),),
+                            contentPadding: EdgeInsets.only(top: 16, bottom: 16, right: 24, left: 24),
                             actions: [
+                              TextButton(
+                                onPressed: () {
+                                  Navigator.pop(context);
+                                },
+                                child: Text("No", style: TextStyle(fontSize: 16),),
+                              ),
                               TextButton(
                                 onPressed: () {
                                   Navigator.pop(context, true);
                                   deletedata();
                                 },
-                                child: Text("Yes"),
-                              ),
-                              TextButton(
-                                onPressed: () {
-                                  Navigator.pop(context);
-                                },
-                                child: Text("No"),
+                                child: Text("Yes", style: TextStyle(fontSize: 16)),
                               ),
                             ],
                           ),
