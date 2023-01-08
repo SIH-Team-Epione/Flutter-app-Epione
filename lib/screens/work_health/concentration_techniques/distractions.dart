@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_dnd/flutter_dnd.dart';
 import 'package:permission_handler/permission_handler.dart';
@@ -213,15 +215,15 @@ class _EliminateDistractionsState extends State<EliminateDistractions>
                   ),
                   SizedBox(height: 15.0),
                   ElevatedButton(
-                    onPressed: () {
-                      FlutterDnd.gotoPolicySettings();
-                    },
                     style: ElevatedButton.styleFrom(
                       elevation: 4.0,
-                      foregroundColor: Colors.tealAccent.shade400,
+                      backgroundColor: Colors.tealAccent.shade400,
                       padding: EdgeInsets.symmetric(
                           vertical: 20.0, horizontal: 30.0),
                     ),
+                    onPressed: () {
+                      FlutterDnd.gotoPolicySettings();
+                    },
                     child: Text(
                       'GO TO POLICY SETTINGS',
                       style: TextStyle(
@@ -235,95 +237,6 @@ class _EliminateDistractionsState extends State<EliminateDistractions>
                 ],
               ),
             ),
-            //Text('Current interruption filter: $_filterName'),
-            //Text('Notification policy access granted: $_isNotificationPolicyAccessGranted'),
-            DropdownButton(
-              value: _currentFilter + 1,
-              items: _filters.map((String value) {
-                return DropdownMenuItem(
-                  value: _filters.indexOf(value) + 1,
-                  child: Text(
-                    value,
-                    style: TextStyle(
-                        fontFamily: 'Montserrat',
-                        fontWeight: FontWeight.w400,
-                        fontSize: 20.0,
-                        color: Colors.black
-                    ),
-                  ),
-                );
-              }).toList(),
-              onChanged: (value) {
-                int idx = int.parse(value.toString());
-                print(idx);
-                // setInterruptionFilter(_filtersInt.indexOf(int.parse(value.toString())));
-                switch (idx) {
-                  case 1: FlutterDnd.setInterruptionFilter(FlutterDnd.INTERRUPTION_FILTER_ALL);
-                  break;
-                  case 2: FlutterDnd.setInterruptionFilter(FlutterDnd.INTERRUPTION_FILTER_PRIORITY);
-                  break;
-                  case 3: FlutterDnd.setInterruptionFilter(FlutterDnd.INTERRUPTION_FILTER_NONE);
-                  break;
-                  case 4: FlutterDnd.setInterruptionFilter(FlutterDnd.INTERRUPTION_FILTER_ALARMS);
-                  break;
-                  default: FlutterDnd.setInterruptionFilter(FlutterDnd.INTERRUPTION_FILTER_UNKNOWN);
-                }
-                setInterruptionFilter(idx-1);
-              },
-            ),
-            SizedBox(height: 12.0,),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 25.0, vertical: 8.0),
-              child: Text(
-                _filtersDescription[_currentFilter],
-                style: TextStyle(
-                  fontFamily: 'Montserrat',
-                  fontWeight: FontWeight.w400,
-                  fontSize: 16.0,
-                  color: Colors.black,
-                ),
-                textAlign: TextAlign.center,
-              ),
-            ),
-            SizedBox(height: 15.0),
-            // // (checkPermission() == false) ? Text('Hello') : SizedBox(height: 0),
-            // SizedBox(height: 15.0),
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 5.0, horizontal: 30
-              ),
-              child: Text(
-                'Please grant Do Not Disturb access permission to the application for using this feature.',
-                style: TextStyle(
-                  fontFamily: 'Montserrat',
-                  fontWeight: FontWeight.w500,
-                  fontSize: 12
-                ),
-                textAlign: TextAlign.center,
-              ),
-            ),
-            SizedBox(height: 15.0),
-            ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                elevation: 4.0,
-                backgroundColor: Colors.tealAccent.shade400,
-                padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 30.0),
-              ),
-              onPressed: () {
-                FlutterDnd.gotoPolicySettings();
-              },
-              child: Text(
-                'GO TO POLICY SETTINGS',
-                style: TextStyle(
-                  fontFamily: 'Montserrat',
-                  fontWeight: FontWeight.w700,
-                  fontSize: 16.0,
-                  color: Colors.white,
-                ),
-              ),
-            ),
-          ],
-    )
-    )
-        );
+    );
   }
 }

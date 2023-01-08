@@ -32,7 +32,7 @@ class _AppTimerState extends State<AppTimer> {
       DateTime endDate = new DateTime.now();
       DateTime startDate = DateTime(endDate.year, endDate.month, endDate.day);
       List<AppUsageInfo> infoList =
-          await AppUsage.getAppUsage(startDate, endDate);
+          await AppUsage().getAppUsage(startDate, endDate);
       infoList = removeSystemApps(infoList);
       infoList.sort((a, b) => b.usage.toString().compareTo(a.usage.toString()));
       setState(() {
