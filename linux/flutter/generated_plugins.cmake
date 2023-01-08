@@ -5,6 +5,7 @@
 list(APPEND FLUTTER_PLUGIN_LIST
   audioplayers_linux
   dialogflow_grpc
+  flutter_webrtc
   maps_launcher
   url_launcher_linux
 )

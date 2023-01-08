@@ -35,7 +35,7 @@ List<Feature> featuresList = [
       description: 'Owing to our jam-packed schedules we often tend to forget to take out time for our near & dear ones, this feature helps you spend time more time with them bringing a sense of togetherness, delight and happiness. As part of your self-care journey, you can connect with your loved ones, seek their support & comfort and stay connected.',
       urlImage: 'assets/images/family_list.jpg',
     ageGroup: 'All ages',
-      nextScreenRoute: '/index'
+      nextScreenRoute: '/index2'
   ),
   const Feature(
       id: 2,
