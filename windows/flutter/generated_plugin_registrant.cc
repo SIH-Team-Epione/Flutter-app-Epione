@@ -9,6 +9,7 @@
 #include <agora_rtc_engine/agora_rtc_engine_plugin.h>
 #include <audioplayers_windows/audioplayers_windows_plugin.h>
 #include <dialogflow_grpc/dialogflow_grpc_plugin.h>
+#include <flutter_webrtc/flutter_web_r_t_c_plugin.h>
 #include <maps_launcher/maps_launcher_plugin.h>
 #include <permission_handler_windows/permission_handler_windows_plugin.h>
 #include <url_launcher_windows/url_launcher_windows.h>
@@ -20,6 +21,8 @@ void RegisterPlugins(flutter::PluginRegistry* registry) {
       registry->GetRegistrarForPlugin("AudioplayersWindowsPlugin"));
   DialogflowGrpcPluginRegisterWithRegistrar(
       registry->GetRegistrarForPlugin("DialogflowGrpcPlugin"));
+  FlutterWebRTCPluginRegisterWithRegistrar(
+      registry->GetRegistrarForPlugin("FlutterWebRTCPlugin"));
   MapsLauncherPluginRegisterWithRegistrar(
       registry->GetRegistrarForPlugin("MapsLauncherPlugin"));
   PermissionHandlerWindowsPluginRegisterWithRegistrar(

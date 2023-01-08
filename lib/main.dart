@@ -18,6 +18,7 @@ import 'package:quiz_app/screens/learn_more/learn_time.dart';
 import 'package:quiz_app/screens/learn_more/social_health.dart';
 import 'package:quiz_app/screens/social_health/contacts.dart';
 import 'package:quiz_app/screens/social_health/index.dart';
+import 'package:quiz_app/screens/social_health/index2.dart';
 import 'package:quiz_app/screens/work_health/shared_exp.dart';
 import 'package:quiz_app/screens/work_health/time_techniques.dart';
 import 'package:quiz_app/screens/learn_more/work_health.dart';
@@ -129,6 +130,7 @@ class _MyAppState extends State<MyApp> {
                 new LearnMoreSocialScreen(),
             '/Contacts': (BuildContext context) => new Contacts(),
             '/index': (BuildContext context) => new IndexPage(),
+            '/index2': (BuildContext context) => new VideoCall(),
             '/communication_skills': (BuildContext context) =>
                 new CommunicationSkillsScreen(),
             '/more_social_health': (BuildContext context) =>
