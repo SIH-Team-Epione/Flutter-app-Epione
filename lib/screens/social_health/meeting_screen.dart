@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:videosdk/videosdk.dart';
 import 'meeting_controls.dart';
 import 'participant_tile.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class MeetingScreen extends StatefulWidget {
   final String meetingId;
@@ -65,10 +66,11 @@ class _MeetingScreenState extends State<MeetingScreen> {
   void initState() {
     super.initState();
     // Create instance of Room (Meeting)
+    final user = FirebaseAuth.instance.currentUser;
     room = VideoSDK.createRoom(
       roomId: widget.meetingId,
       token: widget.token,
-      displayName: "Yash Chudasama",
+      displayName: user!.displayName!,
       micEnabled: micEnabled,
       camEnabled: camEnabled,
       maxResolution: 'hd',
@@ -92,12 +94,15 @@ class _MeetingScreenState extends State<MeetingScreen> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Text("Meeting ID: ${room.id}"),
-          // ElevatedButton(
-          //     onPressed: () {
-          //       room.changeCam(part.id);
-          //     },
-          //     child: Text("Change Camera")),
+
+          ...participantVideoStreams.values
+              .map(
+                (e) => ParticipantTile(
+                  stream: e!,
+                ),
+              )
+              .toList(),
+          Text("Room ID: ${room.id}"),
           MeetingControls(
             onToggleMicButtonPressed: () {
               micEnabled ? room.muteMic() : room.unmuteMic();
@@ -108,14 +113,9 @@ class _MeetingScreenState extends State<MeetingScreen> {
               camEnabled = !camEnabled;
             },
             onLeaveButtonPressed: () => room.leave(),
+            isMicOn: micEnabled,
+            isCameraOn: camEnabled,
           ),
-          ...participantVideoStreams.values
-              .map(
-                (e) => ParticipantTile(
-                  stream: e!,
-                ),
-              )
-              .toList(),
         ],
       ),
     );

@@ -4,12 +4,16 @@ class MeetingControls extends StatelessWidget {
   final void Function() onToggleMicButtonPressed;
   final void Function() onToggleCameraButtonPressed;
   final void Function() onLeaveButtonPressed;
+  bool isCameraOn;
+  bool isMicOn;
 
-  const MeetingControls({
+  MeetingControls({
     Key? key,
     required this.onToggleMicButtonPressed,
     required this.onToggleCameraButtonPressed,
     required this.onLeaveButtonPressed,
+    required this.isCameraOn,
+    required this.isMicOn
   }) : super(key: key);
 
   @override
@@ -17,18 +21,65 @@ class MeetingControls extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
-        ElevatedButton(
-          child: const Text("Leave"),
-          onPressed: onLeaveButtonPressed,
+        GestureDetector(
+          onTap: () {
+            onLeaveButtonPressed;
+          },
+          child: ClipRRect(
+            borderRadius: BorderRadius.all(Radius.circular(10)),
+            child: Column(
+              children: [
+                Container(
+                  decoration: BoxDecoration(
+                    color: Colors.red.shade400,
+                  ),
+                  padding: EdgeInsets.all(12.0),
+                  child: Icon(Icons.call_end, size: 30, color: Colors.white,),
+                ),
+              ],
+            ),
+          ),
         ),
-        ElevatedButton(
-          child: const Text("Toggle Mic"),
-          onPressed: onToggleMicButtonPressed,
+        GestureDetector(
+          onTap: () {
+            onToggleCameraButtonPressed;
+            isCameraOn = !isCameraOn;
+          },
+          child: ClipRRect(
+            borderRadius: BorderRadius.all(Radius.circular(10)),
+            child: Column(
+              children: [
+                Container(
+                  decoration: BoxDecoration(
+                    color: Colors.teal.shade400,
+                  ),
+                  padding: EdgeInsets.all(12.0),
+                  child: Icon(Icons.video_call, size: 30, color: Colors.white,),
+                ),
+              ],
+            ),
+          ),
         ),
-        ElevatedButton(
-          child: const Text("Toggle Camera"),
-          onPressed: onToggleCameraButtonPressed,
-        )
+        GestureDetector(
+          onTap: () {
+            onToggleMicButtonPressed;
+            isMicOn = !isMicOn;
+          },
+          child: ClipRRect(
+            borderRadius: BorderRadius.all(Radius.circular(10)),
+            child: Column(
+              children: [
+                Container(
+                  decoration: BoxDecoration(
+                    color: Colors.teal.shade400,
+                  ),
+                  padding: EdgeInsets.all(12.0),
+                  child: Icon(Icons.mic, size: 30, color: Colors.white,),
+                ),
+              ],
+            ),
+          ),
+        ),
       ],
     );
   }
