@@ -3,7 +3,6 @@ import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-
 class CreateSharedLearningPost extends StatefulWidget {
   const CreateSharedLearningPost({Key? key}) : super(key: key);
 
@@ -34,7 +33,6 @@ class _CreateSharedLearningPostState extends State<CreateSharedLearningPost> {
       await ref.child(currTimeInMilli.toString()).child('name').set(FirebaseAuth.instance.currentUser?.displayName);
       await ref.child(currTimeInMilli.toString()).child('likes').set(0);
       await ref.child(currTimeInMilli.toString()).child('date').set(cdate1);
-
     }
 
     return Scaffold(
@@ -44,28 +42,41 @@ class _CreateSharedLearningPostState extends State<CreateSharedLearningPost> {
       body: Container(
         child: Column(
           children: [
-            TextField(
-              controller: _titleTextController,
-              decoration: InputDecoration.collapsed(hintText: "Title"),
-              showCursor: true,
-              maxLines: null,
+            SizedBox(height: 100.0),
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: 15.0),
+              child: TextField(
+                controller: _titleTextController,
+                decoration: InputDecoration(hintText: "Title"),
+                showCursor: true,
+                maxLines: null,
+              ),
             ),
-            TextField(
-              controller: _postTextController,
-              decoration: InputDecoration.collapsed(hintText: "Title"),
-              showCursor: true,
-              maxLines: null,
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: 15.0),
+              child: TextField(
+                controller: _postTextController,
+                decoration: InputDecoration(hintText: "Text"),
+                showCursor: true,
+                maxLines: null,
+              ),
             ),
+            SizedBox(height: 25.0,),
             GestureDetector(
               child: Container(
-                decoration: BoxDecoration(
-                  color: Colors.teal.shade100
-                ),
+                  decoration: BoxDecoration(
+                      color: Colors.teal.shade100,
+                      borderRadius: BorderRadius.circular(10.0)
+                  ),
                   padding: EdgeInsets.all(20),
-                  child: Text("Submit Post",
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold
-                  ),)),
+                  child: Text(
+                    "Submit Post",
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 14.0,
+                    ),
+                  )
+              ),
               onTap: () {
                 createPost();
                 Navigator.pop(context);

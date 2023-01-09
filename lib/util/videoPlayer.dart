@@ -26,23 +26,27 @@ class PmrVdPlayerState extends State<PmrVdPlayer> {
     );
   }
 
-  Widget build(BuildContext context) => YoutubePlayerBuilder(
-        player: YoutubePlayer(
-          controller: controller,
-        ),
-        builder: (context, player) => Scaffold(
-          body: Container(
-            padding: const EdgeInsets.all(10.0),
-            color: Colors.white,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisSize: MainAxisSize.min,
-              children: <Widget>[
-                player,
-                Divider(
-                  height: 1,
-                ),
-              ],
+  Widget build(BuildContext context) => Scaffold(
+        appBar: AppBar(title: Text("Video Player")),
+        body: YoutubePlayerBuilder(
+          player: YoutubePlayer(
+            controller: controller,
+          ),
+          builder: (context, player) => Scaffold(
+            body: Container(
+              padding: const EdgeInsets.all(0.0),
+              margin: EdgeInsets.symmetric(horizontal: 5, vertical: 200),
+              color: Colors.white,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisSize: MainAxisSize.min,
+                children: <Widget>[
+                  player,
+                  Divider(
+                    height: 1,
+                  ),
+                ],
+              ),
             ),
           ),
         ),

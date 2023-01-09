@@ -5,11 +5,11 @@ class LearnMorePhysicalScreen extends StatefulWidget {
   const LearnMorePhysicalScreen({Key? key}) : super(key: key);
 
   @override
-  State<LearnMorePhysicalScreen> createState() => _LearnMorePhysicalScreenState();
+  State<LearnMorePhysicalScreen> createState() =>
+      _LearnMorePhysicalScreenState();
 }
 
 class _LearnMorePhysicalScreenState extends State<LearnMorePhysicalScreen> {
-
   static final String path = "lib/screens/physical_health/exercises.dart";
   final String image = "assets/images/physical_learn_more.jpg";
   @override
@@ -18,22 +18,23 @@ class _LearnMorePhysicalScreenState extends State<LearnMorePhysicalScreen> {
       body: Stack(
         children: <Widget>[
           Container(
-              foregroundDecoration: BoxDecoration(
-                  color: Colors.black26
-              ),
+              foregroundDecoration: BoxDecoration(color: Colors.black26),
               height: 400,
               child: Image.asset(image, fit: BoxFit.cover)),
           SingleChildScrollView(
-            padding: const EdgeInsets.only(top: 16.0,bottom: 20.0),
+            padding: const EdgeInsets.only(top: 16.0, bottom: 20.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 const SizedBox(height: 250),
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal:16.0),
+                  padding: const EdgeInsets.symmetric(horizontal: 16.0),
                   child: Text(
                     "Learn more about\nPhysical health",
-                    style: TextStyle(color: Colors.white, fontSize: 28.0, fontWeight: FontWeight.bold),
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 28.0,
+                        fontWeight: FontWeight.bold),
                   ),
                 ),
                 Row(
@@ -91,31 +92,38 @@ class _LearnMorePhysicalScreenState extends State<LearnMorePhysicalScreen> {
                                       Icons.circle_outlined,
                                       color: Colors.teal,
                                     ),
-
                                   ],
                                 ),
-                                Text.rich(TextSpan(children: [
-                                  WidgetSpan(
-                                      child: Icon(Icons.location_on, size: 16.0, color: Colors.grey,)
-                                  ),
-                                  TextSpan(
-                                      text: "You are on track 2"
-                                  )
-                                ]), style: TextStyle(color: Colors.grey, fontSize: 12.0),)
+                                Text.rich(
+                                  TextSpan(children: [
+                                    WidgetSpan(
+                                        child: Icon(
+                                      Icons.location_on,
+                                      size: 16.0,
+                                      color: Colors.grey,
+                                    )),
+                                    TextSpan(text: "You are on track 2")
+                                  ]),
+                                  style: TextStyle(
+                                      color: Colors.grey, fontSize: 12.0),
+                                )
                               ],
                             ),
                           ),
                           Column(
                             children: <Widget>[
-                              Text("\$ 0", style: TextStyle(
-                                  color: Colors.teal,
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 20.0
-                              ),),
-                              Text("Our features are free!",style: TextStyle(
-                                  fontSize: 12.0,
-                                  color: Colors.grey
-                              ),)
+                              Text(
+                                "\$ 0",
+                                style: TextStyle(
+                                    color: Colors.teal,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 20.0),
+                              ),
+                              Text(
+                                "Our features are free!",
+                                style: TextStyle(
+                                    fontSize: 12.0, color: Colors.grey),
+                              )
                             ],
                           )
                         ],
@@ -123,16 +131,21 @@ class _LearnMorePhysicalScreenState extends State<LearnMorePhysicalScreen> {
                       const SizedBox(height: 30.0),
                       SizedBox(
                         width: double.infinity,
-                        child: RaisedButton(
-                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.0)),
-                          color: Colors.teal,
-                          textColor: Colors.white,
-                          child: Text("Benefits", style: TextStyle(
-                              fontWeight: FontWeight.normal
-                          ),),
-                          padding: const EdgeInsets.symmetric(
-                            vertical: 16.0,
-                            horizontal: 32.0,
+                        child: ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(30.0)),
+                            backgroundColor: Colors.teal,
+                            padding: const EdgeInsets.symmetric(
+                              vertical: 16.0,
+                              horizontal: 32.0,
+                            ),
+                          ),
+                          child: Text(
+                            "Benefits",
+                            style: TextStyle(
+                                fontWeight: FontWeight.normal,
+                                color: Colors.white),
                           ),
                           onPressed: () {
                             Navigator.pushNamed(context, '/benefits_physical');
@@ -140,31 +153,32 @@ class _LearnMorePhysicalScreenState extends State<LearnMorePhysicalScreen> {
                         ),
                       ),
                       const SizedBox(height: 30.0),
-                      Text("Why is it important for students?".toUpperCase(), style: TextStyle(
-                          fontWeight: FontWeight.w600,
-                          fontSize: 14.0
-                      ),),
+                      Text(
+                        "Why is it important for students?".toUpperCase(),
+                        style: TextStyle(
+                            fontWeight: FontWeight.w600, fontSize: 14.0),
+                      ),
                       const SizedBox(height: 10.0),
                       Text(
                         "There has been researches that show the positive correlation between being physically active and improving as a student. Being a young student means you have a lot of potentials to be able to develop new hobbies that can benefit your fitness. It can be anything like running, skipping, or doing yoga. Exercising at least four times a week increases your metabolic rate which reduces the risk of cardiovascular diseases in the future which is just one of the numerous benefits.",
-                        textAlign: TextAlign.justify, style: TextStyle(
-                          fontWeight: FontWeight.w300,
-                          fontSize: 14.0
-                      ),),
+                        textAlign: TextAlign.justify,
+                        style: TextStyle(
+                            fontWeight: FontWeight.w300, fontSize: 14.0),
+                      ),
                       const SizedBox(height: 10.0),
                       Text(
                         "Being physically fit doesn’t require you have a strict schedule, but just have enough discipline to repeat it regularly. This aspect of self-care directly impacts all others and hence we encourage evryone user to actively utilize the features within this track!",
-                        textAlign: TextAlign.justify, style: TextStyle(
-                          fontWeight: FontWeight.w300,
-                          fontSize: 14.0
-                      ),),
+                        textAlign: TextAlign.justify,
+                        style: TextStyle(
+                            fontWeight: FontWeight.w300, fontSize: 14.0),
+                      ),
                       const SizedBox(height: 10.0),
                       Text(
                         "Having an enthusiastic and active lifestyle overhauls your personality. It lets you perform physical activities without being tired or restless. It also ensures that you are mentally fit and stress-free. So here is your cue to embark on your fitness journey while starting your journey with Epione",
-                        textAlign: TextAlign.justify, style: TextStyle(
-                          fontWeight: FontWeight.w300,
-                          fontSize: 14.0
-                      ),),
+                        textAlign: TextAlign.justify,
+                        style: TextStyle(
+                            fontWeight: FontWeight.w300, fontSize: 14.0),
+                      ),
                       const SizedBox(height: 20.0),
                     ],
                   ),
@@ -180,10 +194,10 @@ class _LearnMorePhysicalScreenState extends State<LearnMorePhysicalScreen> {
               backgroundColor: Colors.transparent,
               elevation: 0,
               centerTitle: true,
-              title: Text("LEARN MORE",style: TextStyle(
-                  fontSize: 16.0,
-                  fontWeight: FontWeight.normal
-              ),),
+              title: Text(
+                "LEARN MORE",
+                style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.normal),
+              ),
             ),
           ),
         ],

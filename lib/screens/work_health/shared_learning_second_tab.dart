@@ -25,8 +25,6 @@ class _MyPostsTabLearningState extends State<MyPostsTabLearning> {
       width: 0,
       height: 0,
     );
-
-
   }
 
   Widget listItem({required Map post}){

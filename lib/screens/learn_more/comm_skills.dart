@@ -21,10 +21,12 @@ class CommunicationSkillsScreen extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
-        RaisedButton(
-          color: Colors.transparent,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(20.0),
+        ElevatedButton(
+          style: ElevatedButton.styleFrom(
+            backgroundColor: Colors.transparent,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(20.0),
+            ),
           ),
           child: Text(
             'Back',
@@ -44,7 +46,9 @@ class CommunicationSkillsScreen extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          SizedBox(height: 25,),
+          SizedBox(
+            height: 25,
+          ),
           Text(
             'Developing communication skills',
             style: TextStyle(
@@ -68,13 +72,13 @@ class CommunicationSkillsScreen extends StatelessWidget {
             height: 1.0,
           ),
           Text(
-            'Enhance your communication:\n\n'+
-            '\n1. Practice active listening\n\n The goal of active listening is to ensure that you hear not just the words the person is saying, but the entire message. Some tips for active listening include: Giving the speaker your full and undivided attention, Showing open, positive body language to keep your mind focused and to show the speaker that you are really listening, Clearing your mind of distractions, judgements, and counter-arguments. Active listening also means listening to understand rather than reply. Reinforce building good listening skills by encouraging yourself to practice asking clarifying questions to fully understand the speaker’s intended message.\n'
-            +'\n2. Build your emotional intelligence. \n\nCommunication is built upon a foundation of emotional intelligence. Simply put, you cannot communicate effectively with others until you can assess and understand your own feelings. Understanding and managing your own emotions is only part of emotional intelligence. The other part—equally important for effective communication—is empathy for others.\n'
-            +'\n3. Ask open-ended question.\n'
-            +'\n5. Reduces risk of anxiety and depression. Activity helps release endorphins, feel-good hormones, that help reduce stress therefore relieving feelings of anxiety and depression.\n'
-            +'\n6. Quality of Being Friendly to Others.\n\n Good communication skills build strong friendships. It also helps in making us confident enough. Better verbal Communication and physical expressions help them to make new friends. Studying with good friends in school reduces stress & enables you to learn much better. \n'
-            +'\n7. Respect Opinions of Other.\n\n Always respect others & give regards to what they’re saying or what they have to say. Respecting others while acknowledging them, is an important aspect of Communication. Being respectful is just like paying attention to what other is saying, by this, the other one feels greatly appreciated, which leads to a better, honest as well as effective communication.\n',
+            'Enhance your communication:\n\n' +
+                '\n1. Practice active listening\n\n The goal of active listening is to ensure that you hear not just the words the person is saying, but the entire message. Some tips for active listening include: Giving the speaker your full and undivided attention, Showing open, positive body language to keep your mind focused and to show the speaker that you are really listening, Clearing your mind of distractions, judgements, and counter-arguments. Active listening also means listening to understand rather than reply. Reinforce building good listening skills by encouraging yourself to practice asking clarifying questions to fully understand the speaker’s intended message.\n' +
+                '\n2. Build your emotional intelligence. \n\nCommunication is built upon a foundation of emotional intelligence. Simply put, you cannot communicate effectively with others until you can assess and understand your own feelings. Understanding and managing your own emotions is only part of emotional intelligence. The other part—equally important for effective communication—is empathy for others.\n' +
+                '\n3. Ask open-ended question.\n' +
+                '\n5. Reduces risk of anxiety and depression. Activity helps release endorphins, feel-good hormones, that help reduce stress therefore relieving feelings of anxiety and depression.\n' +
+                '\n6. Quality of Being Friendly to Others.\n\n Good communication skills build strong friendships. It also helps in making us confident enough. Better verbal Communication and physical expressions help them to make new friends. Studying with good friends in school reduces stress & enables you to learn much better. \n' +
+                '\n7. Respect Opinions of Other.\n\n Always respect others & give regards to what they’re saying or what they have to say. Respecting others while acknowledging them, is an important aspect of Communication. Being respectful is just like paying attention to what other is saying, by this, the other one feels greatly appreciated, which leads to a better, honest as well as effective communication.\n',
             style: TextStyle(
               color: Colors.white.withOpacity(0.85),
               height: 1.4,

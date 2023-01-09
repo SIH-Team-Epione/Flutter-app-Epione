@@ -19,7 +19,7 @@ class Contacts extends StatefulWidget {
 }
 
 class _ContactsState extends State<Contacts> {
-  final user=FirebaseAuth.instance.currentUser;
+  final user = FirebaseAuth.instance.currentUser;
   var emailid;
   late Query _ref;
   DatabaseReference reference = FirebaseDatabase.instance.reference().child(
@@ -34,7 +34,7 @@ class _ContactsState extends State<Contacts> {
         .reference()
         .child('Contacts')
         .orderByChild('name');
-    emailid=user?.email;
+    emailid = user?.email;
   }
 
   Widget _buildContactItem({required Map contact}) {
@@ -106,10 +106,10 @@ class _ContactsState extends State<Contacts> {
                       onTap: () async {
                         final phoneNumber = contact['number'];
                         final url = Uri.parse('tel://$phoneNumber');
-                        if (!await launchUrl(url, mode: LaunchMode.externalApplication)) {
+                        if (!await launchUrl(url,
+                            mode: LaunchMode.externalApplication)) {
                           throw 'Could not launch';
                         }
-
                       },
                       child: Row(
                         children: [
@@ -188,12 +188,14 @@ class _ContactsState extends State<Contacts> {
           title: Text('Delete ${contact['name']}'),
           content: Text('Are you sure you want to delete?'),
           actions: [
-            FlatButton(
+            ElevatedButton(
+                style: ElevatedButton.styleFrom(elevation: 0),
                 onPressed: () {
                   Navigator.pop(context);
                 },
                 child: Text('Cancel')),
-            FlatButton(
+            ElevatedButton(
+                style: ElevatedButton.styleFrom(elevation: 0),
                 onPressed: () {
                   reference
                       .child(contact['key'])
@@ -227,8 +229,10 @@ class _ContactsState extends State<Contacts> {
               Animation<double> animation, int index) {
             Map contact = snapshot.value as Map;
             contact['key'] = snapshot.key;
-            if(contact['id']==emailid) return _buildContactItem(contact: contact);
-            else return Container();
+            if (contact['id'] == emailid)
+              return _buildContactItem(contact: contact);
+            else
+              return Container();
           },
         ),
       ),

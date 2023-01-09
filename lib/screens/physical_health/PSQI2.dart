@@ -31,9 +31,9 @@ class _Psqi2State extends State<Psqi2> {
     "I. Have pain": 0,
     "How often have you taken medicine to help you sleep ": 0,
     "How often have you had trouble staying awake while driving, eating meals, or engaging in social activities":
-    0,
+        0,
     "How much of a problem has it been for you to keep up enthusiasm to get things done":
-    0,
+        0,
   };
   List<num> Convert(Map<String, num> qna) {
     List<num> valuesList = qna2.values.toList();
@@ -134,10 +134,12 @@ class _Psqi2State extends State<Psqi2> {
               ],
             ),
             for (var q in qna2.keys) question(q),
-            RaisedButton(
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(20)),
-              color: Colors.white,
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20)),
+                backgroundColor: Colors.white,
+              ),
               child: Padding(
                 padding: EdgeInsets.all(10),
                 child: Text(
@@ -162,7 +164,7 @@ class _Psqi2State extends State<Psqi2> {
     final myController = TextEditingController();
     return Container(
       padding: const EdgeInsets.only(top: 15),
-      margin: const EdgeInsets.only(left:10,right: 10),
+      margin: const EdgeInsets.only(left: 10, right: 10),
       child: Stack(
         children: [
           Card(

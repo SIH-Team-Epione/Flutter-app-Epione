@@ -1,102 +1,16 @@
 # Epione
-A cross platform flutter mobile application to promote self care among students of all age groups.
+A cross platform flutter mobile application to promote and provide self care among students of all age groups.
 
-### Features
-- [ ] PHQ-9 depression assessment
-- [ ] GAD-7 anxiety assessment
-- [ ] CBT
-- [ ] Diaphragmatic breathing
-- [ ] Meditation
-- [ ] Mindfulness
-- [ ] Exercises (Google Fit Plugin)
-- [ ] Diet tracks
-  - Gaining weight
-  - Losing weight
-  - Maintaining weight
-  - Muscle building
-  - Basic balanced diet
-- [ ] Yoga pose detection
-- [ ] PMR
-- [ ] Connect with family and friends
-- [ ] Take time off of social media
-- [ ] Time management techniques
-  - Pomodoro technique
-  - Pareto analysis
-  - EisenHower matrix
-  - Time Blocking method
-  - Parkinson’s law
-  - GTD method
-- [ ] Concentration techniques
-  - Eliminating distractions
-  - Reducing multitasking
-  - Setting SMART goals
-  - Creating a workspace
-  - Taking regular breaks
-  - Utilizing mnemonic devices
-- [ ] AI Chatbot
-- [ ] Doctor consultation
+<img src="https://user-images.githubusercontent.com/90041178/210432896-7b2a3c9a-3edd-4c74-aaa5-5e7e80cb9b6b.jpg" width="200" height="400">
 
-### UI
-- **Fonts**
-<<<<<<< HEAD
-    - Montserrat 
-    - PlayfairDisplay (Google fonts)(Only for few headings)
-- **Color scheme**
-    - Dark green: #307473 ![img.png](img.png)
-    - Light green: #e0f4f0 ![img_1.png](img_1.png)
-    - Light pink: #f6d6d7 ![img_2.png](img_2.png)
-    - Light grey: #fafafa ![img_3.png](img_3.png)
-    - Dark grey: #bdbdbd ![img_4.png](img_4.png)
-    - Lighter black: #293241 ![img_5.png](img_5.png)
-    - Yellow: #febd40 ![img_6.png](img_6.png)
-- **Text Style**
-  - Heading: 
-=======
-  - Montserrat
-  - PlayfairDisplay (Google fonts)(Only for few headings)
-- **Color scheme**
-  - Dark green: #307473 ![img.png](/img.png)
-  - Light green: #e0f4f0 ![img_1.png](/img_1.png)
-  - Light pink: #f6d6d7 ![img_2.png](/img_2.png)
-  - Light grey: #fafafa ![img_3.png](/img_3.png)
-  - Dark grey: #bdbdbd ![img_4.png](/img_4.png)
-  - Lighter black: #293241 ![img_5.png](/img_5.png)
-  - Yellow: #febd40 ![img_6.png](/img_6.png)
-- **Text Style**
-  - Heading:
->>>>>>> origin/develop
-    fontWeight: FontWeight.w700,
-    color: Colors.black
-  - Paragraphs:
-    color: Color(0xff8e8e8e)
-<<<<<<< HEAD
-  - Pills: ![img_7.png](img_7.png)
-    
-=======
-  - Pills: ![img_7.png](/img_7.png)
+## Track 1: Mental Health
+<img src="https://user-images.githubusercontent.com/90041178/210433577-ba6913b4-07ae-49c6-b9be-848d1fff8cc0.jpg" width="200" height="400">
 
->>>>>>> origin/develop
-    ```
-    Container(
-      padding: EdgeInsets.all(5),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10),
-        color: Color(0xffe0f4f0)
-      ),
-      child: Text(
-        'some text goes here',
-        style: const TextStyle(fontSize: 10.0),
-      ),
-    ),
-    ```
-    
-<<<<<<< HEAD
-=======
-### Packages
--
--
+## Track 2: Physical Health
+<img src="https://user-images.githubusercontent.com/90041178/210432976-1963449c-d86c-484c-abd2-5d9b8ed41b67.jpg" width="200" height="400">
 
-### Screenshots
->>>>>>> origin/develop
+## Track 3: Social Health
+<img src="https://user-images.githubusercontent.com/90041178/210432993-990e8479-367c-4125-8842-00dd15ef0ba6.jpg" width="200" height="400">
 
-![App UI](/ui.PNG)
+## Track 4: Work Health
+<img src="https://user-images.githubusercontent.com/90041178/210433001-4b06d0eb-bfe6-4541-abc3-07baa3e3c6a3.jpg" width="200" height="400">

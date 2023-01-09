@@ -5,6 +5,8 @@ import 'package:quiz_app/screens/work_health/create_post.dart';
 import 'package:quiz_app/screens/work_health/shared_first_tab.dart';
 import 'package:quiz_app/screens/work_health/shared_second_tab.dart';
 
+import '../SharedLearnings.dart';
+
 class SharedExperiences extends StatefulWidget {
   const SharedExperiences({Key? key}) : super(key: key);
 
@@ -56,5 +58,8 @@ class _SharedExperiencesState extends State<SharedExperiences> {
     );
   }
 }
+
+
+
 
 

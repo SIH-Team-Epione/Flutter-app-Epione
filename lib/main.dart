@@ -1,3 +1,4 @@
+import 'package:assets_audio_player/assets_audio_player.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
@@ -17,6 +18,7 @@ import 'package:quiz_app/screens/learn_more/learn_time.dart';
 import 'package:quiz_app/screens/learn_more/social_health.dart';
 import 'package:quiz_app/screens/social_health/contacts.dart';
 import 'package:quiz_app/screens/social_health/index.dart';
+import 'package:quiz_app/screens/social_health/index2.dart';
 import 'package:quiz_app/screens/work_health/shared_exp.dart';
 import 'package:quiz_app/screens/work_health/time_techniques.dart';
 import 'package:quiz_app/screens/learn_more/work_health.dart';
@@ -56,13 +58,7 @@ import 'controllers/question_controller_phq.dart';
 
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(
-      // options: FirebaseOptions(
-      //     apiKey: 'AIzaSyCof7TFo6DH-cHndhmCKfcPTyjubQOoo4A',
-      //     appId: '1:782675839270:android:f3318f5ac8bba2ade099e7',
-      //     messagingSenderId: '782675839270',
-      //     projectId: 'epione-992ee')
-      );
+  await Firebase.initializeApp();
 
   await Permission.camera.request();
   await Permission.microphone.request();
@@ -134,6 +130,7 @@ class _MyAppState extends State<MyApp> {
                 new LearnMoreSocialScreen(),
             '/Contacts': (BuildContext context) => new Contacts(),
             '/index': (BuildContext context) => new IndexPage(),
+            '/index2': (BuildContext context) => new VideoCall(),
             '/communication_skills': (BuildContext context) =>
                 new CommunicationSkillsScreen(),
             '/more_social_health': (BuildContext context) =>

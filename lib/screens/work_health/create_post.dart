@@ -10,7 +10,6 @@ class CreatePostScreen extends StatefulWidget {
   @override
   State<CreatePostScreen> createState() => _CreatePostScreenState();
 }
-
 var dropdownValue = "Select Track";
 
 class _CreatePostScreenState extends State<CreatePostScreen> {
@@ -37,7 +36,6 @@ class _CreatePostScreenState extends State<CreatePostScreen> {
       await ref.child(currTimeInMilli.toString()).child('track').set(dropdownValue);
       await ref.child(currTimeInMilli.toString()).child('likes').set(0);
       await ref.child(currTimeInMilli.toString()).child('date').set(cdate1);
-
     }
 
     return Scaffold(
@@ -45,27 +43,28 @@ class _CreatePostScreenState extends State<CreatePostScreen> {
         title: Text("New Post"),
       ),
       body: Container(
+        margin: EdgeInsets.only(left: 15, right: 15),
         child: Padding(
           padding: EdgeInsets.all(10.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              SizedBox(height: 20,),
+              // SizedBox(height: 20,),
               DropdownButton<String>(
                 value: dropdownValue,
-                icon: const Icon(Icons.arrow_downward),
+                // icon: const Icon(Icons.arrow_downward),
                 elevation: 16,
-                style: const TextStyle(color: Colors.black, fontSize: 14),
-                underline: Container(
-                  height: 2,
-                  color: Colors.black,
-                ),
+                // style: const TextStyle(color: Colors.black, fontSize: 14),
+                // underline: Container(
+                //   height: 2,
+                //   color: Colors.black,
+                // ),
                 onChanged: (String? newValue) {
                   setState(() {
                     dropdownValue = newValue!;
                   });
                 },
-                items: <String>['Select Track', 'Mental health', 'Physical health', 'Social Health', 'Work Health']
+                items: <String>['Select Track', 'Mental Health', 'Physical Health', 'Social Health', 'Work Health']
                     .map<DropdownMenuItem<String>>((String value) {
                   return DropdownMenuItem<String>(
                     value: value,
@@ -74,40 +73,51 @@ class _CreatePostScreenState extends State<CreatePostScreen> {
                 }).toList(),
               ),
               SizedBox(height: 20,),
-              Center(
-                child: TextField(
-                  controller: _titleTextController,
-                  decoration: InputDecoration.collapsed(hintText: "Title"),
-                  showCursor: true,
-                  maxLines: null,
-                  style: TextStyle(
-                    fontSize: 14,
+              Column(
+                children: [
+                  Container(
+                    padding: EdgeInsets.symmetric(horizontal: 15.0),
+                    child: TextField(
+                      controller: _titleTextController,
+                      decoration: InputDecoration(hintText: "Title"),
+                      showCursor: true,
+                      maxLines: null,
+                      // style: TextStyle(
+                      //   fontSize: 14,
+                      // ),
+                    ),
                   ),
-                ),
-              ),
-              SizedBox(height: 20,),
-              Center(
-                child: TextField(
-                  controller: _postTextController,
-                  decoration: InputDecoration.collapsed(hintText: "Text"),
-                  showCursor: true,
-                  maxLines: null,
-                  style: TextStyle(
-                    fontSize: 14,
+                  SizedBox(height: 20,),
+                  Container(
+                    padding: EdgeInsets.symmetric(horizontal: 15.0),
+                    child: TextField(
+                      controller: _postTextController,
+                      decoration: InputDecoration(hintText: "Text"),
+                      showCursor: true,
+                      maxLines: null,
+                      // style: TextStyle(
+                      //   fontSize: 14,
+                      // ),
+                    ),
                   ),
-                ),
+                ],
               ),
-              SizedBox(height: 20,),
+              SizedBox(height: 25,),
               GestureDetector(
                 child: Container(
                   decoration: BoxDecoration(
-                    color: Colors.teal.shade100
+                    color: Colors.teal.shade100,
+                    borderRadius: BorderRadius.circular(10.0)
                   ),
                     padding: EdgeInsets.all(20),
-                    child: Text("Submit Post",
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold
-                    ),)),
+                    child: Text(
+                      "Submit Post",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 14.0,
+                      ),
+                    )
+                ),
                 onTap: () {
                   createPost();
                   Navigator.pop(context);

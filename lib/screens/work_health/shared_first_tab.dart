@@ -5,6 +5,8 @@ import 'package:firebase_database/firebase_database.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:intl/intl.dart';
 
+import '../SharedLearnings.dart';
+
 class PostsTab extends StatefulWidget {
   const PostsTab({Key? key}) : super(key: key);
 
@@ -16,6 +18,8 @@ class _PostsTabState extends State<PostsTab> {
 
     Query dbRef = FirebaseDatabase.instance.ref().child('posts');
     final currentuser = FirebaseAuth.instance.currentUser;
+
+    var dropdownValue = "Filter by Track";
 
     handleLike(){
 
@@ -132,6 +136,7 @@ class _PostsTabState extends State<PostsTab> {
                             style: TextStyle(
                               color: Colors.grey
                             ),
+
                           )
                         ],
                       ),
@@ -141,10 +146,8 @@ class _PostsTabState extends State<PostsTab> {
               ],
             ),
           ),
-        )
+        ),
       );
-
-
     }
 
     @override
@@ -157,12 +160,22 @@ class _PostsTabState extends State<PostsTab> {
           itemBuilder: (BuildContext context, DataSnapshot snapshot, Animation<double> animation, int index){
             Map post = snapshot.value as Map;
             post['key'] = snapshot.key;
+
             return listItem(post: post);
           },
         ),
       );
     }
 
+}
+List<Map<dynamic, dynamic>> filter(String track){
+  List<Map<dynamic, dynamic>> filteredList = [];
+  for(var p in allLearnings){
+    if(p['track']==track){
+      filteredList.add(p);
+    }
+  }
+  return filteredList;
 }
 
 

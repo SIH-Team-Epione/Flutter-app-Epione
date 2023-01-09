@@ -57,7 +57,7 @@ class _TimeTechScreenState extends State<TimeTechScreen> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  const SizedBox(height: 250),
+                  const SizedBox(height: 265),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal:16.0),
                     child: Text(
