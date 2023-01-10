@@ -6,6 +6,7 @@ list(APPEND FLUTTER_PLUGIN_LIST
   agora_rtc_engine
   audioplayers_windows
   dialogflow_grpc
+  flutter_webrtc
   maps_launcher
   permission_handler_windows
   url_launcher_windows
