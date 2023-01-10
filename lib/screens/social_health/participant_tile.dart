@@ -9,15 +9,12 @@ class ParticipantTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: SizedBox(
-        height: 200,
-        width: 200,
-        child: RTCVideoView(
-          stream.renderer!,
-          objectFit: RTCVideoViewObjectFit.RTCVideoViewObjectFitCover,
-        ),
+    return SizedBox(
+      height: MediaQuery.of(context).size.height * 0.3,
+      width: MediaQuery.of(context).size.width * 0.5,
+      child: RTCVideoView(
+        stream.renderer!,
+        objectFit: RTCVideoViewObjectFit.RTCVideoViewObjectFitCover,
       ),
     );
   }

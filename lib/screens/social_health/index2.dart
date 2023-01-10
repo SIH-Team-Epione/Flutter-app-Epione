@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:permission_handler/permission_handler.dart';
 import 'api.dart';
 import 'join_screen.dart';
 import 'meeting_screen.dart';
@@ -39,6 +40,8 @@ class _VideoCallState extends State<VideoCall> {
                   onMeetingIdChanged: (value) => meetingId = value,
                   onCreateMeetingButtonPressed: () async {
                     meetingId = await createMeeting();
+                    await _handleCameraAndMic(Permission.camera);
+                    await _handleCameraAndMic(Permission.microphone);
                     setState(() => isMeetingActive = true);
                   },
                   onJoinMeetingButtonPressed: () {
@@ -48,5 +51,9 @@ class _VideoCallState extends State<VideoCall> {
         ),
       ),
     );
+  }
+  Future<void> _handleCameraAndMic(Permission permission) async {
+    final status = await permission.request();
+    print(status.toString());
   }
 }

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:videosdk/videosdk.dart';
-import 'meeting_controls.dart';
 import 'participant_tile.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
@@ -40,7 +39,9 @@ class _MeetingScreenState extends State<MeetingScreen> {
 
     participant.on(Events.streamDisabled, (Stream stream) {
       if (stream.kind == 'video') {
-        setState(() => participantVideoStreams.remove(participant.id));
+        setState(() {
+          participantVideoStreams.remove(participant.id);
+        });
       }
     });
   }
@@ -75,9 +76,9 @@ class _MeetingScreenState extends State<MeetingScreen> {
       camEnabled: camEnabled,
       maxResolution: 'hd',
       defaultCameraIndex: 1,
-      notification: const NotificationInfo(
-        title: "Video SDK",
-        message: "Video SDK is sharing screen in the meeting",
+      notification: NotificationInfo(
+        title: user.displayName!,
+        message: "${user.displayName} is sharing screen in the meeting",
         icon: "notification_share", // drawable icon name
       ),
     );
@@ -94,27 +95,107 @@ class _MeetingScreenState extends State<MeetingScreen> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-
-          ...participantVideoStreams.values
-              .map(
-                (e) => ParticipantTile(
-                  stream: e!,
+          Column(children: [
+            ...participantVideoStreams.values
+                .map(
+                  (e) => ParticipantTile(
+                    stream: e!,
+                  ),
+                )
+                .toList(),
+            // List.generate(participantVideoStreams.length, (index) =>
+            //   Expanded(
+            //     child: ParticipantTile(
+            //       stream: participantVideoStreams.values.toList()[index]!,
+            //     ),
+            //   )
+            // ),
+          ]),
+          Align(
+            alignment: FractionalOffset.bottomCenter,
+            child: Column(
+              children: [
+                SizedBox(
+                  height: 15,
                 ),
-              )
-              .toList(),
-          Text("Room ID: ${room.id}"),
-          MeetingControls(
-            onToggleMicButtonPressed: () {
-              micEnabled ? room.muteMic() : room.unmuteMic();
-              micEnabled = !micEnabled;
-            },
-            onToggleCameraButtonPressed: () {
-              camEnabled ? room.disableCam() : room.enableCam();
-              camEnabled = !camEnabled;
-            },
-            onLeaveButtonPressed: () => room.leave(),
-            isMicOn: micEnabled,
-            isCameraOn: camEnabled,
+                RichText(
+                  text: TextSpan(
+                    style: TextStyle(fontSize: 18, color: Colors.black),
+                    children: [
+                      TextSpan(
+                        text: "Room ID: ",
+                        style: TextStyle(
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                      TextSpan(
+                          text: room.id,
+                          style: TextStyle(fontStyle: FontStyle.italic)),
+                    ],
+                  ),
+                ),
+                SizedBox(
+                  height: 15,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Container(
+                      width: 50,
+                      height: 50,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(50),
+                        color: Colors.red,
+                      ),
+                      child: IconButton(
+                        color: Color(0xfff0f0f0),
+                        onPressed: () {
+                          room.end();
+                        },
+                        icon: Icon(Icons.call_end),
+                      ),
+                    ),
+                    Container(
+                      width: 50,
+                      height: 50,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(50),
+                        color: Colors.teal,
+                      ),
+                      child: IconButton(
+                        color: Color(0xfff0f0f0),
+                        onPressed: () {
+                          micEnabled ? room.muteMic() : room.unmuteMic();
+                          setState(() => micEnabled = !micEnabled);
+                        },
+                        icon: micEnabled
+                            ? Icon(Icons.mic_off_rounded)
+                            : Icon(Icons.mic_rounded),
+                      ),
+                    ),
+                    Container(
+                      width: 50,
+                      height: 50,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(50),
+                        color: Colors.teal,
+                      ),
+                      child: IconButton(
+                        color: Color(0xfff0f0f0),
+                        onPressed: () {
+                          camEnabled ? room.disableCam() : room.enableCam();
+                          setState(() => camEnabled = !camEnabled);
+                        },
+                        icon: camEnabled
+                            ? Icon(Icons.videocam_off_rounded)
+                            : Icon(Icons.videocam_rounded),
+                      ),
+                    ),
+                  ],
+                )
+              ],
+            ),
           ),
         ],
       ),
