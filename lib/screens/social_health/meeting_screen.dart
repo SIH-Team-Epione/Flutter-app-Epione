@@ -24,6 +24,8 @@ class _MeetingScreenState extends State<MeetingScreen> {
 
   bool micEnabled = true;
   bool camEnabled = true;
+  bool isScreenShared = false;
+  // late List<MediaDeviceInfo> cameras;
   late Room room;
   // late Participant part;
 
@@ -83,6 +85,8 @@ class _MeetingScreenState extends State<MeetingScreen> {
       ),
     );
 
+    // cameras = room.getCameras();
+
     setMeetingEventListener(room);
 
     // Join meeting
@@ -96,7 +100,10 @@ class _MeetingScreenState extends State<MeetingScreen> {
             .map(
               (e) => ParticipantTile(
                 stream: e!,
-                height: MediaQuery.of(context).size.height * 0.90 / participantVideoStreams.length - 4.1,
+                height: MediaQuery.of(context).size.height *
+                        0.90 /
+                        participantVideoStreams.length -
+                    4.1,
               ),
             )
             .toList(),
@@ -142,7 +149,7 @@ class _MeetingScreenState extends State<MeetingScreen> {
   Widget _toolbar() {
     return Container(
       alignment: Alignment.bottomCenter,
-      margin: EdgeInsets.only(bottom: 20),
+      margin: EdgeInsets.only(bottom: 25),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -199,6 +206,40 @@ class _MeetingScreenState extends State<MeetingScreen> {
                   : Icon(Icons.videocam_rounded),
             ),
           ),
+          // Container(
+          //   width: 50,
+          //   height: 50,
+          //   decoration: BoxDecoration(
+          //     borderRadius: BorderRadius.circular(50),
+          //     color: Colors.teal,
+          //   ),
+          //   child: IconButton(
+          //     color: Color(0xfff0f0f0),
+          //     onPressed: () {
+          //       if (!isScreenShared) 
+          //         room.enableScreenShare();
+          //       else
+          //         room.disableScreenShare();
+          //       setState(() => isScreenShared = !isScreenShared);
+          //     },
+          //     icon: isScreenShared ? Icon(Icons.stop_screen_share) : Icon(Icons.screen_share_rounded),
+          //   ),
+          // ),
+          // Container(
+          //   width: 50,
+          //   height: 50,
+          //   decoration: BoxDecoration(
+          //     borderRadius: BorderRadius.circular(50),
+          //     color: Colors.teal,
+          //   ),
+          //   child: IconButton(
+          //     color: Color(0xfff0f0f0),
+          //     onPressed: () {
+          //       room.changeCam(room.localParticipant.id);
+          //     },
+          //     icon: Icon(Icons.switch_camera_rounded),
+          //   ),
+          // ),
         ],
       ),
     );
