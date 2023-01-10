@@ -249,11 +249,11 @@ class _NavBarState extends State<NavBar> {
               if (!selected_opt[10]) {
                 setState(() {
                   textColor = Color(0xFF000000);
-                  set_opt(8);
+                  set_opt(10);
                   showDialog(
                       context: context,
                       builder: (context) {
-                        selected_opt[8] = false;
+                        // selected_opt[8] = false;
                         return Container(
                           child: AlertDialog(
                             title: Text("Are You Sure ?"),
