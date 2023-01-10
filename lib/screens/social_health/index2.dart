@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:permission_handler/permission_handler.dart';
 import 'api.dart';
 import 'join_screen.dart';
 import 'meeting_screen.dart';
@@ -27,19 +28,23 @@ class _VideoCallState extends State<VideoCall> {
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 24.0),
-          child: isMeetingActive
-              ? MeetingScreen(
-                  meetingId: meetingId,
-                  token: token,
-                  leaveMeeting: () {
-                    setState(() => isMeetingActive = false);
-                  },
-                )
-              : JoinScreen(
+          child: JoinScreen(
                   onMeetingIdChanged: (value) => meetingId = value,
                   onCreateMeetingButtonPressed: () async {
                     meetingId = await createMeeting();
+                    await _handleCameraAndMic(Permission.camera);
+                    await _handleCameraAndMic(Permission.microphone);
                     setState(() => isMeetingActive = true);
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => MeetingScreen(
+                          meetingId: meetingId,
+                          token: token,
+                          leaveMeeting: () => setState(() => isMeetingActive = false),
+                        ),
+                      ),
+                    );
                   },
                   onJoinMeetingButtonPressed: () {
                     setState(() => isMeetingActive = true);
@@ -48,5 +53,9 @@ class _VideoCallState extends State<VideoCall> {
         ),
       ),
     );
+  }
+  Future<void> _handleCameraAndMic(Permission permission) async {
+    final status = await permission.request();
+    print(status.toString());
   }
 }
