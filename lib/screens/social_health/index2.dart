@@ -28,21 +28,23 @@ class _VideoCallState extends State<VideoCall> {
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 24.0),
-          child: isMeetingActive
-              ? MeetingScreen(
-                  meetingId: meetingId,
-                  token: token,
-                  leaveMeeting: () {
-                    setState(() => isMeetingActive = false);
-                  },
-                )
-              : JoinScreen(
+          child: JoinScreen(
                   onMeetingIdChanged: (value) => meetingId = value,
                   onCreateMeetingButtonPressed: () async {
                     meetingId = await createMeeting();
                     await _handleCameraAndMic(Permission.camera);
                     await _handleCameraAndMic(Permission.microphone);
                     setState(() => isMeetingActive = true);
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => MeetingScreen(
+                          meetingId: meetingId,
+                          token: token,
+                          leaveMeeting: () => setState(() => isMeetingActive = false),
+                        ),
+                      ),
+                    );
                   },
                   onJoinMeetingButtonPressed: () {
                     setState(() => isMeetingActive = true);

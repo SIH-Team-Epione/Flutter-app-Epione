@@ -89,115 +89,139 @@ class _MeetingScreenState extends State<MeetingScreen> {
     room.join();
   }
 
-  @override
-  Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Column(children: [
-            ...participantVideoStreams.values
-                .map(
-                  (e) => ParticipantTile(
-                    stream: e!,
-                  ),
-                )
-                .toList(),
-            // List.generate(participantVideoStreams.length, (index) =>
-            //   Expanded(
-            //     child: ParticipantTile(
-            //       stream: participantVideoStreams.values.toList()[index]!,
-            //     ),
-            //   )
-            // ),
-          ]),
-          Align(
-            alignment: FractionalOffset.bottomCenter,
-            child: Column(
+  Widget _viewRows() {
+    return Column(
+      children: [
+        ...participantVideoStreams.values
+            .map(
+              (e) => ParticipantTile(
+                stream: e!,
+              ),
+            )
+            .toList(),
+        // List.generate(participantVideoStreams.length, (index) =>
+        //   Expanded(
+        //     child: ParticipantTile(
+        //       stream: participantVideoStreams.values.toList()[index]!,
+        //     ),
+        //   )
+        // ),
+      ],
+    );
+  }
+
+  Widget _roomId() {
+    return Column(
+      children: [
+        SizedBox(
+          height: 15,
+        ),
+        Center(
+          child: RichText(
+            text: TextSpan(
+              style: TextStyle(fontSize: 18, color: Color(0xffe0e0e0)),
               children: [
-                SizedBox(
-                  height: 15,
-                ),
-                RichText(
-                  text: TextSpan(
-                    style: TextStyle(fontSize: 18, color: Colors.black),
-                    children: [
-                      TextSpan(
-                        text: "Room ID: ",
-                        style: TextStyle(
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
-                      TextSpan(
-                          text: room.id,
-                          style: TextStyle(fontStyle: FontStyle.italic)),
-                    ],
+                TextSpan(
+                  text: "Room ID: ",
+                  style: TextStyle(
+                    fontWeight: FontWeight.w600,
                   ),
                 ),
-                SizedBox(
-                  height: 15,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Container(
-                      width: 50,
-                      height: 50,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(50),
-                        color: Colors.red,
-                      ),
-                      child: IconButton(
-                        color: Color(0xfff0f0f0),
-                        onPressed: () {
-                          room.end();
-                        },
-                        icon: Icon(Icons.call_end),
-                      ),
-                    ),
-                    Container(
-                      width: 50,
-                      height: 50,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(50),
-                        color: Colors.teal,
-                      ),
-                      child: IconButton(
-                        color: Color(0xfff0f0f0),
-                        onPressed: () {
-                          micEnabled ? room.muteMic() : room.unmuteMic();
-                          setState(() => micEnabled = !micEnabled);
-                        },
-                        icon: micEnabled
-                            ? Icon(Icons.mic_off_rounded)
-                            : Icon(Icons.mic_rounded),
-                      ),
-                    ),
-                    Container(
-                      width: 50,
-                      height: 50,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(50),
-                        color: Colors.teal,
-                      ),
-                      child: IconButton(
-                        color: Color(0xfff0f0f0),
-                        onPressed: () {
-                          camEnabled ? room.disableCam() : room.enableCam();
-                          setState(() => camEnabled = !camEnabled);
-                        },
-                        icon: camEnabled
-                            ? Icon(Icons.videocam_off_rounded)
-                            : Icon(Icons.videocam_rounded),
-                      ),
-                    ),
-                  ],
-                )
+                TextSpan(
+                    text: room.id,
+                    style: TextStyle(fontStyle: FontStyle.italic)),
               ],
             ),
           ),
+        ),
+      ],
+    );
+  }
+
+  Widget _toolbar() {
+    return Container(
+      alignment: Alignment.bottomCenter,
+      margin: EdgeInsets.only(bottom: 20),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Container(
+            width: 50,
+            height: 50,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(50),
+              color: Colors.red,
+            ),
+            child: IconButton(
+              color: Color(0xfff0f0f0),
+              onPressed: () {
+                room.end();
+                Navigator.pop(context);
+              },
+              icon: Icon(Icons.call_end),
+            ),
+          ),
+          Container(
+            width: 50,
+            height: 50,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(50),
+              color: Colors.teal,
+            ),
+            child: IconButton(
+              color: Color(0xfff0f0f0),
+              onPressed: () {
+                micEnabled ? room.muteMic() : room.unmuteMic();
+                setState(() => micEnabled = !micEnabled);
+              },
+              icon: micEnabled
+                  ? Icon(Icons.mic_off_rounded)
+                  : Icon(Icons.mic_rounded),
+            ),
+          ),
+          Container(
+            width: 50,
+            // height: 50,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(50),
+              color: Colors.teal,
+            ),
+            child: IconButton(
+              color: Color(0xfff0f0f0),
+              onPressed: () {
+                camEnabled ? room.disableCam() : room.enableCam();
+                setState(() => camEnabled = !camEnabled);
+              },
+              icon: camEnabled
+                  ? Icon(Icons.videocam_off_rounded)
+                  : Icon(Icons.videocam_rounded),
+            ),
+          ),
         ],
+      ),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.black87,
+      appBar: AppBar(
+        title: const Text(
+          'Video Call',
+          style: TextStyle(color: Colors.white70),
+        ),
+        centerTitle: true,
+      ),
+      body: Center(
+        child: Stack(
+          children: [
+            _viewRows(),
+            _roomId(),
+            _toolbar(),
+          ],
+        ),
       ),
     );
   }
