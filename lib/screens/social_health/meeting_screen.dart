@@ -96,6 +96,7 @@ class _MeetingScreenState extends State<MeetingScreen> {
             .map(
               (e) => ParticipantTile(
                 stream: e!,
+                height: MediaQuery.of(context).size.height * 0.90 / participantVideoStreams.length - 4.1,
               ),
             )
             .toList(),
