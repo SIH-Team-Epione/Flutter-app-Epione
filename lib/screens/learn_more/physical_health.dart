@@ -135,7 +135,7 @@ class _LearnMorePhysicalScreenState extends State<LearnMorePhysicalScreen> {
                           style: ElevatedButton.styleFrom(
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(30.0)),
-                            backgroundColor: Colors.teal,
+                            primary: Colors.teal,
                             padding: const EdgeInsets.symmetric(
                               vertical: 16.0,
                               horizontal: 32.0,

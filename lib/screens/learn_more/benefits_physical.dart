@@ -25,7 +25,7 @@ class BenefitsPhysical extends StatelessWidget {
       children: <Widget>[
         ElevatedButton(
           style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.transparent,
+            primary: Colors.transparent,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(20.0),
             ),

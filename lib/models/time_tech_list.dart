@@ -32,7 +32,7 @@ List<Technique> techsList = [
     title: 'Eat That Frog Technique',
     description: 'This technique is named after a Mark Twain quote: “Eat a live frog the first thing in the morning and nothing worse will happen to you the rest of the day.” Start your day by doing the most onerous tasks first and getting them out of the way.',
     urlImage: 'assets/images/eat_frog_learn.jpg',
-    urlVideo: 'https://www.youtube.com/watch?v=MWJcRt_DoxY&t=31s,
+    urlVideo: 'https://www.youtube.com/watch?v=MWJcRt_DoxY&t=31s',
     howto: "\n\n1. Get clear on a goal. What do you want to achieve most? "+
 "\n\n2. Write it down. "+
 "\n\n3. Set a deadline.  "+

@@ -128,7 +128,7 @@ class _AddContactsState extends State<AddContacts> {
               padding: EdgeInsets.symmetric(horizontal: 10),
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.teal,
+                  primary: Colors.teal,
                 ),
                 child: Text(
                   'Save Contact',

@@ -91,7 +91,7 @@ class _PsqiState extends State<Psqi> {
               style: ElevatedButton.styleFrom(
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20)),
-                backgroundColor: Colors.white,
+                primary: Colors.white,
               ),
               child: Padding(
                 padding: EdgeInsets.all(10),

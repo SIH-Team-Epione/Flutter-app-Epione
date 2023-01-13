@@ -166,7 +166,7 @@ class _AppTimerState extends State<AppTimer> {
           ),
           ElevatedButton(
               style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.teal.shade400,
+                primary: Colors.teal.shade400,
               ),
               child: Text(
                 'Set',

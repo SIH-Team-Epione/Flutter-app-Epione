@@ -217,7 +217,7 @@ class _EliminateDistractionsState extends State<EliminateDistractions>
                   ElevatedButton(
                     style: ElevatedButton.styleFrom(
                       elevation: 4.0,
-                      backgroundColor: Colors.tealAccent.shade400,
+                      primary: Colors.tealAccent.shade400,
                       padding: EdgeInsets.symmetric(
                           vertical: 20.0, horizontal: 30.0),
                     ),

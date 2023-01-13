@@ -123,7 +123,7 @@ class _EditContactState extends State<EditContact> {
               padding: EdgeInsets.symmetric(horizontal: 10),
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.teal,
+                  primary: Colors.teal,
                 ),
                 child: Text(
                   'Update Contact',
