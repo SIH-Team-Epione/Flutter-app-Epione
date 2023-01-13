@@ -32,7 +32,7 @@ List<Technique> techsList = [
     title: 'Eat That Frog Technique',
     description: 'This technique is named after a Mark Twain quote: “Eat a live frog the first thing in the morning and nothing worse will happen to you the rest of the day.” Start your day by doing the most onerous tasks first and getting them out of the way.',
     urlImage: 'assets/images/eat_frog_learn.jpg',
-    urlVideo: 'https://www.youtube.com/watch?v=FKOMTZ7PPLg',
+    urlVideo: 'https://www.youtube.com/watch?v=MWJcRt_DoxY&t=31s',
     howto: "\n\n1. Get clear on a goal. What do you want to achieve most? "+
 "\n\n2. Write it down. "+
 "\n\n3. Set a deadline.  "+
@@ -93,7 +93,8 @@ List<Technique> techsList = [
     title: 'Pickle Jar Theory',
     description: 'This theory helps you figure out what is useful and what is not useful in your daily life. It allows you to plan tasks with time to spare and set priorities for your day.',
     urlImage: 'assets/images/pickle_jar_learn.jpg',
-    urlVideo: 'https://www.youtube.com/watch?v=G2J59iRQ3OM',
+    //urlVideo: 'https://www.youtube.com/watch?v=G2J59iRQ3OM',
+    urlVideo: '',
     howto:"Imagine a pickle jar full of sand, pebbles, and rocks. The sand is at the bottom and the rocks sit at the top.  "+
 "\n\n1. The sand: This represents disrupting elements of your day, such as phone calls, text messages, emails, social media, etc."+
 "\n\n2. The pebbles: This represents tasks that need to be completed, but can be done on another day or by someone else."+

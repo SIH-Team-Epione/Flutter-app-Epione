@@ -146,7 +146,7 @@ class _PostsTabState extends State<PostsTab> {
               ],
             ),
           ),
-        )
+        ),
       );
     }
 
@@ -166,8 +166,8 @@ class _PostsTabState extends State<PostsTab> {
         ),
       );
     }
-}
 
+}
 List<Map<dynamic, dynamic>> filter(String track){
   List<Map<dynamic, dynamic>> filteredList = [];
   for(var p in allLearnings){

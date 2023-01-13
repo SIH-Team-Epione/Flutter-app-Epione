@@ -1,14 +1,18 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+// ignore: unused_import
 import 'package:flutter_svg/svg.dart';
+// ignore: unused_import
 import 'package:provider/provider.dart';
 import 'package:quiz_app/animations/FadeAnimation.dart';
+// ignore: unused_import
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:quiz_app/constants.dart';
 import 'package:quiz_app/models/Quotes.dart';
 import 'package:quiz_app/screens/SharedLearnings.dart';
 import 'package:quiz_app/screens/doctor_consultation_screen.dart';
+// ignore: unused_import
 import 'package:quiz_app/screens/google_sign_in.dart';
 import 'package:quiz_app/screens/hamburger_menu.dart';
 import 'package:quiz_app/screens/work_health/shared_exp.dart';
@@ -16,8 +20,10 @@ import 'package:quiz_app/util/long_img_container.dart';
 import 'package:quiz_app/screens/chatbot/main.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:url_launcher/url_launcher_string.dart';
+// ignore: unused_import
 import 'package:url_launcher_android/url_launcher_android.dart';
 import 'package:location/location.dart';
+// ignore: unused_import
 import 'package:share_plus/share_plus.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -40,6 +46,7 @@ class _HomeScreenState extends State<HomeScreen> {
       return (to.difference(from).inHours / 24).round();
     }
 
+    // ignore: unused_element
     void gotoDoctorsListPage() {
       Navigator.push(context,
           MaterialPageRoute(builder: (context) => DoctorConsultationScreen()));
@@ -64,7 +71,7 @@ class _HomeScreenState extends State<HomeScreen> {
             icon: ClipRRect(
               borderRadius: BorderRadius.circular(50),
               child: Image.network(
-                user!.photoURL!,
+                user.photoURL!,
               ),
             ),
           )
@@ -274,8 +281,11 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: Column(
                   children: [
                     Container(
-                      margin: EdgeInsets.only(bottom: 10),
-                        child: Text('Shared Experiences', style: TextStyle(fontWeight: FontWeight.bold),)),
+                        margin: EdgeInsets.only(bottom: 10),
+                        child: Text(
+                          'Shared Experiences',
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        )),
                     Text(
                         'Read posts and engage with others on their self-care journey'),
                   ],

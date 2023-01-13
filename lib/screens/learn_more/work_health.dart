@@ -8,7 +8,6 @@ class LearnMoreWorkScreen extends StatefulWidget {
 }
 
 class _LearnMoreWorkScreenState extends State<LearnMoreWorkScreen> {
-
   final String image = "assets/images/work_learn_more.jpg";
   @override
   Widget build(BuildContext context) {
@@ -16,22 +15,23 @@ class _LearnMoreWorkScreenState extends State<LearnMoreWorkScreen> {
       body: Stack(
         children: <Widget>[
           Container(
-              foregroundDecoration: BoxDecoration(
-                  color: Colors.black26
-              ),
+              foregroundDecoration: BoxDecoration(color: Colors.black26),
               height: 400,
               child: Image.asset(image, fit: BoxFit.cover)),
           SingleChildScrollView(
-            padding: const EdgeInsets.only(top: 16.0,bottom: 20.0),
+            padding: const EdgeInsets.only(top: 16.0, bottom: 20.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 const SizedBox(height: 250),
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal:16.0),
+                  padding: const EdgeInsets.symmetric(horizontal: 16.0),
                   child: Text(
                     "Learn more about\nWork health",
-                    style: TextStyle(color: Colors.white, fontSize: 28.0, fontWeight: FontWeight.bold),
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 28.0,
+                        fontWeight: FontWeight.bold),
                   ),
                 ),
                 Row(
@@ -89,61 +89,73 @@ class _LearnMoreWorkScreenState extends State<LearnMoreWorkScreen> {
                                       Icons.circle,
                                       color: Colors.teal,
                                     ),
-
                                   ],
                                 ),
-                                Text.rich(TextSpan(children: [
-                                  WidgetSpan(
-                                      child: Icon(Icons.location_on, size: 16.0, color: Colors.grey,)
-                                  ),
-                                  TextSpan(
-                                      text: "You are on track 4"
-                                  )
-                                ]), style: TextStyle(color: Colors.grey, fontSize: 12.0),)
+                                Text.rich(
+                                  TextSpan(children: [
+                                    WidgetSpan(
+                                        child: Icon(
+                                      Icons.location_on,
+                                      size: 16.0,
+                                      color: Colors.grey,
+                                    )),
+                                    TextSpan(text: "You are on track 4")
+                                  ]),
+                                  style: TextStyle(
+                                      color: Colors.grey, fontSize: 12.0),
+                                )
                               ],
                             ),
                           ),
                           Column(
                             children: <Widget>[
-                              Text("\$ 0", style: TextStyle(
-                                  color: Colors.teal,
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 20.0
-                              ),),
-                              Text("Our features are free!",style: TextStyle(
-                                  fontSize: 12.0,
-                                  color: Colors.grey
-                              ),)
+                              Text(
+                                "\$ 0",
+                                style: TextStyle(
+                                    color: Colors.teal,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 20.0),
+                              ),
+                              Text(
+                                "Our features are free!",
+                                style: TextStyle(
+                                    fontSize: 12.0, color: Colors.grey),
+                              )
                             ],
                           )
                         ],
                       ),
                       const SizedBox(height: 30.0),
-
-                      Text("What do we mean by work health?".toUpperCase(), style: TextStyle(
-                          fontWeight: FontWeight.w600,
-                          fontSize: 14.0
-                      ),),
+                      Text(
+                        "What do we mean by work health?".toUpperCase(),
+                        style: TextStyle(
+                            fontWeight: FontWeight.w600, fontSize: 14.0),
+                      ),
                       const SizedBox(height: 10.0),
                       Text(
                         "A student's life is largely governed of their school or university related work. Be it a high school student or a college going student, studies, projects, internships etc. take up most of their time. \n\nWe wanted to factor in this aspect in our app as we strongly believe that this component is of equal significance when we talk about self care. Hence, we decided to add this unique dimension to our app dividing the features into two, namely, time management and concentration techniques. Head over to their pages to learn more about them!\n",
-                        textAlign: TextAlign.justify, style: TextStyle(
-                          fontWeight: FontWeight.w300,
-                          fontSize: 14.0
-                      ),),
+                        textAlign: TextAlign.justify,
+                        style: TextStyle(
+                            fontWeight: FontWeight.w300, fontSize: 14.0),
+                      ),
                       const SizedBox(height: 30.0),
                       SizedBox(
                         width: double.infinity,
-                        child: RaisedButton(
-                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.0)),
-                          color: Colors.teal,
-                          textColor: Colors.white,
-                          child: Text("Time Management", style: TextStyle(
-                              fontWeight: FontWeight.normal
-                          ),),
-                          padding: const EdgeInsets.symmetric(
-                            vertical: 16.0,
-                            horizontal: 32.0,
+                        child: ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(30.0)),
+                            primary: Colors.teal,
+                            padding: const EdgeInsets.symmetric(
+                              vertical: 16.0,
+                              horizontal: 32.0,
+                            ),
+                          ),
+                          child: Text(
+                            "Time Management",
+                            style: TextStyle(
+                                fontWeight: FontWeight.normal,
+                                color: Colors.white),
                           ),
                           onPressed: () {
                             Navigator.pushNamed(context, '/learn_time');
@@ -153,16 +165,21 @@ class _LearnMoreWorkScreenState extends State<LearnMoreWorkScreen> {
                       const SizedBox(height: 30.0),
                       SizedBox(
                         width: double.infinity,
-                        child: RaisedButton(
-                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.0)),
-                          color: Colors.teal,
-                          textColor: Colors.white,
-                          child: Text("Concentration Techniques", style: TextStyle(
-                              fontWeight: FontWeight.normal
-                          ),),
-                          padding: const EdgeInsets.symmetric(
-                            vertical: 16.0,
-                            horizontal: 32.0,
+                        child: ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(30.0)),
+                            primary: Colors.teal,
+                            padding: const EdgeInsets.symmetric(
+                              vertical: 16.0,
+                              horizontal: 32.0,
+                            ),
+                          ),
+                          child: Text(
+                            "Concentration Techniques",
+                            style: TextStyle(
+                                fontWeight: FontWeight.normal,
+                                color: Colors.white),
                           ),
                           onPressed: () {
                             Navigator.pushNamed(context, '/learn_conc');
@@ -184,10 +201,10 @@ class _LearnMoreWorkScreenState extends State<LearnMoreWorkScreen> {
               backgroundColor: Colors.transparent,
               elevation: 0,
               centerTitle: true,
-              title: Text("LEARN MORE",style: TextStyle(
-                  fontSize: 16.0,
-                  fontWeight: FontWeight.normal
-              ),),
+              title: Text(
+                "LEARN MORE",
+                style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.normal),
+              ),
             ),
           ),
         ],

@@ -21,8 +21,8 @@ class _AppTimerState extends State<AppTimer> {
     try {
       DateTime endDate = new DateTime.now();
       DateTime startDate = DateTime(endDate.year, endDate.month, endDate.day);
-      List<AppUsageInfo> infoList = await AppUsage.getAppUsage(
-          startDate, endDate);
+      List<AppUsageInfo> infoList =
+          await AppUsage().getAppUsage(startDate, endDate);
       setState(() {
         _infos = infoList;
       });
@@ -34,6 +34,7 @@ class _AppTimerState extends State<AppTimer> {
       print(exception);
     }
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -45,8 +46,7 @@ class _AppTimerState extends State<AppTimer> {
           itemBuilder: (context, index) {
             return ListTile(
                 title: Text(_infos[index].appName),
-                trailing: Text(formatTime(_infos[index].usage))
-            );
+                trailing: Text(formatTime(_infos[index].usage)));
           }),
     );
   }
@@ -64,5 +64,3 @@ class _AppTimerState extends State<AppTimer> {
     ].join(':');
   }
 }
-
-

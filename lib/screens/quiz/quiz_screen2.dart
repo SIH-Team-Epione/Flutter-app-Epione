@@ -6,7 +6,6 @@ import 'components/body.dart';
 import 'components/body2.dart';
 
 class QuizScreen2 extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     QuestionController2 _controller = Get.put(QuestionController2());
@@ -18,9 +17,10 @@ class QuizScreen2 extends StatelessWidget {
         backgroundColor: Colors.transparent,
         elevation: 0,
         actions: [
-          FlatButton(
-          onPressed: _controller.nextQuestion,
-          child: Text("Next"),
+          ElevatedButton(
+            style: ElevatedButton.styleFrom(elevation: 0),
+            onPressed: _controller.nextQuestion,
+            child: Text("Next"),
           ),
         ],
       ),
